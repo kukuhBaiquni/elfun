@@ -1,26 +1,69 @@
 const navigation = [{
-  title: 'Main Page',
+  child: [],
+  name: 'Main Page',
 }, {
-  title: 'Recent Changes',
+  child: [],
+  name: 'Recent Changes',
 }, {
-  title: 'Npc\'s',
+  name: 'Characters',
+  child: [{
+    name: 'Elsword',
+  }, {
+    name: 'Aisha',
+  }, {
+    name: 'Rena',
+  }, {
+    name: 'Raven',
+  }, {
+    name: 'Eve',
+  }, {
+    name: 'Chung',
+  }, {
+    name: 'Ara',
+  }, {
+    name: 'Elesis',
+  }, {
+    name: 'Add',
+  }, {
+    name: 'Lu/Ciel',
+  }, {
+    name: 'Rose',
+  }, {
+    name: 'Ain',
+  }, {
+    name: 'Laby',
+  }, {
+    name: 'Noah',
+  }],
 }, {
-  title: 'Dungeons',
+  child: [],
+  name: 'Dungeons',
 }, {
-  title: 'Towns',
+  child: [],
+  name: 'Towns',
 }, {
-  title: 'Characters',
+  child: [],
+  name: 'Npc\'s',
 }, {
-  title: 'Titles',
+  child: [],
+  name: 'Titles',
 }]
 
 function Sidebar() {
   return (
-    <div className='p-4 fixed bg-sky-300'>
+    <div className='p-4 h-sidebar bg-sky-100 flex-grow flex'>
       <ul>
-        {navigation.map(({ title }) => (
-          <li className='py-2 px-4 font-black hover:bg-sky-500 hover:text-gray-200 rounded cursor-pointer duration-300 text-gray-500 transition-all' key={title}>
-            {title}
+        {navigation.map(({ name, child }) => (
+          <li className='py-1 px-4 font-black hover:bg-sky-500 hover:text-gray-200 rounded cursor-pointer duration-300 text-gray-500 transition-all' key={name}>
+            {child.length ? (
+              <ul>
+                {child.map((item) => (
+                  <li className='font-normal' key={item.name}>
+                    {item.name}
+                  </li>
+                ))}
+              </ul>
+            ) : name}
           </li>
         ))}
       </ul>
