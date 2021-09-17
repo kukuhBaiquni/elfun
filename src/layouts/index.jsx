@@ -1,10 +1,12 @@
 import { Fragment } from 'react'
 import PropTypes from 'prop-types'
+import Sidebar from 'components/side-bar'
 
 function Layout({ children }) {
   return (
     <Fragment>
-      <div className='mx-auto w-2/3 bg-red-500 p-5'>
+      <div className='w-full md:w-2/3 mx-auto p-5 flex bg-primary'>
+        <Sidebar />
         {children}
       </div>
     </Fragment>

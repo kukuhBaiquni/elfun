@@ -1,10 +1,13 @@
 import { Fragment } from 'react'
 import Layout from 'layouts'
-import Sidebar from 'components/side-bar'
+import Head from 'next/head'
 
 function Home() {
   return (
     <Fragment>
+      <Head>
+        <title>Home</title>
+      </Head>
       Hello Home
     </Fragment>
   )
@@ -13,7 +16,6 @@ function Home() {
 Home.getLayout = (page) => (
   <Layout>
     {page}
-    <Sidebar />
   </Layout>
 )
 
