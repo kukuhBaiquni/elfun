@@ -18,7 +18,7 @@ function Layout({ children }) {
           />
         </div>
       </header>
-      <div className='w-full md:w-3/4 mx-auto flex bg-gray-300'>
+      <div className='w-full md:w-3/4 mx-auto flex'>
         <Sidebar />
         {children}
       </div>
