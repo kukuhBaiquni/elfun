@@ -1,8 +1,14 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import 'tailwindcss/tailwind.css'
+import PropTypes from 'prop-types'
 
 function MyApp({ Component, pageProps }) {
-  console.log(pageProps)
   return <Component {...pageProps} />
+}
+
+MyApp.propTypes = {
+  Component: PropTypes.any,
+  pageProps: PropTypes.any,
 }
 
 export default MyApp
