@@ -16,10 +16,10 @@ const navigation = [{
 
 function Sidebar() {
   return (
-    <div className='px-2 w-[20%] mr-4 bg-gray-200 mt-8'>
+    <div className='p-4 fixed bg-sky-300'>
       <ul>
         {navigation.map(({ title }) => (
-          <li className='p-2 font-black hover:bg-sky-500 cursor-pointer duration-400 text-gray-500 transition-all' key={title}>
+          <li className='py-2 px-4 font-black hover:bg-sky-500 hover:text-gray-200 rounded cursor-pointer duration-300 text-gray-500 transition-all' key={title}>
             {title}
           </li>
         ))}

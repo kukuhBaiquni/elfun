@@ -4,8 +4,7 @@
 
 @layer base {
   body {
-    /* @apply bg-[#4d2e9b] text-gray-300; */
-    @apply font-nunito;
+    @apply bg-gray-300 font-nunito;
   }
   .btn-primary {
     @apply bg-cyan-400 px-8 py-2 hover:bg-cyan-500 rounded text-gray-50 transition-all duration-300 border-none outline-none

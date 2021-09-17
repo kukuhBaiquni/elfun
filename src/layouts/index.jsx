@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Sidebar from 'components/side-bar'
 import Image from 'next/image'
@@ -7,8 +6,8 @@ import logo from '../../public/images/logo.png'
 function Layout({ children }) {
   return (
     <div>
-      <header className='bg-white fixed z-10 w-full'>
-        <div className='h-20 max-w-screen-2xl mx-auto flex items-center px-4 py-2 bg-eve'>
+      <header className='bg-transparent fixed z-10 w-full'>
+        <div className='h-20 max-w-screen-xl mx-auto flex items-center px-4 py-2 bg-white'>
           <Image
             alt='logo'
             className='cursor-pointer'
@@ -18,10 +17,12 @@ function Layout({ children }) {
           />
         </div>
       </header>
-      <div className='mx-auto max-w-screen-2xl relative'>
+      <div className='mx-auto max-w-screen-xl'>
         <div className='w-full flex pt-24'>
           <Sidebar />
-          {children}
+          <div className='w-[85%] ml-auto bg-white'>
+            {children}
+          </div>
         </div>
       </div>
     </div>

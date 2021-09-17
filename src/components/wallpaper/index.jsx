@@ -69,11 +69,11 @@ function Wallpaper() {
         <Image
           alt='elsdug'
           // filter grayscale hover:filter-none
-          className={`object-cover transition-all duration-300 bg-${color}`}
+          className={`object-cover transition-all duration-300 bg-${color} flex-grow`}
           height={400}
           key={index}
           src={src}
-          width={150}
+          width={200}
         />
       ))}
     </div>
