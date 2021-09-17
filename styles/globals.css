@@ -4,6 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-[#4d2e9b] text-gray-300;
+    /* @apply bg-[#4d2e9b] text-gray-300; */
+    @apply font-nunito
   }
 }
