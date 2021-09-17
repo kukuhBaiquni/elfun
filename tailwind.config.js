@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+// const colors = require('tailwindcss/colors')
+
 module.exports = {
   purge: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
@@ -12,16 +15,11 @@ module.exports = {
         nunito: ['Nunito'],
       },
     },
-    colors: {
-      primary: {
-        DEFAULT: '#7c0c10',
-        dark: '#7c0c10',
-        light: '#7c0c10',
-      },
-    },
   },
   variants: {
-    extend: {},
+    extend: {
+      filter: ['hover'],
+    },
   },
   plugins: [],
 }

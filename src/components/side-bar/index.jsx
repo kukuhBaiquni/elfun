@@ -1,6 +1,6 @@
 function Sidebar() {
   return (
-    <div>
+    <div className='bg-red-300 w-1/6 mt-auto'>
       <ul>
         <li>Home</li>
         <li>Character</li>

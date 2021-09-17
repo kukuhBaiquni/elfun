@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import Layout from 'layouts'
 import Head from 'next/head'
+import Wallpaper from 'components/wallpaper'
 
 function Home() {
   return (
@@ -8,7 +9,7 @@ function Home() {
       <Head>
         <title>Home</title>
       </Head>
-      Hello Home
+      <Wallpaper />
     </Fragment>
   )
 }
