@@ -224,15 +224,12 @@ const character = [{
     child: [{
       name: 'Lord Knight',
       img: lordKnight,
-      child: [],
     }, {
       name: 'Lord Knight Transcendent',
       img: lordKnightTrans,
-      child: [],
     }, {
       name: 'Knight Emperor',
       img: knightEmperor,
-      child: [],
     }],
   }, {
     name: 'Magic Knight',
@@ -240,15 +237,12 @@ const character = [{
     child: [{
       name: 'Rune Slayer',
       img: runeSlayer,
-      child: [],
     }, {
       name: 'Rune Slayer Transcendent',
       img: runeSlayerTrans,
-      child: [],
     }, {
       name: 'Rune Master',
       img: runeMaster,
-      child: [],
     }],
   }, {
     name: 'Sheath Knight',
@@ -256,15 +250,12 @@ const character = [{
     child: [{
       name: 'Infinity Sword',
       img: infinitySword,
-      child: [],
     }, {
       name: 'Infinity Sword Transcendent',
       img: infinitySwordTrans,
-      child: [],
     }, {
       name: 'Immortal',
       img: immortal,
-      child: [],
     }],
   }, {
     name: 'Root Knight',
@@ -272,15 +263,12 @@ const character = [{
     child: [{
       name: 'Sacred Templar',
       img: sacredTemplar,
-      child: [],
     }, {
       name: 'Sacred Templar Transcendent',
       img: sacredTemplarTrans,
-      child: [],
     }, {
       name: 'Genesis',
       img: genesis,
-      child: [],
     }],
   }],
 }, {
@@ -293,15 +281,12 @@ const character = [{
     child: [{
       name: 'Elemental Master',
       img: elementalMaster,
-      child: [],
     }, {
       name: 'Elemental Master Transcendent',
       img: elementalMasterTrans,
-      child: [],
     }, {
       name: 'Aether Sage',
       img: aetherSage,
-      child: [],
     }],
   }, {
     name: 'Dark Magician',
@@ -309,15 +294,12 @@ const character = [{
     child: [{
       name: 'Void Princess',
       img: voidPrincess,
-      child: [],
     }, {
       name: 'Void Princess Transcendent',
       img: voidPrincessTrans,
-      child: [],
     }, {
       name: 'Oz Sorcerer',
       img: ozSorcerer,
-      child: [],
     }],
   }, {
     name: 'Battle Magician',
@@ -325,15 +307,12 @@ const character = [{
     child: [{
       name: 'Dimension Witch',
       img: dimensionWitch,
-      child: [],
     }, {
       name: 'Dimension Witch Transcendent',
       img: dimensionWitchTrans,
-      child: [],
     }, {
       name: 'Metamorphy',
       img: metamorphy,
-      child: [],
     }],
   }],
 }, {
@@ -346,15 +325,12 @@ const character = [{
     child: [{
       name: 'Wind Sneaker',
       img: windSneaker,
-      child: [],
     }, {
       name: 'Wind Sneaker Transcendent',
       img: windSneakerTrans,
-      child: [],
     }, {
       name: 'Anemos',
       img: anemos,
-      child: [],
     }],
   }, {
     name: 'Sniping Ranger',
@@ -362,15 +338,12 @@ const character = [{
     child: [{
       name: 'Grand Archer',
       img: grandArcher,
-      child: [],
     }, {
       name: 'Grand Archer Transcendent',
       img: grandArcherTrans,
-      child: [],
     }, {
       name: 'Daybreaker',
       img: daybreaker,
-      child: [],
     }],
   }, {
     name: 'Trapping Ranger',
@@ -378,15 +351,12 @@ const character = [{
     child: [{
       name: 'Night Watcher',
       img: nightWatcher,
-      child: [],
     }, {
       name: 'Night Watcher Transcendent',
       img: nightWatcherTrans,
-      child: [],
     }, {
       name: 'Twilight',
       img: twilight,
-      child: [],
     }],
   }],
 }, {
@@ -399,15 +369,12 @@ const character = [{
     child: [{
       name: 'Blade Master',
       img: bladeMaster,
-      child: [],
     }, {
       name: 'Blade Master Transcendent',
       img: bladeMasterTrans,
-      child: [],
     }, {
       name: 'Furious Blade',
       img: furiousBlade,
-      child: [],
     }],
   }, {
     name: 'Over Taker',
@@ -415,15 +382,12 @@ const character = [{
     child: [{
       name: 'Reckless Fist',
       img: recklessFist,
-      child: [],
     }, {
       name: 'Reckless Fist Transcendent',
       img: recklessFistTrans,
-      child: [],
     }, {
       name: 'Rage Hearts',
       img: rageHearts,
-      child: [],
     }],
   }, {
     name: 'Weapon Taker',
@@ -431,15 +395,12 @@ const character = [{
     child: [{
       name: 'Veteran Commander',
       img: veteranCommander,
-      child: [],
     }, {
       name: 'Veteran Commander Transcendent',
       img: veteranCommanderTrans,
-      child: [],
     }, {
       name: 'Nova Imperator',
       img: novaImperator,
-      child: [],
     }],
   }],
 }, {
@@ -452,15 +413,12 @@ const character = [{
     child: [{
       name: 'Code: Nemesis',
       img: codeNemesis,
-      child: [],
     }, {
       name: 'Code: Nemesis Transcendent',
       img: codeNemesisTrans,
-      child: [],
     }, {
       name: 'Code: Ultimate',
       img: codeUltimate,
-      child: [],
     }],
   }, {
     name: 'Code: Architecture',
@@ -468,15 +426,12 @@ const character = [{
     child: [{
       name: 'Code: Empress',
       img: codeEmpress,
-      child: [],
     }, {
       name: 'Code: Empress Transcendent',
       img: codeEmpressTrans,
-      child: [],
     }, {
       name: 'Code: Essencia',
       img: codeEssencia,
-      child: [],
     }],
   }, {
     name: 'Code: Electra',
@@ -484,15 +439,12 @@ const character = [{
     child: [{
       name: 'Code: Battle Seraph',
       img: codeBattleSeraph,
-      child: [],
     }, {
       name: 'Code: Battle Seraph Transcendent',
       img: codeBattleSeraphTrans,
-      child: [],
     }, {
       name: 'Code: Sariel',
       img: codeSariel,
-      child: [],
     }],
   }, {
     name: 'Code: Unknown',
@@ -500,15 +452,12 @@ const character = [{
     child: [{
       name: 'Code: Failess',
       img: codeFailess,
-      child: [],
     }, {
       name: 'Code: Failess Transcendent',
       img: codeFailessTrans,
-      child: [],
     }, {
       name: 'Code: Antithese',
       img: codeAntithese,
-      child: [],
     }],
   }],
 }, {
@@ -521,15 +470,12 @@ const character = [{
     child: [{
       name: 'Iron Paladin',
       img: ironPaladin,
-      child: [],
     }, {
       name: 'Iron Paladin Transcendent',
       img: ironPaladinTrans,
-      child: [],
     }, {
       name: 'Comet Crusader',
       img: cometCrusader,
-      child: [],
     }],
   }, {
     name: 'Shooting Guardian',
@@ -537,15 +483,12 @@ const character = [{
     child: [{
       name: 'Deadly Chaser',
       img: deadlyChaser,
-      child: [],
     }, {
       name: 'Deadly Chaser Transcendent',
       img: deadlyChaserTrans,
-      child: [],
     }, {
       name: 'Fatal Phantom',
       img: fatalPhantom,
-      child: [],
     }],
   }, {
     name: 'Shelling Guardian',
@@ -553,15 +496,12 @@ const character = [{
     child: [{
       name: 'Tactical Trooper',
       img: tacticalTrooper,
-      child: [],
     }, {
       name: 'Tactical Trooper Transcendent',
       img: tacticalTrooperTrans,
-      child: [],
     }, {
       name: 'Centurion',
       img: centurion,
-      child: [],
     }],
   }],
 }, {
@@ -574,15 +514,12 @@ const character = [{
     child: [{
       name: 'Sakra Devanam',
       img: sakraDevanam,
-      child: [],
     }, {
       name: 'Sakra Devanam Transcendent',
       img: sakraDevanamTrans,
-      child: [],
     }, {
       name: 'Apsara',
       img: apsara,
-      child: [],
     }],
   }, {
     name: 'Little Devil',
@@ -590,15 +527,12 @@ const character = [{
     child: [{
       name: 'Yama Raja',
       img: yamaRaja,
-      child: [],
     }, {
       name: 'Yama Raja Transcendent',
       img: yamaRajaTrans,
-      child: [],
     }, {
       name: 'Devi',
       img: devi,
-      child: [],
     }],
   }, {
     name: 'Little Specter',
@@ -606,15 +540,12 @@ const character = [{
     child: [{
       name: 'Asura',
       img: asura,
-      child: [],
     }, {
       name: 'Asura Transcendent',
       img: asuraTrans,
-      child: [],
     }, {
       name: 'Shakti',
       img: shakti,
-      child: [],
     }],
   }],
 }, {
@@ -627,15 +558,15 @@ const character = [{
     child: [{
       name: 'Grand Master',
       img: grandMaster,
-      child: [],
+
     }, {
       name: 'Grand Master Transcendent',
       img: grandMasterTrans,
-      child: [],
+
     }, {
       name: 'Empire Sword',
       img: empireSword,
-      child: [],
+
     }],
   }, {
     name: 'Pyro Knight',
@@ -643,15 +574,15 @@ const character = [{
     child: [{
       name: 'Blazing Heart',
       img: blazingHeart,
-      child: [],
+
     }, {
       name: 'Blazing Heart Transcendent',
       img: blazingHeartTrans,
-      child: [],
+
     }, {
       name: 'Flame Lord',
       img: flameLord,
-      child: [],
+
     }],
   }, {
     name: 'Dark Knight',
@@ -659,15 +590,15 @@ const character = [{
     child: [{
       name: 'Crimson Avenger',
       img: crimsonAvenger,
-      child: [],
+
     }, {
       name: 'Crimson Avenger Transcendent',
       img: crimsonAvengerTrans,
-      child: [],
+
     }, {
       name: 'Blood Queen',
       img: bloodyQueen,
-      child: [],
+
     }],
   }],
 }, {
@@ -680,15 +611,15 @@ const character = [{
     child: [{
       name: 'Lunatic Psyker',
       img: lunaticPsyker,
-      child: [],
+
     }, {
       name: 'Lunatic Psyker Transcendent',
       img: lunaticPsykerTrans,
-      child: [],
+
     }, {
       name: 'Doom Bringer',
       img: doomBringer,
-      child: [],
+
     }],
   }, {
     name: 'Arc Tracer',
@@ -696,15 +627,15 @@ const character = [{
     child: [{
       name: 'Mastermind Transcendent',
       img: mastermindTrans,
-      child: [],
+
     }, {
       name: 'Mastermind',
       img: mastermind,
-      child: [],
+
     }, {
       name: 'Dominator',
       img: dominator,
-      child: [],
+
     }],
   }, {
     name: 'Time Tracer',
@@ -712,15 +643,15 @@ const character = [{
     child: [{
       name: 'Diabolic Esper',
       img: diabolicEsper,
-      child: [],
+
     }, {
       name: 'Diabolic Esper Transcendent',
       img: diabolicEsperTrans,
-      child: [],
+
     }, {
       name: 'Mad Paradox',
       img: madParadox,
-      child: [],
+
     }],
   }],
 }, {
@@ -733,11 +664,9 @@ const character = [{
     child: [{
       name: 'Chiliarch Transcendent',
       img: chiliarchTrans,
-      child: [],
     }, {
       name: 'Catastrophe(Timoria)',
       img: timoria,
-      child: [],
     }],
   }, {
     name: 'Noblesse',
@@ -745,11 +674,9 @@ const character = [{
     child: [{
       name: 'Noblesse Transcendent',
       img: noblesseTrans,
-      child: [],
     }, {
       name: 'Innocent(Ishtar)',
       img: ishtar,
-      child: [],
     }],
   }, {
     name: 'Diabla',
@@ -757,11 +684,9 @@ const character = [{
     child: [{
       name: 'Diabla Transcendent',
       img: diablaTrans,
-      child: [],
     }, {
       name: 'Diangelion(Iblis)',
       img: iblis,
-      child: [],
     }],
   }],
 }, {
@@ -774,11 +699,9 @@ const character = [{
     child: [{
       name: 'Dreadlord Transcendent',
       img: dreadlordTrans,
-      child: [],
     }, {
       name: 'Catastrophe(Abysser)',
       img: abysser,
-      child: [],
     }],
   }, {
     name: 'Royal Guard',
@@ -786,11 +709,9 @@ const character = [{
     child: [{
       name: 'Royal Guard Transcendent',
       img: royalGuardTrans,
-      child: [],
     }, {
       name: 'Innocent(chevalier)',
       img: chevalier,
-      child: [],
     }],
   }, {
     name: 'Demonio',
@@ -798,11 +719,9 @@ const character = [{
     child: [{
       name: 'Demonio Transcendent',
       img: demonioTrans,
-      child: [],
     }, {
       name: 'Diangelion(anular)',
       img: anular,
-      child: [],
     }],
   }],
 }, {
@@ -815,15 +734,12 @@ const character = [{
     child: [{
       name: 'Storm Trooper',
       img: stormTrooper,
-      child: [],
     }, {
       name: 'Storm Trooper Transcendent',
       img: stormTrooperTrans,
-      child: [],
     }, {
       name: 'Tempest Burster',
       img: tempestBurster,
-      child: [],
     }],
   }, {
     name: 'Bloodia',
@@ -831,16 +747,13 @@ const character = [{
     child: [{
       name: 'Crimson Rose',
       img: crimsonRose,
-      child: [],
     },
     {
       name: 'Crimson Rose Transcendent',
       img: crimsonRoseTrans,
-      child: [],
     }, {
       name: 'Black Massacre',
       img: blackMassacre,
-      child: [],
     }],
   }, {
     name: 'Valkyrie',
@@ -848,15 +761,12 @@ const character = [{
     child: [{
       name: 'Freyja',
       img: freyja,
-      child: [],
     }, {
       name: 'Freyja Transcendent',
       img: freyjaTrans,
-      child: [],
     }, {
       name: 'Minerva',
       img: minerva,
-      child: [],
     }],
   }, {
     name: 'Metal Heart',
@@ -864,15 +774,12 @@ const character = [{
     child: [{
       name: 'Optimus',
       img: optimus,
-      child: [],
     }, {
       name: 'Optimus Transcendent',
       img: optimusTrans,
-      child: [],
     }, {
       name: 'Prime Operator',
       img: primeOperator,
-      child: [],
     }],
   }],
 }, {
@@ -885,15 +792,12 @@ const character = [{
     child: [{
       name: 'Arme Thaumaturgy',
       img: armeThaumaturgy,
-      child: [],
     }, {
       name: 'Arme Thaumaturgy Transcendent',
       img: armeThaumaturgyTrans,
-      child: [],
     }, {
       name: 'Ritcher',
       img: ritcher,
-      child: [],
     }],
   }, {
     name: 'Lofty: Anpassen',
@@ -901,15 +805,12 @@ const character = [{
     child: [{
       name: 'Erbluhen Emotion',
       img: erbluhenEmotion,
-      child: [],
     }, {
       name: 'Erbluhen Emotion Transcendent',
       img: erbluhenEmotionTrans,
-      child: [],
     }, {
       name: 'Bluhen',
       img: bluhen,
-      child: [],
     }],
   }, {
     name: 'Lofty: Wanderer',
@@ -917,15 +818,12 @@ const character = [{
     child: [{
       name: 'Apostasia',
       img: apostasia,
-      child: [],
     }, {
       name: 'Apostasia Transcendent',
       img: apostasiaTrans,
-      child: [],
     }, {
       name: 'Herrscher',
       img: herrscher,
-      child: [],
     }],
   }],
 }, {
@@ -938,15 +836,12 @@ const character = [{
     child: [{
       name: 'Rumble Pumn',
       img: rumblePumn,
-      child: [],
     }, {
       name: 'Rumble Pumn Transcendent',
       img: rumblePumnTrans,
-      child: [],
     }, {
       name: 'Eternity Winter',
       img: eternityWinter,
-      child: [],
     }],
   }, {
     name: 'Twinkle Child',
@@ -954,15 +849,12 @@ const character = [{
     child: [{
       name: 'Shinning Romantica',
       img: shiningRomantica,
-      child: [],
     }, {
       name: 'Shinning Romantica Transcendent',
       img: shiningRomanticaTrans,
-      child: [],
     }, {
       name: 'Radiant Soul',
       img: radiantSoul,
-      child: [],
     }],
   }, {
     name: 'Rusty Child',
@@ -970,15 +862,12 @@ const character = [{
     child: [{
       name: 'Daydreamer',
       img: daydreamer,
-      child: [],
     }, {
       name: 'Daydreamer Transcendent',
       img: daydreamerTrans,
-      child: [],
     }, {
       name: 'Nisha Labyrinth',
       img: nishaLabyrinth,
-      child: [],
     }],
   }],
 }, {
@@ -991,15 +880,12 @@ const character = [{
     child: [{
       name: 'Silent Shadow',
       img: silentShadow,
-      child: [],
     }, {
       name: 'Silent Shadow Transcendent',
       img: silentShadowTrans,
-      child: [],
     }, {
       name: 'Liberator',
       img: liberator,
-      child: [],
     }],
   }, {
     name: 'Second Selection',
@@ -1007,15 +893,12 @@ const character = [{
     child: [{
       name: 'Stellar Caster',
       img: stellarCaster,
-      child: [],
     }, {
       name: 'Stellar Caster Transcendent',
       img: stellarCasterTrans,
-      child: [],
     }, {
       name: 'Celestia',
       img: celestia,
-      child: [],
     }],
   }, {
     name: 'Second Grief',
@@ -1023,15 +906,12 @@ const character = [{
     child: [{
       name: 'Pale Pilgrim',
       img: palePilgrim,
-      child: [],
     }, {
       name: 'Pale Pilgrim Transcendent',
       img: palePilgrimTrans,
-      child: [],
     }, {
       name: 'Nyx Pieta',
       img: nyxPieta,
-      child: [],
     }],
   }],
 }]
