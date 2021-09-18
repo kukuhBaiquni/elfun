@@ -643,12 +643,12 @@ const character = [{
     name: 'Arc Tracer',
     img: arcTracer,
     child: [{
-      name: 'Mastermind Transcendent',
-      img: mastermindTrans,
-
-    }, {
       name: 'Mastermind',
       img: mastermind,
+
+    }, {
+      name: 'Mastermind Transcendent',
+      img: mastermindTrans,
 
     }, {
       name: 'Dominator',
@@ -750,7 +750,8 @@ const character = [{
   name: 'Rose',
   img: rose,
   bgColor: 'bg-rose',
-  textColor: 'text-rose',
+  textColor: 'text-gray-500',
+  textHoverColor: true,
   hoverBgColor: 'hover:bg-rose',
   child: [{
     name: 'Heavy Barrel',
