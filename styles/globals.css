@@ -9,11 +9,7 @@
   .btn-primary {
     @apply bg-cyan-400 px-8 py-2 hover:bg-cyan-500 rounded text-gray-50 transition-all duration-300 border-none outline-none
   }
-  li .job-nesting > div {
-    bottom: 40px;
-  }
   li .job-nesting:hover > div {
-    z-index: 11;
     animation: slide-in 0.3s;
     opacity: 1;
   }
