@@ -75,7 +75,7 @@ const character = [{
       child: [],
     }, {
       name: 'Sacred Templar Transcendent',
-      img: sacredTemplar,
+      img: sacredTemplarTrans,
       child: [],
     }, {
       name: 'Genesis',

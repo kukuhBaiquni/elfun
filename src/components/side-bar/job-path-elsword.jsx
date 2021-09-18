@@ -4,7 +4,7 @@ import character from './character-data'
 function JobPath() {
   const { color } = character[0]
   return (
-    <ul className='absolute floatig-list w-48 z-10 hidden group-hover:flex flex-col top-0 left-1/2 bg-white drop-shadow-2xl group-hover:translate-x-10 transition-transform duration-300'>
+    <ul className='absolute floatig-list w-48 z-10 hidden group-hover:flex flex-col top-0 left-20 bg-white drop-shadow-2xl group-hover:translate-x-10 transition-transform duration-300'>
       {character[0].child.map((item) => (
         <li className={`job-nesting text-gray-500 hover:bg-${color} hover:text-gray-200 py-2 px-5 relative`} key={item.name}>
           <span className='flex items-center'>
@@ -18,7 +18,7 @@ function JobPath() {
             <p className='ml-1.5'>{item.name}</p>
           </span>
           <div className='opacity-0'>
-            <ul className='absolute z-20 w-72 bg-white left-40 top-0 drop-shadow-2xl'>
+            <ul className='absolute z-20 w-72 bg-white left-48 top-0 drop-shadow-2xl'>
               {item.child.map((job, index) => (
                 <li className={`text-${color} hover:bg-${color} hover:text-gray-200 py-2 px-5`} key={job.name}>
                   <span className='flex items-center'>
