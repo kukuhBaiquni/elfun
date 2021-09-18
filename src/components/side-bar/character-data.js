@@ -1,39 +1,85 @@
+import swordKnight from '../../../public/images/avatar/sword-knight.png'
+import lordKnight from '../../../public/images/avatar/lord-knight.png'
+import lordKnightTrans from '../../../public/images/avatar/lord-knight-trans.png'
+import knightEmperor from '../../../public/images/avatar/knight-emperor.png'
+import magicKnight from '../../../public/images/avatar/magic-knight.png'
+import runeSlayer from '../../../public/images/avatar/rune-slayer.png'
+import runeSlayerTrans from '../../../public/images/avatar/rune-slayer-trans.png'
+import runeMaster from '../../../public/images/avatar/rune-master.png'
+import sheathKnight from '../../../public/images/avatar/sheath-knight.png'
+import infinitySword from '../../../public/images/avatar/infinity-sword.png'
+import infinitySwordTrans from '../../../public/images/avatar/infinity-sword-trans.png'
+import immortal from '../../../public/images/avatar/immortal.png'
+import rootKnight from '../../../public/images/avatar/root-knight.png'
+import sacredTemplar from '../../../public/images/avatar/sacred-templar.png'
+import sacredTemplarTrans from '../../../public/images/avatar/sacred-templar-trans.png'
+import genesis from '../../../public/images/avatar/genesis.png'
+
 const character = [{
   name: 'Elsword',
+  color: 'elsword',
   child: [{
     name: 'Sword Knight',
+    img: swordKnight,
     child: [{
       name: 'Lord Knight',
+      img: lordKnight,
+      child: [],
+    }, {
+      name: 'Lord Knight Transcendent',
+      img: lordKnightTrans,
       child: [],
     }, {
       name: 'Knight Emperor',
+      img: knightEmperor,
       child: [],
     }],
   }, {
     name: 'Magic Knight',
+    img: magicKnight,
     child: [{
       name: 'Rune Slayer',
+      img: runeSlayer,
+      child: [],
+    }, {
+      name: 'Rune Slayer Transcendent',
+      img: runeSlayerTrans,
       child: [],
     }, {
       name: 'Rune Master',
+      img: runeMaster,
       child: [],
     }],
   }, {
     name: 'Sheath Knight',
+    img: sheathKnight,
     child: [{
       name: 'Infinity Sword',
+      img: infinitySword,
+      child: [],
+    }, {
+      name: 'Infinity Sword Transcendent',
+      img: infinitySwordTrans,
       child: [],
     }, {
       name: 'Immortal',
+      img: immortal,
       child: [],
     }],
   }, {
     name: 'Root Knight',
+    img: rootKnight,
     child: [{
       name: 'Sacred Templar',
+      img: sacredTemplar,
+      child: [],
+    }, {
+      name: 'Sacred Templar Transcendent',
+      img: sacredTemplar,
       child: [],
     }, {
       name: 'Genesis',
+      img: genesis,
       child: [],
     }],
   }],

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Fragment } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,7 +9,7 @@ function Characters() {
   return (
     <Fragment>
       Characters
-      <ul>
+      <ul className='my-2'>
         <li className='py-2 relative z-10 whitespace-nowrap group font-normal hover:bg-elsword px-2 hover:translate-x-2 text-gray-400 rounded cursor-pointer transition-transform duration-300'>
           <Link href='/character-elsword'>
             <a className='flex items-center'>
@@ -19,7 +20,7 @@ function Characters() {
                 src={elsword}
                 width={30}
               />
-              <p className='ml-1.5 group-hover:text-gray-200'>Elsword</p>
+              <p className='ml-1.5 group-hover:text-gray-200 text-elsword'>Elsword</p>
             </a>
           </Link>
           <JobPathElsword />
