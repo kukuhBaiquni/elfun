@@ -217,7 +217,8 @@ import nyxPieta from '../../../public/images/avatar/noah/nyx-pieta.png'
 const character = [{
   name: 'Elsword',
   img: elsword,
-  color: 'elsword',
+  bgColor: 'bg-elsword',
+  textColor: 'text-elsword',
   child: [{
     name: 'Sword Knight',
     img: swordKnight,
@@ -274,7 +275,8 @@ const character = [{
 }, {
   name: 'Aisha',
   img: aisha,
-  color: 'aisha',
+  bgColor: 'bg-aisha',
+  textColor: 'text-aisha',
   child: [{
     name: 'High Magician',
     img: highMagician,
@@ -318,7 +320,8 @@ const character = [{
 }, {
   name: 'Rena',
   img: rena,
-  color: 'rena',
+  bgColor: 'bg-rena',
+  textColor: 'text-rena',
   child: [{
     name: 'Combat Ranger',
     img: combatRanger,
@@ -362,7 +365,8 @@ const character = [{
 }, {
   name: 'Raven',
   img: raven,
-  color: 'raven',
+  bgColor: 'bg-raven',
+  textColor: 'text-raven',
   child: [{
     name: 'Sword Taker',
     img: swordTaker,
@@ -406,7 +410,8 @@ const character = [{
 }, {
   name: 'Eve',
   img: eve,
-  color: 'eve',
+  bgColor: 'bg-eve',
+  textColor: 'text-eve',
   child: [{
     name: 'Code: Exotic',
     img: codeExotic,
@@ -463,7 +468,8 @@ const character = [{
 }, {
   name: 'Chung',
   img: chung,
-  color: 'chung',
+  bgColor: 'bg-chung',
+  textColor: 'text-chung',
   child: [{
     name: 'Fury Guardian',
     img: furyGuardian,
@@ -507,7 +513,8 @@ const character = [{
 }, {
   name: 'Ara',
   img: ara,
-  color: 'ara',
+  bgColor: 'bg-ara',
+  textColor: 'text-ara',
   child: [{
     name: 'Little Hsien',
     img: littleHsien,
@@ -551,7 +558,8 @@ const character = [{
 }, {
   name: 'Elesis',
   img: elesis,
-  color: 'elesis',
+  bgColor: 'bg-elesis',
+  textColor: 'text-elesis',
   child: [{
     name: 'Saber Knight',
     img: saberKnight,
@@ -604,7 +612,8 @@ const character = [{
 }, {
   name: 'Add',
   img: add,
-  color: 'add',
+  bgColor: 'bg-add',
+  textColor: 'text-add',
   child: [{
     name: 'Psyshic Tracer',
     img: psychicTracer,
@@ -657,7 +666,8 @@ const character = [{
 }, {
   name: 'Lu',
   img: lu,
-  color: 'luciel',
+  bgColor: 'bg-luciel',
+  textColor: 'text-luciel',
   child: [{
     name: 'Chiliarch',
     img: chiliarch,
@@ -692,7 +702,8 @@ const character = [{
 }, {
   name: 'Ciel',
   img: ciel,
-  color: 'luciel',
+  bgColor: 'bg-luciel',
+  textColor: 'text-luciel',
   child: [{
     name: 'Dreadlord',
     img: dreadlord,
@@ -710,7 +721,7 @@ const character = [{
       name: 'Royal Guard Transcendent',
       img: royalGuardTrans,
     }, {
-      name: 'Innocent(chevalier)',
+      name: 'Innocent(Chevalier)',
       img: chevalier,
     }],
   }, {
@@ -720,17 +731,18 @@ const character = [{
       name: 'Demonio Transcendent',
       img: demonioTrans,
     }, {
-      name: 'Diangelion(anular)',
+      name: 'Diangelion(Anular)',
       img: anular,
     }],
   }],
 }, {
   name: 'Rose',
   img: rose,
-  color: 'rose',
+  bgColor: 'bg-rose',
+  textColor: 'text-rose',
   child: [{
     name: 'Heavy Barrel',
-    igm: heavyBarrel,
+    img: heavyBarrel,
     child: [{
       name: 'Storm Trooper',
       img: stormTrooper,
@@ -785,7 +797,8 @@ const character = [{
 }, {
   name: 'Ain',
   img: ain,
-  color: 'ain',
+  bgColor: 'bg-ain',
+  textColor: 'text-ain',
   child: [{
     name: 'Lofty: Executor',
     img: loftyExecutor,
@@ -829,7 +842,8 @@ const character = [{
 }, {
   name: 'Laby',
   img: laby,
-  color: 'laby',
+  bgColor: 'bg-laby',
+  textColor: 'text-laby',
   child: [{
     name: 'Sparky Child',
     img: sparkyChild,
@@ -873,7 +887,8 @@ const character = [{
 }, {
   name: 'Noah',
   img: noah,
-  color: 'noah',
+  bgColor: 'bg-noah',
+  textColor: 'text-noah',
   child: [{
     name: 'Second Revenger',
     img: secondRevenger,

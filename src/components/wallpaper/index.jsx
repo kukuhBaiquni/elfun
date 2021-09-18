@@ -44,7 +44,7 @@ const images = [{
   color: 'add',
 }, {
   src: lu,
-  color: 'lucial',
+  color: 'luciel',
 }, {
   src: ciel,
   color: 'luciel',
@@ -69,7 +69,7 @@ function Wallpaper() {
         <Image
           alt='elsdug'
           // filter grayscale hover:filter-none
-          className={`object-cover transition-all duration-300 bg-${color} flex-grow`}
+          className={`object-cover transition-all duration-300 ${color} flex-grow`}
           height={400}
           key={index}
           src={src}

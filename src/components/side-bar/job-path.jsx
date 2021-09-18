@@ -16,9 +16,9 @@ function JobPath({ number }) {
               <Image
                 alt={item.name}
                 className='rounded-full object-cover'
-                height={30}
+                height={25}
                 src={item.img}
-                width={30}
+                width={25}
               />
               <p className='ml-1.5'>{item.name}</p>
             </a>
@@ -32,9 +32,9 @@ function JobPath({ number }) {
                       <Image
                         alt={job.name}
                         className={`rounded${index === 0 ? '-full' : ''} object-cover`}
-                        height={30}
+                        height={25}
                         src={job.img}
-                        width={30}
+                        width={25}
                       />
                       <p className='ml-1.5'>{job.name}</p>
                     </a>
