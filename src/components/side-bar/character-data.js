@@ -219,6 +219,7 @@ const character = [{
   img: elsword,
   bgColor: 'bg-elsword',
   textColor: 'text-elsword',
+  hoverBgColor: 'hover:bg-elsword',
   child: [{
     name: 'Sword Knight',
     img: swordKnight,
@@ -277,6 +278,7 @@ const character = [{
   img: aisha,
   bgColor: 'bg-aisha',
   textColor: 'text-aisha',
+  hoverBgColor: 'hover:bg-aisha',
   child: [{
     name: 'High Magician',
     img: highMagician,
@@ -322,6 +324,7 @@ const character = [{
   img: rena,
   bgColor: 'bg-rena',
   textColor: 'text-rena',
+  hoverBgColor: 'hover:bg-rena',
   child: [{
     name: 'Combat Ranger',
     img: combatRanger,
@@ -367,6 +370,7 @@ const character = [{
   img: raven,
   bgColor: 'bg-raven',
   textColor: 'text-raven',
+  hoverBgColor: 'hover:bg-raven',
   child: [{
     name: 'Sword Taker',
     img: swordTaker,
@@ -412,6 +416,7 @@ const character = [{
   img: eve,
   bgColor: 'bg-eve',
   textColor: 'text-eve',
+  hoverBgColor: 'hover:bg-eve',
   child: [{
     name: 'Code: Exotic',
     img: codeExotic,
@@ -470,6 +475,7 @@ const character = [{
   img: chung,
   bgColor: 'bg-chung',
   textColor: 'text-chung',
+  hoverBgColor: 'hover:bg-chung',
   child: [{
     name: 'Fury Guardian',
     img: furyGuardian,
@@ -515,6 +521,7 @@ const character = [{
   img: ara,
   bgColor: 'bg-ara',
   textColor: 'text-ara',
+  hoverBgColor: 'hover:bg-ara',
   child: [{
     name: 'Little Hsien',
     img: littleHsien,
@@ -559,6 +566,7 @@ const character = [{
   name: 'Elesis',
   img: elesis,
   bgColor: 'bg-elesis',
+  hoverBgColor: 'hover:bg-elesis',
   textColor: 'text-elesis',
   child: [{
     name: 'Saber Knight',
@@ -614,6 +622,7 @@ const character = [{
   img: add,
   bgColor: 'bg-add',
   textColor: 'text-add',
+  hoverBgColor: 'hover:bg-add',
   child: [{
     name: 'Psyshic Tracer',
     img: psychicTracer,
@@ -668,6 +677,7 @@ const character = [{
   img: lu,
   bgColor: 'bg-luciel',
   textColor: 'text-luciel',
+  hoverBgColor: 'hover:bg-luciel',
   child: [{
     name: 'Chiliarch',
     img: chiliarch,
@@ -704,6 +714,7 @@ const character = [{
   img: ciel,
   bgColor: 'bg-luciel',
   textColor: 'text-luciel',
+  hoverBgColor: 'hover:bg-luciel',
   child: [{
     name: 'Dreadlord',
     img: dreadlord,
@@ -740,6 +751,7 @@ const character = [{
   img: rose,
   bgColor: 'bg-rose',
   textColor: 'text-rose',
+  hoverBgColor: 'hover:bg-rose',
   child: [{
     name: 'Heavy Barrel',
     img: heavyBarrel,
@@ -799,6 +811,7 @@ const character = [{
   img: ain,
   bgColor: 'bg-ain',
   textColor: 'text-ain',
+  hoverBgColor: 'hover:bg-ain',
   child: [{
     name: 'Lofty: Executor',
     img: loftyExecutor,
@@ -844,6 +857,7 @@ const character = [{
   img: laby,
   bgColor: 'bg-laby',
   textColor: 'text-laby',
+  hoverBgColor: 'hover:bg-laby',
   child: [{
     name: 'Sparky Child',
     img: sparkyChild,
@@ -889,6 +903,7 @@ const character = [{
   img: noah,
   bgColor: 'bg-noah',
   textColor: 'text-noah',
+  hoverBgColor: 'hover:bg-noah',
   child: [{
     name: 'Second Revenger',
     img: secondRevenger,

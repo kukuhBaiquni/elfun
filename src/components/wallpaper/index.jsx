@@ -17,49 +17,49 @@ import noah from '../../../public/images/card/noah.png'
 
 const images = [{
   src: elsword,
-  color: 'elsword',
+  color: 'bg-elsword',
 }, {
   src: aisha,
-  color: 'aisha',
+  color: 'bg-aisha',
 }, {
   src: rena,
-  color: 'rena',
+  color: 'bg-rena',
 }, {
   src: raven,
-  color: 'raven',
+  color: 'bg-raven',
 }, {
   src: eve,
-  color: 'eve',
+  color: 'bg-eve',
 }, {
   src: chung,
-  color: 'chung',
+  color: 'bg-chung',
 }, {
   src: ara,
-  color: 'ara',
+  color: 'bg-ara',
 }, {
   src: elesis,
-  color: 'elesis',
+  color: 'bg-elesis',
 }, {
   src: add,
-  color: 'add',
+  color: 'bg-add',
 }, {
   src: lu,
-  color: 'luciel',
+  color: 'bg-luciel',
 }, {
   src: ciel,
-  color: 'luciel',
+  color: 'bg-luciel',
 }, {
   src: rose,
-  color: 'rose',
+  color: 'bg-rose',
 }, {
   src: ain,
-  color: 'ain',
+  color: 'bg-ain',
 }, {
   src: laby,
-  color: 'laby',
+  color: 'bg-laby',
 }, {
   src: noah,
-  color: 'noah',
+  color: 'bg-noah',
 }]
 
 function Wallpaper() {

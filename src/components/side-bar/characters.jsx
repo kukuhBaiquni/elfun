@@ -10,7 +10,7 @@ function Characters() {
       Characters
       <ul className='my-2'>
         {character.map((item, index) => (
-          <li className={`py-2 relative z-10 whitespace-nowrap group font-normal hover:${item.color} px-2 hover:translate-x-2 text-gray-400 rounded cursor-pointer transition-transform duration-300`} key={item.name}>
+          <li className={`py-2 relative z-10 whitespace-nowrap group font-normal hover:${item.bgColor} px-2 hover:translate-x-2 text-gray-400 rounded cursor-pointer transition-transform duration-300`} key={item.name}>
             <Link href={`/character/${item.name}`}>
               <a className='flex items-center'>
                 <Image

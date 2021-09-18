@@ -68,9 +68,9 @@ module.exports = {
           dark: '#2a14f2',
         },
         rose: {
-          light: '#ebd661',
-          DEFAULT: '#ebd661',
-          dark: '#ebd661',
+          light: '#fff203',
+          DEFAULT: '#fff203',
+          dark: '#fff203',
         },
         ain: {
           light: '#3ef2a4',
