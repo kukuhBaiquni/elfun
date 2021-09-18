@@ -1,19 +1,32 @@
-import swordKnight from '../../../public/images/avatar/sword-knight.png'
-import lordKnight from '../../../public/images/avatar/lord-knight.png'
-import lordKnightTrans from '../../../public/images/avatar/lord-knight-trans.png'
-import knightEmperor from '../../../public/images/avatar/knight-emperor.png'
-import magicKnight from '../../../public/images/avatar/magic-knight.png'
-import runeSlayer from '../../../public/images/avatar/rune-slayer.png'
-import runeSlayerTrans from '../../../public/images/avatar/rune-slayer-trans.png'
-import runeMaster from '../../../public/images/avatar/rune-master.png'
-import sheathKnight from '../../../public/images/avatar/sheath-knight.png'
-import infinitySword from '../../../public/images/avatar/infinity-sword.png'
-import infinitySwordTrans from '../../../public/images/avatar/infinity-sword-trans.png'
-import immortal from '../../../public/images/avatar/immortal.png'
-import rootKnight from '../../../public/images/avatar/root-knight.png'
-import sacredTemplar from '../../../public/images/avatar/sacred-templar.png'
-import sacredTemplarTrans from '../../../public/images/avatar/sacred-templar-trans.png'
-import genesis from '../../../public/images/avatar/genesis.png'
+import swordKnight from '../../../public/images/avatar/elsword/sword-knight.png'
+import lordKnight from '../../../public/images/avatar/elsword/lord-knight.png'
+import lordKnightTrans from '../../../public/images/avatar/elsword/lord-knight-trans.png'
+import knightEmperor from '../../../public/images/avatar/elsword/knight-emperor.png'
+import magicKnight from '../../../public/images/avatar/elsword/magic-knight.png'
+import runeSlayer from '../../../public/images/avatar/elsword/rune-slayer.png'
+import runeSlayerTrans from '../../../public/images/avatar/elsword/rune-slayer-trans.png'
+import runeMaster from '../../../public/images/avatar/elsword/rune-master.png'
+import sheathKnight from '../../../public/images/avatar/elsword/sheath-knight.png'
+import infinitySword from '../../../public/images/avatar/elsword/infinity-sword.png'
+import infinitySwordTrans from '../../../public/images/avatar/elsword/infinity-sword-trans.png'
+import immortal from '../../../public/images/avatar/elsword/immortal.png'
+import rootKnight from '../../../public/images/avatar/elsword/root-knight.png'
+import sacredTemplar from '../../../public/images/avatar/elsword/sacred-templar.png'
+import sacredTemplarTrans from '../../../public/images/avatar/elsword/sacred-templar-trans.png'
+import genesis from '../../../public/images/avatar/elsword/genesis.png'
+
+import highMagician from '../../../public/images/avatar/aisha/high-magician.png'
+import elementalMaster from '../../../public/images/avatar/aisha/elemental-master.png'
+import elementalMasterTrans from '../../../public/images/avatar/aisha/elemental-master-trans.png'
+import aetherSage from '../../../public/images/avatar/aisha/aether-sage.png'
+import darkMagician from '../../../public/images/avatar/aisha/dark-magician.png'
+import voidPrincess from '../../../public/images/avatar/aisha/void-princess.png'
+import voidPrincessTrans from '../../../public/images/avatar/aisha/void-princess-trans.png'
+import ozSorcerer from '../../../public/images/avatar/aisha/oz-sorcerer.png'
+import battleMagician from '../../../public/images/avatar/aisha/battle-magician.png'
+import dimensionWitch from '../../../public/images/avatar/aisha/dimension-witch.png'
+import dimensionWitchTrans from '../../../public/images/avatar/aisha/dimension-witch-trans.png'
+import metamorphy from '../../../public/images/avatar/aisha/metamorphy.png'
 
 const character = [{
   name: 'Elsword',
@@ -85,31 +98,53 @@ const character = [{
   }],
 }, {
   name: 'Aisha',
+  color: 'aisha',
   child: [{
     name: 'High Magician',
+    img: highMagician,
     child: [{
       name: 'Elemental Master',
+      img: elementalMaster,
+      child: [],
+    }, {
+      name: 'Elemental Master Transcendent',
+      img: elementalMasterTrans,
       child: [],
     }, {
       name: 'Aether Sage',
+      img: aetherSage,
       child: [],
     }],
   }, {
     name: 'Dark Magician',
+    img: darkMagician,
     child: [{
       name: 'Void Princess',
+      img: voidPrincess,
+      child: [],
+    }, {
+      name: 'Void Princess Transcendent',
+      img: voidPrincessTrans,
       child: [],
     }, {
       name: 'Oz Sorcerer',
+      img: ozSorcerer,
       child: [],
     }],
   }, {
     name: 'Battle Magician',
+    img: battleMagician,
     child: [{
       name: 'Dimension Witch',
+      img: dimensionWitch,
+      child: [],
+    }, {
+      name: 'Dimension Witch Transcendent',
+      img: dimensionWitchTrans,
       child: [],
     }, {
       name: 'Metamorphy',
+      img: metamorphy,
       child: [],
     }],
   }],
