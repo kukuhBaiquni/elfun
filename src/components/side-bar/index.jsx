@@ -1,6 +1,5 @@
 import { Fragment } from 'react'
-import JobPath from './job-path'
-import characters from './character-data'
+import Characters from './characters'
 
 const navigation = [{
   name: 'Main Page',
@@ -8,9 +7,6 @@ const navigation = [{
 }, {
   name: 'Recent Changes',
   child: [],
-}, {
-  name: 'Characters',
-  child: characters,
 }, {
   name: 'Towns',
   child: [{
@@ -64,12 +60,12 @@ function Sidebar() {
           <li className={`py-1 px-4 font-black ${child.length ? '' : 'hover:bg-sky-400 hover:text-gray-200 rounded cursor-pointer'} mt-1 duration-200 text-gray-500 transition-all`} key={name}>
             {child.length ? (
               <Fragment>
+                <Characters />
                 {name}
                 <ul>
                   {child.map((item) => (
                     <li className='py-1.5 relative pl-2 z-10 whitespace-nowrap group font-normal text-gray-400 hover:translate-x-2 hover:text-sky-400 rounded cursor-pointer transition-transform duration-300 mt-0.5' key={item.name}>
                       {item.name}
-                      {item.child?.length && <JobPath data={item.child} />}
                     </li>
                   ))}
                 </ul>
