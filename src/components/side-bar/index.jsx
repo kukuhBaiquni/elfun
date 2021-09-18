@@ -84,27 +84,33 @@ const navigation = [{
 
 function Sidebar() {
   return (
-    <div className='bg-white p-4 h-sidebar-overflow'>
-      <div className='pr-4 h-sidebar overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-thumb-sky-300 scrollbar-track-sky-200'>
-        <ul>
-          {navigation.map(({ name, child }) => (
-            <li className={`py-2 px-4 font-black ${child.length ? '' : 'hover:bg-gray-500 hover:text-gray-200 rounded cursor-pointer'} duration-200 text-gray-500 transition-all`} key={name}>
-              {child.length ? (
-                <Fragment>
-                  {name}
-                  <ul className='mt-1'>
-                    {child.map((item) => (
-                      <li className='py-2 whitespace-nowrap pl-4 font-normal text-gray-500 hover:bg-gray-500 hover:text-gray-200 rounded cursor-pointer transition-all duration-300' key={item.name}>
-                        {item.name}
-                      </li>
-                    ))}
-                  </ul>
-                </Fragment>
-              ) : name}
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div className='bg-white p-4 border-r border-gray-300 border-solid'>
+      <ul>
+        {navigation.map(({ name, child }) => (
+          <li className={`py-2 px-4 font-black ${child.length ? '' : 'hover:bg-sky-400 hover:text-gray-200 rounded cursor-pointer'} duration-200 text-gray-500 transition-all`} key={name}>
+            {child.length ? (
+              <Fragment>
+                {name}
+                <ul className='mt-1'>
+                  {child.map((item, index) => (
+                    <li className='py-1.5 whitespace-nowrap group p-4 font-normal text-gray-500 hover:bg-sky-400 hover:translate-x-2 hover:text-gray-200 rounded cursor-pointer transition-all duration-300 relative z-10' key={item.name}>
+                      {item.name}
+                      {index === 0 && (
+                        <ul className='absolute group-hover:opacity-100 opacity-0 -bottom-full p-2 rounded -right-full z-50 bg-white drop-shadow-2xl border border-gray-200 border-solid group-hover:translate-x-2 transition-all duration-300'>
+                          <li className='text-gray-500 hover:bg-sky-400 transition-all duration-300 hover:text-gray-200 rounded p-2'>Sword Knight</li>
+                          <li className='text-gray-500 hover:bg-sky-400 transition-all duration-300 hover:text-gray-200 rounded p-2'>Magic Knight Knight</li>
+                          <li className='text-gray-500 hover:bg-sky-400 transition-all duration-300 hover:text-gray-200 rounded p-2'>Sheath Knight</li>
+                          <li className='text-gray-500 hover:bg-sky-400 transition-all duration-300 hover:text-gray-200 rounded p-2'>Root Knight</li>
+                        </ul>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </Fragment>
+            ) : name}
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

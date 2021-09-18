@@ -20,7 +20,7 @@ function Layout({ children }) {
       <div className='mx-auto max-w-screen-xl'>
         <div className='w-full flex pt-24'>
           <Sidebar />
-          <div className='w-full sm:w-[82.5%] ml-auto bg-white'>
+          <div className='w-full sm:w-[81%] bg-white'>
             {children}
           </div>
         </div>
