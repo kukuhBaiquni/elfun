@@ -56,7 +56,7 @@ import furiousBlade from '../../../public/images/avatar/raven/furious-blade.png'
 import weaponTaker from '../../../public/images/avatar/raven/weapon-taker.png'
 import veteranCommander from '../../../public/images/avatar/raven/veteran-commander.png'
 import veteranCommanderTrans from '../../../public/images/avatar/raven/veteran-commander-trans.png'
-import NovaImperator from '../../../public/images/avatar/raven/nova-imperator.png'
+import novaImperator from '../../../public/images/avatar/raven/nova-imperator.png'
 
 import eve from '../../../public/images/avatar/eve/eve.png'
 import codeExotic from '../../../public/images/avatar/eve/code-exotic.png'
@@ -178,8 +178,8 @@ import armeThaumaturgy from '../../../public/images/avatar/ain/arme-thaumaturgy.
 import armeThaumaturgyTrans from '../../../public/images/avatar/ain/arme-thaumaturgy-trans.png'
 import ritcher from '../../../public/images/avatar/ain/ritcher.png'
 import loftyAnpassen from '../../../public/images/avatar/ain/lofty-anpassen.png'
-import erbluhen from '../../../public/images/avatar/ain/erbluhen-emotion.png'
-import erbluhenTrans from '../../../public/images/avatar/ain/erbluhen-emotion-trans.png'
+import erbluhenEmotion from '../../../public/images/avatar/ain/erbluhen-emotion.png'
+import erbluhenEmotionTrans from '../../../public/images/avatar/ain/erbluhen-emotion-trans.png'
 import bluhen from '../../../public/images/avatar/ain/bluhen.png'
 import loftyWanderer from '../../../public/images/avatar/ain/lofty-wanderer.png'
 import apostasia from '../../../public/images/avatar/ain/apostasia.png'
@@ -285,6 +285,7 @@ const character = [{
   }],
 }, {
   name: 'Aisha',
+  img: aisha,
   color: 'aisha',
   child: [{
     name: 'High Magician',
@@ -337,379 +338,699 @@ const character = [{
   }],
 }, {
   name: 'Rena',
+  img: rena,
+  color: 'rena',
   child: [{
     name: 'Combat Ranger',
+    img: combatRanger,
     child: [{
       name: 'Wind Sneaker',
+      img: windSneaker,
+      child: [],
+    }, {
+      name: 'Wind Sneaker Transcendent',
+      img: windSneakerTrans,
       child: [],
     }, {
       name: 'Anemos',
+      img: anemos,
       child: [],
     }],
   }, {
     name: 'Sniping Ranger',
+    img: snipingRanger,
     child: [{
       name: 'Grand Archer',
+      img: grandArcher,
       child: [],
     }, {
-      name: 'Day Breaker',
+      name: 'Grand Archer Transcendent',
+      img: grandArcherTrans,
+      child: [],
+    }, {
+      name: 'Daybreaker',
+      img: daybreaker,
       child: [],
     }],
   }, {
     name: 'Trapping Ranger',
+    img: trappingRanger,
     child: [{
       name: 'Night Watcher',
+      img: nightWatcher,
+      child: [],
+    }, {
+      name: 'Night Watcher Transcendent',
+      img: nightWatcherTrans,
       child: [],
     }, {
       name: 'Twilight',
+      img: twilight,
       child: [],
     }],
   }],
 }, {
   name: 'Raven',
+  img: raven,
+  color: 'raven',
   child: [{
     name: 'Sword Taker',
+    img: swordTaker,
     child: [{
       name: 'Blade Master',
+      img: bladeMaster,
+      child: [],
+    }, {
+      name: 'Blade Master Transcendent',
+      img: bladeMasterTrans,
       child: [],
     }, {
       name: 'Furious Blade',
+      img: furiousBlade,
       child: [],
     }],
   }, {
     name: 'Over Taker',
+    img: overTaker,
     child: [{
       name: 'Reckless Fist',
+      img: recklessFist,
+      child: [],
+    }, {
+      name: 'Reckless Fist Transcendent',
+      img: recklessFistTrans,
       child: [],
     }, {
       name: 'Rage Hearts',
+      img: rageHearts,
       child: [],
     }],
   }, {
     name: 'Weapon Taker',
+    img: weaponTaker,
     child: [{
       name: 'Veteran Commander',
+      img: veteranCommander,
+      child: [],
+    }, {
+      name: 'Veteran Commander Transcendent',
+      img: veteranCommanderTrans,
       child: [],
     }, {
       name: 'Nova Imperator',
+      img: novaImperator,
       child: [],
     }],
   }],
 }, {
   name: 'Eve',
+  img: eve,
+  color: 'eve',
   child: [{
     name: 'Code: Exotic',
+    img: codeExotic,
     child: [{
       name: 'Code: Nemesis',
+      img: codeNemesis,
+      child: [],
+    }, {
+      name: 'Code: Nemesis Transcendent',
+      img: codeNemesisTrans,
       child: [],
     }, {
       name: 'Code: Ultimate',
+      img: codeUltimate,
       child: [],
     }],
   }, {
     name: 'Code: Architecture',
+    img: codeArchitecture,
     child: [{
       name: 'Code: Empress',
+      img: codeEmpress,
+      child: [],
+    }, {
+      name: 'Code: Empress Transcendent',
+      img: codeEmpressTrans,
       child: [],
     }, {
       name: 'Code: Essencia',
+      img: codeEssencia,
       child: [],
     }],
   }, {
     name: 'Code: Electra',
+    img: codeElectra,
     child: [{
       name: 'Code: Battle Seraph',
+      img: codeBattleSeraph,
+      child: [],
+    }, {
+      name: 'Code: Battle Seraph Transcendent',
+      img: codeBattleSeraphTrans,
       child: [],
     }, {
       name: 'Code: Sariel',
+      img: codeSariel,
       child: [],
     }],
   }, {
     name: 'Code: Unknown',
+    img: codeUnknown,
     child: [{
       name: 'Code: Failess',
+      img: codeFailess,
+      child: [],
+    }, {
+      name: 'Code: Failess Transcendent',
+      img: codeFailessTrans,
       child: [],
     }, {
       name: 'Code: Antithese',
+      img: codeAntithese,
       child: [],
     }],
   }],
 }, {
   name: 'Chung',
+  img: chung,
+  color: 'chung',
   child: [{
     name: 'Fury Guardian',
+    img: furyGuardian,
     child: [{
       name: 'Iron Paladin',
+      img: ironPaladin,
       child: [],
     }, {
-      name: 'Comet Crushader',
+      name: 'Iron Paladin Transcendent',
+      img: ironPaladinTrans,
+      child: [],
+    }, {
+      name: 'Comet Crusader',
+      img: cometCrusader,
       child: [],
     }],
   }, {
     name: 'Shooting Guardian',
+    img: shootingGuardian,
     child: [{
       name: 'Deadly Chaser',
+      img: deadlyChaser,
+      child: [],
+    }, {
+      name: 'Deadly Chaser Transcendent',
+      img: deadlyChaserTrans,
       child: [],
     }, {
       name: 'Fatal Phantom',
+      img: fatalPhantom,
       child: [],
     }],
   }, {
     name: 'Shelling Guardian',
+    img: shellingGuardian,
     child: [{
       name: 'Tactical Trooper',
+      img: tacticalTrooper,
+      child: [],
+    }, {
+      name: 'Tactical Trooper Transcendent',
+      img: tacticalTrooperTrans,
       child: [],
     }, {
       name: 'Centurion',
+      img: centurion,
       child: [],
     }],
   }],
 }, {
   name: 'Ara',
+  img: ara,
+  color: 'ara',
   child: [{
     name: 'Little Hsien',
+    img: littleHsien,
     child: [{
       name: 'Sakra Devanam',
+      img: sakraDevanam,
+      child: [],
+    }, {
+      name: 'Sakra Devanam Transcendent',
+      img: sakraDevanamTrans,
       child: [],
     }, {
       name: 'Apsara',
+      img: apsara,
       child: [],
     }],
   }, {
     name: 'Little Devil',
+    img: littleDevil,
     child: [{
       name: 'Yama Raja',
+      img: yamaRaja,
+      child: [],
+    }, {
+      name: 'Yama Raja Transcendent',
+      img: yamaRajaTrans,
       child: [],
     }, {
       name: 'Devi',
+      img: devi,
       child: [],
     }],
   }, {
     name: 'Little Specter',
+    img: littleSpecter,
     child: [{
       name: 'Asura',
+      img: asura,
+      child: [],
+    }, {
+      name: 'Asura Transcendent',
+      img: asuraTrans,
       child: [],
     }, {
       name: 'Shakti',
+      img: shakti,
       child: [],
     }],
   }],
 }, {
   name: 'Elesis',
+  img: elesis,
+  color: 'elesis',
   child: [{
     name: 'Saber Knight',
+    img: saberKnight,
     child: [{
       name: 'Grand Master',
+      img: grandMaster,
+      child: [],
+    }, {
+      name: 'Grand Master Transcendent',
+      img: grandMasterTrans,
       child: [],
     }, {
       name: 'Empire Sword',
+      img: empireSword,
       child: [],
     }],
   }, {
     name: 'Pyro Knight',
+    img: pyroKnight,
     child: [{
       name: 'Blazing Heart',
+      img: blazingHeart,
       child: [],
     }, {
-      name: 'Fire Lord',
+      name: 'Blazing Heart Transcendent',
+      img: blazingHeartTrans,
+      child: [],
+    }, {
+      name: 'Flame Lord',
+      img: flameLord,
       child: [],
     }],
   }, {
     name: 'Dark Knight',
+    img: darkKnight,
     child: [{
       name: 'Crimson Avenger',
+      img: crimsonAvenger,
+      child: [],
+    }, {
+      name: 'Crimson Avenger Transcendent',
+      img: crimsonAvengerTrans,
       child: [],
     }, {
       name: 'Blood Queen',
+      img: bloodyQueen,
       child: [],
     }],
   }],
 }, {
   name: 'Add',
+  img: add,
+  color: 'add',
   child: [{
-    name: 'Physic Tracer',
+    name: 'Psyshic Tracer',
+    img: psychicTracer,
     child: [{
       name: 'Lunatic Psyker',
+      img: lunaticPsyker,
+      child: [],
+    }, {
+      name: 'Lunatic Psyker Transcendent',
+      img: lunaticPsykerTrans,
       child: [],
     }, {
       name: 'Doom Bringer',
+      img: doomBringer,
       child: [],
     }],
   }, {
     name: 'Arc Tracer',
+    img: arcTracer,
     child: [{
-      name: 'Master Mind',
+      name: 'Mastermind Transcendent',
+      img: mastermindTrans,
+      child: [],
+    }, {
+      name: 'Mastermind',
+      img: mastermind,
       child: [],
     }, {
       name: 'Dominator',
+      img: dominator,
       child: [],
     }],
   }, {
     name: 'Time Tracer',
+    img: timeTracer,
     child: [{
       name: 'Diabolic Esper',
+      img: diabolicEsper,
+      child: [],
+    }, {
+      name: 'Diabolic Esper Transcendent',
+      img: diabolicEsperTrans,
       child: [],
     }, {
       name: 'Mad Paradox',
+      img: madParadox,
       child: [],
     }],
   }],
 }, {
-  name: 'Lu/Ciel',
+  name: 'Lu',
+  img: lu,
+  color: 'luciel',
   child: [{
     name: 'Chiliarch',
+    img: chiliarch,
     child: [{
-      name: 'Dread Lord',
+      name: 'Chiliarch Transcendent',
+      img: chiliarchTrans,
       child: [],
     }, {
-      name: 'Catastrophe',
+      name: 'Catastrophe(Timoria)',
+      img: timoria,
       child: [],
     }],
   }, {
-    name: 'Royal Guard',
+    name: 'Noblesse',
+    img: noblesse,
     child: [{
-      name: 'Noblesse',
+      name: 'Noblesse Transcendent',
+      img: noblesseTrans,
       child: [],
     }, {
-      name: 'Innocent',
+      name: 'Innocent(Ishtar)',
+      img: ishtar,
       child: [],
     }],
   }, {
     name: 'Diabla',
+    img: diabla,
     child: [{
-      name: 'Demonio',
+      name: 'Diabla Transcendent',
+      img: diablaTrans,
       child: [],
     }, {
-      name: 'Diangelion',
+      name: 'Diangelion(Iblis)',
+      img: iblis,
+      child: [],
+    }],
+  }],
+}, {
+  name: 'Ciel',
+  img: ciel,
+  color: 'luciel',
+  child: [{
+    name: 'Dreadlord',
+    img: dreadlord,
+    child: [{
+      name: 'Dreadlord Transcendent',
+      img: dreadlordTrans,
+      child: [],
+    }, {
+      name: 'Catastrophe(Abysser)',
+      img: abysser,
+      child: [],
+    }],
+  }, {
+    name: 'Royal Guard',
+    img: royalGuard,
+    child: [{
+      name: 'Royal Guard Transcendent',
+      img: royalGuardTrans,
+      child: [],
+    }, {
+      name: 'Innocent(chevalier)',
+      img: chevalier,
+      child: [],
+    }],
+  }, {
+    name: 'Demonio',
+    img: demonio,
+    child: [{
+      name: 'Demonio Transcendent',
+      img: demonioTrans,
+      child: [],
+    }, {
+      name: 'Diangelion(anular)',
+      img: anular,
       child: [],
     }],
   }],
 }, {
   name: 'Rose',
+  img: rose,
+  color: 'rose',
   child: [{
     name: 'Heavy Barrel',
+    igm: heavyBarrel,
     child: [{
       name: 'Storm Trooper',
+      img: stormTrooper,
+      child: [],
+    }, {
+      name: 'Storm Trooper Transcendent',
+      img: stormTrooperTrans,
       child: [],
     }, {
       name: 'Tempest Burster',
+      img: tempestBurster,
       child: [],
     }],
   }, {
     name: 'Bloodia',
+    img: bloodia,
     child: [{
       name: 'Crimson Rose',
+      img: crimsonRose,
+      child: [],
+    },
+    {
+      name: 'Crimson Rose Transcendent',
+      img: crimsonRoseTrans,
       child: [],
     }, {
       name: 'Black Massacre',
+      img: blackMassacre,
       child: [],
     }],
   }, {
     name: 'Valkyrie',
+    img: valkyrie,
     child: [{
       name: 'Freyja',
+      img: freyja,
+      child: [],
+    }, {
+      name: 'Freyja Transcendent',
+      img: freyjaTrans,
       child: [],
     }, {
       name: 'Minerva',
+      img: minerva,
       child: [],
     }],
   }, {
     name: 'Metal Heart',
+    img: metalHeart,
     child: [{
       name: 'Optimus',
+      img: optimus,
+      child: [],
+    }, {
+      name: 'Optimus Transcendent',
+      img: optimusTrans,
       child: [],
     }, {
       name: 'Prime Operator',
+      img: primeOperator,
       child: [],
     }],
   }],
 }, {
   name: 'Ain',
+  img: ain,
+  color: 'ain',
   child: [{
     name: 'Lofty: Executor',
+    img: loftyExecutor,
     child: [{
       name: 'Arme Thaumaturgy',
+      img: armeThaumaturgy,
+      child: [],
+    }, {
+      name: 'Arme Thaumaturgy Transcendent',
+      img: armeThaumaturgyTrans,
       child: [],
     }, {
       name: 'Ritcher',
+      img: ritcher,
       child: [],
     }],
   }, {
     name: 'Lofty: Anpassen',
+    img: loftyAnpassen,
     child: [{
       name: 'Erbluhen Emotion',
+      img: erbluhenEmotion,
+      child: [],
+    }, {
+      name: 'Erbluhen Emotion Transcendent',
+      img: erbluhenEmotionTrans,
       child: [],
     }, {
       name: 'Bluhen',
+      img: bluhen,
       child: [],
     }],
   }, {
     name: 'Lofty: Wanderer',
+    img: loftyWanderer,
     child: [{
       name: 'Apostasia',
+      img: apostasia,
+      child: [],
+    }, {
+      name: 'Apostasia Transcendent',
+      img: apostasiaTrans,
       child: [],
     }, {
       name: 'Herrscher',
+      img: herrscher,
       child: [],
     }],
   }],
 }, {
   name: 'Laby',
+  img: laby,
+  color: 'laby',
   child: [{
     name: 'Sparky Child',
+    img: sparkyChild,
     child: [{
       name: 'Rumble Pumn',
+      img: rumblePumn,
+      child: [],
+    }, {
+      name: 'Rumble Pumn Transcendent',
+      img: rumblePumnTrans,
       child: [],
     }, {
       name: 'Eternity Winter',
+      img: eternityWinter,
       child: [],
     }],
   }, {
     name: 'Twinkle Child',
+    img: twinkleChild,
     child: [{
       name: 'Shinning Romantica',
+      img: shiningRomantica,
+      child: [],
+    }, {
+      name: 'Shinning Romantica Transcendent',
+      img: shiningRomanticaTrans,
       child: [],
     }, {
       name: 'Radiant Soul',
+      img: radiantSoul,
       child: [],
     }],
   }, {
     name: 'Rusty Child',
+    img: rustyChild,
     child: [{
       name: 'Daydreamer',
+      img: daydreamer,
+      child: [],
+    }, {
+      name: 'Daydreamer Transcendent',
+      img: daydreamerTrans,
       child: [],
     }, {
       name: 'Nisha Labyrinth',
+      img: nishaLabyrinth,
       child: [],
     }],
   }],
 }, {
   name: 'Noah',
+  img: noah,
+  color: 'noah',
   child: [{
     name: 'Second Revenger',
+    img: secondRevenger,
     child: [{
       name: 'Silent Shadow',
+      img: silentShadow,
+      child: [],
+    }, {
+      name: 'Silent Shadow Transcendent',
+      img: silentShadowTrans,
       child: [],
     }, {
       name: 'Liberator',
+      img: liberator,
       child: [],
     }],
   }, {
     name: 'Second Selection',
+    img: secondSelection,
     child: [{
       name: 'Stellar Caster',
+      img: stellarCaster,
+      child: [],
+    }, {
+      name: 'Stellar Caster Transcendent',
+      img: stellarCasterTrans,
       child: [],
     }, {
       name: 'Celestia',
+      img: celestia,
       child: [],
     }],
   }, {
     name: 'Second Grief',
+    img: secondGrief,
     child: [{
       name: 'Pale Pilgrim',
+      img: palePilgrim,
+      child: [],
+    }, {
+      name: 'Pale Pilgrim Transcendent',
+      img: palePilgrimTrans,
       child: [],
     }, {
       name: 'Nyx Pieta',
+      img: nyxPieta,
       child: [],
     }],
   }],
