@@ -1,5 +1,6 @@
 import { Fragment } from 'react'
 import JobPath from './job-path'
+import characters from './character-data'
 
 const navigation = [{
   name: 'Main Page',
@@ -9,85 +10,7 @@ const navigation = [{
   child: [],
 }, {
   name: 'Characters',
-  child: [{
-    name: 'Elsword',
-    child: [{
-      name: 'Sword Knight',
-      child: [{
-        name: 'Lord Knight',
-        child: [],
-      }, {
-        name: 'Knight Emperor',
-        child: [],
-      }],
-    }, {
-      name: 'Magic Knight',
-      child: [{
-        name: 'Rune Slayer',
-        child: [],
-      }, {
-        name: 'Rune Master',
-        child: [],
-      }],
-    }, {
-      name: 'Sheath Knight',
-      child: [{
-        name: 'Infinity Sword',
-        child: [],
-      }, {
-        name: 'Immortal',
-        child: [],
-      }],
-    }, {
-      name: 'Root Knight',
-      child: [{
-        name: 'Sacred Templar',
-        child: [],
-      }, {
-        name: 'Genesis',
-        child: [],
-      }],
-    }],
-  }, {
-    child: [],
-    name: 'Aisha',
-  }, {
-    child: [],
-    name: 'Rena',
-  }, {
-    child: [],
-    name: 'Raven',
-  }, {
-    child: [],
-    name: 'Eve',
-  }, {
-    child: [],
-    name: 'Chung',
-  }, {
-    child: [],
-    name: 'Ara',
-  }, {
-    child: [],
-    name: 'Elesis',
-  }, {
-    child: [],
-    name: 'Add',
-  }, {
-    child: [],
-    name: 'Lu/Ciel',
-  }, {
-    child: [],
-    name: 'Rose',
-  }, {
-    child: [],
-    name: 'Ain',
-  }, {
-    child: [],
-    name: 'Laby',
-  }, {
-    child: [],
-    name: 'Noah',
-  }],
+  child: characters,
 }, {
   name: 'Towns',
   child: [{
@@ -138,7 +61,7 @@ function Sidebar() {
     <div className='bg-white p-4 border-r border-gray-300 border-solid'>
       <ul>
         {navigation.map(({ name, child }) => (
-          <li className={`py-2 px-4 font-black ${child.length ? '' : 'hover:bg-sky-400 hover:text-gray-200 rounded cursor-pointer'} duration-200 text-gray-500 transition-all`} key={name}>
+          <li className={`py-2 px-4 font-black ${child.length ? '' : 'hover:bg-sky-400 hover:text-gray-200 rounded cursor-pointer'} mt-0.5 duration-200 text-gray-500 transition-all`} key={name}>
             {child.length ? (
               <Fragment>
                 {name}

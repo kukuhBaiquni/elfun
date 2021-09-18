@@ -10,18 +10,17 @@
     @apply bg-cyan-400 px-8 py-2 hover:bg-cyan-500 rounded text-gray-50 transition-all duration-300 border-none outline-none
   }
   li .job-nesting > div {
-    right: -75%;
+    right: -125px;
     bottom: 40px;
   }
   li .job-nesting:hover > div {
     z-index: 11;
     animation: slide-in 0.3s;
-    transform: translateX(45px);
     opacity: 1;
   }
 
   @keyframes slide-in {
-    from { transform: translateX(-10px); opacity: 0}
-    to {transform: translateX(45px); opacity: 1}
+    from { opacity: 0}
+    to { opacity: 1}
   }
 }
