@@ -1,40 +1,91 @@
 import { Fragment } from 'react'
+import JobPath from './job-path'
 
 const navigation = [{
-  child: [],
   name: 'Main Page',
-}, {
   child: [],
+}, {
   name: 'Recent Changes',
+  child: [],
 }, {
   name: 'Characters',
   child: [{
     name: 'Elsword',
+    child: [{
+      name: 'Sword Knight',
+      child: [{
+        name: 'Lord Knight',
+        child: [],
+      }, {
+        name: 'Knight Emperor',
+        child: [],
+      }],
+    }, {
+      name: 'Magic Knight',
+      child: [{
+        name: 'Rune Slayer',
+        child: [],
+      }, {
+        name: 'Rune Master',
+        child: [],
+      }],
+    }, {
+      name: 'Sheath Knight',
+      child: [{
+        name: 'Infinity Sword',
+        child: [],
+      }, {
+        name: 'Immortal',
+        child: [],
+      }],
+    }, {
+      name: 'Root Knight',
+      child: [{
+        name: 'Sacred Templar',
+        child: [],
+      }, {
+        name: 'Genesis',
+        child: [],
+      }],
+    }],
   }, {
+    child: [],
     name: 'Aisha',
   }, {
+    child: [],
     name: 'Rena',
   }, {
+    child: [],
     name: 'Raven',
   }, {
+    child: [],
     name: 'Eve',
   }, {
+    child: [],
     name: 'Chung',
   }, {
+    child: [],
     name: 'Ara',
   }, {
+    child: [],
     name: 'Elesis',
   }, {
+    child: [],
     name: 'Add',
   }, {
+    child: [],
     name: 'Lu/Ciel',
   }, {
+    child: [],
     name: 'Rose',
   }, {
+    child: [],
     name: 'Ain',
   }, {
+    child: [],
     name: 'Laby',
   }, {
+    child: [],
     name: 'Noah',
   }],
 }, {
@@ -91,18 +142,11 @@ function Sidebar() {
             {child.length ? (
               <Fragment>
                 {name}
-                <ul className='mt-1'>
-                  {child.map((item, index) => (
-                    <li className='py-1.5 whitespace-nowrap group p-4 font-normal text-gray-500 hover:bg-sky-400 hover:translate-x-2 hover:text-gray-200 rounded cursor-pointer transition-all duration-300 relative z-10' key={item.name}>
+                <ul className='mt-1 z-10 relative'>
+                  {child.map((item) => (
+                    <li className='py-1.5 whitespace-nowrap group p-4 font-normal text-gray-500 hover:bg-sky-400 hover:translate-x-2 hover:text-gray-200 rounded cursor-pointer transition-all duration-300' key={item.name}>
                       {item.name}
-                      {index === 0 && (
-                        <ul className='absolute group-hover:opacity-100 opacity-0 -bottom-full p-2 rounded -right-full z-50 bg-white drop-shadow-2xl border border-gray-200 border-solid group-hover:translate-x-2 transition-all duration-300'>
-                          <li className='text-gray-500 hover:bg-sky-400 transition-all duration-300 hover:text-gray-200 rounded p-2'>Sword Knight</li>
-                          <li className='text-gray-500 hover:bg-sky-400 transition-all duration-300 hover:text-gray-200 rounded p-2'>Magic Knight Knight</li>
-                          <li className='text-gray-500 hover:bg-sky-400 transition-all duration-300 hover:text-gray-200 rounded p-2'>Sheath Knight</li>
-                          <li className='text-gray-500 hover:bg-sky-400 transition-all duration-300 hover:text-gray-200 rounded p-2'>Root Knight</li>
-                        </ul>
-                      )}
+                      {item.child?.length && <JobPath data={item.child} />}
                     </li>
                   ))}
                 </ul>

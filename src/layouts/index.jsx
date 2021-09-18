@@ -6,7 +6,7 @@ import logo from '../../public/images/logo.png'
 function Layout({ children }) {
   return (
     <div>
-      <header className='bg-transparent fixed z-10 w-full'>
+      <header className='bg-white fixed z-20 w-full drop-shadow-xl'>
         <div className='h-20 max-w-screen-xl mx-auto flex items-center px-4 py-2 bg-white'>
           <Image
             alt='logo'
