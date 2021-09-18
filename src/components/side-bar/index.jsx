@@ -85,7 +85,7 @@ const navigation = [{
 function Sidebar() {
   return (
     <div className='bg-white p-4 h-sidebar-overflow'>
-      <div className='pr-4 h-sidebar overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-300'>
+      <div className='pr-4 h-sidebar overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-thumb-sky-300 scrollbar-track-sky-200'>
         <ul>
           {navigation.map(({ name, child }) => (
             <li className={`py-2 px-4 font-black ${child.length ? '' : 'hover:bg-gray-500 hover:text-gray-200 rounded cursor-pointer'} duration-200 text-gray-500 transition-all`} key={name}>

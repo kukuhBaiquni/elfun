@@ -9,7 +9,22 @@ function Home() {
       <Head>
         <title>Home</title>
       </Head>
-      <Wallpaper />
+      <section className='p-3'>
+        <Wallpaper />
+        Welcome to Elwiki, a multilingual database for the game Elsword,
+        containing information from various servers.
+        Elwiki specializes in North American and South Korean data,
+        however all other data from other servers are welcome.
+        This wiki is currently maintained by anybody. Everyone is free to register
+        and help contribute to the wiki to help build a complete database for Elsword.
+        There are currently 18,880 articles in Elwiki.
+
+        Please read these rules before contributing to prevent
+        any mistakes that could been easily avoided
+
+        All rights are reserved (Official Art, Game Screenshots, etc.)
+        to © KOG Studios, Nexon, Gameforge, and KOG Games (formerly known as Kill3rCombo)
+      </section>
     </Fragment>
   )
 }
