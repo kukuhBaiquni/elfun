@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 /* eslint-disable import/no-extraneous-dependencies */
 const colors = require('tailwindcss/colors')
 
@@ -89,6 +90,7 @@ module.exports = {
       },
       height: {
         sidebar: '750px',
+        'sidebar-overflow': '800px',
       },
     },
   },
@@ -96,6 +98,7 @@ module.exports = {
     extend: {
       filter: ['hover'],
     },
+    scrollbar: ['rounded'],
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')],
 }

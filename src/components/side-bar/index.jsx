@@ -1,3 +1,5 @@
+import { Fragment } from 'react'
+
 const navigation = [{
   child: [],
   name: 'Main Page',
@@ -36,11 +38,42 @@ const navigation = [{
     name: 'Noah',
   }],
 }, {
-  child: [],
-  name: 'Dungeons',
-}, {
-  child: [],
   name: 'Towns',
+  child: [{
+    name: 'Ruben',
+  }, {
+    name: 'Elder',
+  }, {
+    name: 'Bethma',
+  }, {
+    name: 'Altera',
+  }, {
+    name: 'Feita',
+  }, {
+    name: 'Velder',
+  }, {
+    name: 'Hamel',
+  }, {
+    name: 'Sander',
+  }, {
+    name: 'Lanox',
+  }, {
+    name: 'Atlas',
+  }, {
+    name: 'Elysion',
+  }, {
+    name: 'Elrianode',
+  }, {
+    name: 'Varnimyr',
+  }, {
+    name: 'Rigomor',
+  }, {
+    name: 'Master Road',
+  }, {
+    name: 'Pruinaum',
+  }, {
+    name: 'Pruinaum Outskirt',
+  }],
 }, {
   child: [],
   name: 'Npc\'s',
@@ -51,22 +84,27 @@ const navigation = [{
 
 function Sidebar() {
   return (
-    <div className='p-4 h-sidebar bg-sky-100 flex-grow flex'>
-      <ul>
-        {navigation.map(({ name, child }) => (
-          <li className='py-1 px-4 font-black hover:bg-sky-500 hover:text-gray-200 rounded cursor-pointer duration-300 text-gray-500 transition-all' key={name}>
-            {child.length ? (
-              <ul>
-                {child.map((item) => (
-                  <li className='font-normal' key={item.name}>
-                    {item.name}
-                  </li>
-                ))}
-              </ul>
-            ) : name}
-          </li>
-        ))}
-      </ul>
+    <div className='bg-white p-4 h-sidebar-overflow'>
+      <div className='pr-4 h-sidebar overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-300'>
+        <ul>
+          {navigation.map(({ name, child }) => (
+            <li className={`py-2 px-4 font-black ${child.length ? '' : 'hover:bg-gray-500 hover:text-gray-200 rounded cursor-pointer'} duration-200 text-gray-500 transition-all`} key={name}>
+              {child.length ? (
+                <Fragment>
+                  {name}
+                  <ul className='mt-1'>
+                    {child.map((item) => (
+                      <li className='py-2 whitespace-nowrap pl-4 font-normal text-gray-500 hover:bg-gray-500 hover:text-gray-200 rounded cursor-pointer transition-all duration-300' key={item.name}>
+                        {item.name}
+                      </li>
+                    ))}
+                  </ul>
+                </Fragment>
+              ) : name}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }
