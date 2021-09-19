@@ -4,13 +4,15 @@ import Header from 'components/header'
 
 function Layout({ children }) {
   return (
-    <div>
+    <div className='dark:bg-gray-800 bg-white'>
       <Header />
       <div className='mx-auto max-w-screen-2xl'>
         <div className='w-full flex pt-24'>
-          <Sidebar />
-          <div className='w-full sm:w-full bg-white'>
-            {children}
+          <div className='flex'>
+            <Sidebar />
+            <div className='w-full sm:w-full'>
+              {children}
+            </div>
           </div>
         </div>
       </div>
