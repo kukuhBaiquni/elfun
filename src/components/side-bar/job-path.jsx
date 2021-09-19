@@ -11,33 +11,33 @@ function JobPath({ number }) {
   const url = (text) => text.toLowerCase().replace(/\s/g, '-')
 
   return (
-    <ul className='absolute floatig-list w-56 z-10 hidden group-hover:flex flex-col top-0 left-20 bg-white drop-shadow-xl group-hover:translate-x-10 transition-transform duration-300'>
+    <ul className='absolute floatig-list w-56 z-10 hidden group-hover:flex flex-col top-0 left-20 bg-gray-200 drop-shadow-xl group-hover:translate-x-10 transition-transform duration-300'>
       {character[number].child.map((item) => (
         <li className={`job-nesting ${textColor} ${hoverBgColor} ${TextColor(textHoverColor)} relative`} key={item.name}>
           <Link href={`/character/${url(item.name)}`}>
-            <a className='py-2 px-5 flex items-center'>
+            <a className='py-1 px-5 flex items-center'>
               <Image
                 alt={item.name}
                 className='object-cover'
-                height={25}
+                height={20}
                 src={item.img}
-                width={25}
+                width={20}
               />
               <p className='ml-1.5'>{item.name}</p>
             </a>
           </Link>
           <div className='opacity-0'>
-            <ul className='absolute z-10 min-w-max bg-white left-56 top-0 drop-shadow-md'>
+            <ul className='absolute z-10 min-w-max bg-gray-200 left-56 top-0 drop-shadow-md'>
               {item.child.map((job) => (
                 <li key={job.name}>
                   <Link href={`/character/${url(job.name)}`}>
-                    <a className={`flex items-center ${textColor} ${hoverBgColor} ${TextColor(textHoverColor)} py-2 px-5`}>
+                    <a className={`flex items-center ${textColor} ${hoverBgColor} ${TextColor(textHoverColor)} py-1 px-5`}>
                       <Image
                         alt={job.name}
-                        className='rounded object-cover'
-                        height={25}
+                        className='object-cover'
+                        height={20}
                         src={job.img}
-                        width={25}
+                        width={20}
                       />
                       <p className='ml-1.5'>{job.name}</p>
                     </a>
