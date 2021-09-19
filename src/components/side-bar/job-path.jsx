@@ -10,11 +10,11 @@ function JobPath({ number }) {
   const url = (text) => text.toLowerCase().replace(/\s/g, '-')
 
   return (
-    <ul className='absolute floatig-list w-56 z-10 hidden group-hover:flex flex-col top-0 left-28 bg-gray-200 dark:bg-gray-700 drop-shadow-xl group-hover:translate-x-10 transition-transform duration-300'>
+    <ul className='absolute floatig-list w-52 z-10 hidden group-hover:flex flex-col top-0 left-28 bg-gray-200 dark:bg-gray-700 drop-shadow-xl group-hover:translate-x-10 transition-transform duration-300'>
       {character[number].child.map((item) => (
         <li className={`job-nesting ${textColor} ${hoverBgColor} relative hover:text-white dark:hover:text-white`} key={item.name}>
           <Link href={`/character/${url(item.name)}`}>
-            <a className='py-1 px-5 flex items-center'>
+            <a className='py-1 px-2 flex items-center'>
               <Image
                 alt={item.name}
                 className='object-cover'
@@ -26,11 +26,11 @@ function JobPath({ number }) {
             </a>
           </Link>
           <div className='opacity-0'>
-            <ul className='absolute z-10 min-w-max bg-gray-200 dark:bg-gray-700 left-56 top-0 drop-shadow-md'>
+            <ul className='absolute z-10 min-w-max bg-gray-200 dark:bg-gray-700 left-52 top-0 drop-shadow-md'>
               {item.child.map((job) => (
                 <li key={job.name}>
                   <Link href={`/character/${url(job.name)}`}>
-                    <a className={`flex items-center ${textColor} ${hoverBgColor} hover:text-white dark:hover:text-white py-1 px-5`}>
+                    <a className={`flex items-center ${textColor} ${hoverBgColor} hover:text-white dark:hover:text-white py-1 px-2`}>
                       <Image
                         alt={job.name}
                         className='object-cover'

@@ -7,7 +7,7 @@ function Layout({ children }) {
     <div className='dark:bg-gray-800 bg-white transition-all duration-300 min-h-screen'>
       <Header />
       <div className='mx-auto max-w-screen-2xl'>
-        <div className='w-full flex pt-24'>
+        <div className='w-full pt-24'>
           <div className='flex'>
             <Sidebar />
             <div className='w-full sm:w-full'>

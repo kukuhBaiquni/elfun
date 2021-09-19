@@ -92,6 +92,9 @@ module.exports = {
         sidebar: '750px',
         'sidebar-overflow': '800px',
       },
+      transitionProperty: {
+        'transform-opacity': 'transform, opacity',
+      },
     },
   },
   variants: {
