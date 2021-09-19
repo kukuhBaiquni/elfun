@@ -8,10 +8,10 @@ function Characters() {
   const TextColor = (def) => (def ? 'text-gray-500' : 'text-gray-200')
   return (
     <Fragment>
-      Characters
+      Characters ({character.length})
       <ul className='my-2'>
         {character.map((item, index) => (
-          <li className={`py-2 relative z-10 whitespace-nowrap group font-normal hover:${item.bgColor} px-2 hover:translate-x-2 rounded cursor-pointer transition-transform duration-300`} key={item.name}>
+          <li className={`py-2 relative z-10 whitespace-nowrap group font-normal ${item.hoverBgColor} px-2 hover:translate-x-2 rounded cursor-pointer transition-transform duration-300`} key={item.name}>
             <Link href={`/character/${item.name}`}>
               <a className='flex items-center'>
                 <Image
@@ -21,7 +21,7 @@ function Characters() {
                   src={item.img}
                   width={25}
                 />
-                <p className={`ml-1.5 group-hover:${TextColor(item.textHoverColor)} text-gray-500`}>{item.name}</p>
+                <p className={`ml-1.5 group-hover:${TextColor(item.textHoverColor)}`}>{item.name}</p>
               </a>
             </Link>
             <JobPath number={index} />

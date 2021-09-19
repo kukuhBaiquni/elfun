@@ -29,7 +29,7 @@ function JobPath({ number }) {
           <div className='opacity-0'>
             <ul className='absolute z-20 min-w-max bg-white left-56 top-0 drop-shadow-2xl'>
               {item.child.map((job) => (
-                <li className={`${textColor} ${hoverBgColor} hover:${TextColor(textHoverColor)}`} key={job.name}>
+                <li className={`${textColor} ${hoverBgColor} hover:${TextColor(textHoverColor)} py-2 px-5`} key={job.name}>
                   <Link href={`/character/${url(name)}/${url(job.name)}`}>
                     <a className='flex items-center'>
                       <Image

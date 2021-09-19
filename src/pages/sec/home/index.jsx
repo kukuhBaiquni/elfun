@@ -1,16 +1,26 @@
+/* eslint-disable max-len */
 import { Fragment } from 'react'
 import Layout from 'layouts'
 import Head from 'next/head'
 import Wallpaper from 'components/wallpaper'
+import Alert from 'components/alerts'
 
 function Home() {
+  const alertContent = (
+    <p className='ml-3'>
+      This website was created for the purpose of being a <b>Portfolio</b> and for <b>Personal</b> use only,
+      it is not intended to plagiarize the original source from <a className='underline' href='https://elwiki.net' rel='noreferrer' target='_blank'>elwiki.net</a>.
+      All assets and images are owned by <a className='underline' href='https://elwiki.net' rel='noreferrer' target='_blank'>elwiki.net</a>,
+    </p>
+  )
+
   return (
     <Fragment>
       <Head>
-        <title>Home</title>
+        <title>Elfun</title>
       </Head>
       <section className='p-3'>
-        <Wallpaper />
+        <Alert text={alertContent} variant='info' />
         Welcome to Elwiki, a multilingual database for the game Elsword,
         containing information from various servers.
         Elwiki specializes in North American and South Korean data,

@@ -7,7 +7,7 @@ function Layout({ children }) {
   return (
     <div>
       <header className='bg-white fixed z-20 w-full drop-shadow-xl'>
-        <div className='h-20 max-w-screen-xl mx-auto flex items-center px-4 py-2 bg-white'>
+        <div className='h-20 max-w-screen-2xl mx-auto flex items-center px-4 py-2 bg-white'>
           <Image
             alt='logo'
             className='cursor-pointer'
@@ -17,7 +17,7 @@ function Layout({ children }) {
           />
         </div>
       </header>
-      <div className='mx-auto max-w-screen-xl'>
+      <div className='mx-auto max-w-screen-2xl'>
         <div className='w-full flex pt-24'>
           <Sidebar />
           <div className='w-full sm:w-[81%] bg-white'>
