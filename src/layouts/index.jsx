@@ -4,7 +4,7 @@ import Header from 'components/header'
 
 function Layout({ children }) {
   return (
-    <div className='dark:bg-gray-800 bg-white'>
+    <div className='dark:bg-gray-800 bg-white transition-all duration-300'>
       <Header />
       <div className='mx-auto max-w-screen-2xl'>
         <div className='w-full flex pt-24'>

@@ -54,10 +54,10 @@ const navigation = [{
 
 function Sidebar() {
   return (
-    <div className='p-4 border-r border-gray-300 hidden sm:block'>
+    <div className='p-4 bg-gray-200 dark:bg-gray-700 hidden sm:block transition-all duration-300'>
       <ul>
         {navigation.map(({ name, child }) => (
-          <li className={`py-1 px-4 font-black ${child.length ? '' : 'hover:bg-sky-400 hover:text-gray-200 rounded cursor-pointer'} mt-1 duration-200 text-gray-500 transition-all`} key={name}>
+          <li className={`py-1 px-4 font-black ${child.length ? '' : 'hover:bg-sky-400 hover:text-gray-200 rounded cursor-pointer'} mt-1 text-gray-500 transition-all duration-300`} key={name}>
             {child.length ? (
               <Fragment>
                 <Characters />

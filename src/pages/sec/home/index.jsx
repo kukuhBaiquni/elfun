@@ -8,7 +8,7 @@ import Alert from 'components/alerts'
 function Home() {
   const alertContent = (
     <p className='ml-3'>
-      This website was created for the purpose of being a <b>Portfolio</b> and for <b>Personal</b> use only,
+      This website was created for the purpose of being a <strong>PORTFOLIO</strong> and for <strong>PERSONAL</strong> use only,
       it is not intended to plagiarize the original source <a className='underline' href='https://elwiki.net' rel='noreferrer' target='_blank'>elwiki.net</a>.
     </p>
   )
@@ -18,7 +18,7 @@ function Home() {
       <Head>
         <title>Elfun</title>
       </Head>
-      <section className='p-3'>
+      <section className='px-3'>
         <Alert text={alertContent} variant='info' />
         Welcome to Elwiki, a multilingual database for the game Elsword,
         containing information from various servers.
