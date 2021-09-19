@@ -1,5 +1,6 @@
 import { Fragment } from 'react'
 import Characters from './characters'
+import Towns from './towns'
 
 const navigation = [{
   name: 'Main Page',
@@ -7,43 +8,6 @@ const navigation = [{
 }, {
   name: 'Recent Changes',
   child: [],
-}, {
-  name: 'Towns',
-  child: [{
-    name: 'Ruben',
-  }, {
-    name: 'Elder',
-  }, {
-    name: 'Bethma',
-  }, {
-    name: 'Altera',
-  }, {
-    name: 'Feita',
-  }, {
-    name: 'Velder',
-  }, {
-    name: 'Hamel',
-  }, {
-    name: 'Sander',
-  }, {
-    name: 'Lanox',
-  }, {
-    name: 'Atlas',
-  }, {
-    name: 'Elysion',
-  }, {
-    name: 'Elrianode',
-  }, {
-    name: 'Varnimyr',
-  }, {
-    name: 'Rigomor',
-  }, {
-    name: 'Master Road',
-  }, {
-    name: 'Pruinaum',
-  }, {
-    name: 'Pruinaum Outskirt',
-  }],
 }, {
   child: [],
   name: 'Npc\'s',
@@ -55,12 +19,11 @@ const navigation = [{
 function Sidebar() {
   return (
     <div className='p-2 bg-gray-200 dark:bg-gray-700 hidden sm:block transition-all duration-300'>
-      <ul>
+      <ul className='py-1 px-2'>
         {navigation.map(({ name, child }) => (
-          <li className={`py-1 px-4 ${child.length ? '' : 'hover:bg-sky-400 hover:text-white cursor-pointer dark:hover:text-white'} mt-1 text-gray-600 dark:text-gray-400`} key={name}>
+          <li className='hover:bg-sky-400 px-2 py-1 cursor-pointer hover:text-white dark:hover:text-white mt-1 text-gray-600 dark:text-gray-400' key={name}>
             {child.length ? (
               <Fragment>
-                <Characters />
                 <div className='relative bg-gray-200 dark:bg-gray-700'>
                   {name}
                   <ul>
@@ -75,6 +38,8 @@ function Sidebar() {
             ) : name}
           </li>
         ))}
+        <Characters />
+        <Towns />
       </ul>
     </div>
   )

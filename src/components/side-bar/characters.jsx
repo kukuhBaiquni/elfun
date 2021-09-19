@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDownIcon } from '@heroicons/react/solid'
@@ -8,14 +8,14 @@ import characters from './character-data'
 function Characters() {
   const [collapse, setCollapse] = useState(true)
   return (
-    <Fragment>
-      <span className='flex items-center justify-center' onClick={() => setCollapse((old) => !old)}>
-        <p className='mr-2'> Characters ({characters.length}) </p>
-        <ChevronDownIcon className={`w-5 h-5 ${collapse ? 'transform -rotate-180' : 'transform rotate-0'} transition-all duration-300`} />
+    <div className='whitespace-nowrap'>
+      <span className='px-2 py-1 flex items-center hover:text-white cursor-pointer transition-all duration-300 text-gray-600 dark:text-gray-400 justify-between hover:bg-sky-400' onClick={() => setCollapse((old) => !old)}>
+        <p> Characters ({characters.length}) </p>
+        <ChevronDownIcon className={`w-5 h-5 ${collapse ? 'transform -rotate-180' : 'transform rotate-0'}`} />
       </span>
-      <ul className='my-2'>
+      <ul className='px-2.5'>
         {characters.map((item, index) => (
-          <li className={`relative z-10 whitespace-nowrap group font-normal ${item.hoverBgColor} hover:translate-x-2 cursor-pointer transition-transform duration-300`} key={item.name}>
+          <li className={`relative z-10 whitespace-nowrap hover:text-white cursor-pointer text-gray-600 dark:text-gray-400 dark:hover:text-white group ${item.hoverBgColor} hover:translate-x-2 cursor-pointer transition-transform duration-300`} key={item.name}>
             <Link href={`/character/${item.name.toLowerCase()}`}>
               <a className='flex items-center p-1 group-hover:text-white'>
                 <Image
@@ -32,7 +32,7 @@ function Characters() {
           </li>
         ))}
       </ul>
-    </Fragment>
+    </div>
   )
 }
 
