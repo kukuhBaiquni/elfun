@@ -7,11 +7,11 @@ function JobPath({ number }) {
   const {
     textColor, textHoverColor, hoverBgColor,
   } = character[number]
-  const TextColor = (def) => (def ? 'hover:text-gray-500' : 'hover:text-gray-200')
+  const TextColor = (def, ori) => (def ? 'hover:text-gray-600 hover:' : `hover:text-white dark:hover:${ori}`)
   const url = (text) => text.toLowerCase().replace(/\s/g, '-')
 
   return (
-    <ul className='absolute floatig-list w-56 z-10 hidden group-hover:flex flex-col top-0 left-20 bg-gray-200 drop-shadow-xl group-hover:translate-x-10 transition-transform duration-300'>
+    <ul className='absolute floatig-list w-56 z-10 hidden group-hover:flex flex-col top-0 left-20 bg-gray-200 dark:bg-gray-700 drop-shadow-xl group-hover:translate-x-10 transition-transform duration-300'>
       {character[number].child.map((item) => (
         <li className={`job-nesting ${textColor} ${hoverBgColor} ${TextColor(textHoverColor)} relative`} key={item.name}>
           <Link href={`/character/${url(item.name)}`}>
@@ -27,7 +27,7 @@ function JobPath({ number }) {
             </a>
           </Link>
           <div className='opacity-0'>
-            <ul className='absolute z-10 min-w-max bg-gray-200 left-56 top-0 drop-shadow-md'>
+            <ul className='absolute z-10 min-w-max bg-gray-200 dark:bg-gray-700 left-56 top-0 drop-shadow-md'>
               {item.child.map((job) => (
                 <li key={job.name}>
                   <Link href={`/character/${url(job.name)}`}>

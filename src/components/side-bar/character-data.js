@@ -750,7 +750,7 @@ const character = [{
   name: 'Rose',
   img: rose,
   bgColor: 'bg-rose',
-  textColor: 'text-gray-500',
+  textColor: 'text-gray-600',
   textHoverColor: true,
   hoverBgColor: 'hover:bg-rose',
   child: [{
