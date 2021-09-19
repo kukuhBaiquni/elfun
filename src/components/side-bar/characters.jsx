@@ -16,7 +16,7 @@ function Characters() {
       </span>
       <ul className={`px-2.5 mt-1 ${collapse ? 'h-0' : 'h-[480px]'} transition-all duration-300`}>
         {characters.map((item, index) => (
-          <li className={`relative z-10 pl-1 ${collapse ? 'opacity-0' : 'opacity-100'} hover:text-white text-gray-600 dark:text-gray-400 dark:hover:text-white group ${item.hoverBgColor} hover:translate-x-2 cursor-pointer transition-all duration-300`} key={item.name}>
+          <li className={`relative z-10 pl-1 ${collapse ? 'opacity-0' : 'opacity-100'} hover:text-white text-gray-600 dark:text-gray-400 dark:hover:text-white group ${item.hoverBgColor} hover:translate-x-2 cursor-pointer transition-transform-opacity duration-300`} key={item.name}>
             <Link href={`/character/${item.name.toLowerCase()}`}>
               <a className='flex items-center p-1 group-hover:text-white'>
                 <Image
