@@ -10,7 +10,7 @@ function JobPath({ number }) {
   const url = (text) => text.toLowerCase().replace(/\s/g, '-')
 
   return (
-    <ul className='absolute floatig-list w-56 z-10 hidden group-hover:flex flex-col top-0 left-20 bg-gray-200 dark:bg-gray-700 drop-shadow-xl group-hover:translate-x-10 transition-transform duration-300'>
+    <ul className='absolute floatig-list w-56 z-10 hidden group-hover:flex flex-col top-0 left-28 bg-gray-200 dark:bg-gray-700 drop-shadow-xl group-hover:translate-x-10 transition-transform duration-300'>
       {character[number].child.map((item) => (
         <li className={`job-nesting ${textColor} ${hoverBgColor} relative hover:text-white dark:hover:text-white`} key={item.name}>
           <Link href={`/character/${url(item.name)}`}>
