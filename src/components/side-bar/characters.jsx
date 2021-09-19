@@ -1,19 +1,23 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ChevronDownIcon } from '@heroicons/react/solid'
 import JobPath from './job-path'
-import character from './character-data'
+import characters from './character-data'
 
 function Characters() {
-  const TextColor = (def) => (def ? 'group-hover:text-gray-600' : 'group-hover:text-white')
+  const [collapse, setCollapse] = useState(true)
   return (
     <Fragment>
-      Characters ({character.length})
+      <span className='flex items-center justify-center' onClick={() => setCollapse((old) => !old)}>
+        <p className='mr-2'> Characters ({characters.length}) </p>
+        <ChevronDownIcon className={`w-5 h-5 ${collapse ? 'transform -rotate-180' : 'transform rotate-0'} transition-all duration-300`} />
+      </span>
       <ul className='my-2'>
-        {character.map((item, index) => (
+        {characters.map((item, index) => (
           <li className={`relative z-10 whitespace-nowrap group font-normal ${item.hoverBgColor} hover:translate-x-2 cursor-pointer transition-transform duration-300`} key={item.name}>
             <Link href={`/character/${item.name.toLowerCase()}`}>
-              <a className={`flex items-center p-1 ${TextColor(item.textHoverColor)}`}>
+              <a className='flex items-center p-1 group-hover:text-white'>
                 <Image
                   alt={item.name}
                   className='object-cover'

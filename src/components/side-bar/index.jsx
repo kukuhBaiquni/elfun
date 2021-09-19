@@ -61,14 +61,16 @@ function Sidebar() {
             {child.length ? (
               <Fragment>
                 <Characters />
-                {name}
-                <ul>
-                  {child.map((item) => (
-                    <li className='py-1.5 relative pl-2 z-10 whitespace-nowrap group font-normal text-gray-600 hover:translate-x-2 hover:text-sky-400 rounded cursor-pointer transition-transform duration-300 mt-0.5' key={item.name}>
-                      {item.name}
-                    </li>
-                  ))}
-                </ul>
+                <div className='relative bg-gray-200 dark:bg-gray-700'>
+                  {name}
+                  <ul>
+                    {child.map((item) => (
+                      <li className='py-1.5 relative pl-2 z-10 whitespace-nowrap group font-normal text-gray-600 hover:translate-x-2 hover:text-sky-400 rounded cursor-pointer transition-transform duration-300 mt-0.5' key={item.name}>
+                        {item.name}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </Fragment>
             ) : name}
           </li>

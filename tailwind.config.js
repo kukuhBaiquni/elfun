@@ -20,12 +20,12 @@ module.exports = {
         elsword: {
           light: '#cc2721',
           DEFAULT: '#cc2721',
-          dark: '#cc2721',
+          dark: '#E1625E',
         },
         aisha: {
           light: '#971ed3',
           DEFAULT: '#971ed3',
-          dark: '#971ed3',
+          dark: '#D491F6',
         },
         rena: {
           light: '#21cc27',
@@ -35,7 +35,7 @@ module.exports = {
         raven: {
           light: '#707070',
           DEFAULT: '#707070',
-          dark: '#707070',
+          dark: '#C5C5C5',
         },
         eve: {
           light: '#e45698',
@@ -55,7 +55,7 @@ module.exports = {
         elesis: {
           light: '#990c0e',
           DEFAULT: '#990c0e',
-          dark: '#990c0e',
+          dark: '#FFAFB0',
         },
         add: {
           light: '#cf61eb',
@@ -65,12 +65,12 @@ module.exports = {
         luciel: {
           light: '#2a14f2',
           DEFAULT: '#2a14f2',
-          dark: '#2a14f2',
+          dark: '#ABA1FF',
         },
         rose: {
           light: '#d8cc1c',
           DEFAULT: '#d8cc1c',
-          dark: '#d8cc1c',
+          dark: '#EFE65B',
         },
         ain: {
           light: '#3ef2a4',

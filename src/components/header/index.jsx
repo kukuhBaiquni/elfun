@@ -6,9 +6,6 @@ import ws from '../../../public/images/avatar/rena/wind-sneaker-trans.png'
 
 function Header() {
   const { theme, setTheme } = useDarkMode()
-  const toggleTheme = () => {
-    document.documentElement.classList.add('dark')
-  }
 
   return (
     <header className='fixed z-20 w-full drop-shadow-sm border-b border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 transition-all duration-300'>
@@ -21,7 +18,7 @@ function Header() {
           width={150}
         />
         <div className='flex items-center'>
-          <span className='mr-3 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full p-1 transition-all duration-300' onClick={toggleTheme}>
+          <span className='mr-3 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full p-1 transition-all duration-300'>
             {theme === 'light' ? (
               <MoonIcon
                 className='h-7 w-7 text-gray-500'

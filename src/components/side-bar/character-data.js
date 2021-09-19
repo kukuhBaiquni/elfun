@@ -218,7 +218,7 @@ const character = [{
   name: 'Elsword',
   img: elsword,
   bgColor: 'bg-elsword',
-  textColor: 'text-elsword',
+  textColor: 'text-elsword dark:text-elsword-dark',
   hoverBgColor: 'hover:bg-elsword',
   child: [{
     name: 'Sword Knight',
@@ -277,7 +277,7 @@ const character = [{
   name: 'Aisha',
   img: aisha,
   bgColor: 'bg-aisha',
-  textColor: 'text-aisha',
+  textColor: 'text-aisha dark:text-aisha-dark',
   hoverBgColor: 'hover:bg-aisha',
   child: [{
     name: 'High Magician',
@@ -369,7 +369,7 @@ const character = [{
   name: 'Raven',
   img: raven,
   bgColor: 'bg-raven',
-  textColor: 'text-raven',
+  textColor: 'text-raven dark:text-raven-dark',
   hoverBgColor: 'hover:bg-raven',
   child: [{
     name: 'Sword Taker',
@@ -566,8 +566,8 @@ const character = [{
   name: 'Elesis',
   img: elesis,
   bgColor: 'bg-elesis',
+  textColor: 'text-elesis dark:text-elesis-dark',
   hoverBgColor: 'hover:bg-elesis',
-  textColor: 'text-elesis',
   child: [{
     name: 'Saber Knight',
     img: saberKnight,
@@ -676,7 +676,7 @@ const character = [{
   name: 'Lu',
   img: lu,
   bgColor: 'bg-luciel',
-  textColor: 'text-luciel',
+  textColor: 'text-luciel dark:text-luciel-dark',
   hoverBgColor: 'hover:bg-luciel',
   child: [{
     name: 'Chiliarch',
@@ -713,7 +713,7 @@ const character = [{
   name: 'Ciel',
   img: ciel,
   bgColor: 'bg-luciel',
-  textColor: 'text-luciel',
+  textColor: 'text-luciel dark:text-luciel-dark',
   hoverBgColor: 'hover:bg-luciel',
   child: [{
     name: 'Dreadlord',
@@ -750,8 +750,7 @@ const character = [{
   name: 'Rose',
   img: rose,
   bgColor: 'bg-rose',
-  textColor: 'text-gray-600',
-  textHoverColor: true,
+  textColor: 'text-rose',
   hoverBgColor: 'hover:bg-rose',
   child: [{
     name: 'Heavy Barrel',
