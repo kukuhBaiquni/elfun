@@ -9,8 +9,7 @@ function Home() {
   const alertContent = (
     <p className='ml-3'>
       This website was created for the purpose of being a <b>Portfolio</b> and for <b>Personal</b> use only,
-      it is not intended to plagiarize the original source from <a className='underline' href='https://elwiki.net' rel='noreferrer' target='_blank'>elwiki.net</a>.
-      All assets and images are owned by <a className='underline' href='https://elwiki.net' rel='noreferrer' target='_blank'>elwiki.net</a>,
+      it is not intended to plagiarize the original source <a className='underline' href='https://elwiki.net' rel='noreferrer' target='_blank'>elwiki.net</a>.
     </p>
   )
 

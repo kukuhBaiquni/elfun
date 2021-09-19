@@ -9,7 +9,7 @@ function Layout({ children }) {
       <div className='mx-auto max-w-screen-2xl'>
         <div className='w-full flex pt-24'>
           <Sidebar />
-          <div className='w-full sm:w-[81%] bg-white'>
+          <div className='w-full sm:w-full bg-white'>
             {children}
           </div>
         </div>
