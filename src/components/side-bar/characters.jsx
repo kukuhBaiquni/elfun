@@ -1,15 +1,18 @@
-import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDownIcon } from '@heroicons/react/solid'
+import PropTypes from 'prop-types'
 import JobPath from './job-path'
 import characters from './character-data'
 
-function Characters() {
-  const [collapse, setCollapse] = useState(true)
+function Characters(props) {
+  const { collapse, setCollapse } = props
+  const onCollapse = () => {
+    const clone = { ...collapse }
+  }
   return (
     <div className='whitespace-nowrap'>
-      <span className='px-2 py-1 flex items-center hover:text-white cursor-pointer text-gray-600 dark:text-gray-400 hover:bg-gray-400 dark:hover:bg-gray-600' onClick={() => setCollapse((old) => !old)}>
+      <span className='px-2 py-1 flex items-center hover:text-white cursor-pointer text-gray-600 dark:text-gray-400 hover:bg-gray-400 dark:hover:bg-gray-600' onClick={onCollapse}>
         <p className='mr-2'> Characters ({characters.length}) </p>
         <ChevronDownIcon className={`w-5 h-5 ${collapse ? 'transform -rotate-180' : 'transform rotate-0'} transition-transform duration-300`} />
       </span>
@@ -34,6 +37,11 @@ function Characters() {
       </ul>
     </div>
   )
+}
+
+Characters.propTypes = {
+  collapse: PropTypes.bool,
+  setCollapse: PropTypes.func,
 }
 
 export default Characters

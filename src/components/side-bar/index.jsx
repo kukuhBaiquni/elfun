@@ -1,45 +1,41 @@
-import { Fragment } from 'react'
+import { useState } from 'react'
+import Link from 'next/link'
 import Characters from './characters'
 import Towns from './towns'
 
 const navigation = [{
   name: 'Main Page',
-  child: [],
+  path: '/',
 }, {
   name: 'Recent Changes',
-  child: [],
+  path: '/changes',
 }, {
-  child: [],
   name: 'Npc\'s',
+  path: '/npcs',
 }, {
-  child: [],
   name: 'Titles',
+  path: '/titles',
 }]
 
 function Sidebar() {
+  const [collapse, setCollapse] = useState({
+    character: true,
+    town: true,
+  })
   return (
     <div className='p-2 bg-gray-200 dark:bg-gray-700 w-60 hidden sm:block transition-all duration-300'>
       <ul className='py-1 px-2'>
-        {navigation.map(({ name, child }) => (
-          <li className='hover:bg-sky-500 px-2 py-1 cursor-pointer hover:text-white dark:hover:text-white mt-1 text-gray-600 dark:text-gray-400' key={name}>
-            {child.length ? (
-              <Fragment>
-                <div className='relative bg-gray-200 dark:bg-gray-700'>
-                  {name}
-                  <ul>
-                    {child.map((item) => (
-                      <li className='py-1.5 relative pl-2 z-10 whitespace-nowrap group font-normal text-gray-600 hover:translate-x-2 hover:text-sky-500 rounded cursor-pointer transition-transform duration-300 mt-0.5' key={item.name}>
-                        {item.name}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Fragment>
-            ) : name}
-          </li>
+        <Characters collapse={collapse} setCollapse={setCollapse} />
+        <Towns collapse={collapse} setCollapse={setCollapse} />
+        {navigation.map(({ name, path }) => (
+          <Link href={path} key={name}>
+            <a>
+              <li className='hover:bg-sky-500 px-2 py-1 cursor-pointer hover:text-white dark:hover:text-white mt-1 text-gray-600 dark:text-gray-400'>
+                {name}
+              </li>
+            </a>
+          </Link>
         ))}
-        <Characters />
-        <Towns />
       </ul>
     </div>
   )

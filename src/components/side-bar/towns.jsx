@@ -1,10 +1,10 @@
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import Link from 'next/link'
+import PropTypes from 'prop-types'
 import towns from './town-data'
 
-function Towns({
-  collapse,
-}) {
+function Towns(props) {
+  const { collapse, setCollapse } = props
   const url = (text) => text.toLowerCase().replace(/\s/g, '-')
   return (
     <div className='whitespace-nowrap'>
@@ -25,6 +25,11 @@ function Towns({
       </ul>
     </div>
   )
+}
+
+Towns.propTypes = {
+  collapse: PropTypes.bool,
+  setCollapse: PropTypes.func,
 }
 
 export default Towns
