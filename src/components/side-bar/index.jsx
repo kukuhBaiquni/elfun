@@ -1,9 +1,31 @@
 import Link from 'next/link'
+import { ChevronDownIcon } from '@heroicons/react/solid'
 import { useImmer } from 'use-immer'
+import { Fragment, useCallback } from 'react'
 import Characters from './characters'
 import Towns from './towns'
+import characters from './character-data'
+import towns from './town-data'
 
-const navigation = [{
+const routes = [{
+  name: 'Main Page',
+  path: '/',
+}, {
+  name: 'Recent Changes',
+  path: '/changes',
+}, {
+  name: 'Characters',
+  path: '',
+  childData: characters,
+  childRenderer: <Characters data={characters} />,
+  collapsed: true,
+}, {
+  name: 'Towns',
+  path: '',
+  childData: towns,
+  childRenderer: <Towns data={towns} />,
+  collapsed: true,
+}, {
   name: 'Npc\'s',
   path: '/npcs',
 }, {
@@ -12,42 +34,46 @@ const navigation = [{
 }]
 
 function Sidebar() {
-  const [collapse, setCollapse] = useImmer({
-    character: true,
-    town: true,
-  })
+  const [navigation, setNavigation] = useImmer(routes)
+
+  const onToggle = useCallback((name) => {
+    setNavigation((old) => {
+      const nav = old.find((nv) => nv.name === name)
+      nav.collapsed = !nav.collapsed
+    })
+  }, [setNavigation])
+
   return (
-    <div className='p-2 bg-gray-200 dark:bg-gray-700 min-h-[750px] w-60 hidden sm:block transition-all duration-300'>
+    <nav className='p-2 bg-gray-200 dark:bg-gray-700 min-h-[750px] max-h-full w-60 hidden sm:block transition-all duration-300'>
       <ul className='py-1 px-2'>
-        <Link href='/'>
-          <a>
-            <li className='hover:bg-sky-500 px-2 py-1 cursor-pointer hover:text-white dark:hover:text-white mt-1 text-gray-600 dark:text-gray-400'>
-              Main Page
-            </li>
-          </a>
-        </Link>
-        <Link href='/changes'>
-          <a>
-            <li className='hover:bg-sky-500 px-2 py-1 cursor-pointer hover:text-white dark:hover:text-white mt-1 text-gray-600 dark:text-gray-400'>
-              Recent Changes
-            </li>
-          </a>
-        </Link>
-        <Characters collapse={collapse} setCollapse={setCollapse} />
-        <Towns collapse={collapse} setCollapse={setCollapse} />
         <div className='relative z-10'>
-          {navigation.map(({ name, path }) => (
-            <Link href={path} key={name}>
-              <a>
-                <li className='hover:bg-sky-500 px-2 py-1 cursor-pointer hover:text-white dark:hover:text-white mt-1 text-gray-600 dark:text-gray-400 '>
-                  {name}
-                </li>
-              </a>
-            </Link>
+          {navigation.map((item) => (
+            item.childData ? (
+              <Fragment key={item.name}>
+                <span
+                  className='px-2 py-1 flex items-center hover:text-white cursor-pointer text-gray-600 dark:text-gray-400 hover:bg-gray-400 dark:hover:bg-gray-600'
+                  onClick={() => onToggle(item.name)}
+                >
+                  <p className='mr-2'> {item.name}({item.childData.length}) </p>
+                  <ChevronDownIcon className={`w-5 h-5 ${navigation.collapsed ? 'transform -rotate-180' : 'transform rotate-0'} transition-transform duration-300`} />
+                </span>
+                <ul className={`px-2.5 mt-1 ${item.collapsed ? 'opacity-0' : 'opacity-100'} ${item.collapsed ? 'h-0 overflow-hidden' : 'h-[100%] overflow-visible'} transition-all duration-300`}>
+                  {item.childRenderer}
+                </ul>
+              </Fragment>
+            ) : (
+              <Link href={item.path} key={item.name}>
+                <a>
+                  <li className='hover:bg-sky-500 px-2 py-1 cursor-pointer hover:text-white dark:hover:text-white text-gray-600 dark:text-gray-400 '>
+                    {item.name}
+                  </li>
+                </a>
+              </Link>
+            )
           ))}
         </div>
       </ul>
-    </div>
+    </nav>
   )
 }
 

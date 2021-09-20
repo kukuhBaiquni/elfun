@@ -214,7 +214,7 @@ import palePilgrim from '../../../public/images/avatar/noah/pale-pilgrim.png'
 import palePilgrimTrans from '../../../public/images/avatar/noah/pale-pilgrim-trans.png'
 import nyxPieta from '../../../public/images/avatar/noah/nyx-pieta.png'
 
-const character = [{
+const characters = [{
   name: 'Elsword',
   img: elsword,
   bgColor: 'bg-elsword',
@@ -946,4 +946,4 @@ const character = [{
   }],
 }]
 
-export default character
+export default characters

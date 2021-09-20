@@ -19,15 +19,15 @@ function Header() {
         />
         <div className='flex items-center'>
           <span className='mr-3 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full p-1 transition-all duration-300'>
-            {theme === 'light' ? (
-              <MoonIcon
-                className='h-7 w-7 text-gray-500'
-                onClick={() => setTheme('dark')}
-              />
-            ) : (
+            {theme === 'dark' ? (
               <SunIcon
                 className='h-7 w-7 text-gray-500'
                 onClick={() => setTheme('light')}
+              />
+            ) : (
+              <MoonIcon
+                className='h-7 w-7 text-gray-500'
+                onClick={() => setTheme('dark')}
               />
             )}
           </span>

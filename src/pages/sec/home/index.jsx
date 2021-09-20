@@ -33,7 +33,7 @@ function Home() {
 
         All rights are reserved (Official Art, Game Screenshots, etc.)
         to © KOG Studios, Nexon, Gameforge, and KOG Games (formerly known as Kill3rCombo)
-        <Wallpaper />
+        {/* <Wallpaper /> */}
       </section>
     </Fragment>
   )
