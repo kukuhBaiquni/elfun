@@ -21,22 +21,26 @@ function Home() {
       <Head>
         <title>Elfun</title>
       </Head>
-      <section className='px-3'>
+      <main className='px-3'>
         <Alert text={alertContent} variant='info' />
-        <Image
-          alt='wallpaper'
-          height={840}
-          src={wallpaper}
-          width={720}
-        />
-        <p className='text-gray-600 dark:text-gray-400'>
-          Welcome to Elfun, this website provide information about Elsword, if you don&apos;t know, visit {elwiki}
+        {/* <section className='p-2 border border-gray-400 dark:border-gray-600 bg-gray-200 dark:bg-gray-700'> */}
+        {/* <Image
+            alt='wallpaper'
+            className='object-cover'
+            height={445}
+            src={wallpaper}
+            width={385}
+          /> */}
+        <h2 className='text-6xl font-semibold mt-4 dark:text-sky-400 text-sky-600'>Welcome to Elfun</h2>
+        <p className='text-gray-600 dark:text-gray-400 mt-2'>
+          This website provide information about Elsword, if you don&apos;t know, visit {elwiki}
           . This website is made for personal use only.
           It contains information about in-game characters, towns, dungeons, titles, equipments, costumes, and many more.
           but not all information is available here. {elwiki} has more than 18k articles, which is a very large number, here I created a website to collect information related to Elsword.
         </p>
+        {/* </section> */}
         {/* <Wallpaper /> */}
-      </section>
+      </main>
     </Fragment>
   )
 }
