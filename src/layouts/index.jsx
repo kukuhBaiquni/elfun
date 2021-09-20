@@ -16,6 +16,9 @@ function Layout({ children }) {
           </div>
         </div>
       </div>
+      <footer className='bg-gray-200 dark:bg-gray-700 w-full h-[200px]'>
+        test
+      </footer>
     </div>
   )
 }

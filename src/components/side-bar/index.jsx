@@ -19,18 +19,32 @@ const routes = [{
   childData: characters,
   childRenderer: <Characters data={characters} />,
   collapsed: true,
+  h: 'h-[480px]',
 }, {
   name: 'Towns',
   path: '',
   childData: towns,
   childRenderer: <Towns data={towns} />,
   collapsed: true,
+  h: 'h-[540px]',
+}, {
+  name: 'Equipments',
+  path: '/equipments',
 }, {
   name: 'Npc\'s',
   path: '/npcs',
 }, {
   name: 'Titles',
   path: '/titles',
+}, {
+  name: 'Ice Burner (Costumes)',
+  path: '/ice-burners',
+}, {
+  name: 'Character Systems',
+  path: '/character-systems',
+}, {
+  name: 'Miscellaneous',
+  path: '/miscellaneous',
 }]
 
 function Sidebar() {
@@ -44,8 +58,8 @@ function Sidebar() {
   }, [setNavigation])
 
   return (
-    <nav className='p-2 bg-gray-200 dark:bg-gray-700 min-h-[750px] max-h-full w-60 hidden sm:block transition-all duration-300'>
-      <ul className='py-1 px-2'>
+    <nav>
+      <ul className='py-1 px-2 bg-gray-200 dark:bg-gray-700 min-h-[750px] max-h-full w-60 hidden sm:block transition-all duration-300'>
         <div className='relative z-10'>
           {navigation.map((item) => (
             item.childData ? (
@@ -57,7 +71,7 @@ function Sidebar() {
                   <p className='mr-2'> {item.name}({item.childData.length}) </p>
                   <ChevronDownIcon className={`w-5 h-5 ${navigation.collapsed ? 'transform -rotate-180' : 'transform rotate-0'} transition-transform duration-300`} />
                 </span>
-                <ul className={`px-2.5 mt-1 ${item.collapsed ? 'opacity-0' : 'opacity-100'} ${item.collapsed ? 'h-0 overflow-hidden' : 'h-[100%] overflow-visible'} transition-all duration-300`}>
+                <ul className={`px-2.5 mt-1 ${item.collapsed ? 'opacity-0' : 'opacity-100'} ${item.collapsed ? 'h-0 overflow-hidden' : `${item.h} overflow-visible`} transition-all duration-300`}>
                   {item.childRenderer}
                 </ul>
               </Fragment>
