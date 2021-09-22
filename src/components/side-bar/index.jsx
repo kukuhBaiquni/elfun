@@ -69,7 +69,7 @@ function Sidebar() {
                   onClick={() => onToggle(item.name)}
                 >
                   <p className='mr-2'> {item.name}({item.childData.length}) </p>
-                  <ChevronDownIcon className={`w-5 h-5 ${navigation.collapsed ? 'transform -rotate-180' : 'transform rotate-0'} transition-transform duration-300`} />
+                  <ChevronDownIcon className={`w-5 h-5 ${item.collapsed ? 'transform rotate-0' : 'transform -rotate-180'} transition-transform duration-300`} />
                 </span>
                 <ul className={`px-2.5 mt-1 ${item.collapsed ? 'opacity-0' : 'opacity-100'} ${item.collapsed ? 'h-0 overflow-hidden' : `${item.h} overflow-visible`} transition-all duration-300`}>
                   {item.childRenderer}

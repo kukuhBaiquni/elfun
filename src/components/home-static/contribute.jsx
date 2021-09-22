@@ -1,4 +1,4 @@
-import { ExternalLinkIcon } from '@heroicons/react/outline'
+import { ExternalLinkIcon, ArrowSmRightIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
 import Image from 'next/image'
 import dungeon from '../../../public/images/categories/dungeon.png'
@@ -97,6 +97,14 @@ export default function Contribute() {
           </div>
         ))}
       </div>
+      <button className='bg-sky-500 hover:bg-sky-600 text-white rounded transition-all duration-300 mt-5' type='button'>
+        <Link href='/contribution'>
+          <a className='flex items-center px-6 py-2 hover:underline'>
+            Start Contribute Now
+            <ArrowSmRightIcon className='w-5 h-5' />
+          </a>
+        </Link>
+      </button>
     </section>
   )
 }

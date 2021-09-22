@@ -31,13 +31,12 @@ function Header() {
               />
             )}
           </span>
-          <span className='text-gray-500 flex items-center cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700 p-1 rounded-full transition-all duration-300'>
+          <span className='text-gray-500 flex items-center cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700 p-1 rounded transition-all duration-300'>
             <Image
               alt='Trans Logo'
-              className='object-cover rounded-full'
-              height={25}
+              height={30}
               src={ws}
-              width={25}
+              width={30}
             />
             <ChevronDownIcon className='h5 w-5 ml-1' />
           </span>
