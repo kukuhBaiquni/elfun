@@ -2,17 +2,17 @@
 import { Fragment } from 'react'
 import Layout from 'layouts'
 import Head from 'next/head'
-import Image from 'next/image'
+// import Image from 'next/image'
+import Link from 'next/link'
 import Alert from 'components/alerts'
-import wallpaper from '../../../../public/images/wallpaper.png'
 
 function Home() {
   const elwiki = <a className='text-sky-500 hover:underline' href='https://elwiki.net' rel='noreferrer' target='_blank'>elwiki.net</a>
-  const noahArt = <a className='text-sky-500 hover:underline' href='https://elwiki.net/wiki/images/8/85/Portrait_-_Liberator_%28Master%29_NoFX.png' rel='noreferrer' target='_blank'>elwiki</a>
+  const elswordGame = <a className='text-sky-500 hover:underline' href='https://elwiki.net/w/Elsword_(game)' rel='noreferrer' target='_blank'>Elsword</a>
   const alertContent = (
     <p className='ml-3'>
       This website was created for the purpose of being a <strong>PORTFOLIO</strong> and for <strong>PERSONAL</strong> use only,
-      it is not intended to plagiarize the original source {elwiki}.
+      it is not intended to plagiarize the original source {elwiki}. Everything in this website just a <strong>DEMO</strong>
     </p>
   )
 
@@ -21,30 +21,24 @@ function Home() {
       <Head>
         <title>Elfun</title>
       </Head>
-      <main className='px-3'>
+      <main>
         <Alert text={alertContent} variant='info' />
-        <section className='flex justify-between'>
-          <div className='min-w-[385px] bg-pink-300'>
-            <Image
-              alt='wallpaper'
-              className='object-cover'
-              height={445}
-              src={wallpaper}
-              width={385}
-            />
-            <span className='text-sm'>Liberator Art. source {noahArt}</span>
-          </div>
-          <div className='ml-8'>
-            <h2 className='text-2xl font-semibold mt-4 dark:text-sky-400 text-sky-600 font-titillium'>Welcome to Elfun</h2>
-            <p className='text-gray-600 dark:text-gray-400 mt-2'>
-              This website provide information about Elsword, if you don&apos;t know, visit {elwiki}
-              . This website is made for personal use only.
-              It contains information about in-game characters, towns, dungeons, titles, equipments, costumes, and many more.
-              but not all information is available here. {elwiki} has more than 18k articles, which is a very large number, here I created a website to collect few information related to Elsword.
-            </p>
-          </div>
+        <section className='text-gray-600 dark:text-gray-400 px-2'>
+          <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Welcome to Elfun</h2>
+          <p className='my-2'>
+            This website provide information about Elsword, if you don&apos;t know, see {elswordGame}
+            . This website is made for personal use only.
+            It contains information about in-game characters, towns, dungeons, titles, equipments, costumes, and many more.
+            but not all information is available here. {elwiki} (multilingual database for the game {elswordGame}) has more than 18k articles, which is a very large number, here I created a website to collect few information related to Elsword.
+          </p>
+          <i>All rights are reserved (Official Art, Game Screenshots, etc.) to © KOG Studios, Nexon, Gameforge, and KOG Games (formerly known as Kill3rCombo)</i>
+          <p className='mt-5'>
+            Know anything about Elsword? Try
+            <Link href='/contributor-mode'>
+              <a className='text-sky-500 hover:underline'> Contributor Mode</a>
+            </Link>
+          </p>
         </section>
-        {/* <Wallpaper /> */}
       </main>
     </Fragment>
   )
