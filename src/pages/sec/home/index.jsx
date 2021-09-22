@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 import Layout from 'layouts'
 import Head from 'next/head'
 import Alert from 'components/alerts'
-import Welcome from 'components/home-static/welcome'
+import { Welcome, News, Categories } from 'components/home-static'
 
 function Home() {
   const elwiki = <a className='text-sky-500 hover:underline' href='https://elwiki.net' rel='noreferrer' target='_blank'>elwiki.net</a>
@@ -21,7 +21,11 @@ function Home() {
       </Head>
       <main className='text-gray-600 dark:text-gray-400'>
         <Alert text={alertContent} variant='info' />
-        <Welcome />
+        <section className='px-2 mb-10'>
+          <Welcome />
+          <Categories />
+          <News />
+        </section>
       </main>
     </Fragment>
   )

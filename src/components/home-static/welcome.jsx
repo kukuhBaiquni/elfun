@@ -1,11 +1,12 @@
 /* eslint-disable max-len */
 import Link from 'next/link'
+import { Fragment } from 'react'
 
 export default function Welcome() {
   const elwiki = <a className='text-sky-500 hover:underline' href='https://elwiki.net' rel='noreferrer' target='_blank'>elwiki.net</a>
   const elswordGame = <a className='text-sky-500 hover:underline' href='https://elwiki.net/w/Elsword_(game)' rel='noreferrer' target='_blank'>Elsword</a>
   return (
-    <section className='px-2 mb-10'>
+    <Fragment>
       <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Welcome to Elfun</h2>
       <p className='my-2'>
         This website provide information about Elsword, if you don&apos;t know, see {elswordGame}
@@ -20,6 +21,6 @@ export default function Welcome() {
           <a className='text-sky-500 hover:underline'> Contributor Mode</a>
         </Link>
       </p>
-    </section>
+    </Fragment>
   )
 }
