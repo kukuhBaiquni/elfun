@@ -1,5 +1,4 @@
 /* eslint-disable max-len */
-import Link from 'next/link'
 import { Fragment } from 'react'
 
 export default function Welcome() {
@@ -12,15 +11,9 @@ export default function Welcome() {
         This website provide information about Elsword, if you don&apos;t know, see {elswordGame}
         . This website is made for personal use only.
         It contains information about in-game characters, towns, dungeons, titles, equipments, costumes, and many more.
-        but not all information is available here. {elwiki} (multilingual database for the game {elswordGame}) has more than 18k articles, which is a very large number, here I created a website to collect few information related to Elsword.
+        but not all information is available here. {elwiki} (multilingual database for the game {elswordGame}) has more than 18k articles, which is a very large number, here I created the website to collect few information related to {elswordGame} from there.
       </p>
       <i>All rights are reserved (Official Art, Game Screenshots, etc.) to © KOG Studios, Nexon, Gameforge, and KOG Games (formerly known as Kill3rCombo)</i>
-      <p className='mt-5'>
-        Know anything about Elsword?
-        <Link href='/contributor-mode'>
-          <a className='text-sky-500 hover:underline'> Start Contribute</a>
-        </Link>
-      </p>
     </Fragment>
   )
 }
