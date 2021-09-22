@@ -6,11 +6,9 @@ import Alert from 'components/alerts'
 import { Welcome, News, Categories } from 'components/home-static'
 
 function Home() {
-  const elwiki = <a className='text-sky-500 hover:underline' href='https://elwiki.net' rel='noreferrer' target='_blank'>elwiki.net</a>
   const alertContent = (
     <p className='ml-3'>
-      This website was created for the purpose of being a <strong>PORTFOLIO</strong> and for <strong>PERSONAL</strong> use only,
-      it is not intended to plagiarize the original source {elwiki}. Everything in this website just a <strong>DEMO</strong>
+      This website was created for the purpose of being a <strong>PORTFOLIO</strong> and for <strong>PERSONAL</strong> use only. Everything in this website just a <strong>DEMO</strong>
     </p>
   )
 
