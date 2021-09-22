@@ -14,6 +14,7 @@ module.exports = {
     extend: {
       fontFamily: {
         nunito: ['Nunito'],
+        titillium: ['Titillium Web'],
       },
       colors: {
         ...colors,

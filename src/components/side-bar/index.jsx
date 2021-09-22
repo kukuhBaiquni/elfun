@@ -58,7 +58,7 @@ function Sidebar() {
   }, [setNavigation])
 
   return (
-    <nav>
+    <nav className='font-titillium'>
       <ul className='py-1 px-2 bg-gray-200 dark:bg-gray-700 min-h-[750px] max-h-full w-60 hidden sm:block transition-all duration-300'>
         <div className='relative z-10'>
           {navigation.map((item) => (
