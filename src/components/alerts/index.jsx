@@ -17,7 +17,7 @@ function Alert({ variant, text }) {
   }[variant]
   return (
     <div className={`w-full ${alert.bgColor} ${alert.textColor} ${alert.border} p-4 mb-5`}>
-      <span className='flex items-center'>
+      <span className='flex items-center text-sm'>
         <InformationCircleIcon className={`h-5 w-5 ${alert.textColor} min-w-min`} />
         {typeof text === 'string' ? (
           <p className='ml-1'>{text}</p>
