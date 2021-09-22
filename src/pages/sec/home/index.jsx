@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 import Layout from 'layouts'
 import Head from 'next/head'
 import Alert from 'components/alerts'
-import { Welcome, News, Categories } from 'components/home-static'
+import { Welcome, News, Contribute } from 'components/home-static'
 
 function Home() {
   const alertContent = (
@@ -21,7 +21,7 @@ function Home() {
         <Alert text={alertContent} variant='info' />
         <section className='px-2 mb-10'>
           <Welcome />
-          <Categories />
+          <Contribute />
           <News />
         </section>
       </main>
