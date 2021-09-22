@@ -16,9 +16,9 @@ export default function Welcome() {
       </p>
       <i>All rights are reserved (Official Art, Game Screenshots, etc.) to © KOG Studios, Nexon, Gameforge, and KOG Games (formerly known as Kill3rCombo)</i>
       <p className='mt-5'>
-        Know anything about Elsword? Try
+        Know anything about Elsword?
         <Link href='/contributor-mode'>
-          <a className='text-sky-500 hover:underline'> Contributor Mode</a>
+          <a className='text-sky-500 hover:underline'> Start Contribute</a>
         </Link>
       </p>
     </Fragment>
