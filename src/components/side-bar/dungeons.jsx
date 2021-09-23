@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 
-export default function JobPath({ data }) {
+export default function Dungeons({ data }) {
   const url = (text) => text.toLowerCase().replace(/\s/g, '-')
 
   return (
@@ -27,6 +27,6 @@ export default function JobPath({ data }) {
   )
 }
 
-JobPath.propTypes = {
+Dungeons.propTypes = {
   data: PropTypes.object,
 }

@@ -158,7 +158,7 @@ module.exports = {
           DEFAULT: '#44f0e8',
           dark: '#44f0e8',
         },
-        masterRoad: {
+        'master-road': {
           light: '#414243',
           DEFAULT: '#414243',
           dark: '#414243',
@@ -168,7 +168,7 @@ module.exports = {
           DEFAULT: '#54a3c5',
           dark: '#54a3c5',
         },
-        pruinaumOutskirt: {
+        'pruinaum-outskirt': {
           light: '#cf0077',
           DEFAULT: '#cf0077',
           dark: '#cf0077',

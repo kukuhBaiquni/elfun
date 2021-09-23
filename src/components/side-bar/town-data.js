@@ -91,6 +91,9 @@ import whiteMistSwamp from '../../../public/images/dungeons/white-mist-swamp.png
 const towns = [{
   name: 'Ruben',
   img: ruben,
+  bgColor: 'bg-ruben',
+  textColor: 'text-ruben dark:text-ruben-dark',
+  hoverBgColor: 'hover:bg-ruben',
   child: [{
     name: 'Tree of Life',
     img: treeOfLife,
@@ -104,6 +107,9 @@ const towns = [{
 }, {
   name: 'Elder',
   img: elder,
+  bgColor: 'bg-elder',
+  textColor: 'text-elder dark:text-elder-dark',
+  hoverBgColor: 'hover:bg-elder',
   child: [{
     name: 'Shadow Forest',
     img: shadowForest,
@@ -123,6 +129,9 @@ const towns = [{
 }, {
   name: 'Bethma',
   img: bethma,
+  bgColor: 'bg-bethma',
+  textColor: 'text-bethma dark:text-bethma-dark',
+  hoverBgColor: 'hover:bg-bethma',
   child: [{
     name: 'Dragon Road',
     img: dragonRoad,
@@ -145,6 +154,9 @@ const towns = [{
 }, {
   name: 'Altera',
   img: altera,
+  bgColor: 'bg-altera',
+  textColor: 'text-altera dark:text-altera-dark',
+  hoverBgColor: 'hover:bg-altera',
   child: [{
     name: 'The Black Crow',
     img: theBlackCrow,
@@ -167,6 +179,9 @@ const towns = [{
 }, {
   name: 'Feita',
   img: feita,
+  bgColor: 'bg-feita',
+  textColor: 'text-feita dark:text-feita-dark',
+  hoverBgColor: 'hover:bg-feita',
   child: [{
     name: 'Shrine of Dedication',
     img: shrineOfDedication,
@@ -189,6 +204,9 @@ const towns = [{
 }, {
   name: 'Velder',
   img: velder,
+  bgColor: 'bg-velder',
+  textColor: 'text-velder dark:text-velder-dark',
+  hoverBgColor: 'hover:bg-velder',
   child: [{
     name: 'Residential Area 3',
     img: residentialArea3,
@@ -211,6 +229,9 @@ const towns = [{
 }, {
   name: 'Hamel',
   img: hamel,
+  bgColor: 'bg-hamel',
+  textColor: 'text-hamel dark:text-hamel-dark',
+  hoverBgColor: 'hover:bg-hamel',
   child: [{
     name: 'Resiam Outskirt',
     img: resiamOutskirt,
@@ -236,6 +257,9 @@ const towns = [{
 }, {
   name: 'Sander',
   img: sander,
+  bgColor: 'bg-sander',
+  textColor: 'text-sander dark:text-sander-dark',
+  hoverBgColor: 'hover:bg-sander',
   child: [{
     name: 'Barren Sander',
     img: barrenSander,
@@ -258,6 +282,9 @@ const towns = [{
 }, {
   name: 'Lanox',
   img: lanox,
+  bgColor: 'bg-lanox',
+  textColor: 'text-lanox dark:text-lanox-dark',
+  hoverBgColor: 'hover:bg-lanox',
   child: [{
     name: 'Burnt Forest',
     img: burntForest,
@@ -280,6 +307,9 @@ const towns = [{
 }, {
   name: 'Atlas',
   img: atlas,
+  bgColor: 'bg-atlas',
+  textColor: 'text-atlas dark:text-atlas-dark',
+  hoverBgColor: 'hover:bg-atlas',
   child: [{
     name: 'Diceon Mines',
     img: diceonMines,
@@ -293,6 +323,9 @@ const towns = [{
 }, {
   name: 'Elysion',
   img: elysion,
+  bgColor: 'bg-elysion',
+  textColor: 'text-elysion dark:text-elysion-dark',
+  hoverBgColor: 'hover:bg-elysion',
   child: [{
     name: 'Celestial Crossroad',
     img: celestialCrossroad,
@@ -309,6 +342,9 @@ const towns = [{
 }, {
   name: 'Elrianode',
   img: elrianode,
+  bgColor: 'bg-elrianode',
+  textColor: 'text-elrianode dark:text-elrianode-dark',
+  hoverBgColor: 'hover:bg-elrianode',
   child: [{
     name: 'Hall of El',
     img: hallOfEl,
@@ -331,6 +367,9 @@ const towns = [{
 }, {
   name: 'Varnimyr',
   img: varnimyr,
+  bgColor: 'bg-varnimyr',
+  textColor: 'text-varnimyr dark:text-varnimyr-dark',
+  hoverBgColor: 'hover:bg-varnimyr',
   child: [{
     name: 'Labyrinth of Ruin',
     img: labyrinthOfRuin,
@@ -359,15 +398,31 @@ const towns = [{
 }, {
   name: 'Rigomor',
   img: general,
+  bgColor: 'bg-rigomor',
+  textColor: 'text-rigomor dark:text-rigomor-dark',
+  hoverBgColor: 'hover:bg-rigomor',
+  child: [],
 }, {
   name: 'Master Road',
+  bgColor: 'bg-master-road',
+  textColor: 'text-master-road dark:text-master-road-dark',
+  hoverBgColor: 'hover:bg-master-road',
   img: general,
+  child: [],
 }, {
   name: 'Pruinaum',
+  bgColor: 'bg-pruinaum',
+  textColor: 'text-pruinaum dark:text-pruinaum-dark',
+  hoverBgColor: 'hover:bg-pruinaum',
   img: pruinaum,
+  child: [],
 }, {
   name: 'Pruinaum Outskirt',
+  bgColor: 'bg-pruinaum-outskirt',
+  textColor: 'text-pruinaum-outskirt dark:text-pruinaum-outskirt-dark',
+  hoverBgColor: 'hover:bg-pruinaum-outskirt',
   img: general,
+  child: [],
 }]
 
 export default towns
