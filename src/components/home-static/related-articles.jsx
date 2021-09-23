@@ -30,7 +30,7 @@ export default function RelatedArticles() {
       <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 mt-4'>
         {articles.map((item) => (
           <div className='relative group p-2 h-[200px]' key={item.title}>
-            <div className='w-full h-full bg-black absolute z-10 top-0 left-0 opacity-0 group-hover:opacity-80 transition-all duration-300' />
+            <div className='w-full h-full bg-black absolute z-10 top-0 left-0 opacity-0 group-hover:opacity-90 transition-all duration-300' />
             <Image
               alt='Elsword World'
               className='object-cover w-full h-full'
