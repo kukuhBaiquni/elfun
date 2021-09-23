@@ -1,4 +1,5 @@
 import { Fragment } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import towns from './town-data'
 
@@ -14,6 +15,13 @@ function Towns() {
         >
           <Link href={`/town/${url(item.name)}`}>
             <a className='flex items-center p-1 group-hover:text-white'>
+              <Image
+                alt={item.name}
+                className='object-cover'
+                height={20}
+                src={item.img}
+                width={20}
+              />
               <p className='ml-1.5'>{item.name}</p>
             </a>
           </Link>
