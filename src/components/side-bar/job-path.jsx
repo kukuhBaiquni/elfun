@@ -15,6 +15,7 @@ function JobPath({ data }) {
                 alt={item.name}
                 className='object-cover'
                 height={20}
+                loading='eager'
                 src={item.img}
                 width={20}
               />
@@ -31,6 +32,7 @@ function JobPath({ data }) {
                         alt={job.name}
                         className='object-cover'
                         height={20}
+                        loading='eager'
                         src={job.img}
                         width={20}
                       />

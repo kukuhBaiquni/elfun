@@ -9,10 +9,10 @@ const characters = [{
     img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Fsword-knight.png?alt=media&token=800e5e6f-7bbd-4b81-8fed-946d05be895a',
     child: [{
       name: 'Lord Knight',
-      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Flord-knight.png?alt=media&token=81bd2f53-5d06-4651-82a6-eaec7f9b8bc6',
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Flord-knight.png?alt=media&token=da9f6b22-4899-4f15-9c04-6028e3bbe912',
     }, {
       name: 'Lord Knight Transcendent',
-      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Flord-knight-trans.png?alt=media&token=b61cf7df-af29-4e55-b352-815af77283ad',
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Flord-knight-trans.png?alt=media&token=625697f8-1bf5-4656-bb26-5bdb18c65bc3',
     }, {
       name: 'Knight Emperor',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Fknight-emperor.png?alt=media&token=f61d4722-9fad-4365-ad84-e396aa597156',
@@ -348,7 +348,7 @@ const characters = [{
   }],
 }, {
   name: 'Elesis',
-  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felesis%2Felesis.png?alt=media&token=e0314838-4bbf-4009-97d7-da898f92d569',
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felesis%2Felesis.png?alt=media&token=99c20cbc-d08a-4db1-9607-29f2c3bbe82c',
   bgColor: 'bg-elesis',
   textColor: 'text-elesis dark:text-elesis-dark',
   hoverBgColor: 'hover:bg-elesis',
@@ -395,7 +395,7 @@ const characters = [{
   }],
 }, {
   name: 'Add',
-  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fadd%2Fadd.png?alt=media&token=7d5d4fd8-9954-4cc6-8117-b205d01fe363',
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fadd%2Fadd.png?alt=media&token=f83ea6aa-317e-4526-8ff7-d06de0c04c0f',
   bgColor: 'bg-add',
   textColor: 'text-add',
   hoverBgColor: 'hover:bg-add',
@@ -450,7 +450,7 @@ const characters = [{
   }],
 }, {
   name: 'Lu',
-  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flu-ciel%2Flu.png?alt=media&token=add1b13f-873a-477e-bfc7-f89d94702b96',
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flu-ciel%2Flu.png?alt=media&token=7c309cbe-325e-48a9-9c16-a9d67289c046',
   bgColor: 'bg-luciel',
   textColor: 'text-luciel dark:text-luciel-dark',
   hoverBgColor: 'hover:bg-luciel',

@@ -1,25 +1,21 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import elswordWorld from '../../../public/images/articles/elsword-world.jpg'
-import npc from '../../../public/images/articles/npc.jpg'
-import story from '../../../public/images/articles/story.jpg'
-import itemMall from '../../../public/images/articles/item-mall.jpg'
 
 const articles = [{
   title: 'Elsword World',
-  img: elswordWorld,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Farticle%2Felsword-world.jpg?alt=media&token=b1020221-4b36-4fe1-a937-314586d8f6a3',
   path: '/related-articles/elsword-world',
 }, {
   title: 'Non Playable Character (NPC)',
-  img: npc,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Farticle%2Fnpc.jpg?alt=media&token=e82c9e7c-18c3-443e-85e8-4fddc8622f82',
   path: '/related-articles/npc',
 }, {
   title: 'Item Mall & Ice Burner',
-  img: itemMall,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Farticle%2Fitem-mall.jpg?alt=media&token=a5ab4a67-64ac-43fb-a1d3-a0d74bd6df02',
   path: '/related-articles/item-mall',
 }, {
   title: 'Story',
-  img: story,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Farticle%2Fstory.jpg?alt=media&token=73c48d9a-8ce5-4885-902e-131a5b647c18',
   path: '/related-articles/story',
 }]
 
@@ -38,6 +34,7 @@ export default function RelatedArticles() {
               alt='Elsword World'
               className='object-cover w-full h-full'
               layout='fill'
+              loading='eager'
               src={item.img}
             />
             <div className='mx-auto flex items-center justify-center flex-col absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-[-30%] opacity-0 group-hover:translate-y-[-55%] group-hover:opacity-100 z-10 transition-all duration-300'>
