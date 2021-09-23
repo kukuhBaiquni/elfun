@@ -5,28 +5,6 @@
 @layer base {
   body {
     @apply font-nunito;
-    @media only screen and (min-width: 576px) {
-      &::-webkit-scrollbar {
-        width: .6vh;
-        height: .6vh;
-      };
-
-      &::-webkit-scrollbar-track {
-        @apply bg-gray-300 dark:bg-gray-600;
-      };
-
-      &::-webkit-scrollbar-corner {
-        background: transparent;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        @apply bg-gray-400 rounded;
-      };
-
-      &::-webkit-scrollbar-thumb:hover {
-        @apply bg-gray-400 dark:bg-gray-700;
-      };
-    }
   }
   .btn-primary {
     @apply bg-cyan-400 px-8 py-2 hover:bg-cyan-500 rounded text-gray-50 transition-all duration-300 border-none outline-none
