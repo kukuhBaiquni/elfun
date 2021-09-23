@@ -9,7 +9,7 @@ function Header() {
   const { theme, setTheme } = useDarkMode()
 
   return (
-    <header className='fixed z-20 w-full drop-shadow-sm border-b border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 transition-all duration-300'>
+    <header className='fixed z-30 w-full drop-shadow-sm border-b border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 transition-all duration-300'>
       <div className='h-20 max-w-screen-2xl mx-auto flex items-center justify-between px-4 py-2 '>
         <Link href='/'>
           <a className='flex items-center cursor-pointer'>

@@ -60,7 +60,7 @@ function Sidebar() {
   return (
     <nav className='font-titillium mr-0 sm:mr-3 hidden lg:block'>
       <ul className='py-2 px-2 bg-gray-200 dark:bg-gray-700 min-h-[750px] max-h-full w-52 transition-all duration-300'>
-        <div className='relative z-10'>
+        <div className='relative z-20'>
           {navigation.map((item) => (
             item.childData ? (
               <Fragment key={item.name}>
