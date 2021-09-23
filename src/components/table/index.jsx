@@ -11,14 +11,14 @@ export default function Table(props) {
     rows,
     prepareRow,
   } = tableInstance
+
   return (
-  // apply the table props
-    <table {...getTableProps()}>
+    <table {...getTableProps()} className='border-collapse min-w-max'>
       <thead>
         {headerGroups.map((headerGroup, i) => (
           <tr key={i} {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column, j) => (
-              <th key={j} {...column.getHeaderProps()}>
+              <th className='px-3 py-2 text-left font-titillium text-lg border border-gray-300 dark:border-gray-600 bg-gray-200 dark:bg-gray-700' key={j} {...column.getHeaderProps()}>
                 { column.render('Header') }
               </th>
             ))}
@@ -31,7 +31,7 @@ export default function Table(props) {
           return (
             <tr key={i} {...row.getRowProps()}>
               { row.cells.map((cell, j) => (
-                <td key={j} {...cell.getCellProps()}>
+                <td className='px-3 py-2 text-left border border-gray-300 dark:border-gray-600' key={j} {...cell.getCellProps()}>
                   { cell.render('Cell') }
                 </td>
               ))}
