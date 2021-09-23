@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Fragment } from 'react'
 
+const category = ['Character', 'Town', 'Dungeon', 'NPC', 'Title', 'Equipment']
+
 export default function Contribution() {
   const router = useRouter()
   return (
@@ -21,48 +23,15 @@ export default function Contribution() {
         </p>
         <p>First choose which category you want to contribute.</p>
         <ul className='list-disc pl-5 mt-5'>
-          <li>
-            <Link href={`${router.pathname}/character`}>
-              <a className='text-sky-500 hover:underline'>
-                Character
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href={`${router.pathname}/town`}>
-              <a className='text-sky-500 hover:underline'>
-                Town
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href={`${router.pathname}/dungeon`}>
-              <a className='text-sky-500 hover:underline'>
-                Dungeon
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href={`${router.pathname}/npc`}>
-              <a className='text-sky-500 hover:underline'>
-                NPC
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href={`${router.pathname}/title`}>
-              <a className='text-sky-500 hover:underline'>
-                Title
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href={`${router.pathname}/equipment`}>
-              <a className='text-sky-500 hover:underline'>
-                Equipment
-              </a>
-            </Link>
-          </li>
+          {category.map((item) => (
+            <li key={item}>
+              <Link href={`${router.pathname}/${item.toLowerCase()}`}>
+                <a className='text-sky-500 hover:underline'>
+                  {item}
+                </a>
+              </Link>
+            </li>
+          ))}
         </ul>
       </main>
     </Fragment>
