@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import towns from './town-data'
+import Dungeons from './dungeons'
 
 function Towns() {
   const url = (text) => text.toLowerCase().replace(/\s/g, '-')
@@ -10,7 +11,7 @@ function Towns() {
     <Fragment>
       {towns.map((item) => (
         <li
-          className='relative hover:text-white cursor-pointer text-gray-600 dark:text-gray-400 dark:hover:text-white group hover:bg-sky-500 hover:translate-x-2 transition-transform-opacity duration-300'
+          className={`relative hover:text-white cursor-pointer text-gray-600 dark:text-gray-400 dark:hover:text-white group ${item.hoverBgColor} hover:translate-x-2 transition-transform-opacity duration-300`}
           key={item.name}
         >
           <Link href={`/town/${url(item.name)}`}>
@@ -25,6 +26,7 @@ function Towns() {
               <p className='ml-1.5'>{item.name}</p>
             </a>
           </Link>
+          <Dungeons data={item} />
         </li>
       ))}
     </Fragment>

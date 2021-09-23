@@ -106,17 +106,17 @@ module.exports = {
         altera: {
           light: '#782f0f',
           DEFAULT: '#782f0f',
-          dark: '#782f0f',
+          dark: '#AA5C3A',
         },
         feita: {
           light: '#800c9d',
           DEFAULT: '#800c9d',
-          dark: '#800c9d',
+          dark: '#A54CBB',
         },
         velder: {
           light: '#be352b',
           DEFAULT: '#be352b',
-          dark: '#be352b',
+          dark: '#E66157',
         },
         hamel: {
           light: '#007be4',
@@ -124,7 +124,7 @@ module.exports = {
           dark: '#007be4',
         },
         sander: {
-          light: '#f2e26d',
+          light: '#E0CB36',
           DEFAULT: '#f2e26d',
           dark: '#f2e26d',
         },
@@ -151,7 +151,7 @@ module.exports = {
         varnimyr: {
           light: '#5150d9',
           DEFAULT: '#5150d9',
-          dark: '#5150d9',
+          dark: '#8382DC',
         },
         rigomor: {
           light: '#44f0e8',
