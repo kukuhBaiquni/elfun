@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { ChevronDownIcon, MoonIcon, SunIcon } from '@heroicons/react/solid'
 import useDarkMode from 'hooks/useDarkMode'
 import logo from '../../../public/images/logo.png'
-import ws from '../../../public/images/avatar/rena/wind-sneaker-trans.png'
 
 function Header() {
   const { theme, setTheme } = useDarkMode()
@@ -39,7 +38,7 @@ function Header() {
             <Image
               alt='Trans Logo'
               height={30}
-              src={ws}
+              src='https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Freckless-fist.png?alt=media&token=0123d1ce-7cc2-4e87-a47c-c2107e059cd2'
               width={30}
             />
             <ChevronDownIcon className='h5 w-5 ml-1' />

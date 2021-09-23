@@ -1,63 +1,3 @@
-import elsword from '../../../public/images/avatar/elsword/elsword.png'
-import swordKnight from '../../../public/images/avatar/elsword/sword-knight.png'
-import lordKnight from '../../../public/images/avatar/elsword/lord-knight.png'
-import lordKnightTrans from '../../../public/images/avatar/elsword/lord-knight-trans.png'
-import knightEmperor from '../../../public/images/avatar/elsword/knight-emperor.png'
-import magicKnight from '../../../public/images/avatar/elsword/magic-knight.png'
-import runeSlayer from '../../../public/images/avatar/elsword/rune-slayer.png'
-import runeSlayerTrans from '../../../public/images/avatar/elsword/rune-slayer-trans.png'
-import runeMaster from '../../../public/images/avatar/elsword/rune-master.png'
-import sheathKnight from '../../../public/images/avatar/elsword/sheath-knight.png'
-import infinitySword from '../../../public/images/avatar/elsword/infinity-sword.png'
-import infinitySwordTrans from '../../../public/images/avatar/elsword/infinity-sword-trans.png'
-import immortal from '../../../public/images/avatar/elsword/immortal.png'
-import rootKnight from '../../../public/images/avatar/elsword/root-knight.png'
-import sacredTemplar from '../../../public/images/avatar/elsword/sacred-templar.png'
-import sacredTemplarTrans from '../../../public/images/avatar/elsword/sacred-templar-trans.png'
-import genesis from '../../../public/images/avatar/elsword/genesis.png'
-
-import aisha from '../../../public/images/avatar/aisha/aisha.png'
-import highMagician from '../../../public/images/avatar/aisha/high-magician.png'
-import elementalMaster from '../../../public/images/avatar/aisha/elemental-master.png'
-import elementalMasterTrans from '../../../public/images/avatar/aisha/elemental-master-trans.png'
-import aetherSage from '../../../public/images/avatar/aisha/aether-sage.png'
-import darkMagician from '../../../public/images/avatar/aisha/dark-magician.png'
-import voidPrincess from '../../../public/images/avatar/aisha/void-princess.png'
-import voidPrincessTrans from '../../../public/images/avatar/aisha/void-princess-trans.png'
-import ozSorcerer from '../../../public/images/avatar/aisha/oz-sorcerer.png'
-import battleMagician from '../../../public/images/avatar/aisha/battle-magician.png'
-import dimensionWitch from '../../../public/images/avatar/aisha/dimension-witch.png'
-import dimensionWitchTrans from '../../../public/images/avatar/aisha/dimension-witch-trans.png'
-import metamorphy from '../../../public/images/avatar/aisha/metamorphy.png'
-
-import rena from '../../../public/images/avatar/rena/rena.png'
-import combatRanger from '../../../public/images/avatar/rena/combat-ranger.png'
-import windSneaker from '../../../public/images/avatar/rena/wind-sneaker.png'
-import windSneakerTrans from '../../../public/images/avatar/rena/wind-sneaker-trans.png'
-import anemos from '../../../public/images/avatar/rena/anemos.png'
-import snipingRanger from '../../../public/images/avatar/rena/sniping-ranger.png'
-import grandArcher from '../../../public/images/avatar/rena/grand-archer.png'
-import grandArcherTrans from '../../../public/images/avatar/rena/grand-archer-trans.png'
-import daybreaker from '../../../public/images/avatar/rena/daybreaker.png'
-import trappingRanger from '../../../public/images/avatar/rena/trapping-ranger.png'
-import nightWatcher from '../../../public/images/avatar/rena/night-watcher.png'
-import nightWatcherTrans from '../../../public/images/avatar/rena/night-watcher-trans.png'
-import twilight from '../../../public/images/avatar/rena/twilight.png'
-
-import raven from '../../../public/images/avatar/raven/raven.png'
-import overTaker from '../../../public/images/avatar/raven/over-taker.png'
-import recklessFist from '../../../public/images/avatar/raven/reckless-fist.png'
-import recklessFistTrans from '../../../public/images/avatar/raven/reckless-fist-trans.png'
-import rageHearts from '../../../public/images/avatar/raven/rage-hearts.png'
-import swordTaker from '../../../public/images/avatar/raven/sword-taker.png'
-import bladeMaster from '../../../public/images/avatar/raven/blade-master.png'
-import bladeMasterTrans from '../../../public/images/avatar/raven/blade-master-trans.png'
-import furiousBlade from '../../../public/images/avatar/raven/furious-blade.png'
-import weaponTaker from '../../../public/images/avatar/raven/weapon-taker.png'
-import veteranCommander from '../../../public/images/avatar/raven/veteran-commander.png'
-import veteranCommanderTrans from '../../../public/images/avatar/raven/veteran-commander-trans.png'
-import novaImperator from '../../../public/images/avatar/raven/nova-imperator.png'
-
 import eve from '../../../public/images/avatar/eve/eve.png'
 import codeExotic from '../../../public/images/avatar/eve/code-exotic.png'
 import codeNemesis from '../../../public/images/avatar/eve/code-nemesis.png'
@@ -275,140 +215,140 @@ const characters = [{
   }],
 }, {
   name: 'Aisha',
-  img: aisha,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Faisha.png?alt=media&token=83ed3a09-1aaf-4c2a-8aab-bfb9f541cf65',
   bgColor: 'bg-aisha',
   textColor: 'text-aisha dark:text-aisha-dark',
   hoverBgColor: 'hover:bg-aisha',
   child: [{
     name: 'High Magician',
-    img: highMagician,
+    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Fhigh-magician.png?alt=media&token=1d92ff19-3f80-496c-b7ff-ce304ed5430d',
     child: [{
       name: 'Elemental Master',
-      img: elementalMaster,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Felemental-master.png?alt=media&token=3f150e4a-57ad-4e57-abbb-51dfc77bd71f',
     }, {
       name: 'Elemental Master Transcendent',
-      img: elementalMasterTrans,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Felemental-master-trans.png?alt=media&token=23821e85-1466-4e60-bd10-360090bc30f5',
     }, {
       name: 'Aether Sage',
-      img: aetherSage,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Faether-sage.png?alt=media&token=a2b72dfa-de33-43ad-890b-3b331e317ab3',
     }],
   }, {
     name: 'Dark Magician',
-    img: darkMagician,
+    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Fdark-magician.png?alt=media&token=8a4ebb8a-ed19-4e96-ae84-5bdbbcb4ee4c',
     child: [{
       name: 'Void Princess',
-      img: voidPrincess,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Fvoid-princess.png?alt=media&token=d6a75ae9-94a2-4cd1-bcfa-99a172332f7f',
     }, {
       name: 'Void Princess Transcendent',
-      img: voidPrincessTrans,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Fvoid-princess-trans.png?alt=media&token=a12b5a80-6208-4a7a-853a-f4645e969b53',
     }, {
       name: 'Oz Sorcerer',
-      img: ozSorcerer,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Foz-sorcerer.png?alt=media&token=9be7ff50-5c77-4dc4-b59b-c613ee41c013',
     }],
   }, {
     name: 'Battle Magician',
-    img: battleMagician,
+    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Fbattle-magician.png?alt=media&token=3c9810b8-0f88-4e2b-a098-a293577c8994',
     child: [{
       name: 'Dimension Witch',
-      img: dimensionWitch,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Fdimension-witch.png?alt=media&token=3aba92d1-6418-42f6-afba-964a687c1bb5',
     }, {
       name: 'Dimension Witch Transcendent',
-      img: dimensionWitchTrans,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Fdimension-witch-trans.png?alt=media&token=492ed58c-a3ae-4a11-bc22-7636ca410f9f',
     }, {
       name: 'Metamorphy',
-      img: metamorphy,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Fmetamorphy.png?alt=media&token=b86f5d7b-df42-4da5-b384-61af4b9ec3d7',
     }],
   }],
 }, {
   name: 'Rena',
-  img: rena,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Frena.png?alt=media&token=7efb02c0-cb99-4023-ac3f-566cfeda605a',
   bgColor: 'bg-rena',
   textColor: 'text-rena',
   hoverBgColor: 'hover:bg-rena',
   child: [{
     name: 'Combat Ranger',
-    img: combatRanger,
+    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Fcombat-ranger.png?alt=media&token=a24e9307-7c63-4b14-a605-0a69cfe7f556',
     child: [{
       name: 'Wind Sneaker',
-      img: windSneaker,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Fwind-sneaker.png?alt=media&token=17eb0ebe-2293-4dbb-bf24-ee2abb1b59c4',
     }, {
       name: 'Wind Sneaker Transcendent',
-      img: windSneakerTrans,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Fwind-sneaker-trans.png?alt=media&token=9fb2979e-e9c1-4e14-bb97-4fc21db0e77d',
     }, {
       name: 'Anemos',
-      img: anemos,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Fanemos.png?alt=media&token=3a8a1108-f72a-48be-ac5c-3a24c4aebad7',
     }],
   }, {
     name: 'Sniping Ranger',
-    img: snipingRanger,
+    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Fsniping-ranger.png?alt=media&token=8b4a7875-fdc8-46f8-8acf-bdd413f89283',
     child: [{
       name: 'Grand Archer',
-      img: grandArcher,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Fgrand-archer.png?alt=media&token=28934e81-a65e-420a-be1a-8cdf7e2179f4',
     }, {
       name: 'Grand Archer Transcendent',
-      img: grandArcherTrans,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Fgrand-archer-trans.png?alt=media&token=e369279f-df3d-4b73-bdcf-8457381afbc7',
     }, {
       name: 'Daybreaker',
-      img: daybreaker,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Fdaybreaker.png?alt=media&token=350e8ee1-2927-48c8-bea3-a47e3dd56947',
     }],
   }, {
     name: 'Trapping Ranger',
-    img: trappingRanger,
+    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Ftrapping-ranger.png?alt=media&token=920b086b-0a02-46e4-87f0-12f75a18299b',
     child: [{
       name: 'Night Watcher',
-      img: nightWatcher,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Fnight-watcher.png?alt=media&token=57f1089f-835a-4707-b493-bb3c4b3565bb',
     }, {
       name: 'Night Watcher Transcendent',
-      img: nightWatcherTrans,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Fnight-watcher-trans.png?alt=media&token=0ef559ec-7aec-4491-85f7-79329808cf58',
     }, {
       name: 'Twilight',
-      img: twilight,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Ftwilight.png?alt=media&token=7ac37e2a-66cd-44cd-9cf3-77f20d682a98',
     }],
   }],
 }, {
   name: 'Raven',
-  img: raven,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Fraven.png?alt=media&token=f5678b62-ce43-4c44-9a22-55b2fbc00ebe',
   bgColor: 'bg-raven',
   textColor: 'text-raven dark:text-raven-dark',
   hoverBgColor: 'hover:bg-raven',
   child: [{
     name: 'Sword Taker',
-    img: swordTaker,
+    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Fsword-taker.png?alt=media&token=739eacbb-d8d5-454b-bdca-b5aae77763c0',
     child: [{
       name: 'Blade Master',
-      img: bladeMaster,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Fblade-master.png?alt=media&token=7813a963-4a5c-4d92-9a9a-704aa34555dc',
     }, {
       name: 'Blade Master Transcendent',
-      img: bladeMasterTrans,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Fblade-master-trans.png?alt=media&token=4b60441b-ca1e-4625-a6e6-88e71667f524',
     }, {
       name: 'Furious Blade',
-      img: furiousBlade,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Ffurious-blade.png?alt=media&token=47d5d10b-30bc-4494-90ab-1cb9ad04f843',
     }],
   }, {
     name: 'Over Taker',
-    img: overTaker,
+    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Fover-taker.png?alt=media&token=f69fb9d2-434d-4f50-9843-e6d24994b1e7',
     child: [{
       name: 'Reckless Fist',
-      img: recklessFist,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Freckless-fist.png?alt=media&token=0123d1ce-7cc2-4e87-a47c-c2107e059cd2',
     }, {
       name: 'Reckless Fist Transcendent',
-      img: recklessFistTrans,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Freckless-fist-trans.png?alt=media&token=135d780a-bf6d-438f-a4e4-93e4c70d8057',
     }, {
       name: 'Rage Hearts',
-      img: rageHearts,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Frage-hearts.png?alt=media&token=0a52a622-604d-4ac0-b0b4-032b774448d9',
     }],
   }, {
     name: 'Weapon Taker',
-    img: weaponTaker,
+    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Fweapon-taker.png?alt=media&token=59e403ff-9210-48c5-b6d5-48267cabc225',
     child: [{
       name: 'Veteran Commander',
-      img: veteranCommander,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Fveteran-commander.png?alt=media&token=e33a0696-32a8-41aa-987f-e2697d53ec90',
     }, {
       name: 'Veteran Commander Transcendent',
-      img: veteranCommanderTrans,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Fveteran-commander-trans.png?alt=media&token=fa68b45d-40d2-41de-bd34-cdbd31402826',
     }, {
       name: 'Nova Imperator',
-      img: novaImperator,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Fnova-imperator.png?alt=media&token=b6fea89a-8d10-4ba8-ab4e-e54e27aba9b9',
     }],
   }],
 }, {
