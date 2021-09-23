@@ -18,6 +18,8 @@ function Home() {
     <Fragment>
       <Head>
         <title>Elfun</title>
+        <meta content='Information for game Elsword' name='description' />
+        <meta content='Elsword, MMORPG, Hit and Slash' name='keywords' />
       </Head>
       <main className='text-gray-600 dark:text-gray-400'>
         <Alert text={alertContent} variant='info' />
