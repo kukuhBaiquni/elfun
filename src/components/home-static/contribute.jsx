@@ -89,7 +89,7 @@ export default function Contribute() {
                 <ExternalLinkIcon className='w-4 h-4' />
               </a>
             </Link>
-            <ul className='list-disc pl-5 pr-1 mt-3'>
+            <ul className='list-disc pl-5 pr-1 mt-2'>
               {item.list.map((act, index) => (
                 <li key={index}>{act}</li>
               ))}

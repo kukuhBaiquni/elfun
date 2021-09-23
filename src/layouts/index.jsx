@@ -16,9 +16,9 @@ function Layout({ children }) {
           </div>
         </div>
       </div>
-      <footer className='bg-gray-200 dark:bg-gray-700 w-full h-[200px]'>
+      <footer className='bg-gray-200 dark:bg-gray-700 w-full p-3'>
         <div className='max-w-screen-2xl mx-auto h-full'>
-          Kukuh Baiquni © 2020
+          <p className='text-center text-gray-300'>Kukuh Baiquni © 2021 - Technology Stack in this website (Next JS, React JS, Tailwind CSS, Node JS, Express JS, Mongo DB, Mongo DB Atlas, Heroku, Vercel, Firebase)</p>
         </div>
       </footer>
     </div>

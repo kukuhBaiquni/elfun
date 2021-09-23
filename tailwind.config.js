@@ -88,6 +88,91 @@ module.exports = {
           DEFAULT: '#7a61eb',
           dark: '#7a61eb',
         },
+        ruben: {
+          light: '#3cd44a',
+          DEFAULT: '#3cd44a',
+          dark: '#3cd44a',
+        },
+        elder: {
+          light: '#34afef',
+          DEFAULT: '#34afef',
+          dark: '#34afef',
+        },
+        bethma: {
+          light: '#f7812b',
+          DEFAULT: '#f7812b',
+          dark: '#f7812b',
+        },
+        altera: {
+          light: '#782f0f',
+          DEFAULT: '#782f0f',
+          dark: '#782f0f',
+        },
+        feita: {
+          light: '#800c9d',
+          DEFAULT: '#800c9d',
+          dark: '#800c9d',
+        },
+        velder: {
+          light: '#be352b',
+          DEFAULT: '#be352b',
+          dark: '#be352b',
+        },
+        hamel: {
+          light: '#007be4',
+          DEFAULT: '#007be4',
+          dark: '#007be4',
+        },
+        sander: {
+          light: '#f2e26d',
+          DEFAULT: '#f2e26d',
+          dark: '#f2e26d',
+        },
+        lanox: {
+          light: '#e94f0f',
+          DEFAULT: '#e94f0f',
+          dark: '#e94f0f',
+        },
+        atlas: {
+          light: '#e56855',
+          DEFAULT: '#e56855',
+          dark: '#e56855',
+        },
+        elysion: {
+          light: '#ff2e55',
+          DEFAULT: '#ff2e55',
+          dark: '#ff2e55',
+        },
+        elrianode: {
+          light: '#878aff',
+          DEFAULT: '#878aff',
+          dark: '#878aff',
+        },
+        varnimyr: {
+          light: '#5150d9',
+          DEFAULT: '#5150d9',
+          dark: '#5150d9',
+        },
+        rigomor: {
+          light: '#44f0e8',
+          DEFAULT: '#44f0e8',
+          dark: '#44f0e8',
+        },
+        masterRoad: {
+          light: '#414243',
+          DEFAULT: '#414243',
+          dark: '#414243',
+        },
+        pruinaum: {
+          light: '#54a3c5',
+          DEFAULT: '#54a3c5',
+          dark: '#54a3c5',
+        },
+        pruinaumOutskirt: {
+          light: '#cf0077',
+          DEFAULT: '#cf0077',
+          dark: '#cf0077',
+        },
       },
       height: {
         sidebar: '750px',
