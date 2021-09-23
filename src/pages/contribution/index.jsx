@@ -1,13 +1,39 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/display-name */
 import Layout from 'layouts'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { Fragment } from 'react'
+import { Fragment, useMemo } from 'react'
+import Table from 'components/table'
+import data from './dummy.json'
 
 const category = ['Character', 'Town', 'Dungeon', 'NPC', 'Title', 'Equipment']
 
 export default function Contribution() {
   const router = useRouter()
+
+  const columns = useMemo(() => [{
+    Header: 'Name',
+    accessor: 'name',
+    Cell: ({ value }) => (
+      <Link href='/contributor/id'>
+        <a className='font-titillium text-base hover:underline text-sky-500 flex items-center py-1 px-2 transition-all duration-300'>
+          {value}
+        </a>
+      </Link>
+    ),
+  }, {
+    Header: 'Contribution Point',
+    accessor: 'point',
+  }, {
+    Header: 'Rank',
+    accessor: 'rank',
+  }, {
+    Header: 'Join Date',
+    accessor: 'joinDate',
+  }], [])
+
   return (
     <Fragment>
       <Head>
@@ -33,6 +59,10 @@ export default function Contribution() {
             </li>
           ))}
         </ul>
+        <h3 className='text-2xl font-semibold font-titillium dark:text-sky-400 text-sky-600 mt-6 mb-3'>Top Contributor</h3>
+        <div className='max-w-screen-lg overflow-x-auto'>
+          <Table columns={columns} data={data} />
+        </div>
       </main>
     </Fragment>
   )
