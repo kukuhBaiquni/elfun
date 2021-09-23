@@ -216,61 +216,61 @@ import nyxPieta from '../../../public/images/avatar/noah/nyx-pieta.png'
 
 const characters = [{
   name: 'Elsword',
-  img: elsword,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Felsword.png?alt=media&token=590001bd-3af0-403c-a578-8e2e3b713e32',
   bgColor: 'bg-elsword',
   textColor: 'text-elsword dark:text-elsword-dark',
   hoverBgColor: 'hover:bg-elsword',
   child: [{
     name: 'Sword Knight',
-    img: swordKnight,
+    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Fsword-knight.png?alt=media&token=800e5e6f-7bbd-4b81-8fed-946d05be895a',
     child: [{
       name: 'Lord Knight',
-      img: lordKnight,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Flord-knight.png?alt=media&token=81bd2f53-5d06-4651-82a6-eaec7f9b8bc6',
     }, {
       name: 'Lord Knight Transcendent',
-      img: lordKnightTrans,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Flord-knight-trans.png?alt=media&token=b61cf7df-af29-4e55-b352-815af77283ad',
     }, {
       name: 'Knight Emperor',
-      img: knightEmperor,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Fknight-emperor.png?alt=media&token=f61d4722-9fad-4365-ad84-e396aa597156',
     }],
   }, {
     name: 'Magic Knight',
-    img: magicKnight,
+    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Fmagic-knight.png?alt=media&token=2ba86346-23d0-4a7e-91a2-a1faeb6e3dac',
     child: [{
       name: 'Rune Slayer',
-      img: runeSlayer,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Frune-slayer.png?alt=media&token=87e4489c-f8e9-490b-be6e-3cb8cf9d7a25',
     }, {
       name: 'Rune Slayer Transcendent',
-      img: runeSlayerTrans,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Frune-slayer-trans.png?alt=media&token=694be52f-c73f-4097-9d53-3187de5f06ee',
     }, {
       name: 'Rune Master',
-      img: runeMaster,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Frune-master.png?alt=media&token=15496cf6-ad41-4b12-9c36-5b721967473b',
     }],
   }, {
     name: 'Sheath Knight',
-    img: sheathKnight,
+    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Fsheath-knight.png?alt=media&token=8a10fbce-e018-490b-8027-90cd42b881e1',
     child: [{
       name: 'Infinity Sword',
-      img: infinitySword,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Finfinity-sword.png?alt=media&token=7905c1fd-3f63-4fd9-af42-164cc8399b55',
     }, {
       name: 'Infinity Sword Transcendent',
-      img: infinitySwordTrans,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Finfinity-sword-trans.png?alt=media&token=ad4b1baf-b75f-480f-900f-957f8530e2be',
     }, {
       name: 'Immortal',
-      img: immortal,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Fimmortal.png?alt=media&token=4b0c3fbf-30e9-4c24-bab0-cc5078a63d4c',
     }],
   }, {
     name: 'Root Knight',
-    img: rootKnight,
+    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Froot-knight.png?alt=media&token=675a9874-725b-4c53-9efb-d04a874e0b9a',
     child: [{
       name: 'Sacred Templar',
-      img: sacredTemplar,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Fsacred-templar.png?alt=media&token=c9320eac-4912-42ad-b31f-df96f72ee56e',
     }, {
       name: 'Sacred Templar Transcendent',
-      img: sacredTemplarTrans,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Fsacred-templar-trans.png?alt=media&token=b7e00465-4375-4576-9b3d-f7950521d932',
     }, {
       name: 'Genesis',
-      img: genesis,
+      img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Fgenesis.png?alt=media&token=9f7b734a-d5ad-453b-8389-4dc69aa569e3',
     }],
   }],
 }, {
