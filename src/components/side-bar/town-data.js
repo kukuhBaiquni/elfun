@@ -1,19 +1,3 @@
-import ruben from '../../../public/images/towns/ruben.png'
-import elder from '../../../public/images/towns/elder.png'
-import bethma from '../../../public/images/towns/bethma.png'
-import altera from '../../../public/images/towns/altera.png'
-import feita from '../../../public/images/towns/feita.png'
-import velder from '../../../public/images/towns/velder.png'
-import hamel from '../../../public/images/towns/hamel.png'
-import sander from '../../../public/images/towns/sander.png'
-import lanox from '../../../public/images/towns/lanox.png'
-import atlas from '../../../public/images/towns/atlas.png'
-import elysion from '../../../public/images/towns/elysion.png'
-import elrianode from '../../../public/images/towns/elrianode.png'
-import varnimyr from '../../../public/images/towns/varnimyr.png'
-import pruinaum from '../../../public/images/towns/pruinaum.png'
-import general from '../../../public/images/towns/general.png'
-
 // DUNGEON
 import adrianPalace from '../../../public/images/dungeons/adrian-palace.png'
 import altarOfDedication from '../../../public/images/dungeons/altar-of-dedication.png'
@@ -90,7 +74,7 @@ import whiteMistSwamp from '../../../public/images/dungeons/white-mist-swamp.png
 
 const towns = [{
   name: 'Ruben',
-  img: ruben,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fruben.png?alt=media&token=d3b2870f-4dc0-49fc-8e5d-640284cd72b9',
   bgColor: 'bg-ruben',
   textColor: 'text-ruben dark:text-ruben-dark',
   hoverBgColor: 'hover:bg-ruben',
@@ -106,7 +90,7 @@ const towns = [{
   }],
 }, {
   name: 'Elder',
-  img: elder,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Felder.png?alt=media&token=274c5e82-6cca-4b4b-a8e1-d140a9c1af7f',
   bgColor: 'bg-elder',
   textColor: 'text-elder dark:text-elder-dark',
   hoverBgColor: 'hover:bg-elder',
@@ -128,7 +112,7 @@ const towns = [{
   }],
 }, {
   name: 'Bethma',
-  img: bethma,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fbethma.png?alt=media&token=391ab771-2c8c-4b8c-a5db-465691750929',
   bgColor: 'bg-bethma',
   textColor: 'text-bethma dark:text-bethma-dark',
   hoverBgColor: 'hover:bg-bethma',
@@ -153,7 +137,7 @@ const towns = [{
   }],
 }, {
   name: 'Altera',
-  img: altera,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Faltera.png?alt=media&token=8642c231-ec9a-4154-b59e-184490c22a82',
   bgColor: 'bg-altera',
   textColor: 'text-altera dark:text-altera-dark',
   hoverBgColor: 'hover:bg-altera',
@@ -178,7 +162,7 @@ const towns = [{
   }],
 }, {
   name: 'Feita',
-  img: feita,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Ffeita.png?alt=media&token=39d61809-b0e5-47fd-9d4d-332ed7ff5714',
   bgColor: 'bg-feita',
   textColor: 'text-feita dark:text-feita-dark',
   hoverBgColor: 'hover:bg-feita',
@@ -203,7 +187,7 @@ const towns = [{
   }],
 }, {
   name: 'Velder',
-  img: velder,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fvelder.png?alt=media&token=4d36a19c-a2dd-426b-b03b-d778689106fd',
   bgColor: 'bg-velder',
   textColor: 'text-velder dark:text-velder-dark',
   hoverBgColor: 'hover:bg-velder',
@@ -228,7 +212,7 @@ const towns = [{
   }],
 }, {
   name: 'Hamel',
-  img: hamel,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fhamel.png?alt=media&token=9cd26e68-5fd8-40b6-a47b-6b600ba22d83',
   bgColor: 'bg-hamel',
   textColor: 'text-hamel dark:text-hamel-dark',
   hoverBgColor: 'hover:bg-hamel',
@@ -256,7 +240,7 @@ const towns = [{
   }],
 }, {
   name: 'Sander',
-  img: sander,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fsander.png?alt=media&token=0937dda6-8793-48c5-af8e-25eeffc9ba58',
   bgColor: 'bg-sander',
   textColor: 'text-sander dark:text-sander-dark',
   hoverBgColor: 'hover:bg-sander',
@@ -281,7 +265,7 @@ const towns = [{
   }],
 }, {
   name: 'Lanox',
-  img: lanox,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Flanox.png?alt=media&token=afe5ab61-6dd2-4d27-8c51-2327fc9ea0d6',
   bgColor: 'bg-lanox',
   textColor: 'text-lanox dark:text-lanox-dark',
   hoverBgColor: 'hover:bg-lanox',
@@ -306,7 +290,7 @@ const towns = [{
   }],
 }, {
   name: 'Atlas',
-  img: atlas,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fatlas.png?alt=media&token=11a9e960-b2c2-489a-a06d-259ef205d043',
   bgColor: 'bg-atlas',
   textColor: 'text-atlas dark:text-atlas-dark',
   hoverBgColor: 'hover:bg-atlas',
@@ -322,7 +306,7 @@ const towns = [{
   }],
 }, {
   name: 'Elysion',
-  img: elysion,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Felysion.png?alt=media&token=7b3b2019-e678-4cb2-9386-cca1f57cf723',
   bgColor: 'bg-elysion',
   textColor: 'text-elysion dark:text-elysion-dark',
   hoverBgColor: 'hover:bg-elysion',
@@ -341,7 +325,7 @@ const towns = [{
   }],
 }, {
   name: 'Elrianode',
-  img: elrianode,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Felrianode.png?alt=media&token=d9a74d9c-7021-4607-a4f0-a4c42bda319f',
   bgColor: 'bg-elrianode',
   textColor: 'text-elrianode dark:text-elrianode-dark',
   hoverBgColor: 'hover:bg-elrianode',
@@ -366,7 +350,7 @@ const towns = [{
   }],
 }, {
   name: 'Varnimyr',
-  img: varnimyr,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fvarnimyr.png?alt=media&token=510cb5a8-ce59-4b1f-8c17-0833ef04d056',
   bgColor: 'bg-varnimyr',
   textColor: 'text-varnimyr dark:text-varnimyr-dark',
   hoverBgColor: 'hover:bg-varnimyr',
@@ -397,7 +381,7 @@ const towns = [{
   }],
 }, {
   name: 'Rigomor',
-  img: general,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fgeneral.png?alt=media&token=7ff1d45d-76d9-403b-9cb0-b04442a9d8d7',
   bgColor: 'bg-rigomor',
   textColor: 'text-rigomor dark:text-rigomor-dark',
   hoverBgColor: 'hover:bg-rigomor',
@@ -407,21 +391,21 @@ const towns = [{
   bgColor: 'bg-master-road',
   textColor: 'text-master-road dark:text-master-road-dark',
   hoverBgColor: 'hover:bg-master-road',
-  img: general,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fgeneral.png?alt=media&token=7ff1d45d-76d9-403b-9cb0-b04442a9d8d7',
   child: [],
 }, {
   name: 'Pruinaum',
   bgColor: 'bg-pruinaum',
   textColor: 'text-pruinaum dark:text-pruinaum-dark',
   hoverBgColor: 'hover:bg-pruinaum',
-  img: pruinaum,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fpruinaum.png?alt=media&token=68a73b33-0e7c-4fa6-8036-d952ab02f467',
   child: [],
 }, {
   name: 'Pruinaum Outskirt',
   bgColor: 'bg-pruinaum-outskirt',
   textColor: 'text-pruinaum-outskirt dark:text-pruinaum-outskirt-dark',
   hoverBgColor: 'hover:bg-pruinaum-outskirt',
-  img: general,
+  img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fgeneral.png?alt=media&token=7ff1d45d-76d9-403b-9cb0-b04442a9d8d7',
   child: [],
 }]
 
