@@ -4,7 +4,7 @@ import Layout from 'layouts'
 import Head from 'next/head'
 import Alert from 'components/alerts'
 import {
-  Welcome, News, Contribute, RelatedArticles,
+  Welcome, Contribute, RelatedArticles,
 } from 'components/home-static'
 
 function Home() {
@@ -25,7 +25,6 @@ function Home() {
           <Welcome />
           <RelatedArticles />
           <Contribute />
-          <News />
         </section>
       </main>
     </Fragment>
