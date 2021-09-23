@@ -31,7 +31,7 @@ export default function Table(props) {
           return (
             <tr key={i} {...row.getRowProps()}>
               { row.cells.map((cell, j) => (
-                <td className='px-3 py-2 text-left border border-gray-300 dark:border-gray-600' key={j} {...cell.getCellProps()}>
+                <td className='px-3 py-2 min-w-max text-left border border-gray-300 dark:border-gray-600' key={j} {...cell.getCellProps()}>
                   { cell.render('Cell') }
                 </td>
               ))}

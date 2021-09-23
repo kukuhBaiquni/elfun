@@ -17,7 +17,9 @@ function Layout({ children }) {
         </div>
       </div>
       <footer className='bg-gray-200 dark:bg-gray-700 w-full h-[200px]'>
-        test
+        <div className='max-w-screen-2xl mx-auto h-full'>
+          Kukuh Baiquni © 2020
+        </div>
       </footer>
     </div>
   )

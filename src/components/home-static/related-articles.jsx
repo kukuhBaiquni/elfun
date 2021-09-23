@@ -25,7 +25,7 @@ const articles = [{
 
 export default function RelatedArticles() {
   return (
-    <div className='mt-10'>
+    <div className='mt-8'>
       <h3 className='text-2xl font-semibold font-titillium dark:text-sky-400 text-sky-600'>Related Articles</h3>
       <p className='mt-2'>
         You can read these articles to get more details information
