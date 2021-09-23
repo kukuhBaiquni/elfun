@@ -4,7 +4,7 @@ import { useMemo } from 'react'
 // import Link from 'next/link'
 import Table from 'components/table'
 
-export default function News() {
+export default function NewsAndUpdate() {
   const data = useMemo(() => [{
     date: '12 December 2020',
     content: ['Add Altera Village'],

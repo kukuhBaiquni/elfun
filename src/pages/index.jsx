@@ -4,7 +4,7 @@ import Layout from 'layouts'
 import Head from 'next/head'
 import Alert from 'components/alerts'
 import {
-  Welcome, News, Contribute, RelatedArticles, RecentlyAdded,
+  Welcome, News, Contribute, RelatedArticles, NewsAndUpdate,
 } from 'components/home-static'
 
 function Home() {
@@ -23,7 +23,7 @@ function Home() {
         <Alert text={alertContent} variant='info' />
         <section className='px-2 mb-10'>
           <Welcome />
-          <RecentlyAdded />
+          <NewsAndUpdate />
           <News />
           <RelatedArticles />
           <Contribute />
