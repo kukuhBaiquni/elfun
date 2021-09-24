@@ -12,7 +12,9 @@ export default function JobPathMapper(props) {
   const { push, pathname } = useRouter()
 
   const onSelectCharacter = (name, img, bgColor) => {
-    setSelectedCharacter({ name, img, bgColor })
+    setSelectedCharacter({
+      name, img, bgColor,
+    })
   }
 
   return (
@@ -31,7 +33,7 @@ export default function JobPathMapper(props) {
               placeholder='blur'
               src={data?.img}
               width={54}
-              onClick={() => onSelectCharacter(data?.name, data?.img, data?.bgColor, [data?.name])}
+              onClick={() => onSelectCharacter(data?.name, data?.img, data?.bgColor)}
             />
           </div>
           <span>{data?.name}</span>
@@ -75,18 +77,16 @@ function SecondPath(props) {
                 src={item.img}
                 width={54}
                 onClick={
-                  // eslint-disable-next-line max-len
-                  () => onSelectCharacter(item.name, item.img, data.bgColor, [data.name, item.name])
+                  () => onSelectCharacter(item.name, item.img, data.bgColor)
                 }
               />
             </div>
             <span>{item.name}</span>
             <LastPath
-              bgColor={data.bgColor} // For coloring border when job path is selected
+              bgColor={data.bgColor}
               data={item}
-              name={data.name} // For checking job path e.g [base job, first class, second class, transcendent, third class]
-              selectedCharacter={selectedCharacter} // For checking if job path is selected, if selected the border will change color
-              textColor={data.textColor} // For coloring arrown down icon
+              selectedCharacter={selectedCharacter}
+              textColor={data.textColor}
               onSelectCharacter={onSelectCharacter}
             />
           </div>
@@ -117,7 +117,9 @@ function LastPath(props) {
               placeholder='blur'
               src={job.img}
               width={54}
-              onClick={() => onSelectCharacter(job.name, job.img, bgColor, [data?.name])}
+              onClick={
+                () => onSelectCharacter(job.name, job.img, bgColor)
+              }
             />
           </div>
           <span>{job.name}</span>

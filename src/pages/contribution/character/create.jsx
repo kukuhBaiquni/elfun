@@ -11,17 +11,7 @@ export default function Create() {
   const [isVisible, setIsVisible] = useState(false)
   const { query } = useRouter()
 
-  /*
-   * Checking if query parameter is exist in character-data via useRouter()
-   * If query parameter do not exist in character data, then show warning Modal
-   * Pass "persist" props to make Modal not closable
-  */
   console.log(query.character)
-  useEffect(() => {
-    if (!characters.find((char) => char.name === query.character)) {
-      setIsVisible(true)
-    }
-  }, [query.character])
 
   return (
     <Fragment>
@@ -30,7 +20,7 @@ export default function Create() {
         <meta content='Create Character Information' name='description' />
       </Head>
       <main className='text-gray-600 dark:text-gray-400 px-2'>
-        <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Create new Character Information</h2>
+        <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Add {query.character} Information</h2>
         <p className='my-2'>
           Choose which character you want to add information:
         </p>
