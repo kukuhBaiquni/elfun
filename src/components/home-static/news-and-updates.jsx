@@ -2,7 +2,7 @@
 /* eslint-disable react/display-name */
 import { useMemo } from 'react'
 import Link from 'next/link'
-import Table from 'components/table'
+import Table from 'components/common/table'
 import { ExternalLinkIcon } from '@heroicons/react/outline'
 
 export default function NewsAndUpdate() {

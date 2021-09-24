@@ -2,17 +2,13 @@
 /* eslint-disable react/prop-types */
 import { Fragment, useRef } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import JobPath from './job-path-mapper'
+import JobPath from './job-path/job-path-mapper'
 
 export default function Example(props) {
   const cancelButtonRef = useRef(null)
   const {
-    isVisible, setIsVisible, data, setSelectedCharacter, selectedCharacter,
+    isVisible, setIsVisible, content = null,
   } = props
-
-  const onSelectCharacter = (name, img, bgColor) => {
-    setSelectedCharacter({ name, img, bgColor })
-  }
 
   return (
     <Transition.Root as={Fragment} show={isVisible}>
@@ -42,12 +38,7 @@ export default function Example(props) {
             leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
           >
             <div className='inline-block w-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs sm:text-sm whitespace-nowrap text-center sm:text-left overflow-hidden shadow-xl font-titillium max-w-lg transform transition-all'>
-              <JobPath
-                data={data}
-                selectedCharacter={selectedCharacter}
-                setIsVisible={setIsVisible}
-                onSelectCharacter={onSelectCharacter}
-              />
+              {content}
             </div>
           </Transition.Child>
         </div>

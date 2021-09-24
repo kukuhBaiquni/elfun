@@ -2,22 +2,26 @@ import { Fragment, useState, useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Layout from 'layouts'
+import { useRouter } from 'next/router'
 import characters from 'store/character-data'
-import Modal from 'components/common/modal/job-path'
+import Modal from 'components/common/modal'
 
 export default function Create() {
   const [isVisible, setIsVisible] = useState(false)
   const [data, setData] = useState(null)
   const [selectedCharacter, setSelectedCharacter] = useState(null)
+  const { query } = useRouter()
 
   const showModalAndSetData = (character) => {
     setIsVisible(true)
     setData(character)
   }
 
-  useEffect(() => {
-    if (isVisible) setSelectedCharacter(null)
-  }, [isVisible])
+  // useEffect(() => {
+  //   if (!characters.find((char) => char.name === query.character)) {
+
+  //   }
+  // }, [])
 
   return (
     <Fragment>

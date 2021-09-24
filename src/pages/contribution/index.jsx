@@ -5,7 +5,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Fragment, useMemo } from 'react'
-import Table from 'components/table'
+import Table from 'components/common/table'
 import data from './dummy.json'
 
 const category = ['Character', 'Town', 'Dungeon', 'NPC', 'Title', 'Equipment']
