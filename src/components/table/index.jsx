@@ -18,7 +18,7 @@ export default function Table(props) {
         {headerGroups.map((headerGroup, i) => (
           <tr key={i} {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column, j) => (
-              <th className='px-3 py-2 text-left font-titillium text-lg border border-gray-300 dark:border-gray-600 bg-gray-200 dark:bg-gray-700' key={j} {...column.getHeaderProps()}>
+              <th className='px-3 py-2 text-left font-titillium text-lg border border-gray-300 dark:border-gray-600 bg-gray-200 dark:bg-gray-700 transition-all duration-300' key={j} {...column.getHeaderProps()}>
                 { column.render('Header') }
               </th>
             ))}
@@ -31,7 +31,7 @@ export default function Table(props) {
           return (
             <tr key={i} {...row.getRowProps()}>
               { row.cells.map((cell, j) => (
-                <td className='px-3 py-2 min-w-max text-left border border-gray-300 dark:border-gray-600' key={j} {...cell.getCellProps()}>
+                <td className='px-3 py-2 min-w-max text-left border border-gray-300 dark:border-gray-600 transition-all duration-300' key={j} {...cell.getCellProps()}>
                   { cell.render('Cell') }
                 </td>
               ))}
