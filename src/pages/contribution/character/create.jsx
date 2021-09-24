@@ -5,7 +5,7 @@ import Layout from 'layouts'
 import characters from 'store/character-data'
 import Modal from 'components/common/modal/job-path'
 
-export default function Character() {
+export default function Create() {
   const [isVisible, setIsVisible] = useState(false)
   const [data, setData] = useState(null)
   const [selectedCharacter, setSelectedCharacter] = useState(null)
@@ -22,9 +22,8 @@ export default function Character() {
   return (
     <Fragment>
       <Head>
-        <title>Elfun - Contributor</title>
-        <meta content='Contribution guide for filling submission article form' name='description' />
-        <meta content='Elfun Contribution Guide, Contribution Elfun, Elfun' name='keywords' />
+        <title>Elfun - Create Character Information</title>
+        <meta content='Create Character Information' name='description' />
       </Head>
       <main className='text-gray-600 dark:text-gray-400 px-2'>
         <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Create new Character Information</h2>
@@ -51,7 +50,7 @@ export default function Character() {
   )
 }
 
-Character.getLayout = (page) => (
+Create.getLayout = (page) => (
   <Layout>
     {page}
   </Layout>

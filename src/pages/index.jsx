@@ -2,7 +2,7 @@
 import { Fragment } from 'react'
 import Layout from 'layouts'
 import Head from 'next/head'
-import Alert from 'components/alerts'
+import Alert from 'components/common/alerts'
 import {
   Welcome, Contribute, RelatedArticles, NewsAndUpdate,
 } from 'components/home-static'

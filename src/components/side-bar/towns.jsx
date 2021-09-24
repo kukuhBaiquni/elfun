@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import towns from './town-data'
+import towns from '../../store/town-data'
 import Dungeons from './dungeons'
 
 function Towns() {

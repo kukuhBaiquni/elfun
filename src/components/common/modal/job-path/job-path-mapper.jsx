@@ -1,13 +1,17 @@
 /* eslint-disable react/prop-types */
 import { Fragment } from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import { ChevronDoubleDownIcon, CheckCircleIcon, XIcon } from '@heroicons/react/solid'
 import loader from 'components/common/loader'
+import qs from 'qs'
 
 export default function JobPath(props) {
   const {
     data, selectedCharacter, onSelectCharacter, setIsVisible,
   } = props
+  const { push, pathname } = useRouter()
+  const query = qs.stringify({ character: selectedCharacter?.name || '' }, { addQueryPrefix: true })
   return (
     <Fragment>
       <div className={`text-white py-2 px-3 text-lg ${data?.bgColor} flex justify-between items-center`}>
@@ -38,6 +42,7 @@ export default function JobPath(props) {
           className={`text-base px-12 py-2 ${data?.bgColor} text-white rounded ml-auto hover:opacity-75 sm:w-3/4 disabled:bg-gray-500 disabled:cursor-not-allowed mt-8 mb-0 sm:mb-2 w-full mx-auto transition-all duration-300`}
           disabled={!selectedCharacter}
           type='button'
+          onClick={() => push(`${pathname}/create${query}`)}
         >
           Start Now!
         </button>

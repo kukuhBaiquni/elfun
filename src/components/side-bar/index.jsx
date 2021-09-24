@@ -2,10 +2,10 @@ import Link from 'next/link'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { useImmer } from 'use-immer'
 import { Fragment, useCallback } from 'react'
+import characters from 'store/character-data'
+import towns from 'store/town-data'
 import Characters from './characters'
 import Towns from './towns'
-import characters from './character-data'
-import towns from './town-data'
 
 const routes = [{
   name: 'Main Page',
