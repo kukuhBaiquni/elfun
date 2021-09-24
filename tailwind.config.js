@@ -69,7 +69,7 @@ module.exports = {
           dark: '#ABA1FF',
         },
         rose: {
-          light: '#d8cc1c',
+          light: '#A59C12',
           DEFAULT: '#d8cc1c',
           dark: '#EFE65B',
         },

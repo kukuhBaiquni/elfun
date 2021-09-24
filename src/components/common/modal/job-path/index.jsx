@@ -45,6 +45,7 @@ export default function Example(props) {
               <JobPath
                 data={data}
                 selectedCharacter={selectedCharacter}
+                setIsVisible={setIsVisible}
                 onSelectCharacter={onSelectCharacter}
               />
             </div>

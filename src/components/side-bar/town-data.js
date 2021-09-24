@@ -242,8 +242,8 @@ const towns = [{
   name: 'Sander',
   img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fsander.png?alt=media&token=0937dda6-8793-48c5-af8e-25eeffc9ba58',
   bgColor: 'bg-sander',
-  textColor: 'text-sander dark:text-sander-dark',
-  hoverBgColor: 'hover:bg-sander',
+  textColor: 'text-sander-light dark:text-sander-dark',
+  hoverBgColor: 'hover:bg-sander-light',
   child: [{
     name: 'Barren Sander',
     img: barrenSander,

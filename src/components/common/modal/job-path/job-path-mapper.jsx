@@ -1,21 +1,22 @@
 /* eslint-disable react/prop-types */
 import { Fragment } from 'react'
 import Image from 'next/image'
-import { ChevronDoubleDownIcon, CheckCircleIcon } from '@heroicons/react/solid'
+import { ChevronDoubleDownIcon, CheckCircleIcon, XIcon } from '@heroicons/react/solid'
 import loader from 'components/common/loader'
 
 export default function JobPath(props) {
   const {
-    data, selectedCharacter, onSelectCharacter,
+    data, selectedCharacter, onSelectCharacter, setIsVisible,
   } = props
   return (
     <Fragment>
-      <div className={`text-white p-2 text-lg ${data?.bgColor}`}>
+      <div className={`text-white py-2 px-3 text-lg ${data?.bgColor} flex justify-between items-center`}>
         <h5>Choose Character Path</h5>
+        <XIcon className='w-6 h-6 cursor-pointer' onClick={() => setIsVisible(false)} />
       </div>
       <div className='p-2 mt-3 flex flex-col'>
         <div className='flex flex-col justify-center items-center'>
-          <div className={`p-1 mb-1 flex flex-col items-center ${selectedCharacter?.name === data?.name ? data?.bgColor : 'bg-gray-500'} cursor-pointer hover:opacity-75 transition-all duration-300 relative`}>
+          <div className={`p-1 mb-1 flex flex-col items-center ${selectedCharacter?.name === data?.name ? data?.bgColor : 'dark:bg-gray-500 bg-gray-400'} cursor-pointer hover:opacity-75 transition-all duration-300 relative`}>
             <Image
               alt={data?.name}
               blurDataURL={loader(54, 54)}
@@ -57,7 +58,7 @@ function SecondPath(props) {
             ) : (
               <ChevronDoubleDownIcon className={`w-5 h-5 mb-2 ${data?.textColor}`} />
             )}
-            <div className={`p-1 mb-1 flex flex-col items-center ${selectedCharacter?.name === item?.name ? data?.bgColor : 'bg-gray-500'} cursor-pointer hover:opacity-75 transition-all duration-300`}>
+            <div className={`p-1 mb-1 flex flex-col items-center ${selectedCharacter?.name === item?.name ? data?.bgColor : 'dark:bg-gray-500 bg-gray-400'} cursor-pointer hover:opacity-75 transition-all duration-300`}>
               <Image
                 alt={item.name}
                 blurDataURL={loader(54, 54)}
@@ -96,7 +97,7 @@ function LastPath(props) {
           ) : (
             <ChevronDoubleDownIcon className={`w-5 h-5 mb-2 ${textColor}`} />
           )}
-          <div className={`p-1 mb-1 flex flex-col items-center ${selectedCharacter?.name === job.name ? bgColor : 'bg-gray-500'} cursor-pointer hover:opacity-75 transition-all duration-300`}>
+          <div className={`p-1 mb-1 flex flex-col items-center ${selectedCharacter?.name === job.name ? bgColor : 'dark:bg-gray-500 bg-gray-400'} cursor-pointer hover:opacity-75 transition-all duration-300`}>
             <Image
               alt={job.name}
               blurDataURL={loader(54, 54)}

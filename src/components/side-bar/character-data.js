@@ -526,8 +526,8 @@ const characters = [{
   name: 'Rose',
   img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frose%2Frose.png?alt=media&token=dcad2e1b-f12b-4c47-a67c-4da32edf4a9a',
   bgColor: 'bg-rose',
-  textColor: 'text-rose',
-  hoverBgColor: 'hover:bg-rose',
+  textColor: 'text-rose-light',
+  hoverBgColor: 'hover:bg-rose-light',
   child: [{
     name: 'Heavy Barrel',
     img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frose%2Fheavy-barrel.png?alt=media&token=0d3d569a-bb8f-4daf-a612-329c30428ea6',
