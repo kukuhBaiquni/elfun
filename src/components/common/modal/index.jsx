@@ -2,16 +2,15 @@
 /* eslint-disable react/prop-types */
 import { Fragment, useRef } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import JobPath from './job-path/job-path-mapper'
 
-export default function Example(props) {
+export default function Modal(props) {
   const cancelButtonRef = useRef(null)
   const {
-    isVisible, setIsVisible, content = null,
+    isVisible, setIsVisible, render, persist,
   } = props
 
   return (
-    <Transition.Root as={Fragment} show={isVisible}>
+    <Transition.Root as={Fragment} show={persist || isVisible}>
       <Dialog as='div' className='fixed z-50 inset-0 overflow-y-auto' initialFocus={cancelButtonRef} onClose={setIsVisible}>
         <div className='flex items-end sm:items-center justify-center min-h-screen text-center sm:p-0'>
           <Transition.Child
@@ -38,7 +37,7 @@ export default function Example(props) {
             leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
           >
             <div className='inline-block w-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs sm:text-sm whitespace-nowrap text-center sm:text-left overflow-hidden shadow-xl font-titillium max-w-lg transform transition-all'>
-              {content}
+              {render}
             </div>
           </Transition.Child>
         </div>

@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { ChevronDoubleDownIcon, CheckCircleIcon, XIcon } from '@heroicons/react/solid'
 import loader from 'components/common/loader'
 
-export default function JobPath(props) {
+export default function JobPathMapper(props) {
   const {
     data, selectedCharacter, setSelectedCharacter, setIsVisible,
   } = props
@@ -31,7 +31,7 @@ export default function JobPath(props) {
               placeholder='blur'
               src={data?.img}
               width={54}
-              onClick={() => onSelectCharacter(data?.name, data?.img, data?.bgColor)}
+              onClick={() => onSelectCharacter(data?.name, data?.img, data?.bgColor, [data?.name])}
             />
           </div>
           <span>{data?.name}</span>
@@ -64,9 +64,9 @@ function SecondPath(props) {
             {selectedCharacter?.name === item.name ? (
               <CheckCircleIcon className='w-5 h-5 mb-2 text-green-600' />
             ) : (
-              <ChevronDoubleDownIcon className={`w-5 h-5 mb-2 ${data?.textColor}`} />
+              <ChevronDoubleDownIcon className={`w-5 h-5 mb-2 ${data.textColor}`} />
             )}
-            <div className={`p-1 mb-1 flex flex-col items-center ${selectedCharacter?.name === item?.name ? data?.bgColor : 'dark:bg-gray-500 bg-gray-400'} cursor-pointer hover:opacity-75 transition-all duration-300`}>
+            <div className={`p-1 mb-1 flex flex-col items-center ${selectedCharacter?.name === item?.name ? data.bgColor : 'dark:bg-gray-500 bg-gray-400'} cursor-pointer hover:opacity-75 transition-all duration-300`}>
               <Image
                 alt={item.name}
                 blurDataURL={loader(54, 54)}
@@ -74,15 +74,19 @@ function SecondPath(props) {
                 placeholder='blur'
                 src={item.img}
                 width={54}
-                onClick={() => onSelectCharacter(item.name, item.img, data?.bgColor)}
+                onClick={
+                  // eslint-disable-next-line max-len
+                  () => onSelectCharacter(item.name, item.img, data.bgColor, [data.name, item.name])
+                }
               />
             </div>
             <span>{item.name}</span>
             <LastPath
-              bgColor={data.bgColor}
+              bgColor={data.bgColor} // For coloring border when job path is selected
               data={item}
-              selectedCharacter={selectedCharacter}
-              textColor={data.textColor}
+              name={data.name} // For checking job path e.g [base job, first class, second class, transcendent, third class]
+              selectedCharacter={selectedCharacter} // For checking if job path is selected, if selected the border will change color
+              textColor={data.textColor} // For coloring arrown down icon
               onSelectCharacter={onSelectCharacter}
             />
           </div>
@@ -113,7 +117,7 @@ function LastPath(props) {
               placeholder='blur'
               src={job.img}
               width={54}
-              onClick={() => onSelectCharacter(job.name, job.img, data?.bgColor)}
+              onClick={() => onSelectCharacter(job.name, job.img, bgColor, [data?.name])}
             />
           </div>
           <span>{job.name}</span>

@@ -62,6 +62,13 @@
       "jsx-a11y/no-noninteractive-element-interactions": "off",
       "react/no-array-index-key": "off",
       "jsx-a11y/anchor-is-valid": "off",
-      "no-param-reassign": "off"
+      "no-param-reassign": "off",
+      "max-len": ["error", {
+        "code": 100,
+        "ignoreComments": true,
+        "ignoreTrailingComments": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreStrings": true
+      }]
     }
 }

@@ -5,23 +5,23 @@ import Layout from 'layouts'
 import { useRouter } from 'next/router'
 import characters from 'store/character-data'
 import Modal from 'components/common/modal'
+import Warning from 'components/common/modal/feedback/warning'
 
 export default function Create() {
   const [isVisible, setIsVisible] = useState(false)
-  const [data, setData] = useState(null)
-  const [selectedCharacter, setSelectedCharacter] = useState(null)
   const { query } = useRouter()
 
-  const showModalAndSetData = (character) => {
-    setIsVisible(true)
-    setData(character)
-  }
-
-  // useEffect(() => {
-  //   if (!characters.find((char) => char.name === query.character)) {
-
-  //   }
-  // }, [])
+  /*
+   * Checking if query parameter is exist in character-data via useRouter()
+   * If query parameter do not exist in character data, then show warning Modal
+   * Pass "persist" props to make Modal not closable
+  */
+  console.log(query.character)
+  useEffect(() => {
+    if (!characters.find((char) => char.name === query.character)) {
+      setIsVisible(true)
+    }
+  }, [query.character])
 
   return (
     <Fragment>
@@ -34,20 +34,10 @@ export default function Create() {
         <p className='my-2'>
           Choose which character you want to add information:
         </p>
-        <div className='grid grid-cols-3 sm:grid-cols-5 gap-2 max-w-screen-sm'>
-          {characters.map((item) => (
-            <button className={`p-1 ${item.bgColor} flex items-center hover:opacity-70`} key={item.name} type='button' onClick={() => showModalAndSetData(item)}>
-              <Image alt={item.name} height={20} src={item.img} width={20} />
-              <span className='text-white ml-2 font-titillium'>{item.name}</span>
-            </button>
-          ))}
-        </div>
         <Modal
-          data={data}
           isVisible={isVisible}
-          selectedCharacter={selectedCharacter}
+          render={<Warning />}
           setIsVisible={setIsVisible}
-          setSelectedCharacter={setSelectedCharacter}
         />
       </main>
     </Fragment>

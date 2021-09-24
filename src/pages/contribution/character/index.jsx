@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Layout from 'layouts'
 import characters from 'store/character-data'
 import Modal from 'components/common/modal'
+import JobPathMapper from 'components/common/modal/job-path/job-path-mapper'
 
 export default function Character() {
   const [isVisible, setIsVisible] = useState(false)
@@ -40,11 +41,16 @@ export default function Character() {
           ))}
         </div>
         <Modal
-          data={data}
           isVisible={isVisible}
-          selectedCharacter={selectedCharacter}
+          render={(
+            <JobPathMapper
+              data={data}
+              selectedCharacter={selectedCharacter}
+              setIsVisible={setIsVisible}
+              setSelectedCharacter={setSelectedCharacter}
+            />
+          )}
           setIsVisible={setIsVisible}
-          setSelectedCharacter={setSelectedCharacter}
         />
       </main>
     </Fragment>
