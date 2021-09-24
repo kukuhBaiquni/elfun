@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import loader from 'components/loader'
 
 const articles = [{
   title: 'Elsword World',
@@ -32,9 +33,10 @@ export default function RelatedArticles() {
             <div className='w-full h-full bg-black absolute z-10 top-0 left-0 opacity-0 group-hover:opacity-90 transition-all duration-300' />
             <Image
               alt='Elsword World'
+              blurDataURL={loader('100%', '100%')}
               className='object-cover w-full h-full'
               layout='fill'
-              loading='eager'
+              placeholder='blur'
               src={item.img}
             />
             <div className='mx-auto flex items-center justify-center flex-col absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-[-30%] opacity-0 group-hover:translate-y-[-55%] group-hover:opacity-100 z-10 transition-all duration-300'>
