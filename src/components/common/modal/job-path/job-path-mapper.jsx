@@ -2,6 +2,7 @@
 import { Fragment } from 'react'
 import Image from 'next/image'
 import { ChevronDoubleDownIcon, CheckCircleIcon } from '@heroicons/react/solid'
+import loader from 'components/common/loader'
 
 export default function JobPath(props) {
   const {
@@ -17,7 +18,9 @@ export default function JobPath(props) {
           <div className={`p-1 mb-1 flex flex-col items-center ${selectedCharacter?.name === data?.name ? data?.bgColor : 'bg-gray-500'} cursor-pointer hover:opacity-75 transition-all duration-300 relative`}>
             <Image
               alt={data?.name}
+              blurDataURL={loader(54, 54)}
               height={54}
+              placeholder='blur'
               src={data?.img}
               width={54}
               onClick={() => onSelectCharacter(data?.name, data?.img, data?.bgColor)}
@@ -57,7 +60,9 @@ function SecondPath(props) {
             <div className={`p-1 mb-1 flex flex-col items-center ${selectedCharacter?.name === item?.name ? data?.bgColor : 'bg-gray-500'} cursor-pointer hover:opacity-75 transition-all duration-300`}>
               <Image
                 alt={item.name}
+                blurDataURL={loader(54, 54)}
                 height={54}
+                placeholder='blur'
                 src={item.img}
                 width={54}
                 onClick={() => onSelectCharacter(item.name, item.img, data?.bgColor)}
@@ -94,7 +99,9 @@ function LastPath(props) {
           <div className={`p-1 mb-1 flex flex-col items-center ${selectedCharacter?.name === job.name ? bgColor : 'bg-gray-500'} cursor-pointer hover:opacity-75 transition-all duration-300`}>
             <Image
               alt={job.name}
+              blurDataURL={loader(54, 54)}
               height={54}
+              placeholder='blur'
               src={job.img}
               width={54}
               onClick={() => onSelectCharacter(job.name, job.img, data?.bgColor)}
