@@ -11,9 +11,10 @@ export default function Example(props) {
   } = props
 
   const onSelectCharacter = (name, img, bgColor) => {
+    console.log(name)
     setSelectedCharacter({ name, img, bgColor })
   }
-
+  console.log(selectedCharacter)
   return (
     <Transition.Root as={Fragment} show={isVisible}>
       <Dialog as='div' className='fixed z-50 inset-0 overflow-y-auto' initialFocus={cancelButtonRef} onClose={setIsVisible}>
