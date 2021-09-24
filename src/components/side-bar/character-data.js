@@ -389,7 +389,7 @@ const characters = [{
       name: 'Crimson Avenger (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felesis%2Fcrimson-avenger-trans.png?alt=media&token=825a1238-c5ee-4da7-bb9c-ce8951748b06',
     }, {
-      name: 'Blood Queen',
+      name: 'Bloody Queen',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felesis%2Fbloody-queen.png?alt=media&token=059c29c8-a274-4743-8d7c-6ca0c41c856d',
     }],
   }],

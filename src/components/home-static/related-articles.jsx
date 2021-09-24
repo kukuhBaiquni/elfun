@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import loader from 'components/loader'
+import loader from 'components/common/loader'
 
 const articles = [{
   title: 'Elsword World',

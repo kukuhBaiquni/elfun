@@ -1,18 +1,23 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Layout from 'layouts'
 import characters from 'components/side-bar/character-data'
-import Modal from 'components/common/modal'
+import Modal from 'components/common/modal/job-path'
 
 export default function Character() {
   const [isVisible, setIsVisible] = useState(false)
   const [data, setData] = useState(null)
+  const [selectedCharacter, setSelectedCharacter] = useState(null)
 
   const showModalAndSetData = (character) => {
     setIsVisible(true)
     setData(character)
   }
+
+  useEffect(() => {
+    if (isVisible) setSelectedCharacter(null)
+  }, [isVisible])
 
   return (
     <Fragment>
@@ -30,11 +35,17 @@ export default function Character() {
           {characters.map((item) => (
             <button className={`p-1 ${item.bgColor} flex items-center hover:opacity-70`} key={item.name} type='button' onClick={() => showModalAndSetData(item)}>
               <Image alt={item.name} height={20} src={item.img} width={20} />
-              <span className='text-white ml-2'>{item.name}</span>
+              <span className='text-white ml-2 font-titillium'>{item.name}</span>
             </button>
           ))}
         </div>
-        <Modal data={data} isVisible={isVisible} setIsVisible={setIsVisible} />
+        <Modal
+          data={data}
+          isVisible={isVisible}
+          selectedCharacter={selectedCharacter}
+          setIsVisible={setIsVisible}
+          setSelectedCharacter={setSelectedCharacter}
+        />
       </main>
     </Fragment>
   )
