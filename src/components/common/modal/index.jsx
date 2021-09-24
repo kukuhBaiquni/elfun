@@ -34,24 +34,37 @@ export default function Example({ isVisible, setIsVisible, data }) {
             leaveFrom='opacity-100 translate-y-0 sm:scale-100'
             leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
           >
-            <div className='inline-block w-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-sm text-center sm:text-left overflow-hidden shadow-xl font-titillium max-w-lg transform transition-all' ref={cancelButtonRef}>
+            <div className='inline-block w-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs sm:text-sm whitespace-nowrap text-center sm:text-left overflow-hidden shadow-xl font-titillium max-w-lg transform transition-all' ref={cancelButtonRef}>
               <div className={`text-white p-2 text-lg ${data?.bgColor}`}>
                 <h5>Choose Character Path</h5>
               </div>
               <div className='p-2 mt-3'>
                 <div className='flex flex-col justify-center items-center'>
-                  <div className={`p-1 mb-1 flex flex-col items-center ${data?.bgColor} rounded`}>
+                  <div className={`p-0.5 mb-1 flex flex-col items-center ${data?.bgColor} rounded`}>
                     <Image alt={data?.name} height={54} src={data?.img} width={54} />
                   </div>
                   <span>{data?.name}</span>
                   <div className={`grid ${data?.child.length === 3 ? 'grid-cols-3' : 'grid-cols-4'} gap-3 mt-3`}>
                     {data?.child.map((item) => (
-                      <div className='p-2 flex flex-col items-center' key={item.name}>
-                        <div className={`p-1 mb-1 flex flex-col items-center ${data?.bgColor} rounded`}>
-                          <Image alt={item.name} height={54} src={item.img} width={54} />
+                      <Fragment key={item.name}>
+                        <div className='p-2 flex flex-col items-center'>
+                          <div className={`p-0.5 mb-1 flex flex-col items-center ${data?.bgColor} rounded`}>
+                            <Image alt={item.name} height={54} src={item.img} width={54} />
+                          </div>
+                          <span>{item.name}</span>
+                          <div className='grid grid-cols-1 gap-3 mt-3'>
+                            {item.child.map((job) => (
+                              <div className='p-2 flex flex-col items-center' key={job.name}>
+                                <div className={`p-0.5 mb-1 flex flex-col items-center ${data?.bgColor} rounded`}>
+                                  <Image alt={job.name} height={54} src={job.img} width={54} />
+                                </div>
+                                <span>{job.name}</span>
+                              </div>
+                            ))}
+                          </div>
                         </div>
-                        <span>{item.name}</span>
-                      </div>
+                      </Fragment>
+
                     ))}
                   </div>
                 </div>

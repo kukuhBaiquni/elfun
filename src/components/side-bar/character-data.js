@@ -11,7 +11,7 @@ const characters = [{
       name: 'Lord Knight',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Flord-knight.png?alt=media&token=da9f6b22-4899-4f15-9c04-6028e3bbe912',
     }, {
-      name: 'Lord Knight Transcendent',
+      name: 'Lord Knight (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Flord-knight-trans.png?alt=media&token=625697f8-1bf5-4656-bb26-5bdb18c65bc3',
     }, {
       name: 'Knight Emperor',
@@ -24,7 +24,7 @@ const characters = [{
       name: 'Rune Slayer',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Frune-slayer.png?alt=media&token=87e4489c-f8e9-490b-be6e-3cb8cf9d7a25',
     }, {
-      name: 'Rune Slayer Transcendent',
+      name: 'Rune Slayer (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Frune-slayer-trans.png?alt=media&token=694be52f-c73f-4097-9d53-3187de5f06ee',
     }, {
       name: 'Rune Master',
@@ -37,7 +37,7 @@ const characters = [{
       name: 'Infinity Sword',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Finfinity-sword.png?alt=media&token=7905c1fd-3f63-4fd9-af42-164cc8399b55',
     }, {
-      name: 'Infinity Sword Transcendent',
+      name: 'Infinity Sword (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Finfinity-sword-trans.png?alt=media&token=ad4b1baf-b75f-480f-900f-957f8530e2be',
     }, {
       name: 'Immortal',
@@ -50,7 +50,7 @@ const characters = [{
       name: 'Sacred Templar',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Fsacred-templar.png?alt=media&token=c9320eac-4912-42ad-b31f-df96f72ee56e',
     }, {
-      name: 'Sacred Templar Transcendent',
+      name: 'Sacred Templar (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felsword%2Fsacred-templar-trans.png?alt=media&token=b7e00465-4375-4576-9b3d-f7950521d932',
     }, {
       name: 'Genesis',
@@ -70,7 +70,7 @@ const characters = [{
       name: 'Elemental Master',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Felemental-master.png?alt=media&token=3f150e4a-57ad-4e57-abbb-51dfc77bd71f',
     }, {
-      name: 'Elemental Master Transcendent',
+      name: 'Elemental Master (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Felemental-master-trans.png?alt=media&token=23821e85-1466-4e60-bd10-360090bc30f5',
     }, {
       name: 'Aether Sage',
@@ -83,7 +83,7 @@ const characters = [{
       name: 'Void Princess',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Fvoid-princess.png?alt=media&token=d6a75ae9-94a2-4cd1-bcfa-99a172332f7f',
     }, {
-      name: 'Void Princess Transcendent',
+      name: 'Void Princess (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Fvoid-princess-trans.png?alt=media&token=a12b5a80-6208-4a7a-853a-f4645e969b53',
     }, {
       name: 'Oz Sorcerer',
@@ -96,7 +96,7 @@ const characters = [{
       name: 'Dimension Witch',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Fdimension-witch.png?alt=media&token=3aba92d1-6418-42f6-afba-964a687c1bb5',
     }, {
-      name: 'Dimension Witch Transcendent',
+      name: 'Dimension Witch (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Fdimension-witch-trans.png?alt=media&token=492ed58c-a3ae-4a11-bc22-7636ca410f9f',
     }, {
       name: 'Metamorphy',
@@ -116,7 +116,7 @@ const characters = [{
       name: 'Wind Sneaker',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Fwind-sneaker.png?alt=media&token=17eb0ebe-2293-4dbb-bf24-ee2abb1b59c4',
     }, {
-      name: 'Wind Sneaker Transcendent',
+      name: 'Wind Sneaker (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Fwind-sneaker-trans.png?alt=media&token=9fb2979e-e9c1-4e14-bb97-4fc21db0e77d',
     }, {
       name: 'Anemos',
@@ -129,7 +129,7 @@ const characters = [{
       name: 'Grand Archer',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Fgrand-archer.png?alt=media&token=28934e81-a65e-420a-be1a-8cdf7e2179f4',
     }, {
-      name: 'Grand Archer Transcendent',
+      name: 'Grand Archer (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Fgrand-archer-trans.png?alt=media&token=e369279f-df3d-4b73-bdcf-8457381afbc7',
     }, {
       name: 'Daybreaker',
@@ -142,7 +142,7 @@ const characters = [{
       name: 'Night Watcher',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Fnight-watcher.png?alt=media&token=57f1089f-835a-4707-b493-bb3c4b3565bb',
     }, {
-      name: 'Night Watcher Transcendent',
+      name: 'Night Watcher (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Fnight-watcher-trans.png?alt=media&token=0ef559ec-7aec-4491-85f7-79329808cf58',
     }, {
       name: 'Twilight',
@@ -162,7 +162,7 @@ const characters = [{
       name: 'Blade Master',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Fblade-master.png?alt=media&token=7813a963-4a5c-4d92-9a9a-704aa34555dc',
     }, {
-      name: 'Blade Master Transcendent',
+      name: 'Blade Master (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Fblade-master-trans.png?alt=media&token=4b60441b-ca1e-4625-a6e6-88e71667f524',
     }, {
       name: 'Furious Blade',
@@ -175,7 +175,7 @@ const characters = [{
       name: 'Reckless Fist',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Freckless-fist.png?alt=media&token=0123d1ce-7cc2-4e87-a47c-c2107e059cd2',
     }, {
-      name: 'Reckless Fist Transcendent',
+      name: 'Reckless Fist (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Freckless-fist-trans.png?alt=media&token=135d780a-bf6d-438f-a4e4-93e4c70d8057',
     }, {
       name: 'Rage Hearts',
@@ -188,7 +188,7 @@ const characters = [{
       name: 'Veteran Commander',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Fveteran-commander.png?alt=media&token=e33a0696-32a8-41aa-987f-e2697d53ec90',
     }, {
-      name: 'Veteran Commander Transcendent',
+      name: 'Veteran Commander (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Fveteran-commander-trans.png?alt=media&token=fa68b45d-40d2-41de-bd34-cdbd31402826',
     }, {
       name: 'Nova Imperator',
@@ -208,7 +208,7 @@ const characters = [{
       name: 'Code: Nemesis',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Feve%2Fcode-nemesis.png?alt=media&token=ca65c85a-95f1-4970-804c-89be31ed46fa',
     }, {
-      name: 'Code: Nemesis Transcendent',
+      name: 'Code: Nemesis (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Feve%2Fcode-nemesis-trans.png?alt=media&token=c24ad81a-0220-47e9-aeb0-2bdaf474d823',
     }, {
       name: 'Code: Ultimate',
@@ -221,7 +221,7 @@ const characters = [{
       name: 'Code: Empress',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Feve%2Fcode-empress.png?alt=media&token=b6ea096f-46e8-4d62-8fc1-42bbe8b6c0ec',
     }, {
-      name: 'Code: Empress Transcendent',
+      name: 'Code: Empress (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Feve%2Fcode-empress-trans.png?alt=media&token=1b30105e-b32e-4826-a603-f5026b1a650d',
     }, {
       name: 'Code: Essencia',
@@ -234,7 +234,7 @@ const characters = [{
       name: 'Code: Battle Seraph',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Feve%2Fcode-battle-seraph.png?alt=media&token=563c9872-0469-44da-9c04-9e8594a49277',
     }, {
-      name: 'Code: Battle Seraph Transcendent',
+      name: 'Code: Battle Seraph (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Feve%2Fcode-battle-seraph-trans.png?alt=media&token=9b383bc4-b9fb-4075-b09a-48bb3788c086',
     }, {
       name: 'Code: Sariel',
@@ -247,7 +247,7 @@ const characters = [{
       name: 'Code: Failess',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Feve%2Fcode-failess.png?alt=media&token=5c6eef8b-04ee-4a2e-905c-b2c4dbca1d9b',
     }, {
-      name: 'Code: Failess Transcendent',
+      name: 'Code: Failess (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Feve%2Fcode-failess-trans.png?alt=media&token=67f5ecc3-a62b-44c8-8848-713399835f37',
     }, {
       name: 'Code: Antithese',
@@ -267,7 +267,7 @@ const characters = [{
       name: 'Iron Paladin',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fchung%2Firon-paladin.png?alt=media&token=6c01b7c1-ab41-41be-9803-31d97648dab8',
     }, {
-      name: 'Iron Paladin Transcendent',
+      name: 'Iron Paladin (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fchung%2Firon-paladin-trans.png?alt=media&token=2515b937-217d-41c4-9260-d6678b9897ba',
     }, {
       name: 'Comet Crusader',
@@ -280,7 +280,7 @@ const characters = [{
       name: 'Deadly Chaser',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fchung%2Fdeadly-chaser.png?alt=media&token=1c812261-21f3-41d1-baef-fc136dcc0e80',
     }, {
-      name: 'Deadly Chaser Transcendent',
+      name: 'Deadly Chaser (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fchung%2Fdeadly-chaser-trans.png?alt=media&token=e371d2d9-a360-4b8a-bbb3-60ca09758981',
     }, {
       name: 'Fatal Phantom',
@@ -293,7 +293,7 @@ const characters = [{
       name: 'Tactical Trooper',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fchung%2Ftactical-trooper.png?alt=media&token=bf20e022-d3ff-4e46-941d-b18a058780cb',
     }, {
-      name: 'Tactical Trooper Transcendent',
+      name: 'Tactical Trooper (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fchung%2Ftactical-trooper-trans.png?alt=media&token=b447a730-6021-441a-8b5f-190cd5ec7feb',
     }, {
       name: 'Centurion',
@@ -313,7 +313,7 @@ const characters = [{
       name: 'Sakra Devanam',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fara%2Fsakra-devanam.png?alt=media&token=ee671f27-74c0-47e5-b00c-c4f29d4e0604',
     }, {
-      name: 'Sakra Devanam Transcendent',
+      name: 'Sakra Devanam (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fara%2Fsakra-devanam-trans.png?alt=media&token=4b4a4874-faac-4ed0-9230-1c44876e88c7',
     }, {
       name: 'Apsara',
@@ -326,7 +326,7 @@ const characters = [{
       name: 'Yama Raja',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fara%2Fyama-raja.png?alt=media&token=410e3fde-2aa5-42f6-a80b-d09cba449b19',
     }, {
-      name: 'Yama Raja Transcendent',
+      name: 'Yama Raja (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fara%2Fyama-raja-trans.png?alt=media&token=00737216-9362-43c3-84e4-62fc934e0b04',
     }, {
       name: 'Devi',
@@ -339,7 +339,7 @@ const characters = [{
       name: 'Asura',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fara%2Fasura.png?alt=media&token=ef721814-c767-4784-aad6-0df0981c9383',
     }, {
-      name: 'Asura Transcendent',
+      name: 'Asura (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fara%2Fasura-trans.png?alt=media&token=11530201-af16-4206-9829-06e3d5c34b97',
     }, {
       name: 'Shakti',
@@ -359,7 +359,7 @@ const characters = [{
       name: 'Grand Master',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felesis%2Fgrand-master.png?alt=media&token=b9651045-fe20-4044-a19e-5bb97e8f70f0',
     }, {
-      name: 'Grand Master Transcendent',
+      name: 'Grand Master (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felesis%2Fgrand-master-trans.png?alt=media&token=0b396e9e-e754-4041-98c5-30e6e846bab5',
 
     }, {
@@ -373,7 +373,7 @@ const characters = [{
       name: 'Blazing Heart',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felesis%2Fblazing-heart.png?alt=media&token=1fc8b6ad-e4d8-41d9-b34b-f5d364fd8641',
     }, {
-      name: 'Blazing Heart Transcendent',
+      name: 'Blazing Heart (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felesis%2Fblazing-heart-trans.png?alt=media&token=843d210a-f151-4e93-b3e1-c9f6144f2162',
     }, {
       name: 'Flame Lord',
@@ -386,7 +386,7 @@ const characters = [{
       name: 'Crimson Avenger',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felesis%2Fcrimson-avenger.png?alt=media&token=3ae987b7-a631-44c0-8c71-a66babf98dd3',
     }, {
-      name: 'Crimson Avenger Transcendent',
+      name: 'Crimson Avenger (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Felesis%2Fcrimson-avenger-trans.png?alt=media&token=825a1238-c5ee-4da7-bb9c-ce8951748b06',
     }, {
       name: 'Blood Queen',
@@ -407,7 +407,7 @@ const characters = [{
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fadd%2Flunatic-psyker.png?alt=media&token=53a59b0d-8b9b-4fc1-aaf7-7b46572cbe68',
 
     }, {
-      name: 'Lunatic Psyker Transcendent',
+      name: 'Lunatic Psyker (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fadd%2Flunatic-psyker-trans.png?alt=media&token=aaac52ea-df6b-4bac-a21a-ddcf825cd9a1',
 
     }, {
@@ -423,7 +423,7 @@ const characters = [{
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fadd%2Fmastermind.png?alt=media&token=87cda009-fdc6-4126-8b86-dfefc92cf6f8',
 
     }, {
-      name: 'Mastermind Transcendent',
+      name: 'Mastermind (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fadd%2Fmastermind-trans.png?alt=media&token=d7a0b5e3-b9e5-46f5-9a85-f2873ad15458',
 
     }, {
@@ -439,7 +439,7 @@ const characters = [{
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fadd%2Fdiabolic-esper.png?alt=media&token=2d5af881-9c43-4420-91d1-feff67ab1e1c',
 
     }, {
-      name: 'Diabolic Esper Transcendent',
+      name: 'Diabolic Esper (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fadd%2Fdiabolic-esper-trans.png?alt=media&token=f733e96f-e05b-4dd7-b0d7-ff9fa4c70a8b',
 
     }, {
@@ -458,7 +458,7 @@ const characters = [{
     name: 'Chiliarch',
     img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flu-ciel%2Fchiliarch.png?alt=media&token=974fa3fb-13a4-40e5-b6e5-992cb5c14481',
     child: [{
-      name: 'Chiliarch Transcendent',
+      name: 'Chiliarch (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flu-ciel%2Fchiliarch-trans.png?alt=media&token=2470298a-f226-4b8f-8cb1-aa40f7934c24',
     }, {
       name: 'Catastrophe(Timoria)',
@@ -468,7 +468,7 @@ const characters = [{
     name: 'Noblesse',
     img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flu-ciel%2Fnoblesse.png?alt=media&token=b16e53eb-3e60-464d-b07b-cfdcafae6d4d',
     child: [{
-      name: 'Noblesse Transcendent',
+      name: 'Noblesse (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flu-ciel%2Fnoblesse-trans.png?alt=media&token=9d87dacb-461c-4180-8ed4-c7babb1a9b10',
     }, {
       name: 'Innocent(Ishtar)',
@@ -478,7 +478,7 @@ const characters = [{
     name: 'Diabla',
     img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flu-ciel%2Fdiabla.png?alt=media&token=ffdd3ada-36e7-4771-9667-e729b298ceec',
     child: [{
-      name: 'Diabla Transcendent',
+      name: 'Diabla (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flu-ciel%2Fdiabla-trans.png?alt=media&token=eb60bd9c-ee2d-496d-9183-81d39e33e57c',
     }, {
       name: 'Diangelion(Iblis)',
@@ -495,7 +495,7 @@ const characters = [{
     name: 'Dreadlord',
     img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flu-ciel%2Fdreadlord.png?alt=media&token=ba8dbff7-87bf-4483-916e-a3938622dcdd',
     child: [{
-      name: 'Dreadlord Transcendent',
+      name: 'Dreadlord (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flu-ciel%2Fdreadlord-trans.png?alt=media&token=e2f47120-3c68-48b0-bd9f-8503daf0a245',
     }, {
       name: 'Catastrophe(Abysser)',
@@ -505,7 +505,7 @@ const characters = [{
     name: 'Royal Guard',
     img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flu-ciel%2Froyal-guard.png?alt=media&token=621543f2-0bca-452c-9ced-89a2ee8a6d31',
     child: [{
-      name: 'Royal Guard Transcendent',
+      name: 'Royal Guard (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flu-ciel%2Froyal-guard-trans.png?alt=media&token=2c78f5a4-d18c-4209-8fcd-0f5eb9220456',
     }, {
       name: 'Innocent(Chevalier)',
@@ -515,7 +515,7 @@ const characters = [{
     name: 'Demonio',
     img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flu-ciel%2Fdemonio.png?alt=media&token=4f5a201e-fc97-416a-89cb-f53728c792ae',
     child: [{
-      name: 'Demonio Transcendent',
+      name: 'Demonio (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flu-ciel%2Fdemonio-trans.png?alt=media&token=9f544aeb-4704-48c7-86f2-dc7f416b85a4',
     }, {
       name: 'Diangelion(Anular)',
@@ -535,7 +535,7 @@ const characters = [{
       name: 'Storm Trooper',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frose%2Fstorm-trooper.png?alt=media&token=83d78400-fdd8-49ca-9f85-5427ed9e5b37',
     }, {
-      name: 'Storm Trooper Transcendent',
+      name: 'Storm Trooper (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frose%2Fstorm-trooper-trans.png?alt=media&token=0ab82dc1-f68f-4713-8ec9-e5d52ee1008c',
     }, {
       name: 'Tempest Burster',
@@ -549,7 +549,7 @@ const characters = [{
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frose%2Fcrimson-rose.png?alt=media&token=0242b5ba-82a6-4cfa-8217-fb20dacb68f3',
     },
     {
-      name: 'Crimson Rose Transcendent',
+      name: 'Crimson Rose (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frose%2Fcrimson-rose-trans.png?alt=media&token=4bf3928c-5d74-4777-9416-e83d4f6e1f19',
     }, {
       name: 'Black Massacre',
@@ -562,7 +562,7 @@ const characters = [{
       name: 'Freyja',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frose%2Ffreyja.png?alt=media&token=bf17559b-56e2-4ff9-ac02-5091202109b4',
     }, {
-      name: 'Freyja Transcendent',
+      name: 'Freyja (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frose%2Ffreyja-trans.png?alt=media&token=3f6c1401-de20-4c3c-bda7-497aa0be39f1',
     }, {
       name: 'Minerva',
@@ -575,7 +575,7 @@ const characters = [{
       name: 'Optimus',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frose%2Foptimus.png?alt=media&token=5b1f9adb-fee0-4c1a-9cde-d86e7bdadbbc',
     }, {
-      name: 'Optimus Transcendent',
+      name: 'Optimus (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frose%2Foptimus-trans.png?alt=media&token=52d3ad29-6186-4dd7-aacd-7a74d94e4629',
     }, {
       name: 'Prime Operator',
@@ -595,7 +595,7 @@ const characters = [{
       name: 'Arme Thaumaturgy',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fain%2Farme-thaumaturgy.png?alt=media&token=c6731175-b991-413c-9a14-b0736c723dd6',
     }, {
-      name: 'Arme Thaumaturgy Transcendent',
+      name: 'Arme Thaumaturgy (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fain%2Farme-thaumaturgy-trans.png?alt=media&token=a6d27335-b9fc-4921-8b09-90bfc6b8311f',
     }, {
       name: 'Ritcher',
@@ -608,7 +608,7 @@ const characters = [{
       name: 'Erbluhen Emotion',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fain%2Ferbluhen-emotion.png?alt=media&token=e53f43df-2781-4c88-8e7a-d9a179876511',
     }, {
-      name: 'Erbluhen Emotion Transcendent',
+      name: 'Erbluhen Emotion (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fain%2Ferbluhen-emotion-trans.png?alt=media&token=2d41a0a7-8286-4896-801f-abefac8f0c95',
     }, {
       name: 'Bluhen',
@@ -621,7 +621,7 @@ const characters = [{
       name: 'Apostasia',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fain%2Fapostasia.png?alt=media&token=ec294a80-cee7-402d-ac71-0ce3149b56e0',
     }, {
-      name: 'Apostasia Transcendent',
+      name: 'Apostasia (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fain%2Fapostasia-trans.png?alt=media&token=11a3957b-c7dc-477c-b2ef-9173d14c7f79',
     }, {
       name: 'Herrscher',
@@ -641,7 +641,7 @@ const characters = [{
       name: 'Rumble Pumn',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flaby%2Frumble-pumn.png?alt=media&token=b38f9e35-fb82-48f8-ba4d-c9f933284ead',
     }, {
-      name: 'Rumble Pumn Transcendent',
+      name: 'Rumble Pumn (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flaby%2Frumble-pumn-trans.png?alt=media&token=7c4b3e72-df85-4d9f-87e6-d212969d92d0',
     }, {
       name: 'Eternity Winter',
@@ -654,7 +654,7 @@ const characters = [{
       name: 'Shinning Romantica',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flaby%2Fshining-romantica.png?alt=media&token=e90a525d-89a4-445b-9d44-97432b4875e3',
     }, {
-      name: 'Shinning Romantica Transcendent',
+      name: 'Shinning Romantica (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flaby%2Fshining-romantica-trans.png?alt=media&token=e609ca23-9d96-426e-a3e9-74421f5de56a',
     }, {
       name: 'Radiant Soul',
@@ -667,7 +667,7 @@ const characters = [{
       name: 'Daydreamer',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flaby%2Fdaydreamer.png?alt=media&token=f6f7b203-719f-4f04-995f-f56763519a74',
     }, {
-      name: 'Daydreamer Transcendent',
+      name: 'Daydreamer (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flaby%2Fdaydreamer-trans.png?alt=media&token=0271eefe-18d1-4a3a-9bdc-63ef3a2c1829',
     }, {
       name: 'Nisha Labyrinth',
@@ -687,7 +687,7 @@ const characters = [{
       name: 'Silent Shadow',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fnoah%2Fsilent-shadow.png?alt=media&token=03a14668-6cac-416d-a7de-df02000da072',
     }, {
-      name: 'Silent Shadow Transcendent',
+      name: 'Silent Shadow (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fnoah%2Fsilent-shadow-trans.png?alt=media&token=8017d73a-16fe-40ab-bd4c-ed17a18a4b4f',
     }, {
       name: 'Liberator',
@@ -700,7 +700,7 @@ const characters = [{
       name: 'Stellar Caster',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fnoah%2Fstellar-caster.png?alt=media&token=b90f5ed0-2766-465b-9baa-065653d06178',
     }, {
-      name: 'Stellar Caster Transcendent',
+      name: 'Stellar Caster (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fnoah%2Fstellar-caster-trans.png?alt=media&token=ee7638a0-1a20-46e5-992d-314cfe719dd1',
     }, {
       name: 'Celestia',
@@ -713,7 +713,7 @@ const characters = [{
       name: 'Pale Pilgrim',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fnoah%2Fpale-pilgrim.png?alt=media&token=5db7d600-db23-4f15-8ab8-ed71bf34959d',
     }, {
-      name: 'Pale Pilgrim Transcendent',
+      name: 'Pale Pilgrim (T)',
       img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fnoah%2Fpale-pilgrim-trans.png?alt=media&token=0db84e9d-2169-40fd-a43e-6b402d7b7fba',
     }, {
       name: 'Nyx Pieta',
