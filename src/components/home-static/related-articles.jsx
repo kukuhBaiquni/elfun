@@ -37,6 +37,7 @@ export default function RelatedArticles() {
               className='object-cover w-full h-full'
               layout='fill'
               placeholder='blur'
+              priority
               src={item.img}
             />
             <div className='mx-auto flex items-center justify-center flex-col absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-[-30%] opacity-0 group-hover:translate-y-[-55%] group-hover:opacity-100 z-10 transition-all duration-300'>

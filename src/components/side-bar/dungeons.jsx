@@ -14,6 +14,7 @@ export default function Dungeons({ data }) {
               <Image
                 alt={item.name}
                 height={25}
+                loading='eager'
                 src={item.img}
                 width={25}
               />
