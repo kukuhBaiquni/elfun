@@ -20,7 +20,6 @@ function Towns() {
                 alt={item.name}
                 className='object-cover'
                 height={20}
-                loading='eager'
                 src={item.img}
                 width={20}
               />
