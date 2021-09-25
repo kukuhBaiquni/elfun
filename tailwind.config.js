@@ -3,11 +3,19 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: [
-    './src/pages/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
-    './src/layouts/**/*.{js,ts,jsx,tsx}',
-  ],
+  purge: {
+    content: [
+      './src/pages/**/*.{js,ts,jsx,tsx}',
+      './src/components/**/*.{js,ts,jsx,tsx}',
+      './src/layouts/**/*.{js,ts,jsx,tsx}',
+    ],
+    safelist: [
+      'bg-elsword',
+      'text-elsword',
+      'hover:bg-elsword',
+      'dark:text-elsword-dark',
+    ],
+  },
   darkMode: 'class', // or 'media' or 'class'
   mode: 'jit',
   theme: {
