@@ -11,15 +11,8 @@ export default function Dungeons({ data }) {
       {data.child.map((item) => (
         <li className={clsx(data.textColor, data.hoverBgColor, 'job-nesting relative hover:text-white dark:hover:text-white')} key={item.name}>
           <Link href={`/character/${url(item.name)}`}>
-            <a className='py-1 pl-2 pr-4 flex items-center'>
-              <Image
-                alt={item.name}
-                height={25}
-                // loading='eager'
-                src={item.img}
-                width={25}
-              />
-              <p className='ml-1.5'>{item.name}</p>
+            <a className='py-1 pl-2 pr-4'>
+              {item.name}
             </a>
           </Link>
         </li>
