@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Fragment } from 'react'
-import Layout from 'layouts'
+import CharacterDetail from 'layouts/character-details'
+import OptimusCut from '../../../public/images/example/optimus-skill-cut.png'
 
 const avatar = 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frose%2Foptimus.png?alt=media&token=5b1f9adb-fee0-4c1a-9cde-d86e7bdadbbc'
 
@@ -14,6 +15,15 @@ export default function Optimus() {
         <meta content='Elsword, MMORPG, Optimus, Metal Heart, Prime Operator, Rose' name='keywords' />
       </Head>
       <main className='text-gray-600 dark:text-gray-400 px-2'>
+        <div className='max-w-screen-2xl bg-gradient-to-r from-black p-3 flex justify-end'>
+          <Image
+            alt='Optimus Skin Cut'
+            className='object-cover'
+            height={600}
+            src={OptimusCut}
+          />
+        </div>
+
         <h2 className='text-3xl font-semibold text-rose font-titillium'>Optimus</h2>
 
         <div className='mt-3 flex items-center'>
@@ -33,7 +43,7 @@ export default function Optimus() {
 }
 
 Optimus.getLayout = (page) => (
-  <Layout>
+  <CharacterDetail>
     {page}
-  </Layout>
+  </CharacterDetail>
 )
