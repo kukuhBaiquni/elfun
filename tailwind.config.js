@@ -135,6 +135,8 @@ module.exports = {
       'text-pruinaum-outskirt',
       'hover:bg-pruinaum-outskirt',
       'dark:text-pruinaum-outskirt-dark',
+
+      'dark:hover:text-gray-600',
     ],
   },
   darkMode: 'class', // or 'media' or 'class'
