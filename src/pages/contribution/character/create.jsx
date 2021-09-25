@@ -3,7 +3,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Layout from 'layouts'
 import { useRouter } from 'next/router'
-import characters from 'store/character-data'
 import Modal from 'components/common/modal'
 import Warning from 'components/common/modal/feedback/warning'
 

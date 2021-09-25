@@ -5,7 +5,7 @@ import clsx from 'clsx'
 
 export default function Dungeons({ data }) {
   const url = (text) => text.toLowerCase().replace(/\s/g, '-')
-  console.log(data)
+
   return (
     <ul className='absolute floatig-list min-w-max z-10 hidden group-hover:flex flex-col top-0 left-28 bg-gray-200 dark:bg-gray-700 drop-shadow-xl group-hover:translate-x-10 transition-transform duration-300'>
       {data.child.map((item) => (
