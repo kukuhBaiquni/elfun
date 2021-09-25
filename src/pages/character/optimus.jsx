@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Fragment } from 'react'
 import CharacterDetail from 'layouts/character-details'
 import OptimusCut from '../../../public/images/example/optimus-skill-cut.png'
+import CrimsonRoseCut from '../../../public/images/example/crimson-rose-skill-cut.png'
 
 const avatar = 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frose%2Foptimus.png?alt=media&token=5b1f9adb-fee0-4c1a-9cde-d86e7bdadbbc'
 
@@ -20,7 +21,7 @@ export default function Optimus() {
             alt='Optimus Skin Cut'
             className='object-cover'
             height={600}
-            src={OptimusCut}
+            src={CrimsonRoseCut}
           />
         </div>
 

@@ -11,8 +11,6 @@ export default function Create() {
   const [isVisible, setIsVisible] = useState(false)
   const { query } = useRouter()
 
-  console.log(query.character)
-
   return (
     <Fragment>
       <Head>
