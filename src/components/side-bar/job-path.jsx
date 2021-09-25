@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
+import clsx from 'clsx'
 
 function JobPath({ data }) {
   const url = (text) => text.toLowerCase().replace(/\s/g, '-')
@@ -8,7 +9,7 @@ function JobPath({ data }) {
   return (
     <ul className='absolute floatig-list w-52 z-10 hidden group-hover:flex flex-col top-0 left-28 bg-gray-200 dark:bg-gray-700 drop-shadow-xl group-hover:translate-x-10 transition-transform duration-300'>
       {data.child.map((item) => (
-        <li className={`job-nesting ${data.textColor} ${data.hoverBgColor} relative hover:text-white dark:hover:text-white`} key={item.name}>
+        <li className={clsx(data.textColor, data.hoverBgColor, data.hoverTextColor || 'hover:text-white dark:hover:text-white', 'job-nesting relative')} key={item.name}>
           <Link href={`/character/${url(item.name)}`}>
             <a className='py-1 px-2 flex items-center'>
               <Image
@@ -27,7 +28,7 @@ function JobPath({ data }) {
               {item.child.map((job) => (
                 <li key={job.name}>
                   <Link href={`/character/${url(job.name)}`}>
-                    <a className={`flex items-center ${data.textColor} ${data.hoverBgColor} hover:text-white dark:hover:text-white py-1 px-2 pr-16`}>
+                    <a className={clsx(data.textColor, data.hoverBgColor, data.hoverTextColor || 'hover:text-white dark:hover:text-white', 'flex items-center py-1 px-2 pr-16')}>
                       <Image
                         alt={job.name}
                         className='object-cover'

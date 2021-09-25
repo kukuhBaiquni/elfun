@@ -10,12 +10,11 @@ function Characters({ data }) {
     <Fragment>
       {data.map((item) => (
         <li
-          className={clsx(item.hoverBgColor, item.hoverTextColor || 'hover:text-white', 'relative z-10 pl-1 text-gray-600 dark:text-gray-400 dark:hover:text-white group hover:translate-x-2 cursor-pointer transition-transform-opacity duration-300')}
+          className={clsx('relative z-10 pl-1 group hover:translate-x-2 cursor-pointer transition-transform-opacity duration-300 dark:text-gray-400 text-gray-600', item.hoverBgColor, item.hoverTextColor || 'hover:text-white dark:hover:text-white')}
           key={item.name}
         >
-          {console.log(item.hoverTextColor || 'hover:text-white')}
           <Link href={`/character/${item.name.toLowerCase()}`}>
-            <a className='flex items-center p-1 group-hover:text-white'>
+            <a className={clsx(item.hoverTextColor && 'dark:group-hover:text-gray-600', 'flex items-center p-1')}>
               <Image
                 alt={item.name}
                 className='object-cover'
