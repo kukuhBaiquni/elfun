@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import towns from 'store/town-data'
+import clsx from 'clsx'
 import Dungeons from './dungeons'
 
 function Towns() {
@@ -11,11 +12,11 @@ function Towns() {
     <Fragment>
       {towns.map((item) => (
         <li
-          className={`relative pl-1 hover:text-white cursor-pointer text-gray-600 dark:text-gray-400 dark:hover:text-white group ${item.hoverBgColor} hover:translate-x-2 transition-transform-opacity duration-300`}
+          className={clsx(item.hoverBgColor, item.hoverTextColor || 'dark:hover:text-white hover:text-white cursor-pointer', 'relative pl-1 text-gray-600 dark:text-gray-400 group hover:translate-x-2 transition-transform-opacity duration-300')}
           key={item.name}
         >
           <Link href={`/town/${url(item.name)}`}>
-            <a className='flex items-center p-1 group-hover:text-white'>
+            <a className={clsx(item.hoverTextColor ? 'dark:group-hover:text-gray-600 group-hover:text-gray-600' : 'group-hover:text-white', 'flex items-center p-1')}>
               <Image
                 alt={item.name}
                 className='object-cover'
