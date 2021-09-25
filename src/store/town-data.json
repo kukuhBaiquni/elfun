@@ -187,8 +187,9 @@
     "name":"Sander",
     "img":"https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fsander.png?alt=media&token=0937dda6-8793-48c5-af8e-25eeffc9ba58",
     "bgColor":"bg-sander",
-    "textColor":"text-sander-light dark:text-sander-dark",
-    "hoverBgColor":"hover:bg-sander-light",
+    "textColor":"text-gray-600 dark:text-sander",
+    "hoverTextColor": "hover:text-gray-600",
+    "hoverBgColor":"hover:bg-sander",
     "child":[
       {
         "name":"Barren Sander"
@@ -307,7 +308,7 @@
     "name":"Varnimyr",
     "img":"https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fvarnimyr.png?alt=media&token=510cb5a8-ce59-4b1f-8c17-0833ef04d056",
     "bgColor":"bg-varnimyr",
-    "textColor":"text-varnimyr dark:text-varnimyr-dark",
+    "textColor":"text-gray-600 dark:text-varnimyr",
     "hoverBgColor":"hover:bg-varnimyr",
     "child":[
       {

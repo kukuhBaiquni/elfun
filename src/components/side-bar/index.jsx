@@ -46,7 +46,7 @@ const routes = [{
   name: 'Miscellaneous',
   path: '/miscellaneous',
 }]
-console.log(towns)
+
 function Sidebar() {
   const [navigation, setNavigation] = useImmer(routes)
 

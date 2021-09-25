@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import towns from '../../store/town-data'
+import towns from 'store/town-data'
 import Dungeons from './dungeons'
 
 function Towns() {
@@ -11,7 +11,7 @@ function Towns() {
     <Fragment>
       {towns.map((item) => (
         <li
-          className={`relative hover:text-white cursor-pointer text-gray-600 dark:text-gray-400 dark:hover:text-white group ${item.hoverBgColor} hover:translate-x-2 transition-transform-opacity duration-300`}
+          className={`relative pl-1 hover:text-white cursor-pointer text-gray-600 dark:text-gray-400 dark:hover:text-white group ${item.hoverBgColor} hover:translate-x-2 transition-transform-opacity duration-300`}
           key={item.name}
         >
           <Link href={`/town/${url(item.name)}`}>

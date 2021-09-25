@@ -10,9 +10,10 @@ function Characters({ data }) {
     <Fragment>
       {data.map((item) => (
         <li
-          className={clsx(item.hoverBgColor, 'relative z-10 pl-1 hover:text-white text-gray-600 dark:text-gray-400 dark:hover:text-white group hover:translate-x-2 cursor-pointer transition-transform-opacity duration-300')}
+          className={clsx(item.hoverBgColor, item.hoverTextColor || 'hover:text-white', 'relative z-10 pl-1 text-gray-600 dark:text-gray-400 dark:hover:text-white group hover:translate-x-2 cursor-pointer transition-transform-opacity duration-300')}
           key={item.name}
         >
+          {console.log(item.hoverTextColor || 'hover:text-white')}
           <Link href={`/character/${item.name.toLowerCase()}`}>
             <a className='flex items-center p-1 group-hover:text-white'>
               <Image

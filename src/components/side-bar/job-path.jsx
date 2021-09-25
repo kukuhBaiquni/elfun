@@ -27,7 +27,7 @@ function JobPath({ data }) {
               {item.child.map((job) => (
                 <li key={job.name}>
                   <Link href={`/character/${url(job.name)}`}>
-                    <a className={`flex items-center ${data.textColor} ${data.hoverBgColor} hover:text-white dark:hover:text-white py-1 px-2`}>
+                    <a className={`flex items-center ${data.textColor} ${data.hoverBgColor} hover:text-white dark:hover:text-white py-1 px-2 pr-16`}>
                       <Image
                         alt={job.name}
                         className='object-cover'
