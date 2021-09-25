@@ -21,7 +21,7 @@ export default function Optimus() {
             alt='Optimus Skin Cut'
             className='object-cover'
             height={600}
-            src={CrimsonRoseCut}
+            src={OptimusCut}
           />
         </div>
 

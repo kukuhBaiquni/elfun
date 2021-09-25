@@ -186,8 +186,8 @@ module.exports = {
   variants: {
     extend: {
       filter: ['hover'],
+      scrollbar: ['rounded'],
     },
-    scrollbar: ['rounded'],
   },
   plugins: [require('tailwind-scrollbar')],
 }

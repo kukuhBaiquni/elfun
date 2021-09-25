@@ -2,6 +2,7 @@ import Image from 'next/image'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { Fragment } from 'react'
+import clsx from 'clsx'
 import JobPath from './job-path'
 
 function Characters({ data }) {
@@ -9,7 +10,7 @@ function Characters({ data }) {
     <Fragment>
       {data.map((item) => (
         <li
-          className={`relative z-10 pl-1 hover:text-white text-gray-600 dark:text-gray-400 dark:hover:text-white group ${item.hoverBgColor} hover:translate-x-2 cursor-pointer transition-transform-opacity duration-300`}
+          className={clsx(item.hoverBgColor, 'relative z-10 pl-1 hover:text-white text-gray-600 dark:text-gray-400 dark:hover:text-white group hover:translate-x-2 cursor-pointer transition-transform-opacity duration-300')}
           key={item.name}
         >
           <Link href={`/character/${item.name.toLowerCase()}`}>
