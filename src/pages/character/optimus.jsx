@@ -45,9 +45,9 @@ export default function Optimus() {
               <button className='text-rose py-2 px-3 border border-rose' type='button'>Transcendent</button>
             </div>
           </div>
-          <div className='max-w-full bg-pink-500'>
-            <div className='absolute -top-6 left-3 dark:bg-gray-700 bg-gray-200 py-2 px-6 drop-shadow-lg'>
-              <h3 className='text-xl text-sky-500 font-semibold'>Basic Information</h3>
+          <div className='max-w-full'>
+            <div className='absolute -top-5 -sm:top-6 left-3 dark:bg-gray-700 bg-gray-200 py-2 px-6 drop-shadow-lg'>
+              <h3 className='sm:text-xl text-sky-500 font-semibold'>Basic Information</h3>
             </div>
             <div className='overflow-x-auto mt-3'>
               <div className='grid grid-cols-5 w-[550px] sm:w-full sm:max-w-lg'>

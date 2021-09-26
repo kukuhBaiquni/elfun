@@ -5,7 +5,7 @@ import Head from 'next/head'
 import Alert from 'components/common/alerts'
 import {
   Welcome, Contribute, RelatedArticles, NewsAndUpdate,
-} from 'components/home-static'
+} from 'components/page-fragment/home'
 
 function Home() {
   const alertContent = (
