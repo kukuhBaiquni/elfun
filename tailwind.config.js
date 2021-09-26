@@ -146,6 +146,7 @@ module.exports = {
       fontFamily: {
         nunito: ['Nunito'],
         titillium: ['Titillium Web'],
+        concert: ['Concert One'],
       },
       colors: {
         ...colors,
