@@ -38,9 +38,9 @@ export default function Optimus() {
         </section>
 
         <section className='bg-gradient-to-r dark:from-gray-700 from-gray-200 relative p-3 pt-6'>
-          <div className='w-full sm:w-[510px] p-3 border border-gray-600 mt-3'>
+          <div className='w-full lg:w-[510px] md:w-full p-3 border border-gray-600 mt-3'>
             <Image alt='optimus' className='object-cover' src={optimus} />
-            <div className='flex justify-center'>
+            <div className='flex justify-center mt-3'>
               <button className='bg-rose text-gray-600 py-2 px-3' type='button'>2nd Job</button>
               <button className='text-rose py-2 px-3 border border-rose' type='button'>Transcendent</button>
             </div>
@@ -50,7 +50,7 @@ export default function Optimus() {
               <h3 className='sm:text-xl text-sky-500 font-semibold'>Basic Information</h3>
             </div>
             <div className='overflow-x-auto mt-3'>
-              <div className='grid grid-cols-5 w-[550px] sm:w-full sm:max-w-lg'>
+              <div className='grid grid-cols-5 w-[550px] sm:w-full lg:max-w-lg'>
                 <div className='border border-gray-600 px-2 py-1 border-b-0 font-semibold dark:text-gray-300 text-gray-700'>Name</div>
                 <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 col-span-4'>Anna Testarossa (Rose)</div>
                 <div className='border border-gray-600 px-2 py-1 border-b-0 font-semibold dark:text-gray-300 text-gray-700'>Class</div>
