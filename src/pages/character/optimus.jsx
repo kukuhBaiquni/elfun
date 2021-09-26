@@ -7,6 +7,8 @@ import CharacterDetail from 'layouts/character-details'
 import { ArrowSmRightIcon } from '@heroicons/react/solid'
 import OptimusCut from '../../../public/images/example/optimus-skill-cut.png'
 import optimus from '../../../public/images/example/optimus.png'
+import magic from '../../../public/images/magic-dealer.png'
+import cover from '../../../public/images/cover.png'
 
 const avatar = 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frose%2Foptimus.png?alt=media&token=5b1f9adb-fee0-4c1a-9cde-d86e7bdadbbc'
 const rose = 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frose%2Frose.png?alt=media&token=dcad2e1b-f12b-4c47-a67c-4da32edf4a9a'
@@ -23,31 +25,28 @@ export default function Optimus() {
         <meta content='Elsword, MMORPG, Optimus, Metal Heart, Prime Operator, Rose' name='keywords' />
       </Head>
       <main className='text-gray-600 dark:text-gray-400 px-2 h-[2000px]'>
-        <section className='max-w-screen-2xl h-[400px] bg-gray-700 flex justify-end relative sm:p-3 mb-4'>
+        <section className='max-w-screen-2xl h-[400px] transform dark:bg-gray-700 bg-gray-200 flex justify-end relative sm:p-3 mb-3'>
           <Image
             alt='Optimus Skin Cut'
             className='object-cover'
+            quality={100}
             src={OptimusCut}
           />
           <div className='flex items-center absolute left-2 bottom-2 sm:left-3 sm:bottom-3'>
-            <Image alt='Optimus' height={54} quality={100} src={avatar} width={54} />
+            <Image alt='Optimus' height={54} src={avatar} width={54} />
             <h2 className='text-3xl font-semibold text-rose font-titillium ml-3'>Optimus</h2>
           </div>
         </section>
 
-        <section className='bg-gray-700 flex relative justify-between p-3'>
+        <section className='bg-gradient-to-r dark:bg-gray-700 flex bg-gray-200 relative justify-between p-3'>
           <div className='max-w-full sm:max-w-3xl'>
-            <p className='text-sm sm:text-lg text-rose'>
-              The ecstasy you get when you design as much driving parts as you want,
-              since design was considered a weakness as a weapon, was indescribable!
-            </p>
             <div className='sm:max-w-screen-lg overflow-x-auto mt-3'>
-              <div className='grid grid-cols-4 w-[400px] sm:w-full sm:max-w-lg'>
-                <div className='border border-gray-600 px-2 py-1 border-b-0'>Name</div>
-                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 col-span-3'>Anna Testarosa (Rose)</div>
-                <div className='border border-gray-600 px-2 py-1 border-b-0'>Class</div>
-                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 col-span-3'>Optimus</div>
-                <div className='border border-gray-600 px-2 py-1 border-b-0 flex items-center'>Weapon</div>
+              <div className='grid grid-cols-5 w-[400px] sm:w-full sm:max-w-lg'>
+                <div className='border border-gray-600 px-2 py-1 border-b-0 font-semibold dark:text-gray-300 text-gray-700'>Name</div>
+                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 col-span-4'>Anna Testarossa (Rose)</div>
+                <div className='border border-gray-600 px-2 py-1 border-b-0 font-semibold dark:text-gray-300 text-gray-700'>Class</div>
+                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 col-span-4 text-rose'>Optimus</div>
+                <div className='border border-gray-600 px-2 py-1 border-b-0 flex items-center font-semibold dark:text-gray-300 text-gray-700'>Weapon</div>
                 <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 col-span-3'>
                   <ul className='list-disc pl-5'>
                     <li>Guns (Auto-guns)</li>
@@ -56,12 +55,16 @@ export default function Optimus() {
                     <li>Mecha Volt MX</li>
                   </ul>
                 </div>
-                <div className='border border-gray-600 px-2 py-1 border-b-0'>Age</div>
-                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 col-span-3'>22</div>
-                <div className='border border-gray-600 px-2 py-1 border-b-0'>Race</div>
-                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 col-span-3'>Human</div>
-                <div className='border border-gray-600 px-2 py-1 flex items-center'>Class Tree</div>
-                <div className='border border-gray-600 px-2 border-l-0 py-2 col-span-3 flex justify-between items-center'>
+                <div className='border border-gray-600 px-2 border-b-0 border-l-0 flex items-center flex-col py-2'>
+                  <Image alt='Magic Emblem' src={magic} />
+                  <p>Magical</p>
+                </div>
+                <div className='border border-gray-600 px-2 py-1 border-b-0 font-semibold dark:text-gray-300 text-gray-700'>Age</div>
+                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 col-span-4'>22</div>
+                <div className='border border-gray-600 px-2 py-1 border-b-0 font-semibold dark:text-gray-300 text-gray-700'>Race</div>
+                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 col-span-4'>Human</div>
+                <div className='border border-gray-600 px-2 border-b-0 py-1 flex items-center font-semibold dark:text-gray-300 text-gray-700'>Class Tree</div>
+                <div className='border border-gray-600 px-2 border-l-0 py-2 col-span-4 flex border-b-0 justify-between items-center'>
                   <Image alt='rose' height={40} src={rose} width={40} />
                   <ArrowSmRightIcon className='w-5 h-5' />
                   <Image alt='rose' height={40} src={metalHeart} width={40} />
@@ -72,6 +75,22 @@ export default function Optimus() {
                   <ArrowSmRightIcon className='w-5 h-5' />
                   <Image alt='rose' height={40} src={primeOperator} width={40} />
                 </div>
+
+                <div className='border border-gray-600 row-span-3 px-2 py-1 border-b-0 flex items-center font-semibold dark:text-gray-300 text-gray-700'>Statistic</div>
+                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 font-semibold dark:text-gray-300 text-gray-700'>Speed:</div>
+                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1'>Slow</div>
+                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 bg-rose text-gray-600'>Average</div>
+                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1'>Fast</div>
+
+                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 font-semibold dark:text-gray-300 text-gray-700'>Range:</div>
+                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1'>Short</div>
+                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 bg-rose text-gray-600'>Medium</div>
+                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1'>Long</div>
+
+                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 font-semibold dark:text-gray-300 text-gray-700'>Difficulty:</div>
+                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1'>Easy</div>
+                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1'>Normal</div>
+                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 bg-rose text-gray-600'>Hard</div>
               </div>
 
             </div>

@@ -36,7 +36,7 @@ export default function RelatedArticles() {
             <Image
               alt='Elsword World'
               blurDataURL={loader('100%', '100%')}
-              className='object-cover w-full h-full'
+              className='object-cover'
               layout='fill'
               placeholder='blur'
               src={item.img}
