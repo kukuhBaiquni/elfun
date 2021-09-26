@@ -1,4 +1,4 @@
-import Image from 'next/image'
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
@@ -12,14 +12,7 @@ function JobPath({ data }) {
         <li className={clsx(data.textColor, data.hoverBgColor, data.hoverTextColor || 'hover:text-white dark:hover:text-white', 'job-nesting relative')} key={item.name}>
           <Link href={`/character/${url(item.name)}`}>
             <a className='py-1 px-2 flex items-center'>
-              <Image
-                alt={item.name}
-                className='object-cover'
-                height={20}
-                priority
-                src={item.img}
-                width={20}
-              />
+              <img alt={item.name} className='w-5 h-5' src={item.img} />
               <p className='ml-1.5'>{item.name}</p>
             </a>
           </Link>
@@ -29,14 +22,7 @@ function JobPath({ data }) {
                 <li key={job.name}>
                   <Link href={`/character/${url(job.name)}`}>
                     <a className={clsx(data.textColor, data.hoverBgColor, data.hoverTextColor || 'hover:text-white dark:hover:text-white', 'flex items-center py-1 px-2 pr-16')}>
-                      <Image
-                        alt={job.name}
-                        className='object-cover'
-                        height={20}
-                        priority
-                        src={job.img}
-                        width={20}
-                      />
+                      <img alt={job.name} className='w-5 h-5' src={job.img} />
                       <p className='ml-1.5'>{job.name}</p>
                     </a>
                   </Link>

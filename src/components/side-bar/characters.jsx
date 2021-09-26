@@ -1,4 +1,4 @@
-import Image from 'next/image'
+/* eslint-disable @next/next/no-img-element */
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { Fragment } from 'react'
@@ -15,14 +15,7 @@ function Characters({ data }) {
         >
           <Link href={`/character/${item.name.toLowerCase()}`}>
             <a className={clsx(item.hoverTextColor && 'dark:group-hover:text-gray-600', 'flex items-center p-1')}>
-              <Image
-                alt={item.name}
-                className='object-cover'
-                height={20}
-                priority
-                src={item.img}
-                width={20}
-              />
+              <img alt={item.name} className='w-5 h-5' src={item.img} />
               <p className='ml-1.5'>{item.name}</p>
             </a>
           </Link>
