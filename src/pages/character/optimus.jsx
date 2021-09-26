@@ -25,7 +25,7 @@ export default function Optimus() {
         <meta content='Elsword, MMORPG, Optimus, Metal Heart, Prime Operator, Rose' name='keywords' />
       </Head>
       <main className='text-gray-600 dark:text-gray-400 px-2 h-[2000px]'>
-        <section className='max-w-screen-2xl h-[400px] transform dark:bg-gray-700 bg-gray-200 flex justify-end relative sm:p-3 mb-3'>
+        <section className='max-w-screen-2xl h-[400px] bg-gradient-to-r from-sky-500 to-rose flex justify-end relative sm:p-3 mb-3'>
           <Image
             alt='Optimus Skin Cut'
             className='object-cover'
@@ -38,8 +38,9 @@ export default function Optimus() {
           </div>
         </section>
 
-        <section className='bg-gradient-to-r dark:bg-gray-700 flex bg-gray-200 relative justify-between p-3'>
-          <div className='max-w-full sm:max-w-3xl'>
+        <section className='bg-gradient-to-r max-w-7xl dark:from-gray-700 flex from-gray-200 relative justify-between items-center p-3'>
+          <div className='max-w-full sm:max-w-3xl self-start mr-4'>
+            <h3 className='text-2xl text-sky-500 font-semibold'>Basic Information</h3>
             <div className='sm:max-w-screen-lg overflow-x-auto mt-3'>
               <div className='grid grid-cols-5 w-[400px] sm:w-full sm:max-w-lg'>
                 <div className='border border-gray-600 px-2 py-1 border-b-0 font-semibold dark:text-gray-300 text-gray-700'>Name</div>
@@ -76,7 +77,7 @@ export default function Optimus() {
                   <Image alt='rose' height={40} src={primeOperator} width={40} />
                 </div>
 
-                <div className='border border-gray-600 row-span-3 px-2 py-1 border-b-0 flex items-center font-semibold dark:text-gray-300 text-gray-700'>Statistic</div>
+                <div className='border border-gray-600 row-span-3 px-2 py-1 flex items-center font-semibold dark:text-gray-300 text-gray-700'>Statistic</div>
                 <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 font-semibold dark:text-gray-300 text-gray-700'>Speed:</div>
                 <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1'>Slow</div>
                 <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 bg-rose text-gray-600'>Average</div>
@@ -87,10 +88,10 @@ export default function Optimus() {
                 <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 bg-rose text-gray-600'>Medium</div>
                 <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1'>Long</div>
 
-                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 font-semibold dark:text-gray-300 text-gray-700'>Difficulty:</div>
-                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1'>Easy</div>
-                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1'>Normal</div>
-                <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 bg-rose text-gray-600'>Hard</div>
+                <div className='border border-gray-600 px-2 border-l-0 py-1 font-semibold dark:text-gray-300 text-gray-700'>Difficulty:</div>
+                <div className='border border-gray-600 px-2 border-l-0 py-1'>Easy</div>
+                <div className='border border-gray-600 px-2 border-l-0 py-1'>Normal</div>
+                <div className='border border-gray-600 px-2 border-l-0 py-1 bg-rose text-gray-600'>Hard</div>
               </div>
 
             </div>
