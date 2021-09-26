@@ -2,12 +2,12 @@
 import { ExternalLinkIcon, ArrowSmRightIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
 import Image from 'next/image'
-import dungeon from '../../../public/images/categories/dungeon.png'
-import equipment from '../../../public/images/categories/equipment.png'
-import character from '../../../public/images/categories/rena-head.png'
-import title from '../../../public/images/categories/title.png'
-import town from '../../../public/images/categories/town.png'
-import npc from '../../../public/images/categories/npc.png'
+import dungeon from '../../../../public/images/categories/dungeon.png'
+import equipment from '../../../../public/images/categories/equipment.png'
+import character from '../../../../public/images/categories/rena-head.png'
+import title from '../../../../public/images/categories/title.png'
+import town from '../../../../public/images/categories/town.png'
+import npc from '../../../../public/images/categories/npc.png'
 
 const content = [{
   name: 'Characters',
