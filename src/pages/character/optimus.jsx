@@ -6,7 +6,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Fragment, useState } from 'react'
 import CharacterDetail from 'layouts/character-details'
-import { ArrowSmRightIcon } from '@heroicons/react/solid'
+import { ArrowSmRightIcon, ChevronUpIcon } from '@heroicons/react/solid'
+import { Disclosure, Transition } from '@headlessui/react'
 import OptimusCut from '../../../public/images/example/optimus-skill-cut.png'
 import optimus from '../../../public/images/example/optimus.png'
 import magic from '../../../public/images/magic-dealer.png'
@@ -28,7 +29,7 @@ export default function Optimus() {
         <meta content='Optimus - 4th Path of Rose (Elsword)' name='description' />
         <meta content='Elsword, MMORPG, Optimus, Metal Heart, Prime Operator, Rose' name='keywords' />
       </Head>
-      <main className='text-gray-600 dark:text-gray-400 px-2 h-[2000px]'>
+      <main className='text-gray-600 dark:text-gray-400 px-2 mb-10'>
         <section className='max-w-screen-2xl h-[400px] bg-gradient-to-r from-transparent to-rose flex justify-end relative sm:p-3 mb-3 drop-shadow-lg'>
           <Image
             alt='Optimus Skin Cut'
@@ -134,6 +135,65 @@ export default function Optimus() {
                 <Image alt='Mecha' height={30} src={optimusMecha} width={30} />
                 <p className='ml-2'>Item Mall: Optimus Mecha</p>
               </div>
+            </div>
+
+            <div className='w-full mt-3 bg-gray-700'>
+              <Disclosure>
+                {({ open }) => (
+                  <Fragment>
+                    <Disclosure.Button className='flex justify-between w-full px-4 py-2 font-medium text-left text-purple-900 bg-gray-700 hover:bg-gray-600 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75'>
+                      <span>What is your refund policy?</span>
+                      <ChevronUpIcon
+                        className={`${
+                    open ? 'transform rotate-180' : ''
+                  } w-5 h-5 text-purple-500`}
+                      />
+                    </Disclosure.Button>
+                    <Transition
+                      enter='transition duration-100 ease-out'
+                      enterFrom='transform scale-95 opacity-0'
+                      enterTo='transform scale-100 opacity-100'
+                      leave='transition duration-75 ease-out'
+                      leaveFrom='transform scale-100 opacity-100'
+                      leaveTo='transform scale-95 opacity-0'
+                    >
+
+                      <Disclosure.Panel className='px-4 pt-4 pb-2 text-sm text-gray-500'>
+                        If you&apos;re unhappy with your purchase for any reason, email us
+                        within 90 days and we&apos;ll refund you in full, no questions asked.
+                      </Disclosure.Panel>
+                    </Transition>
+                  </Fragment>
+                )}
+              </Disclosure>
+              <Disclosure as='div' className='mt-2'>
+                {({ open }) => (
+                  <Fragment>
+                    <Disclosure.Button className='flex justify-between w-full px-4 py-2 font-medium text-left text-purple-900 bg-gray-700 hover:bg-gray-600 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75'>
+                      <span>What is your refund policy?</span>
+                      <ChevronUpIcon
+                        className={`${
+                    open ? 'transform rotate-180' : ''
+                  } w-5 h-5 text-purple-500`}
+                      />
+                    </Disclosure.Button>
+                    <Transition
+                      enter='transition duration-100 ease-out'
+                      enterFrom='transform scale-95 opacity-0'
+                      enterTo='transform scale-100 opacity-100'
+                      leave='transition duration-75 ease-out'
+                      leaveFrom='transform scale-100 opacity-100'
+                      leaveTo='transform scale-95 opacity-0'
+                    >
+
+                      <Disclosure.Panel className='px-4 pt-4 pb-2 text-sm text-gray-500'>
+                        If you&apos;re unhappy with your purchase for any reason, email us
+                        within 90 days and we&apos;ll refund you in full, no questions asked.
+                      </Disclosure.Panel>
+                    </Transition>
+                  </Fragment>
+                )}
+              </Disclosure>
             </div>
           </div>
         </section>
