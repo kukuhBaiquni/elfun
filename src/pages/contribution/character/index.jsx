@@ -5,6 +5,7 @@ import Layout from 'layouts'
 import characters from 'store/character-data'
 import Modal from 'components/common/modal'
 import JobPathMapper from 'components/common/modal/job-path/job-path-mapper'
+import clsx from 'clsx'
 
 export default function Character() {
   const [isVisible, setIsVisible] = useState(false)
@@ -36,7 +37,7 @@ export default function Character() {
           {characters.map((item) => (
             <button className={`p-1 ${item.bgColor} flex items-center hover:opacity-70`} key={item.name} type='button' onClick={() => showModalAndSetData(item)}>
               <Image alt={item.name} height={20} src={item.img} width={20} />
-              <span className='text-white ml-2 font-titillium'>{item.name}</span>
+              <span className={clsx(item.hoverTextColor ? 'text-gray-600' : 'text-white', 'ml-2 font-titillium')}>{item.name}</span>
             </button>
           ))}
         </div>

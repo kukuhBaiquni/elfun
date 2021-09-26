@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { ChevronDoubleDownIcon, CheckCircleIcon, XIcon } from '@heroicons/react/solid'
 import loader from 'components/common/loader'
+import clsx from 'clsx'
 
 export default function JobPathMapper(props) {
   const {
@@ -19,13 +20,13 @@ export default function JobPathMapper(props) {
 
   return (
     <Fragment>
-      <div className={`text-white py-2 px-3 text-lg ${data?.bgColor} flex justify-between items-center`}>
+      <div className={clsx(data?.bgColor, data?.hoverTextColor ? 'text-gray-600' : 'text-white', 'py-2 px-3 text-lg flex justify-between items-center')}>
         <h5>Choose Character Path</h5>
         <XIcon className='w-6 h-6 cursor-pointer' onClick={() => setIsVisible(false)} />
       </div>
       <div className='p-2 mt-3 flex flex-col'>
         <div className='flex flex-col justify-center items-center'>
-          <div className={`p-1 mb-1 flex flex-col items-center ${selectedCharacter?.name === data?.name ? data?.bgColor : 'dark:bg-gray-500 bg-gray-400'} cursor-pointer hover:opacity-75 transition-all duration-300 relative`}>
+          <div className={clsx(selectedCharacter?.name === data?.name ? data?.bgColor : 'dark:bg-gray-500 bg-gray-400', 'p-1 mb-1 flex flex-col items-center cursor-pointer hover:opacity-75 transition-all duration-300 relative')}>
             <Image
               alt={data?.name}
               blurDataURL={loader(54, 54)}
@@ -44,7 +45,7 @@ export default function JobPathMapper(props) {
           />
         </div>
         <button
-          className={`text-base px-12 py-2 ${data?.bgColor} text-white rounded ml-auto hover:opacity-75 sm:w-3/4 disabled:bg-gray-500 disabled:cursor-not-allowed mt-8 mb-0 sm:mb-2 w-full mx-auto transition-all duration-300`}
+          className={clsx(data?.bgColor, data?.hoverTextColor ? 'text-gray-600' : 'text-white', 'text-base px-12 py-2 rounded ml-auto hover:opacity-75 sm:w-3/4 disabled:bg-gray-500 disabled:cursor-not-allowed mt-8 mb-0 sm:mb-2 w-full mx-auto transition-all duration-300')}
           disabled={!selectedCharacter}
           type='button'
           onClick={() => push(`${pathname}/create?character=${selectedCharacter?.name}`)}
