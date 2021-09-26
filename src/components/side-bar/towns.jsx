@@ -17,7 +17,7 @@ function Towns() {
         >
           <Link href={`/town/${url(item.name)}`}>
             <a className={clsx(item.hoverTextColor ? 'dark:group-hover:text-gray-600 group-hover:text-gray-600' : 'group-hover:text-white', 'flex items-center p-1')}>
-              <img alt={item.name} className='w-5 h-5' src={item.img} />
+              <img alt={item.name} height={20} src={item.img} width={20} />
               <p className='ml-1.5'>{item.name}</p>
             </a>
           </Link>

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 import Image from 'next/image'
 import loader from 'components/common/loader'
@@ -31,6 +32,7 @@ export default function RelatedArticles() {
         {articles.map((item) => (
           <div className='relative group p-2 h-[200px]' key={item.title}>
             <div className='w-full h-full bg-black absolute z-10 top-0 left-0 opacity-0 group-hover:opacity-90 transition-all duration-300' />
+            {/* <img alt='asd' className='object-cover' height='100%' src={item.img} width='100%' /> */}
             <Image
               alt='Elsword World'
               blurDataURL={loader('100%', '100%')}
