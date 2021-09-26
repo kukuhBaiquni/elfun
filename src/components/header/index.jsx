@@ -38,6 +38,7 @@ function Header() {
             <Image
               alt='Trans Logo'
               height={30}
+              priority
               src='https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Fraven%2Freckless-fist.png?alt=media&token=0123d1ce-7cc2-4e87-a47c-c2107e059cd2'
               width={30}
             />

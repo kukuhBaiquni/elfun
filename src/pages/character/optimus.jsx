@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Fragment } from 'react'
 import CharacterDetail from 'layouts/character-details'
+import { ArrowSmRightIcon } from '@heroicons/react/solid'
 import OptimusCut from '../../../public/images/example/optimus-skill-cut.png'
 import optimus from '../../../public/images/example/optimus.png'
 
@@ -23,13 +24,13 @@ export default function Optimus() {
       </Head>
       <main className='text-gray-600 dark:text-gray-400 px-2 h-[2000px]'>
         <section className='max-w-screen-2xl h-[400px] bg-gray-700 flex justify-end relative sm:p-3 mb-4'>
-          <Image
+          {/* <Image
             alt='Optimus Skin Cut'
             className='object-cover'
             src={OptimusCut}
-          />
+          /> */}
           <div className='flex items-center absolute left-2 bottom-2 sm:left-3 sm:bottom-3'>
-            <Image alt='Optimus' height={54} quality={100} src={avatar} width={54} />
+            {/* <Image alt='Optimus' height={54} quality={100} src={avatar} width={54} /> */}
             <h2 className='text-3xl font-semibold text-rose font-titillium ml-3'>Optimus</h2>
           </div>
         </section>
@@ -60,19 +61,23 @@ export default function Optimus() {
                 <div className='border border-gray-600 px-2 py-1 border-b-0'>Race</div>
                 <div className='border border-gray-600 px-2 border-l-0 border-b-0 py-1 col-span-3'>Human</div>
                 <div className='border border-gray-600 px-2 py-1 flex items-center'>Class Tree</div>
-                <div className='border border-gray-600 px-2 border-l-0 py-2 col-span-3 flex justify-between'>
-                  <Image alt='rose' height={40} src={rose} width={40} />
+                <div className='border border-gray-600 px-2 border-l-0 py-2 col-span-3 flex justify-between items-center'>
+                  {/* <Image alt='rose' height={40} src={rose} width={40} />
+                  <ArrowSmRightIcon className='w-5 h-5' />
                   <Image alt='rose' height={40} src={metalHeart} width={40} />
+                  <ArrowSmRightIcon className='w-5 h-5' />
                   <Image alt='rose' height={40} src={avatar} width={40} />
+                  <ArrowSmRightIcon className='w-5 h-5' />
                   <Image alt='rose' height={40} src={optimusT} width={40} />
-                  <Image alt='rose' height={40} src={primeOperator} width={40} />
+                  <ArrowSmRightIcon className='w-5 h-5' />
+                  <Image alt='rose' height={40} src={primeOperator} width={40} /> */}
                 </div>
               </div>
 
             </div>
           </div>
           <div className='w-[500px] hidden md:block'>
-            <Image alt='optimus' className='object-cover' src={optimus} />
+            {/* <Image alt='optimus' className='object-cover' src={optimus} /> */}
           </div>
         </section>
 

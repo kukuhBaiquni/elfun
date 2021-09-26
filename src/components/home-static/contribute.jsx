@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { ExternalLinkIcon, ArrowSmRightIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
 import Image from 'next/image'
