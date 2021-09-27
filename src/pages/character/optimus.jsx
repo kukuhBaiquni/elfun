@@ -8,7 +8,7 @@ import { Fragment, useState } from 'react'
 import CharacterDetail from 'layouts/character-details'
 import { ArrowSmRightIcon } from '@heroicons/react/solid'
 import ChangeJobQuest from 'components/page-fragment/character/change-job-quest'
-import OptimusCut from '../../../public/images/example/optimus-skill-cut.png'
+import CoverHeader from 'components/page-fragment/character/cover-header'
 import optimus from '../../../public/images/example/optimus.png'
 import magic from '../../../public/images/magic-dealer.png'
 import optimusMecha from '../../../public/images/example/optimus-mecha.png'
@@ -30,17 +30,7 @@ export default function Optimus() {
         <meta content='Elsword, MMORPG, Optimus, Metal Heart, Prime Operator, Rose' name='keywords' />
       </Head>
       <main className='text-gray-600 dark:text-gray-400 px-2 mb-10'>
-        <section className='max-w-screen-2xl h-[400px] bg-gradient-to-r from-transparent to-rose flex justify-end relative sm:p-3 mb-3 drop-shadow-lg'>
-          <Image
-            alt='Optimus Skin Cut'
-            className='object-cover'
-            quality={100}
-            src={OptimusCut}
-          />
-          <div className='flex items-center absolute bottom-3 left-0 py-2 px-6 rounded-r-full bg-gray-900'>
-            <h2 className='text-3xl text-rose font-titillium'>Optimus</h2>
-          </div>
-        </section>
+        <CoverHeader />
 
         <section className='bg-gradient-to-r dark:from-gray-700 from-gray-200 p-3 lg:flex'>
           <div>

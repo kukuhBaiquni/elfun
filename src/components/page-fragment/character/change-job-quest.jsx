@@ -24,7 +24,6 @@ export default function ChangeJobQuest() {
               leaveFrom='transform scale-100 opacity-100'
               leaveTo='transform scale-95 opacity-0'
             >
-
               <Disclosure.Panel className='p-2 text-gray-600 dark:text-gray-400 border dark:border-gray-600 border-gray-300'>
                 <Disclosure>
                   {(props) => (
