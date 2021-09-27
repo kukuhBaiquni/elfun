@@ -1,0 +1,103 @@
+{
+  "tree":[
+    {
+      "level":35,
+      "skills":[
+        {
+          "skillId":"11.402.35.0S.N.U",
+          "name":"Magnetic Guard",
+          "description":"Summons a Magnetic Guard to protect you and your allies for 20 secs.  Magical Attack Power, Damage Reduction, and Special Active Skill Cooldown Acceleration are increased for the duration of the skill.",
+          "img":"../../../../public/images/example/skill/magnetic-guard.png",
+          "type":{
+            "value":1,
+            "label":"Active",
+            "flag":""
+          },
+          "uniqueUsage":[
+            {
+              "title":"ECP Using Skill",
+              "info":[
+                {
+                  "description":"Consumes ECP instead of MP"
+                },
+                {
+                  "description":"Upon activating Over Strike, skill cannot be used"
+                }
+              ]
+            }
+          ],
+          "finalEnhanced":{
+            "description":"Damage reduction increased by 5%",
+            "result":{
+              "value":10,
+              "suffix":"%"
+            }
+          },
+          "requirements":[
+            {
+              "class":{
+                "value":"11.402",
+                "label":"Optimus"
+              },
+              "level":35
+            }
+          ],
+          "tableInformation":{
+            "head":[
+              {
+                "label":"Magical Attack Power Increase",
+                "rootData":"magicAttackIncrease"
+              },
+              {
+                "label":"Received Damage Decrease",
+                "rootData":"damageReduction"
+              },
+              {
+                "label":"Special Active Skill Cooldown Speed",
+                "rootData":"skillCooldown"
+              },
+              {
+                "label":"Duration",
+                "rootData":"duration"
+              },
+              {
+                "label":"ECP Usage",
+                "rootData":"ecp"
+              },
+              {
+                "label":"Cooldown",
+                "rootData":"cooldown"
+              }
+            ]
+          },
+          "traits":[
+            {
+              "name":"Killing Blow (1) Magnetic Guard",
+              "effect":"Skill duration increased by 20%",
+              "result":{
+                "field":{
+                  "rootData":"duration",
+                  "label":"Duration"
+                },
+                "value":24,
+                "suffix":"seconds"
+              }
+            },
+            {
+              "name":"Haste Magnetic Guard",
+              "effect":"Skill cooldown decreased by 20%",
+              "result":{
+                "field":{
+                  "rootData":"cooldown",
+                  "label":"Cooldown"
+                },
+                "value":24,
+                "suffix":"seconds"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
