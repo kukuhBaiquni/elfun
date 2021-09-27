@@ -13,7 +13,7 @@ export default function Table(props) {
   } = tableInstance
 
   return (
-    <table {...getTableProps()} className='border-collapse min-w-max'>
+    <table {...getTableProps()} className='border-collapse'>
       <thead>
         {headerGroups.map((headerGroup, i) => (
           <tr key={i} {...headerGroup.getHeaderGroupProps()}>
