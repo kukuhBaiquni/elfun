@@ -205,10 +205,18 @@
                 "field": {
                   "rootData": "gatlingShot",
                   "label": "Gatling Shot",
-                  "attribute": [
+                  "attributes": [
                     {
-                      "value": 2,
-                      "label": "Magical"
+                      "label": "Damage",
+                      "value": 91,
+                      "suffix": "%",
+                      "display": "91%"
+                    },
+                    {
+                      "label": "Max Hit",
+                      "value": 22,
+                      "suffix": "",
+                      "display": "22"
                     }
                   ]
                 },
@@ -220,10 +228,20 @@
                 "field": {
                   "rootData": "guidedMissile",
                   "label": "Guided Missile",
-                  "attribute": {
-                    "value": 2,
-                    "label": "Magical"
-                  }
+                  "attribute": [
+                    {
+                      "label": "Damage",
+                      "value": 155,
+                      "suffix": "%",
+                      "display": "155%"
+                    },
+                    {
+                      "label": "Max Hit",
+                      "value": 24,
+                      "suffix": "",
+                      "display": "24"
+                    }
+                  ]
                 },
                 "value":155,
                 "suffix":"%",
@@ -233,10 +251,20 @@
                 "field": {
                   "rootData": "laserBeam",
                   "label": "Laser Beam",
-                  "attribute": {
-                    "value": 2,
-                    "label": "Magical"
-                  }
+                  "attribute": [
+                    {
+                      "label": "Damage",
+                      "value": 288,
+                      "suffix": "%",
+                      "display": "288%"
+                    },
+                    {
+                      "label": "Max Hit",
+                      "value": 8,
+                      "suffix": "",
+                      "display": "8"
+                    }
+                  ]
                 },
                 "value":288,
                 "suffix":"%",
