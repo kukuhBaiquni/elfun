@@ -23,91 +23,33 @@ import skillLock from '../../../../public/images/skill-lock.png'
 
 export default function SkillTree() {
   return (
-    <Fragment>
-      <h6 className='dark:text-gray-300 text-gray-700 font-semibold text-2xl font-titillium mb-1'>Skill Tree</h6>
-      <div className='grid grid-cols-12 mt-4'>
-        <div className='bg-gray-600' />
-        <div className='flex items-center justify-center p-3 bg-gray-600 text-center'>Level 35</div>
-        <div className='flex items-center justify-center p-3 bg-gray-600 text-center'>Level 45</div>
-        <div className='flex items-center justify-center p-3 bg-gray-600 text-center'>Level 50</div>
-        <div className='flex items-center justify-center p-3 bg-gray-600 text-center'>Level 55</div>
-        <div className='flex items-center justify-center p-3 bg-gray-600 text-center'>Level 60</div>
-        <div className='flex items-center justify-center p-3 bg-gray-600 text-center'>Level 65</div>
-        <div className='row-span-6 flex items-center justify-center bg-gray-600'>Transcendent</div>
-        <div className='flex items-center justify-center p-3 bg-gray-600 text-center'>Level 70</div>
-        <div className='flex items-center justify-center p-3 bg-gray-600 text-center'>Level 80</div>
-        <div className='flex items-center justify-center p-3 bg-gray-600 text-center'>Level 90</div>
-        <div className='flex items-center justify-center p-3 bg-gray-600 text-center'>Level 95</div>
-        <div className='bg-cyan-300 text-gray-600 p-3 flex items-center justify-center'>Passive</div>
-        <div className='p-3 flex items-center justify-center'>
+    <div className='font-titillium'>
+      <h6 className='dark:text-gray-300 text-gray-700 font-semibold text-2xl mb-1'>Skill Tree</h6>
+      <div className='grid grid-cols-6 mt-4 lg:max-w-lg'>
+        <div className='p-3 bg-gray-600 text-center'>Level</div>
+        <div className='p-3 col-span-3 bg-gray-700 text-center'>Skills</div>
+        <div className='p-3 bg-gray-800 text-center'>Passives</div>
+        <div className='p-3 bg-gray-900 text-center'>Locked</div>
+        <div className='flex items-center justify-center p-3 bg-gray-700 text-center text-lg'>35</div>
+        <div className='p-3 flex bg-gray-700 items-center justify-center'>
+          <Image alt='Magnetic Guard' height={54} src={magneticGuard} width={54} />
+        </div>
+        <div className='p-3 bg-gray-700 flex items-center justify-center'>
+          <Image alt='Battle Roid' height={54} src={battleRoid} width={54} />
+        </div>
+        <div />
+        <div className='p-3 bg-gray-800 flex items-center justify-center'>
           <Image alt='G-Extension' height={54} src={gExtension} width={54} />
         </div>
         <div />
+        <div className='flex items-center justify-center p-3 bg-gray-700 text-center text-lg'>45</div>
         <div />
-        <div />
-        <div className='p-3 flex items-center justify-center'>
-          <Image alt='Mecha Generator' height={54} src={mechaGenerator} width={54} />
-        </div>
-        <div />
-        <div>70</div>
-        <div>80</div>
-        <div>90</div>
-        <div>95</div>
-        <div className='bg-red-300 text-gray-600 p-3 flex items-center justify-center'>Active</div>
-        <div className='p-3 flex items-center justify-center'>
-          <Image alt='Magnetic Guard' height={54} src={magneticGuard} width={54} />
-        </div>
-        <div />
-        <div className='p-3 flex items-center justify-center'>
-          <Image alt='G-3 Raptor' height={54} src={raptor} width={54} />
-        </div>
-        <div />
-        <div />
-        <div />
-        <div>70</div>
-        <div>80</div>
-        <div>90</div>
-        <div>95</div>
-        <div className='bg-orange-300 text-gray-600 p-3 flex items-center justify-center text-center'>Special Active</div>
-        <div className='p-3 flex items-center justify-center'>
-          <Image alt='Battle Roid' height={54} src={battleRoid} width={54} />
-        </div>
-        <div className='p-3 flex items-center justify-center'>
+        <div className='p-3 bg-gray-700 flex items-center justify-center'>
           <Image alt='G-1 Corona' height={54} src={corona} width={54} />
         </div>
-        <div className='p-3 flex items-center justify-center'>
-          <Image alt='G-2 Rolling Thunder' height={54} src={rollingThunder} width={54} />
-        </div>
-        <div className='p-3 flex items-center justify-center'>
-          <Image alt='Magnetic Generator' height={54} src={magneticGenerator} width={54} />
-        </div>
         <div />
         <div />
-        <div>70</div>
-        <div>80</div>
-        <div>90</div>
-        <div>95</div>
-        <div className='bg-sky-300 text-gray-600 p-3 flex items-center justify-center'>Hyper Active</div>
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div className='p-3 flex items-center justify-center'>
-          <div className='relative flex'>
-            <div className='absolute top-0 z-10 hover:hidden flex items-center justify-center'>
-              <Image alt='G-4 Frisbee' height={54} src={skillLock} width={54} />
-            </div>
-            <Image alt='Mecha Volt MX' height={54} src={mechaVolt} width={54} />
-          </div>
-        </div>
-        <div>70</div>
-        <div>80</div>
-        <div>90</div>
-        <div>95</div>
-        <div className='bg-green-300 text-gray-600 p-3 flex items-center justify-center'>Locked</div>
-        <div />
-        <div className='p-3 flex items-center justify-center'>
+        <div className='p-3 bg-gray-900 flex items-center justify-center'>
           <div className='relative flex'>
             <div className='absolute top-0 z-10 hover:hidden flex items-center justify-center'>
               <Image alt='G-4 Frisbee' height={54} src={skillLock} width={54} />
@@ -115,9 +57,32 @@ export default function SkillTree() {
             <Image alt='G-4 Frisbee' height={54} src={frisbee} width={54} />
           </div>
         </div>
+        <div className='flex items-center justify-center p-3 bg-gray-700 text-center text-lg'>50</div>
+        <div className='p-3 bg-gray-700 flex items-center justify-center'>
+          <Image alt='G-3 Raptor' height={54} src={raptor} width={54} />
+        </div>
+        <div className='p-3 bg-gray-700 flex items-center justify-center'>
+          <Image alt='G-2 Rolling Thunder' height={54} src={rollingThunder} width={54} />
+        </div>
         <div />
         <div />
-        <div className='p-3 flex items-center justify-center'>
+        <div />
+        <div className='flex items-center justify-center p-3 bg-gray-700 text-center text-lg'>55</div>
+        <div />
+        <div className='p-3 bg-gray-700 flex items-center justify-center'>
+          <Image alt='Magnetic Generator' height={54} src={magneticGenerator} width={54} />
+        </div>
+        <div />
+        <div />
+        <div />
+        <div className='flex items-center justify-center p-3 bg-gray-700 text-center text-lg'>60</div>
+        <div />
+        <div />
+        <div />
+        <div className='p-3 bg-gray-800 flex items-center justify-center'>
+          <Image alt='Mecha Generator' height={54} src={mechaGenerator} width={54} />
+        </div>
+        <div className='p-3 bg-gray-900 flex items-center justify-center'>
           <div className='relative flex'>
             <div className='absolute top-0 z-10 hover:hidden flex items-center justify-center'>
               <Image alt='G-4 Frisbee' height={54} src={skillLock} width={54} />
@@ -125,12 +90,69 @@ export default function SkillTree() {
             <Image alt='G-Mastery' height={54} src={gMastery} width={54} />
           </div>
         </div>
+        <div className='flex items-center justify-center p-3 bg-gray-700 text-center text-lg'>65</div>
         <div />
-        <div>70</div>
-        <div>80</div>
-        <div>90</div>
-        <div>95</div>
+        <div />
+        <div className='p-3 bg-gray-700 flex items-center justify-center'>
+          <div className='relative flex'>
+            <div className='absolute top-0 z-10 hover:hidden flex items-center justify-center'>
+              <Image alt='G-4 Frisbee' height={54} src={skillLock} width={54} />
+            </div>
+            <Image alt='Mecha Volt MX' height={54} src={mechaVolt} width={54} />
+          </div>
+        </div>
+        <div />
+        <div />
+        <div className='col-span-6 p-6 flex items-center justify-center bg-rose text-gray-600'>Transcendent</div>
+        <div className='flex items-center justify-center p-3 bg-gray-700 text-center text-lg'>70</div>
+        <div />
+        <div className='p-3 bg-gray-700 flex items-center justify-center'>
+          <Image alt='EX-C Viper' height={54} src={viper} width={54} />
+        </div>
+        <div />
+        <div className='p-3 bg-gray-700 flex items-center justify-center'>
+          <Image alt='Awakened Will: Optimus' height={54} src={awakenedWillOpt} width={54} />
+        </div>
+        <div />
+        <div className='flex items-center justify-center p-3 bg-gray-700 text-center text-lg'>80</div>
+        <div className='p-3 bg-gray-700 flex items-center justify-center'>
+          <Image alt='Focused Strike!' height={54} src={focusedStrike} width={54} />
+        </div>
+        <div />
+        <div />
+        <div />
+        <div className='p-3 bg-gray-700 flex items-center justify-center'>
+          <div className='relative flex'>
+            <div className='absolute top-0 z-10 hover:hidden flex items-center justify-center'>
+              <Image alt='G-4 Frisbee' height={54} src={skillLock} width={54} />
+            </div>
+            <Image alt='Awakened One' height={54} src={awakenedOne} width={54} />
+          </div>
+        </div>
+        <div className='flex items-center justify-center p-3 bg-gray-700 text-center text-lg'>90</div>
+        <div />
+        <div className='p-3 bg-gray-700 flex items-center justify-center'>
+          <Image alt='Ancient Buster' height={54} src={ancientBuster} width={54} />
+        </div>
+        <div />
+        <div />
+        <div className='p-3 bg-gray-700 flex items-center justify-center'>
+          <div className='relative flex'>
+            <div className='absolute top-0 z-10 hover:hidden flex items-center justify-center'>
+              <Image alt='G-4 Frisbee' height={54} src={skillLock} width={54} />
+            </div>
+            <Image alt='Sub Mech Revolution' height={54} src={subMechRevolution} width={54} />
+          </div>
+        </div>
+        <div className='flex items-center justify-center p-3 bg-gray-700 text-center text-lg'>95</div>
+        <div />
+        <div className='p-3 bg-gray-700 flex items-center justify-center'>
+          <Image alt='Ancient Buster' height={54} src={armoredTempest} width={54} />
+        </div>
+        <div />
+        <div />
+        <div />
       </div>
-    </Fragment>
+    </div>
   )
 }
