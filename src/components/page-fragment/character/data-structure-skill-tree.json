@@ -33,7 +33,7 @@
                 "field": {
                   "rootData": "damageReduction",
                   "label": "Receive Damage Reduction",
-                  "attribute": null
+                  "attributes": []
                 },
                 "value":10,
                 "suffix":"%",
@@ -56,64 +56,70 @@
               {
                 "label":"Magical Attack Power Increase",
                 "rootData":"magicAttackIncrease",
-                "attribute": null
+                "attributes": []
               },
               {
                 "label":"Received Damage Decrease",
                 "rootData":"damageReduction",
-                "attribute": null
+                "attributes": []
               },
               {
                 "label":"Special Active Skill Cooldown Speed",
                 "rootData":"skillCooldown",
-                "attribute": null
+                "attributes": []
               },
               {
                 "label":"Duration",
                 "rootData":"duration",
-                "attribute": null
+                "attributes": []
               },
               {
                 "label":"ECP Usage",
                 "rootData":"ecp",
-                "attribute": null
+                "attributes": []
               },
               {
                 "label":"Cooldown",
                 "rootData":"cooldown",
-                "attribute": null
+                "attributes": []
               }
             ],
             "data": {
               "magicAttackIncrease": {
                 "value": 20,
                 "suffix": "%",
-                "display": "20%"
+                "display": "20%",
+                "attributes": []
               },
               "damageReduction": {
                 "value": 5,
                 "suffix": "%",
-                "display": "5%"
+                "display": "5%",
+                "attributes": []
               },
               "skillCooldown": {
                 "value": 1.3,
                 "suffix": "x",
-                "display": "x 1.3"
+                "display": "x 1.3",
+                "attributes": []
               },
               "duration": {
                 "value": 20,
                 "suffix": "seconds",
-                "display": "20 seconds"
+                "display": "20 seconds",
+                "attributes": []
               },
               "ecp": {
                 "value": 35,
                 "suffix": "ECP",
-                "display": "35 ECP"
+                "display": "35 ECP",
+                "attributes": []
               },
               "cooldown": {
                 "value": 22,
                 "suffix": "seconds",
-                "display": "22 seconds"
+                "display": "22 seconds",
+                "attributes": []
               }
             }
           },
@@ -126,7 +132,7 @@
                   "field":{
                     "rootData":"duration",
                     "label":"Duration",
-                    "attribute": null
+                    "attributes": []
                   },
                   "value":24,
                   "suffix":"seconds"
@@ -141,7 +147,7 @@
                   "field":{
                     "rootData":"cooldown",
                     "label":"Cooldown",
-                    "attribute": null
+                    "attributes": []
                   },
                   "value":17.6,
                   "suffix":"seconds"
@@ -208,12 +214,14 @@
                   "attributes": [
                     {
                       "label": "Damage",
+                      "rootData": "damage",
                       "value": 91,
                       "suffix": "%",
                       "display": "91%"
                     },
                     {
                       "label": "Max Hit",
+                      "rootData": "maxHit",
                       "value": 22,
                       "suffix": "",
                       "display": "22"
@@ -228,15 +236,17 @@
                 "field": {
                   "rootData": "guidedMissile",
                   "label": "Guided Missile",
-                  "attribute": [
+                  "attributes": [
                     {
                       "label": "Damage",
+                      "rootData": "damage",
                       "value": 155,
                       "suffix": "%",
                       "display": "155%"
                     },
                     {
                       "label": "Max Hit",
+                      "rootData": "maxHit",
                       "value": 24,
                       "suffix": "",
                       "display": "24"
@@ -251,15 +261,17 @@
                 "field": {
                   "rootData": "laserBeam",
                   "label": "Laser Beam",
-                  "attribute": [
+                  "attributes": [
                     {
                       "label": "Damage",
+                      "rootData": "damage",
                       "value": 288,
                       "suffix": "%",
                       "display": "288%"
                     },
                     {
                       "label": "Max Hit",
+                      "rootData": "maxHit",
                       "value": 8,
                       "suffix": "",
                       "display": "8"
@@ -286,29 +298,104 @@
             "head":[
               {
                 "label":"Gatling Shot",
-                "rootData":"gatlingShot"
+                "rootData":"gatlingShot",
+                "attributes": [
+                  {
+                    "label": "Damage",
+                    "rootData": "damage"
+                  },
+                  {
+                    "label": "Max Hit",
+                    "rootData": "maxHit"
+                  }
+                ]
               },
               {
                 "label":"Guided Missile",
-                "rootData":"guidedMissile"
+                "rootData":"guidedMissile",
+                "attributes": [
+                  {
+                    "label": "Damage",
+                    "value": 129,
+                    "suffix": "%",
+                    "display": "129%"
+                  },
+                  {
+                    "label": "Max Hit",
+                    "value": 24,
+                    "suffix": "",
+                    "display": "24"
+                  }
+                ]
               },
               {
                 "label":"Laser Beam",
-                "rootData":"laserBeam"
+                "rootData":"laserBeam",
+                "attributes": [
+                  {
+                    "label": "Damage",
+                    "value": 240,
+                    "suffix": "%",
+                    "display": "240%"
+                  },
+                  {
+                    "label": "Max Hit",
+                    "value": 8,
+                    "suffix": "",
+                    "display": "8"
+                  }
+                ]
               },
               {
                 "label":"Duration",
-                "rootData":"duration"
+                "rootData":"duration",
+                "attributes": []
               },
               {
                 "label":"ECP Usage",
-                "rootData":"ecp"
+                "rootData":"ecp",
+                "attributes": []
               },
               {
                 "label":"Cooldown",
-                "rootData":"cooldown"
+                "rootData":"cooldown",
+                "attributes": []
               }
-            ]
+            ],
+            "data": {
+              "gatlingShot": {
+                "attributes": [
+                  {
+                    "label": "Damage",
+                    "value": 76,
+                    "suffix": "%",
+                    "display": "76%"
+                  },
+                  {
+                    "label": "Max Hit",
+                    "value": 22,
+                    "suffix": "",
+                    "display": "22"
+                  }
+                ]
+              },
+              "guidedMissile": {
+                "attributes": [
+                  {
+                    "label": "Damage",
+                    "value": 129,
+                    "suffix": "%",
+                    "display": "129%"
+                  },
+                  {
+                    "label": "Max Hit",
+                    "value": 24,
+                    "suffix": "",
+                    "display": "24"
+                  }
+                ]
+              }
+            }
           },
           "traits":[
             {
