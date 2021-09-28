@@ -34,7 +34,7 @@
         "dynamic": false
       },
       {
-        "description": "Cooldown time increased by 20%",
+        "description": "Cooldown time increased to 120%",
         "dynamic": false
       }
     ]
