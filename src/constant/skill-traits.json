@@ -1,0 +1,192 @@
+[
+  {
+    "name": "Empowered",
+    "effect": [
+      {
+        "description": "Damage increased",
+        "dynamic": true
+      }
+    ]
+  },
+  {
+    "name": "Gigantic",
+    "effect": [
+      {
+        "description": "Skill radius/size increased",
+        "dynamic": true
+      }
+    ]
+  },
+  {
+    "name": "Light",
+    "effect": [
+      {
+        "description": "MP cost reduced",
+        "dynamic":true
+      }
+    ]
+  },
+  {
+    "name": "Heavy",
+    "effect": [
+      {
+        "description": "Damage increased by 44%",
+        "dynamic": false
+      },
+      {
+        "description": "Cooldown time increased by 20%",
+        "dynamic": false
+      }
+    ]
+  },
+  {
+    "name": "Useful",
+    "effect": [
+      {
+        "description": "Damage reduced",
+        "dynamic": true
+      },
+      {
+        "description": "Hit count increased",
+        "dynamic": true
+      }
+    ]
+  },
+  {
+    "name": "Enhanced",
+    "effect": [
+      {
+        "description": "Critical rate increased to 100%",
+        "dynamic": false
+      },
+      {
+        "description": "Damage reduced",
+        "dynamic": true
+      }
+    ]
+  },
+  {
+    "name": "Reversed",
+    "effect": [
+      {
+        "description": "Cooldown increased",
+        "dynamic": true
+      },
+      {
+        "description": "MP cost reduced",
+        "dynamic": true
+      }
+    ]
+  },
+  {
+    "name": "Critical",
+    "effect": [
+      {
+        "description": "MP cost increased",
+        "dynamic": true
+      },
+      {
+        "description": "Skill will ignore 50% defense",
+        "dynamic": false
+      }
+    ]
+  },
+  {
+    "name": "Haste",
+    "effect": [
+      {
+        "description": "Cooldown reduced",
+        "dynamic": true
+      }
+    ]
+  },
+  {
+    "name": "Regenerating 1",
+    "effect": [
+      {
+        "description": "At certain chance of regaining some of the MP used",
+        "dynamic": true
+      }
+    ]
+  },
+  {
+    "name": "Regenerating 2",
+    "effect": [
+      {
+        "description": "50% chance of reducing cooldown time to 60%",
+        "dynamic": false
+      }
+    ]
+  },
+  {
+    "name": "Ruthless",
+    "effect": [
+      {
+        "description": "Skill will cancel Mana Break",
+        "dynamic": false
+      },
+      {
+        "description": "Cooldown time is doubled",
+        "dynamic": false
+      }
+    ]
+  },
+  {
+    "name": "Evil",
+    "effect": [
+      {
+        "description": "Skill will burn MP per hit",
+        "dynamic": true
+      }
+    ]
+  },
+  {
+    "name": "Powerful",
+    "effect": [
+      {
+        "description": "Super Armor state added to the skill",
+        "dynamic": false
+      },
+      {
+        "description": "Cooldown increased",
+        "dynamic": true
+      }
+    ]
+  },
+  {
+    "name": "Killing Blow 1",
+    "effect": [
+      {
+        "description": "Skill effect's duration increased",
+        "dynamic": true
+      }
+    ]
+  },
+  {
+    "name":"Killing Blow 2",
+    "effect": [
+      {
+        "description": "Skill effect's effectiveness increased",
+        "dynamic": true
+      }
+    ]
+  },
+  {
+    "name": "Absorbing",
+    "effect": [
+      {
+        "description": "Skill's Mana gain increased",
+        "dynamic": true
+      }
+    ]
+  },
+  {
+    "name": "Persistent",
+    "effect": [
+      {
+        "description": "Skill will reduce KD per hit",
+        "dynamic": true
+      }
+    ]
+  }
+]
