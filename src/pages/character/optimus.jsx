@@ -9,49 +9,6 @@ import JobInfo from 'components/page-fragment/character/job-info'
 import SkillTree from 'components/page-fragment/character/skill-tree'
 
 export default function Optimus() {
-  const json = [
-    {
-      id: 1,
-      iconImage: 'https://uifaces.co/our-content/donated/UZ0VIIh3.png',
-      consultant: 'Amira',
-      category: 'Doctor',
-      standBy: 2,
-      session: 2,
-    },
-    {
-      id: 2,
-      iconImage: 'https://uifaces.co/our-content/donated/UZ0VIIh3.png',
-      consultant: 'Ana',
-      category: 'Nutriosionist',
-      standBy: 2,
-      session: 3,
-    },
-    {
-      id: 3,
-      iconImage: 'https://uifaces.co/our-content/donated/UZ0VIIh3.png',
-      consultant: 'Almara',
-      category: 'Product Consultant',
-      standBy: 2,
-      session: 4,
-    },
-  ]
-
-  const onClick = () => {
-    const head = Object.keys(json[0]).join()
-    const val = json.map((x) => Object.values(x)).join('\r\n')
-    const blob = new Blob([`${head}\r\n`.concat(val)], { type: 'application/csv;charset=utf-8' })
-    const link = document.createElement('a')
-    if (link.download !== undefined) {
-      const url = URL.createObjectURL(blob)
-      link.setAttribute('href', url)
-      link.setAttribute('download', 'example.csv')
-      link.style.visibility = 'hidden'
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
-    }
-  }
-
   return (
     <Fragment>
       <Head>
@@ -75,7 +32,6 @@ export default function Optimus() {
           <SkillTree />
         </section>
       </div>
-      <button type='button' onClick={onClick}>coy</button>
     </Fragment>
   )
 }
