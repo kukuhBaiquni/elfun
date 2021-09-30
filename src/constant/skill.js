@@ -1,7 +1,7 @@
 /*
  * SKILL CONSTANT
  * 1. Character id e.g. 11 for rose
- * 2. Job Path order. e.g. Rose 000
+ * 2. Job Path order. e.g. Rose 11
  *  -Heavy Barrel 101, Storm Trooper 102, Storm Trooper (T) 10T, Tempest Burster 103
  *  -Bloodia 201, Crimson Rose 202, Crimson Rose (T) 20T, Black Massacre 203
  *  -Valkyrie 301, Freyja 302, Freyja (T) 30T, Minerva 303
@@ -15,7 +15,7 @@
  * Example (G-0 Battleroid)
  * 11.402.35.0S.N.U
  * 11 - Rose
- * 02 - Optimus(2nd Job)
+ * 402 - Optimus(2nd Job)
  * 35 - Skill Level 35
  * 0S - Special Active
  * N - skill is not MOD
