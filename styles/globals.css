@@ -9,6 +9,15 @@
   .btn-primary {
     @apply bg-cyan-400 px-8 py-2 hover:bg-cyan-500 rounded text-gray-50 transition-all duration-300 border-none outline-none;
   }
+  .color-general {
+    @apply text-gray-600 dark:text-gray-400;
+  }
+  .bg-general {
+    @apply bg-gray-200 dark:bg-gray-700;
+  }
+  .border-general {
+    @apply border dark:border-gray-600 border-gray-300;
+  }
   li .job-nesting:hover > div {
     opacity: 1;
   }
