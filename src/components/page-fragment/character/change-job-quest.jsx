@@ -12,7 +12,7 @@ export default function ChangeJobQuest() {
       <Disclosure>
         {({ open }) => (
           <Fragment>
-            <Disclosure.Button className='flex justify-between w-full px-4 py-2 font-medium text-left bg-rose hover:bg-opacity-80 text-gray-600 border dark:border-gray-600 border-gray-300'>
+            <Disclosure.Button className='flex justify-between w-full px-4 py-2 font-medium text-left bg-rose hover:bg-opacity-80 text-gray-600 border-general'>
               <span className='font-semibold'>Change Job Quest (Optimus)</span>
               <ChevronUpIcon className={clsx(open ? '-transform rotate-180' : 'transform rotate-0', 'w-5 h-5 text-gray-600 transition-all duration-300')} />
             </Disclosure.Button>
@@ -24,7 +24,7 @@ export default function ChangeJobQuest() {
               leaveFrom='transform scale-100 opacity-100'
               leaveTo='transform scale-95 opacity-0'
             >
-              <Disclosure.Panel className='p-2 text-gray-600 dark:text-gray-400 border dark:border-gray-600 border-gray-300'>
+              <Disclosure.Panel className='p-2 text-gray-600 dark:text-gray-400 border-general'>
                 <Disclosure>
                   {(props) => (
                     <Fragment>

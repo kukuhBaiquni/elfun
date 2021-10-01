@@ -8,7 +8,7 @@ const background = 'Rose is not satisfied with her creation. Even though she\'s 
 export default function JobInfo() {
   return (
     <Fragment>
-      <div className='border dark:border-gray-600 border-gray-300 flex-grow p-2'>
+      <div className='border-general flex-grow p-2'>
         <span className='text-rose text-lg'>Rose (Optimus): </span>
         <i className=''>The ecstasy you get when you design as much driving parts as you want, since design was considered a weakness as a weapon, was indescribable!</i>
       </div>

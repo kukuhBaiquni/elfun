@@ -7,7 +7,7 @@ export default function Portrait() {
   const [tab, setTab] = useState(0)
   return (
     <Fragment>
-      <div className='w-full lg:w-[510px] sm:h-[600px] p-3 border flex items-center justify-center dark:border-gray-600 border-gray-300'>
+      <div className='w-full lg:w-[510px] sm:h-[600px] p-3 flex items-center justify-center border-general'>
         <Image alt='optimus' className='object-contain' height={530} quality={100} src={tab ? optimusTrans : optimus} width={540} />
       </div>
       <div className='flex justify-center mt-auto'>

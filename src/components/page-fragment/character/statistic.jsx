@@ -13,12 +13,12 @@ export default function Statistic() {
     <div className='max-w-full'>
       <div className='overflow-x-auto mt-3'>
         <div className='grid grid-cols-5 w-[550px] sm:w-full lg:max-w-lg'>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 py-1 border-b-0 font-semibold dark:text-gray-300 text-gray-700'>Name</div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 border-l-0 border-b-0 py-1 col-span-4'>Anna Testarossa (Rose)</div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 py-1 border-b-0 font-semibold dark:text-gray-300 text-gray-700'>Class</div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 border-l-0 border-b-0 py-1 col-span-4 text-rose'>Optimus</div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 py-1 border-b-0 flex items-center font-semibold dark:text-gray-300 text-gray-700'>Weapon</div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 border-l-0 border-b-0 py-1 col-span-3'>
+          <div className='border-general px-2 py-1 border-b-0 font-semibold dark:text-gray-300 text-gray-700'>Name</div>
+          <div className='border-general px-2 border-l-0 border-b-0 py-1 col-span-4'>Anna Testarossa (Rose)</div>
+          <div className='border-general px-2 py-1 border-b-0 font-semibold dark:text-gray-300 text-gray-700'>Class</div>
+          <div className='border-general px-2 border-l-0 border-b-0 py-1 col-span-4 text-rose'>Optimus</div>
+          <div className='border-general px-2 py-1 border-b-0 flex items-center font-semibold dark:text-gray-300 text-gray-700'>Weapon</div>
+          <div className='border-general px-2 border-l-0 border-b-0 py-1 col-span-3'>
             <ul className='list-disc pl-5'>
               <li>Guns (Auto-guns)</li>
               <li>Robot Assistants</li>
@@ -26,16 +26,16 @@ export default function Statistic() {
               <li>Mecha Volt MX</li>
             </ul>
           </div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 border-b-0 border-l-0 flex items-center flex-col py-2'>
+          <div className='border-general px-2 border-b-0 border-l-0 flex items-center flex-col py-2'>
             <Image alt='Magic Emblem' src={magic} />
             <p className='text-indigo-500'>Magical</p>
           </div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 py-1 border-b-0 font-semibold dark:text-gray-300 text-gray-700'>Age</div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 border-l-0 border-b-0 py-1 col-span-4'>22</div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 py-1 border-b-0 font-semibold dark:text-gray-300 text-gray-700'>Race</div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 border-l-0 border-b-0 py-1 col-span-4'>Human</div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 border-b-0 py-1 flex items-center font-semibold dark:text-gray-300 text-gray-700 whitespace-nowrap'>Class Tree</div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 border-l-0 py-2 col-span-4 flex border-b-0 justify-between items-center'>
+          <div className='border-general px-2 py-1 border-b-0 font-semibold dark:text-gray-300 text-gray-700'>Age</div>
+          <div className='border-general px-2 border-l-0 border-b-0 py-1 col-span-4'>22</div>
+          <div className='border-general px-2 py-1 border-b-0 font-semibold dark:text-gray-300 text-gray-700'>Race</div>
+          <div className='border-general px-2 border-l-0 border-b-0 py-1 col-span-4'>Human</div>
+          <div className='border-general px-2 border-b-0 py-1 flex items-center font-semibold dark:text-gray-300 text-gray-700 whitespace-nowrap'>Class Tree</div>
+          <div className='border-general px-2 border-l-0 py-2 col-span-4 flex border-b-0 justify-between items-center'>
             <Image alt='rose' height={40} quality={100} src={rose} width={40} />
             <ArrowSmRightIcon className='w-5 h-5' />
             <Image alt='rose' height={40} quality={100} src={metalHeart} width={40} />
@@ -49,21 +49,21 @@ export default function Statistic() {
             <Image alt='rose' height={40} quality={100} src={primeOperator} width={40} />
           </div>
 
-          <div className='border dark:border-gray-600 border-gray-300 row-span-3 px-2 py-1 flex items-center font-semibold dark:text-gray-300 text-gray-700'>Statistic</div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 border-l-0 border-b-0 py-1 font-semibold dark:text-gray-300 text-gray-700'>Speed:</div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 border-l-0 border-b-0 py-1 text-center'>Slow</div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 border-l-0 border-b-0 py-1 bg-rose text-gray-600 text-center'>Average</div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 border-l-0 border-b-0 py-1 text-center'>Fast</div>
+          <div className='border-general row-span-3 px-2 py-1 flex items-center font-semibold dark:text-gray-300 text-gray-700'>Statistic</div>
+          <div className='border-general px-2 border-l-0 border-b-0 py-1 font-semibold dark:text-gray-300 text-gray-700'>Speed:</div>
+          <div className='border-general px-2 border-l-0 border-b-0 py-1 text-center'>Slow</div>
+          <div className='border-general px-2 border-l-0 border-b-0 py-1 bg-rose text-gray-600 text-center'>Average</div>
+          <div className='border-general px-2 border-l-0 border-b-0 py-1 text-center'>Fast</div>
 
-          <div className='border dark:border-gray-600 border-gray-300 px-2 border-l-0 border-b-0 py-1 font-semibold dark:text-gray-300 text-gray-700'>Range:</div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 border-l-0 border-b-0 py-1 text-center'>Short</div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 border-l-0 border-b-0 py-1 bg-rose text-gray-600 text-center'>Medium</div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 border-l-0 border-b-0 py-1 text-center'>Long</div>
+          <div className='border-general px-2 border-l-0 border-b-0 py-1 font-semibold dark:text-gray-300 text-gray-700'>Range:</div>
+          <div className='border-general px-2 border-l-0 border-b-0 py-1 text-center'>Short</div>
+          <div className='border-general px-2 border-l-0 border-b-0 py-1 bg-rose text-gray-600 text-center'>Medium</div>
+          <div className='border-general px-2 border-l-0 border-b-0 py-1 text-center'>Long</div>
 
-          <div className='border dark:border-gray-600 border-gray-300 px-2 border-l-0 py-1 font-semibold dark:text-gray-300 text-gray-700'>Difficulty:</div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 border-l-0 py-1 text-center'>Easy</div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 border-l-0 py-1 text-center'>Normal</div>
-          <div className='border dark:border-gray-600 border-gray-300 px-2 border-l-0 py-1 bg-rose text-gray-600 text-center'>Hard</div>
+          <div className='border-general px-2 border-l-0 py-1 font-semibold dark:text-gray-300 text-gray-700'>Difficulty:</div>
+          <div className='border-general px-2 border-l-0 py-1 text-center'>Easy</div>
+          <div className='border-general px-2 border-l-0 py-1 text-center'>Normal</div>
+          <div className='border-general px-2 border-l-0 py-1 bg-rose text-gray-600 text-center'>Hard</div>
         </div>
       </div>
     </div>
