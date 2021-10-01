@@ -5,7 +5,7 @@ import Document, {
 class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang='en' role='document'>
         <Head>
           <link href='/favicon.ico' rel='icon' />
           <link href='https://fonts.gstatic.com' rel='preconnect' />
