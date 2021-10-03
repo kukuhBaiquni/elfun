@@ -10,7 +10,12 @@ export default function Skills() {
         <meta content='Contribution guide for filling submission article form' name='description' />
         <meta content='Elfun Contribution Guide, Contribution Elfun, Elfun' name='keywords' />
       </Head>
-      <InputText />
+      <main>
+        <section className='max-w-xl'>
+          <InputText />
+          <InputText />
+        </section>
+      </main>
     </div>
   )
 }

@@ -18,6 +18,9 @@
   .border-general {
     @apply border dark:border-gray-600 border-gray-300;
   }
+  .border-input {
+    @apply border dark:border-gray-600 border-gray-400;
+  }
   li .job-nesting:hover > div {
     opacity: 1;
   }
