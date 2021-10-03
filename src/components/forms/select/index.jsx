@@ -15,12 +15,12 @@ export default function Example() {
   const [selected, setSelected] = useState(people[0])
 
   return (
-    <div className='w-72'>
+    <div className='w-full'>
       <Listbox value={selected} onChange={setSelected}>
         <div className='relative mt-1'>
-          <Listbox.Button className='relative w-full py-2 pl-3 pr-10 text-left bg-red-400 rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm'>
+          <Listbox.Button className='relative w-full py-2 pl-2 pr-10 text-left border-general text-general rounded cursor-default outline-none sm:text-sm'>
             <span className='block truncate'>{selected.name}</span>
-            <span className='inset-y-0 right-0 flex items-center pr-2 pointer-events-none'>
+            <span className='absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none'>
               <SelectorIcon
                 aria-hidden='true'
                 className='w-5 h-5 text-gray-400'
@@ -37,7 +37,7 @@ export default function Example() {
               {people.map((person, personIdx) => (
                 <Listbox.Option
                   className={({ active }) => `${active ? 'text-amber-900 bg-amber-100' : 'text-gray-900'}
-                          cursor-default select-none relative py-2 pl-10 pr-4`}
+                          cursor-default select-none relative py-2 pl-5 pr-4`}
                   key={personIdx}
                   value={person}
                 >
@@ -57,7 +57,7 @@ export default function Example() {
                           }
                                 absolute inset-y-0 left-0 flex items-center pl-3`}
                         >
-                          <CheckIcon aria-hidden='true' className='w-5 h-5' />
+                          <CheckIcon aria-hidden='true' className='w-5 h-5 text-lime-500' />
                         </span>
                       ) : null}
                     </Fragment>
