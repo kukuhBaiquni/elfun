@@ -21,6 +21,9 @@
   .border-input {
     @apply border dark:border-gray-600 border-gray-400;
   }
+  .border-input-focus {
+    @apply border border-sky-500 dark:border-gray-500 bg-sky-100 dark:bg-gray-700;
+  }
   li .job-nesting:hover > div {
     opacity: 1;
   }

@@ -1,6 +1,7 @@
 import Layout from 'layouts'
 import Head from 'next/head'
 import InputText from 'components/forms/input-text'
+import Select from 'components/forms/select'
 
 export default function Skills() {
   return (
@@ -12,8 +13,9 @@ export default function Skills() {
       </Head>
       <main>
         <section className='max-w-xl'>
+          <InputText label='Add Skill Property' />
           <InputText />
-          <InputText />
+          <Select />
         </section>
       </main>
     </div>
