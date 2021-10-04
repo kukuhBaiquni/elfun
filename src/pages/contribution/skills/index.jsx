@@ -2,6 +2,7 @@ import Layout from 'layouts'
 import Head from 'next/head'
 import InputText from 'components/forms/input-text'
 import Select from 'components/forms/select'
+import Checkbox from 'components/forms/checkbox'
 
 export default function Skills() {
   return (
@@ -16,6 +17,7 @@ export default function Skills() {
           <InputText label='Add Skill Property' />
           <InputText />
           <Select />
+          <Checkbox />
         </section>
       </main>
     </div>
