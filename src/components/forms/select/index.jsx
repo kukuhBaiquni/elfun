@@ -2,7 +2,6 @@
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/solid'
-import clsx from 'clsx'
 
 const people = [
   { name: 'Wade Cooper' },
