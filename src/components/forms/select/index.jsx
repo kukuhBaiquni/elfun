@@ -35,7 +35,7 @@ export default function Example() {
             leaveFrom='opacity-100'
             leaveTo='opacity-0'
           >
-            <Listbox.Options className='w-full py-1 mt-1 border-input overflow-auto text-base bg-general text-general rounded shadow-lg max-h-60 sm:text-sm'>
+            <Listbox.Options className='w-full absolute py-1 mt-1 border-input overflow-auto text-base bg-general text-general rounded shadow-lg max-h-60 sm:text-sm'>
               {people.map((person, personIdx) => (
                 <Listbox.Option
                   className={({ active }) => `${active && 'text-sky-600 bg-sky-300 dark:bg-gray-800'} cursor-default select-none relative py-2 pl-10 pr-4`}
