@@ -4,6 +4,12 @@ import InputText from 'components/forms/input-text'
 import Select from 'components/forms/select'
 import Checkbox from 'components/forms/checkbox'
 
+const dummyOptions = [
+  { label: 'Tenacity', value: 0 },
+  { label: 'Strength', value: 1 },
+  { label: 'Bravery', value: 2 },
+]
+
 export default function Skills() {
   return (
     <div>
@@ -17,7 +23,7 @@ export default function Skills() {
           <InputText label='Add Skill Property' />
           <InputText />
           <Select />
-          <Checkbox />
+          <Checkbox label='Skills' name='specialActive' options={dummyOptions} />
         </section>
       </main>
     </div>

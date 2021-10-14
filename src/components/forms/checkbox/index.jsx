@@ -9,8 +9,8 @@ export default function Checkbox(props) {
       <label className='font-semibold block' htmlFor={name}>{label}</label>
       {options.map((item) => (
         <Fragment key={item.label}>
-          <input className='rounded p-6 checked:bg-sky-500' id='vehicle1' name='vehicle1' type='checkbox' value='Bike' />
-          <label className='ml-2' htmlFor='vehicle1' />
+          <input className='rounded p-6 checked:bg-sky-500' id={name} name={name} type='checkbox' value={item.value} />
+          <label className='ml-2' htmlFor={name}>{item.label}</label>
         </Fragment>
       ))}
     </div>
