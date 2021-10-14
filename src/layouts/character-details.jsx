@@ -1,5 +1,10 @@
 import PropTypes from 'prop-types'
-import Header from 'components/header'
+import dynamic from 'next/dynamic'
+
+const Header = dynamic(
+  () => import('../components/header'),
+  { ssr: false },
+)
 
 function CharacterDetails({ children }) {
   return (

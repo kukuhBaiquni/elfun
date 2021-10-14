@@ -1,6 +1,11 @@
 import PropTypes from 'prop-types'
 import Sidebar from 'components/side-bar'
-import Header from 'components/header'
+import dynamic from 'next/dynamic'
+
+const Header = dynamic(
+  () => import('../components/header'),
+  { ssr: false },
+)
 
 function Layout({ children }) {
   return (
