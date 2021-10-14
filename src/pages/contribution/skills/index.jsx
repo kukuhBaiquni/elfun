@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import Layout from 'layouts'
 import Head from 'next/head'
 import InputText from 'components/forms/input-text'
