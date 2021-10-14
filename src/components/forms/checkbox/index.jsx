@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import PropTypes from 'prop-types'
 import { Fragment } from 'react'
+import { CheckIcon } from '@heroicons/react/solid'
 
 export default function Checkbox(props) {
   const { name = 'name', label = 'Label', options = [] } = props
@@ -10,8 +11,11 @@ export default function Checkbox(props) {
       <div className='grid grid-cols-4'>
         {options.map((item) => (
           <Fragment key={item.label}>
-            <div className='flex items-center'>
-              <div className='h-4 w-4 border-general rounded' />
+            <div className='flex items-center cursor-pointer flex-grow-0 max-w-min'>
+              <div className='h-4 w-4 border-input rounded flex items-center justify-center'>
+                <CheckIcon className='w-5 h-5' />
+              </div>
+              <span className='ml-2'>Option</span>
             </div>
             <div className='hidden'>
               <input id={item.value} name={name} type='checkbox' value={item.value} />
