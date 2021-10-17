@@ -23,12 +23,12 @@ export default function Checkbox(props) {
       <div className='grid grid-cols-4'>
         {options.map((item) => (
           <Fragment key={item.label}>
-            {/* <button className='flex items-center cursor-pointer flex-grow-0 max-w-min' type='button' onClick={() => console.log(item)}>
+            <button className='flex items-center cursor-pointer flex-grow-0 max-w-min' type='button' onClick={() => console.log(item)}>
               <div className='h-4 w-4 border-input rounded flex items-center justify-center'>
                 <CheckIcon className='w-5 h-5' />
               </div>
               <span className='ml-2'>Option</span>
-            </button> */}
+            </button>
             <div>
               <input id={item.value} name={name} {...checkbox} type='checkbox' value={item.value} />
               <label className='ml-2' htmlFor={item.value}>{item.label}</label>
