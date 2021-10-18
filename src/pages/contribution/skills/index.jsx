@@ -5,12 +5,7 @@ import InputText from 'components/forms/input-text'
 import Select from 'components/forms/select'
 import Checkbox from 'components/forms/checkbox'
 import { useForm } from 'react-hook-form'
-
-const dummyOptions = [
-  { label: 'Tenacity', value: 0 },
-  { label: 'Strength', value: 1 },
-  { label: 'Bravery', value: 2 },
-]
+import SKILL_SPECIAL_ACTIVE_OPTIONS from 'constant/skill-special-active-options'
 
 export default function Skills() {
   const { register, control, watch } = useForm()
@@ -29,7 +24,13 @@ export default function Skills() {
           <InputText label='Add Skill Property' />
           <InputText />
           <Select />
-          <Checkbox control={control} label='Skills' name='specialActive' options={dummyOptions} />
+          <Checkbox
+            control={control}
+            defaultValue={[]}
+            label='Skills'
+            name='specialActive'
+            options={SKILL_SPECIAL_ACTIVE_OPTIONS}
+          />
         </section>
       </main>
     </div>

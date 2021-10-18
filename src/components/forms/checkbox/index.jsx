@@ -27,9 +27,9 @@ export default function Checkbox(props) {
               <div className='h-4 w-4 border-input rounded flex items-center justify-center'>
                 <CheckIcon className='w-5 h-5' />
               </div>
-              <span className='ml-2'>Option</span>
+              <span className='ml-2'>{item.label}</span>
             </button>
-            <div>
+            <div className='hidden'>
               <input id={item.value} name={name} {...checkbox} type='checkbox' value={item.value} />
               <label className='ml-2' htmlFor={item.value}>{item.label}</label>
             </div>
