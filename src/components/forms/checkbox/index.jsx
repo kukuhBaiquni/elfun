@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import PropTypes from 'prop-types'
 import { Fragment, useState } from 'react'
-import { CheckIcon } from '@heroicons/react/solid'
+import { CheckCircleIcon } from '@heroicons/react/solid'
 import { useController } from 'react-hook-form'
 
 export default function Checkbox(props) {
@@ -20,13 +20,13 @@ export default function Checkbox(props) {
   return (
     <div className='py-2 text-general font-titillium'>
       <span className='font-semibold block'>{label}</span>
-      <div className='grid grid-cols-4'>
-        {options.map((item) => (
+      <div className='grid grid-cols-4 gap-2'>
+        {[...options, ...options, ...options, ...options].map((item) => (
           <Fragment key={item.label}>
-            <button className='flex items-center cursor-pointer flex-grow-0 max-w-min' type='button' onClick={() => console.log(item)}>
-              <div className='h-4 w-4 border-input rounded flex items-center justify-center'>
-                <CheckIcon className='w-5 h-5' />
-              </div>
+            <button className='flex items-center cursor-pointer flex-grow-0 border-input p-1 rounded' type='button' onClick={() => console.log(item)}>
+              {/* <CheckCircleIcon className='w-5 h-5 text-sky-700' /> */}
+              {/* <div className='h-4 w-4 border-input rounded flex items-center justify-center bg-sky-300'>
+              </div> */}
               <span className='ml-2'>{item.label}</span>
             </button>
             <div className='hidden'>
