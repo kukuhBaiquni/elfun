@@ -2,6 +2,7 @@
 import Layout from 'layouts'
 import Head from 'next/head'
 import InputText from 'components/forms/input-text'
+import Textarea from 'components/forms/input-text/textarea'
 import Select from 'components/forms/select'
 import Checkbox from 'components/forms/checkbox'
 import { useForm } from 'react-hook-form'
@@ -21,8 +22,9 @@ export default function Skills() {
       </Head>
       <main>
         <section className='max-w-xl'>
-          <InputText label='Skill Name' />
-          <InputText label='Description' />
+          <InputText label='Skill Name' placeholder='Skill Name..' />
+
+          <Textarea label='Description' placeholder='Description..' />
           <Select />
           <Checkbox
             control={control}
