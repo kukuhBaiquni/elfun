@@ -6,7 +6,7 @@ import Textarea from 'components/forms/input-text/textarea'
 import Select from 'components/forms/select'
 import Checkbox from 'components/forms/checkbox'
 import { useForm } from 'react-hook-form'
-import SKILL_SPECIAL_ACTIVE_OPTIONS from 'constant/skill-special-active-options'
+import SKILL_CATEGORIES from 'constant/skill-categories'
 
 export default function Skills() {
   const { register, control, watch } = useForm()
@@ -22,8 +22,8 @@ export default function Skills() {
       </Head>
       <main>
         <section className='max-w-xl'>
+          <h3 className='uppercase text-general font-bold'>Add New Skill: Optimus</h3>
           <InputText label='Skill Name' placeholder='Skill Name..' />
-
           <Textarea label='Description' placeholder='Description..' />
           <Select />
           <Checkbox
@@ -31,7 +31,7 @@ export default function Skills() {
             defaultValue={[]}
             label='Skills'
             name='specialActive'
-            options={SKILL_SPECIAL_ACTIVE_OPTIONS}
+            options={SKILL_CATEGORIES}
           />
         </section>
       </main>

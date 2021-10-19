@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import PropTypes from 'prop-types'
 import { Fragment, useState } from 'react'
-import { CheckCircleIcon } from '@heroicons/react/solid'
+import { CheckIcon } from '@heroicons/react/solid'
 import { useController } from 'react-hook-form'
 
 export default function Checkbox(props) {
@@ -21,15 +21,15 @@ export default function Checkbox(props) {
     <div className='py-2 text-general font-titillium'>
       <span className='font-semibold block'>{label}</span>
       <div className='grid grid-cols-4 gap-2'>
-        {[...options, ...options, ...options, ...options].map((item) => (
+        {options.map((item) => (
           <Fragment key={item.label}>
-            <button className='flex items-center cursor-pointer flex-grow-0 border-input p-1 rounded' type='button' onClick={() => console.log(item)}>
-              {/* <CheckCircleIcon className='w-5 h-5 text-sky-700' /> */}
-              {/* <div className='h-4 w-4 border-input rounded flex items-center justify-center bg-sky-300'>
-              </div> */}
+            <button className='flex items-center cursor-pointer' type='button' onClick={() => console.log(item)}>
+              <div className='h-4 w-4 rounded flex items-center justify-center bg-sky-300'>
+                <CheckIcon className='w-4 h-4 text-sky-500' />
+              </div>
               <span className='ml-2'>{item.label}</span>
             </button>
-            <div className='hidden'>
+            <div>
               <input id={item.value} name={name} {...checkbox} type='checkbox' value={item.value} />
               <label className='ml-2' htmlFor={item.value}>{item.label}</label>
             </div>

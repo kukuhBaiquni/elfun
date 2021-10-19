@@ -1,7 +1,7 @@
 /* eslint-disable no-shadow */
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
-import { CheckIcon, ChevronDownIcon } from '@heroicons/react/solid'
+import { CheckIcon, ChevronDownIcon, ExclamationCircleIcon } from '@heroicons/react/solid'
 
 const people = [
   { name: 'Wade Cooper' },
@@ -64,6 +64,10 @@ export default function Example() {
           </Transition>
         </div>
       </Listbox>
+      <div className='flex items-center'>
+        <ExclamationCircleIcon className='w-4 h-4 text-red-500 dark:text-red-700' />
+        <span className='text-red-500 dark:text-red-700 ml-1 text-sm' role='alert'>Error Message!</span>
+      </div>
     </div>
   )
 }
