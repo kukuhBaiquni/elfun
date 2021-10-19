@@ -21,8 +21,8 @@ export default function Skills() {
       </Head>
       <main>
         <section className='max-w-xl'>
-          <InputText label='Add Skill Property' />
-          <InputText />
+          <InputText label='Skill Name' />
+          <InputText label='Description' />
           <Select />
           <Checkbox
             control={control}
