@@ -9,9 +9,7 @@ import { useForm } from 'react-hook-form'
 import SKILL_CATEGORIES from 'constant/skill-categories'
 
 export default function Skills() {
-  const { register, control, watch } = useForm()
-
-  console.log('watch', watch())
+  const { control } = useForm()
 
   return (
     <div>
