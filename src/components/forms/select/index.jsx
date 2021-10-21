@@ -2,15 +2,16 @@
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronDownIcon, ExclamationCircleIcon } from '@heroicons/react/solid'
+import PropTypes from 'prop-types'
 
-export default function Select({ options = [] }) {
+export default function Select({ label, options = [] }) {
   const [selected, setSelected] = useState(options[0] || '')
 
   return (
     <div className='w-full text-general py-2 font-titillium'>
       <Listbox value={selected} onChange={setSelected}>
         <div className='relative mt-1'>
-          <Listbox.Label className='font-semibold'>Skill Property</Listbox.Label>
+          <Listbox.Label className='font-semibold'>{label}</Listbox.Label>
           <Listbox.Button className='relative w-full border-input my-1 py-2 pl-2 pr-10 text-left text-general rounded cursor-default outline-none sm:text-sm'>
             <span className='block truncate'>{selected.label}</span>
             <span className='absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none'>
@@ -61,4 +62,9 @@ export default function Select({ options = [] }) {
       </div>
     </div>
   )
+}
+
+Select.propTypes = {
+  options: PropTypes.array,
+  label: PropTypes.string,
 }

@@ -24,12 +24,12 @@ export default function Checkbox(props) {
         {options.map((item) => (
           <Fragment key={item.label}>
             <button className='flex items-center cursor-pointer' type='button' onClick={() => console.log(item)}>
-              <div className='h-4 w-4 rounded flex items-center justify-center bg-sky-300'>
+              <div className='h-4 w-4 rounded border border-input flex items-center justify-center'>
                 <CheckIcon className='w-4 h-4 text-sky-500' />
               </div>
-              <span className='ml-2'>{item.label}</span>
+              <span className='ml-2 text-left'>{item.label}</span>
             </button>
-            <div>
+            <div className='hidden'>
               <input id={item.value} name={name} {...checkbox} type='checkbox' value={item.value} />
               <label className='ml-2' htmlFor={item.value}>{item.label}</label>
             </div>
