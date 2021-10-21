@@ -1,10 +1,10 @@
 const SKILL_CATEGORIES = [
-  { label: 'Passive', value: 0 },
-  { label: 'Active', value: 1 },
-  { label: 'Tenacity', value: 2 },
-  { label: 'Strength', value: 3 },
-  { label: 'Bravery', value: 4 },
-  { label: 'Hyperactive', value: 5 },
+  { label: 'Passive', value: '0P' },
+  { label: 'Active', value: '0A' },
+  { label: '[Special Active:Tenacity]', value: '0T' },
+  { label: '[Special Active:Strength]', value: '0S' },
+  { label: '[Special Active:Bravery]', value: '0B' },
+  { label: 'Hyperactive', value: '0H' },
 ]
 
 export default SKILL_CATEGORIES

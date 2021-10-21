@@ -23,7 +23,7 @@ export default function Skills() {
           <h3 className='uppercase text-general font-bold'>Add New Skill: Optimus</h3>
           <InputText label='Skill Name' placeholder='Skill Name..' />
           <Textarea label='Description' placeholder='Description..' />
-          <Select />
+          <Select options={SKILL_CATEGORIES} />
           <Checkbox
             control={control}
             defaultValue={[]}

@@ -20,7 +20,7 @@ const SKILL_STATS = {
       value: 0,
     },
   ],
-  attribute: [
+  attributes: [
     {
       damageType: [
         {
@@ -35,3 +35,5 @@ const SKILL_STATS = {
     },
   ],
 }
+
+export default SKILL_STATS

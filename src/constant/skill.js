@@ -7,13 +7,13 @@
  *  -Valkyrie 301, Freyja 302, Freyja (T) 30T, Minerva 303
  *  -Metal Heart 401, Optimus 402, Optimus (T) 40T, Prime Operator 403
  * 3. Skill Level e.g. for Hyper Active must be 65
- * 4. Skill Type. passive 0P, active 0A, special active 0S, hyper active 0H
+ * 4. Skill Type. passive 0P, active 0A, tenacity 0T, strength 0S, bravery 0B, hyper active 0H
  * 5. If skill mod, add M otherwise N
  * 6. If Locked, add L otherwise U
  * 7. Split characters with period('.')
  *
  * Example (G-0 Battleroid)
- * 11.402.35.0S.N.U
+ * 11.402.35.0B.N.U
  * 11 - Rose
  * 402 - Optimus(2nd Job)
  * 35 - Skill Level 35
