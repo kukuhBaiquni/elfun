@@ -7,7 +7,9 @@ import Select from 'components/forms/select'
 import Checkbox from 'components/forms/checkbox'
 import { useForm } from 'react-hook-form'
 import SKILL_CATEGORIES from 'constant/skill-categories'
+import getConfig from 'next/config'
 
+console.log(getConfig())
 export default function Skills() {
   const { control } = useForm()
 
