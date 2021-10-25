@@ -20,7 +20,7 @@ export default function Checkbox(props) {
   return (
     <div className='py-2 text-general font-titillium'>
       <span className='font-semibold block'>{label}</span>
-      <div className='grid grid-cols-4 gap-2'>
+      <div className='grid grid-cols-3 gap-2'>
         {options.map((item) => (
           <Fragment key={item.label}>
             <button className='flex items-center cursor-pointer' type='button' onClick={() => console.log(item)}>

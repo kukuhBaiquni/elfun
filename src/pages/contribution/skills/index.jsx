@@ -5,11 +5,10 @@ import InputText from 'components/forms/input-text'
 import Textarea from 'components/forms/input-text/textarea'
 import Select from 'components/forms/select'
 import Checkbox from 'components/forms/checkbox'
+import InputImage from 'components/forms/input-image'
 import { useForm } from 'react-hook-form'
 import SKILL_CATEGORIES from 'constant/skill-categories'
-import getConfig from 'next/config'
 
-console.log(getConfig())
 export default function Skills() {
   const { control } = useForm()
 
@@ -22,7 +21,7 @@ export default function Skills() {
       </Head>
       <main>
         <section className='max-w-xl'>
-          <h3 className='uppercase text-general font-bold'>Add New Skill: Optimus</h3>
+          <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Add New Skill: Optimus</h2>
           <InputText label='Skill Name' placeholder='Skill Name..' />
           <Textarea label='Description' placeholder='Description..' />
           <Select label='Skill Category' options={SKILL_CATEGORIES} />
@@ -33,6 +32,7 @@ export default function Skills() {
             name='specialActive'
             options={SKILL_CATEGORIES}
           />
+          <InputImage />
         </section>
       </main>
     </div>
