@@ -1,15 +1,16 @@
 /* eslint-disable no-shadow */
-import { Fragment, useState, memo } from 'react'
-import { Listbox, Transition } from '@headlessui/react'
+import { useState, memo } from 'react'
+import Transition from 'components/common/transition'
 import { CheckIcon, ChevronDownIcon, ExclamationCircleIcon } from '@heroicons/react/solid'
 import PropTypes from 'prop-types'
+import clsx from 'clsx'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 
 function Select(props) {
   const {
     name, label, options, placeholder,
   } = props
-  const [selected, setSelected] = useState(options[0] || '')
+  const [selected, setSelected] = useState(options[0] || {})
   const [isVisible, setIsVisible] = useState(false)
 
   return (
@@ -20,24 +21,31 @@ function Select(props) {
         onBlur={() => setIsVisible(false)}
         onFocus={() => setIsVisible(true)}
       >
-        <span>Selected</span>
+        <span>{selected?.label}</span>
         <ChevronDownIcon className='h-5 w-5' />
       </button>
       <div className='absolute top-20 left-0 z-50 w-full'>
-        <Transition
-          as='div'
-          enter='ease-out duration-300'
-          enterFrom='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
-          enterTo='opacity-100 translate-y-0 sm:scale-100'
-          leave='ease-in duration-200'
-          leaveFrom='opacity-100 translate-y-0 sm:scale-100'
-          leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
-          show={isVisible}
-        >
+        <Transition isVisible={isVisible}>
           <div className='w-full p-2 bg-gray-200 dark:bg-gray-700 border-input-focus rounded text-xs sm:text-sm shadow-xl'>
-            <div className='custom-scroll h-[300px] overflow-y-auto pr-2'>
-              {Array(12).fill('.').map((_, index) => (
-                <p className='p-2 text-left hover:bg-gray-500 rounded' key={index}>options</p>
+            <div className='custom-scroll max-h-[300px] overflow-y-auto pr-2 flex flex-col'>
+              {options.map((item, index) => (
+                <button
+                  className={clsx(
+                    item.value === selected.value
+                      ? 'bg-sky-500 cursor-default text-white'
+                      : 'hover:bg-gray-300 dark:hover:bg-gray-600',
+                    'p-2 text-left rounded flex',
+                  )}
+                  disabled={item.value === selected.value}
+                  key={index}
+                  type='button'
+                  onClick={() => setSelected(item)}
+                >
+                  {item.label}
+                  {item.value === selected.value && (
+                    <CheckIcon className='h-5 w-5 text-sky-500 ml-2' />
+                  )}
+                </button>
               ))}
             </div>
           </div>

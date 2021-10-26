@@ -3,21 +3,12 @@ import { ExclamationCircleIcon } from '@heroicons/react/solid'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
 
-/**
- *
- * @param {node} Component
- * @param {object} props
- * @param {string} props.name form field name for registering in react-hook-form (required)
- * @param {string} props.label text label that displayed above input (required)}
- * @returns {*} Enhanced Component
- */
-
 export function FormFieldWrapper(props) {
   const {
     name, label, children, bordered,
   } = props
   // eslint-disable-next-line no-console
-  console.log('📝', props)
+  // console.log('📝', props)
   return (
     <div className='py-2 font-titillium text-general relative'>
       <label className='font-semibold' htmlFor={name}>{label}</label>
