@@ -47,7 +47,7 @@ export default function Skills() {
         <meta content='Contribution guide for filling submission article form' name='description' />
         <meta content='Elfun Contribution Guide, Contribution Elfun, Elfun' name='keywords' />
       </Head>
-      <main>
+      <main className='px-2'>
         <section className='max-w-xl'>
           <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Add New Skill: Optimus</h2>
           <FormProvider {...methods}>
