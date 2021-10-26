@@ -22,25 +22,27 @@ function Select(props) {
       >
         <span>Selected</span>
         <ChevronDownIcon className='h-5 w-5' />
-        <div className='absolute top-10 left-0 z-50 w-full'>
-          <Transition
-            as='div'
-            enter='ease-out duration-300'
-            enterFrom='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
-            enterTo='opacity-100 translate-y-0 sm:scale-100'
-            leave='ease-in duration-200'
-            leaveFrom='opacity-100 translate-y-0 sm:scale-100'
-            leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
-            show={isVisible}
-          >
-            <div className='w-full custom-scroll bg-gray-200 h-[300px] overflow-y-auto dark:bg-gray-700 border-input-focus rounded text-gray-600 dark:text-gray-400 text-xs sm:text-sm shadow-xl'>
+      </button>
+      <div className='absolute top-20 left-0 z-50 w-full'>
+        <Transition
+          as='div'
+          enter='ease-out duration-300'
+          enterFrom='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
+          enterTo='opacity-100 translate-y-0 sm:scale-100'
+          leave='ease-in duration-200'
+          leaveFrom='opacity-100 translate-y-0 sm:scale-100'
+          leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
+          show={isVisible}
+        >
+          <div className='w-full p-2 bg-gray-200 dark:bg-gray-700 border-input-focus rounded text-xs sm:text-sm shadow-xl'>
+            <div className='custom-scroll h-[300px] overflow-y-auto pr-2'>
               {Array(12).fill('.').map((_, index) => (
-                <p className='p-2 text-left hover:bg-gray-500' key={index}>options</p>
+                <p className='p-2 text-left hover:bg-gray-500 rounded' key={index}>options</p>
               ))}
             </div>
-          </Transition>
-        </div>
-      </button>
+          </div>
+        </Transition>
+      </div>
     </FormFieldWrapper>
   )
 }

@@ -19,7 +19,7 @@ export function FormFieldWrapper(props) {
   // eslint-disable-next-line no-console
   console.log('📝', props)
   return (
-    <div className='py-2 font-titillium text-general'>
+    <div className='py-2 font-titillium text-general relative'>
       <label className='font-semibold' htmlFor={name}>{label}</label>
       <div className={clsx(
         bordered && 'border-input focus-within:border-input-focus',
