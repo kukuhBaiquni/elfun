@@ -15,7 +15,7 @@ function Select(props) {
 
   const { register, setValue, watch } = useFormContext()
   const currentValue = watch(name)
-
+  const displayLabel = options.find((item) => item.value === currentValue)
   useEffect(() => {
     register(name)
   }, [register, name])
@@ -28,7 +28,7 @@ function Select(props) {
         onBlur={() => setIsVisible(false)}
         onFocus={() => setIsVisible(true)}
       >
-        <span>{currentValue?.label || options[0].label}</span>
+        <span>{displayLabel?.label || options[0].label}</span>
         <ChevronDownIcon className='h-5 w-5' />
       </button>
       <div className='absolute top-20 left-0 z-50 w-full'>
@@ -38,15 +38,15 @@ function Select(props) {
               {options.map((item, index) => (
                 <button
                   className={clsx(
-                    item.value === currentValue?.value
+                    item.value === currentValue
                       ? 'bg-sky-500 cursor-default text-white'
                       : 'hover:bg-gray-300 dark:hover:bg-gray-600',
                     'p-2 text-left rounded flex',
                   )}
-                  disabled={item.value === currentValue?.value}
+                  disabled={item.value === currentValue}
                   key={index}
                   type='button'
-                  onClick={() => setValue(name, item)}
+                  onClick={() => setValue(name, item.value)}
                 >
                   {item.label}
                   {item.value === currentValue?.value && (

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { useEffect, memo } from 'react'
 import { CheckIcon } from '@heroicons/react/solid'
 import { useFormContext } from 'react-hook-form'
+import { FormFieldWrapper } from '../FormFieldWrapper'
 
 function Checkbox(props) {
   const { name, label, options = [] } = props
@@ -26,19 +27,18 @@ function Checkbox(props) {
   }
 
   return (
-    <div className='py-2 text-general font-titillium'>
-      <span className='font-semibold block'>{label}</span>
+    <FormFieldWrapper label={label} name={name}>
       <div className='grid grid-cols-3 gap-2'>
         {options.map((item) => (
           <button className='flex items-center' key={item.value} type='button' onClick={() => onCheckboxClick(item)}>
             <div className='h-4 w-4 rounded border border-input flex items-center justify-center relative'>
               {currentValue.includes(item.value) && <CheckIcon className='w-4 h-4 text-sky-500' />}
             </div>
-            <span className='ml-2 text-left'>{item.label}</span>
+            <span className='ml-2 text-left text-sm'>{item.label}</span>
           </button>
         ))}
       </div>
-    </div>
+    </FormFieldWrapper>
   )
 }
 

@@ -1,11 +1,34 @@
 import clsx from 'clsx'
 import React, { Fragment } from 'react'
 import { useDropzone } from 'react-dropzone'
+import { PhotographIcon } from '@heroicons/react/solid'
+import { FormFieldWrapper } from '../FormFieldWrapper'
 
 export default function InputImage() {
+  const { getRootProps, getInputProps } = useDropzone({
+    accept: '.jpg, .jpeg, .png,',
+    multiple: false,
+    onDrop: (files) => {
+      console.log(files)
+      // setFiles(acceptedFiles.map(file => Object.assign(file, {
+      //   preview: URL.createObjectURL(file)
+      // })));
+    },
+  })
+
+  console.log(getRootProps())
+  console.log(getInputProps())
+
   return (
-    <div className='bg-lime-400'>
-      jncx
-    </div>
+    <FormFieldWrapper label='Skill Icon' name='skillIcon'>
+      <button
+        className='border-input h-[54px] w-[54px] rounded'
+        type='button'
+        {...getRootProps()}
+      >
+        <PhotographIcon className='w-5 h-5 m-auto' />
+      </button>
+      <input {...getInputProps()} />
+    </FormFieldWrapper>
   )
 }
