@@ -39,7 +39,7 @@ export default function Modal(props) {
             <div className={clsx(
               size,
               'inline-block w-full bg-general whitespace-nowrap text-center overflow-hidden shadow-xl',
-              'sm:text-sm sm:text-left text-general text-xs font-titillium transform transition-all',
+              'sm:text-left text-general transform transition-all',
             )}
             >
               {render}

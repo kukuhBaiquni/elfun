@@ -29,7 +29,7 @@ export default function JobPathMapper(props) {
         <h5>Choose Character Path</h5>
         <XIcon className='w-6 h-6 cursor-pointer' onClick={() => setIsVisible(false)} />
       </div>
-      <div className='p-2 mt-3 flex flex-col'>
+      <div className='p-2 mt-3 flex flex-col sm:text-sm text-xs font-titillium'>
         <div className='flex flex-col justify-center items-center'>
           <div className={clsx(
             selectedCharacter?.name === data?.name
