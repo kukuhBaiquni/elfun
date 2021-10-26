@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { memo } from 'react'
-import { FormFieldWrapper } from '../FormFieldWrapper'
+import { FormFieldWrapper } from '../common'
 
 function Textarea(props) {
   const {
