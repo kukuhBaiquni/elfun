@@ -33,7 +33,7 @@ function Select(props) {
             leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
             show={isVisible}
           >
-            <div className='w-full bg-gray-200 h-[300px] overflow-y-auto dark:bg-gray-700 border-input-focus rounded text-gray-600 dark:text-gray-400 text-xs sm:text-sm shadow-xl'>
+            <div className='w-full custom-scroll bg-gray-200 h-[300px] overflow-y-auto dark:bg-gray-700 border-input-focus rounded text-gray-600 dark:text-gray-400 text-xs sm:text-sm shadow-xl'>
               {Array(12).fill('.').map((_, index) => (
                 <p className='p-2 text-left hover:bg-gray-500' key={index}>options</p>
               ))}
