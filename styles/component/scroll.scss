@@ -1,0 +1,23 @@
+.custom-scroll {
+  @media only screen and (min-width: 576px) {
+    &::-webkit-scrollbar {
+      @apply w-2;
+    };
+
+    &::-webkit-scrollbar-track {
+      @apply bg-transparent;
+    };
+
+    &::-webkit-scrollbar-corner {
+      @apply bg-transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @apply rounded bg-gray-400 dark:bg-gray-600;
+    };
+
+    &::-webkit-scrollbar-thumb:hover {
+      @apply bg-gray-500;
+    };
+  }
+}
