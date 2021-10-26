@@ -13,7 +13,9 @@ import clsx from 'clsx'
  */
 
 export function FormFieldWrapper(props) {
-  const { name, label, children, bordered } = props
+  const {
+    name, label, children, bordered,
+  } = props
   // eslint-disable-next-line no-console
   console.log('📝', props)
   return (
@@ -21,8 +23,9 @@ export function FormFieldWrapper(props) {
       <label className='font-semibold' htmlFor={name}>{label}</label>
       <div className={clsx(
         bordered && 'border-input focus-within:border-input-focus',
-        'flex items-center w-full my-1 px-2 font-nunito rounded transition-all duration-300'
-      )}>
+        'w-full my-1 font-nunito rounded transition-all duration-300',
+      )}
+      >
         {children}
       </div>
       <div className='flex items-center'>
@@ -34,8 +37,13 @@ export function FormFieldWrapper(props) {
 }
 
 FormFieldWrapper.propTypes = {
-  name: PropTypes.string,
-  label: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
   children: PropTypes.node,
   bordered: PropTypes.bool,
+}
+
+FormFieldWrapper.defaultProps = {
+  children: null,
+  bordered: false,
 }

@@ -1,70 +1,61 @@
 /* eslint-disable no-shadow */
-import { Fragment, useState } from 'react'
+import { Fragment, useState, memo } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronDownIcon, ExclamationCircleIcon } from '@heroicons/react/solid'
 import PropTypes from 'prop-types'
+import { FormFieldWrapper } from '../FormFieldWrapper'
 
-export default function Select({ label, options = [] }) {
+function Select(props) {
+  const {
+    name, label, options, placeholder,
+  } = props
   const [selected, setSelected] = useState(options[0] || '')
+  const [isVisible, setIsVisible] = useState(false)
 
   return (
-    <div className='w-full text-general py-2 font-titillium'>
-      <Listbox value={selected} onChange={setSelected}>
-        <div className='relative mt-1'>
-          <Listbox.Label className='font-semibold'>{label}</Listbox.Label>
-          <Listbox.Button className='relative w-full border-input my-1 py-2 pl-2 pr-10 text-left text-general rounded cursor-default outline-none sm:text-sm'>
-            <span className='block truncate'>{selected.label}</span>
-            <span className='absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none'>
-              <ChevronDownIcon
-                aria-hidden='true'
-                className='w-5 h-5'
-              />
-            </span>
-          </Listbox.Button>
+    <FormFieldWrapper bordered label={label} name={name}>
+      <button
+        className='p-2 w-full flex justify-between text-sm relative'
+        type='button'
+        onBlur={() => setIsVisible(false)}
+        onFocus={() => setIsVisible(true)}
+      >
+        <span>Selected</span>
+        <ChevronDownIcon className='h-5 w-5' />
+        <div className='absolute top-10 left-0 z-50 w-full'>
           <Transition
-            as={Fragment}
-            leave='transition ease-in duration-100'
-            leaveFrom='opacity-100'
-            leaveTo='opacity-0'
+            as='div'
+            enter='ease-out duration-300'
+            enterFrom='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
+            enterTo='opacity-100 translate-y-0 sm:scale-100'
+            leave='ease-in duration-200'
+            leaveFrom='opacity-100 translate-y-0 sm:scale-100'
+            leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
+            show={isVisible}
           >
-            <Listbox.Options className='w-full absolute py-1 mt-1 border-input overflow-auto text-base bg-general text-general rounded shadow-lg max-h-60 sm:text-sm'>
-              {options.map((option, options) => (
-                <Listbox.Option
-                  className={({ active }) => `${active && 'text-sky-600 bg-sky-300 dark:bg-gray-800'} cursor-default select-none relative py-2 pl-10 pr-4`}
-                  key={options}
-                  value={option}
-                >
-                  {({ selected }) => (
-                    <Fragment>
-                      <span
-                        className={`${
-                          selected ? 'font-semibold text-sky-600 dark:text-sky-400' : 'font-normal'
-                        } block truncate`}
-                      >
-                        {option.label}
-                      </span>
-                      {selected ? (
-                        <span className='absolute inset-y-0 left-0 flex items-center pl-3'>
-                          <CheckIcon aria-hidden='true' className='w-5 h-5 text-sky-600 dark:text-sky-400' />
-                        </span>
-                      ) : null}
-                    </Fragment>
-                  )}
-                </Listbox.Option>
-              ))}
-            </Listbox.Options>
+            <div className='w-full bg-gray-200 dark:bg-gray-700 border-input-focus rounded text-gray-600 dark:text-gray-400 text-xs sm:text-sm shadow-xl'>
+              <button>options</button>
+            </div>
           </Transition>
         </div>
-      </Listbox>
-      <div className='flex items-center'>
-        <ExclamationCircleIcon className='w-4 h-4 text-red-500 dark:text-red-700' />
-        <span className='text-red-500 dark:text-red-700 ml-1 text-sm' role='alert'>Error Message!</span>
-      </div>
-    </div>
+      </button>
+    </FormFieldWrapper>
   )
 }
 
 Select.propTypes = {
   options: PropTypes.array,
-  label: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
 }
+
+Select.defaultProps = {
+  options: [],
+  placeholder: 'Please select..',
+}
+
+export default memo(
+  Select,
+  (prevProps, nextProps) => prevProps.isDirty === nextProps.isDirty,
+)

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { memo } from 'react'
-import { FormFieldWrapper } from '../common'
+import { FormFieldWrapper } from '../FormFieldWrapper'
 
 function Textarea(props) {
   const {
@@ -21,7 +21,10 @@ function Textarea(props) {
   )
 }
 
-export default memo(Textarea, (prevProps, nextProps) => prevProps.isDirty === nextProps.isDirty)
+export default memo(
+  Textarea,
+  (prevProps, nextProps) => prevProps.isDirty === nextProps.isDirty,
+)
 
 Textarea.propTypes = {
   name: PropTypes.string,
