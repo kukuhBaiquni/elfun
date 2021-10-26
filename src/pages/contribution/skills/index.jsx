@@ -78,7 +78,7 @@ export default function Skills() {
             /> */}
             <InputImage label='Skill Icon' name='skillIcon' />
           </FormProvider>
-          <TableComposer label='Create Table' name='table' />
+          <TableComposer label='Table Information' name='table' />
         </section>
       </main>
     </div>

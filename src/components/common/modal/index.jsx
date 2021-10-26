@@ -12,7 +12,7 @@ export default function Modal(props) {
   return (
     <Transition.Root as={Fragment} show={persist || isVisible}>
       <Dialog as='div' className='fixed z-50 inset-0 overflow-y-auto' initialFocus={cancelButtonRef} onClose={setIsVisible}>
-        <div className='flex items-end sm:items-center justify-center min-h-screen text-center sm:p-0'>
+        <div className='flex items-end sm:items-center justify-center min-h-screen sm:p-0'>
           <Transition.Child
             as={Fragment}
             enter='ease-out duration-300'
@@ -38,7 +38,7 @@ export default function Modal(props) {
           >
             <div className={clsx(
               size,
-              'inline-block w-full bg-general whitespace-nowrap text-center overflow-hidden shadow-xl',
+              'inline-block w-full bg-general whitespace-nowrap overflow-hidden shadow-xl',
               'sm:text-left text-general transform transition-all',
             )}
             >
