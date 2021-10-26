@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { memo } from 'react'
-import { FormFieldWrapper } from '../common'
+import { FormFieldWrapper } from '../FormFieldWrapper'
 
 function InputText(props) {
   const {
@@ -10,7 +10,7 @@ function InputText(props) {
     <FormFieldWrapper bordered label={label} name={name}>
       <input
         {...register(name)}
-        className='w-full outline-none placeholder-gray-500 bg-transparent text-sm py-2'
+        className='w-full outline-none placeholder-gray-500 bg-transparent text-sm p-2'
         defaultValue={defaultValue}
         id={name}
         placeholder={placeholder}

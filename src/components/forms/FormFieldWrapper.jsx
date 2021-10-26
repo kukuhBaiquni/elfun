@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import { ExclamationCircleIcon } from '@heroicons/react/solid'
-import clsx from 'clsx'
 import PropTypes from 'prop-types'
+import clsx from 'clsx'
 
 /**
  *
@@ -9,7 +9,6 @@ import PropTypes from 'prop-types'
  * @param {object} props
  * @param {string} props.name form field name for registering in react-hook-form (required)
  * @param {string} props.label text label that displayed above input (required)}
- * @param {node} props.children input component
  * @returns {*} Enhanced Component
  */
 
@@ -22,11 +21,10 @@ export function FormFieldWrapper(props) {
   return (
     <div className='py-2 font-titillium text-general'>
       <label className='font-semibold' htmlFor={name}>{label}</label>
-      <div
-        className={clsx(
-          bordered && 'border-input focus-within:border-input-focus',
-          'flex items-center w-full my-1 px-2 font-nunito rounded transition-all duration-300',
-        )}
+      <div className={clsx(
+        bordered && 'border-input focus-within:border-input-focus',
+        'w-full my-1 font-nunito rounded transition-all duration-300',
+      )}
       >
         {children}
       </div>
