@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Fragment, useState, useEffect } from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
 import Layout from 'layouts'
 import characters from 'store/character-data'
 import Modal from 'components/common/modal'

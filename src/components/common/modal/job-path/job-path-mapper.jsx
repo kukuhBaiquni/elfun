@@ -1,10 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/prop-types */
 import { Fragment } from 'react'
-import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { ChevronDoubleDownIcon, CheckCircleIcon, XIcon } from '@heroicons/react/solid'
-import loader from 'components/common/loader'
 import clsx from 'clsx'
 
 export default function JobPathMapper(props) {
@@ -30,10 +28,7 @@ export default function JobPathMapper(props) {
           <div className={clsx(selectedCharacter?.name === data?.name ? data?.bgColor : 'dark:bg-gray-500 bg-gray-400', 'p-1 mb-1 flex flex-col items-center cursor-pointer hover:opacity-75 transition-all duration-300 relative')}>
             <img
               alt={data?.name}
-              // blurDataURL={loader(54, 54)}
               height={54}
-              // placeholder='blur'
-              // priority
               src={data?.img}
               width={54}
               onClick={() => onSelectCharacter(data?.name, data?.img, data?.bgColor)}
@@ -74,10 +69,7 @@ function SecondPath(props) {
             <div className={`p-1 mb-1 flex flex-col items-center ${selectedCharacter?.name === item?.name ? data.bgColor : 'dark:bg-gray-500 bg-gray-400'} cursor-pointer hover:opacity-75 transition-all duration-300`}>
               <img
                 alt={item.name}
-                // blurDataURL={loader(54, 54)}
                 height={54}
-                // placeholder='blur'
-                // priority
                 src={item.img}
                 width={54}
                 onClick={
@@ -116,9 +108,7 @@ function LastPath(props) {
           <div className={`p-1 mb-1 flex flex-col items-center ${selectedCharacter?.name === job.name ? bgColor : 'dark:bg-gray-500 bg-gray-400'} cursor-pointer hover:opacity-75 transition-all duration-300`}>
             <img
               alt={job.name}
-              // blurDataURL={loader(54, 54)}
               height={54}
-              // placeholder='blur'
               src={job.img}
               width={54}
               onClick={
