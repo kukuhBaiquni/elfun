@@ -32,5 +32,8 @@
   li .job-nesting:hover > div {
     opacity: 1;
   }
+  .cursor-grab {
+    cursor: grab;
+  }
   @import "component/scroll";
 }

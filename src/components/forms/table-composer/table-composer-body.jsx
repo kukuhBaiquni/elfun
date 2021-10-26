@@ -3,12 +3,15 @@ import Button from 'components/common/button'
 import { Fragment } from 'react'
 import { useFieldArray, useFormContext } from 'react-hook-form'
 import PropTypes from 'prop-types'
+import { ReactSortable } from 'react-sortablejs'
 import InputText from '../input-text/input-text'
 
 export default function TableComposerBody(props) {
   const { setIsVisible } = props
   const { control } = useFormContext()
-  const { fields, append, remove } = useFieldArray({
+  const {
+    fields, append, remove, move,
+  } = useFieldArray({
     name: 'skillAttributes',
     control,
     keyName: '$id',
@@ -30,7 +33,23 @@ export default function TableComposerBody(props) {
           label='Add Attribute'
           leftIcon={<PlusIcon className='h-3.5 w-3.5 mr-1' />}
           size='sm'
+          onClick={() => append({
+            name: `JNCX ${Math.random()}`,
+          })}
         />
+        <ReactSortable
+          animation={150}
+          filter='.filtered'
+          ghostClass='opacity-60'
+          handle='.handle'
+          list={fields}
+          setList={() => { }}
+          onEnd={(evt) => move(evt.oldIndex, evt.newIndex)}
+        >
+          {fields.map((item, index) => (
+            <div className='bg-pink-400 p-2 cursor-grab handle' key={item.$id}>{item.name}</div>
+          ))}
+        </ReactSortable>
       </div>
     </Fragment>
   )
