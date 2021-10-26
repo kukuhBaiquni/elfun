@@ -34,7 +34,7 @@ export default function Skills() {
       skillName: '',
       skillDescription: '',
       skillCategory: '',
-      skillAttributes: [],
+      // skillAttributes: [],
       skillIcon: {},
     },
   })
@@ -66,7 +66,7 @@ export default function Skills() {
               name='skillCategory'
               options={SKILL_CATEGORIES}
             />
-            <Checkbox
+            {/* <Checkbox
               defaultValue={[]}
               label='Skills'
               name='skillAttributes'
@@ -75,7 +75,7 @@ export default function Skills() {
                 { label: 'Use MP', value: 1 },
                 { label: 'Use CD', value: 2 },
               ]}
-            />
+            /> */}
             <InputImage label='Skill Icon' name='skillIcon' />
           </FormProvider>
           <TableComposer label='Create Table' name='table' />

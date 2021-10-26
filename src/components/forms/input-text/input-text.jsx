@@ -15,10 +15,12 @@ function InputText(props) {
     <FormFieldWrapper bordered errorMessage={errorMessage} label={label} name={name}>
       <input
         {...register(name)}
+        autoComplete='off'
         className='w-full outline-none placeholder-gray-500 bg-transparent text-sm p-2'
         defaultValue={defaultValue}
         id={name}
         placeholder={placeholder}
+        spellCheck={false}
         type='text'
       />
     </FormFieldWrapper>

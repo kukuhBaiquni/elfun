@@ -15,11 +15,13 @@ function Textarea(props) {
     <FormFieldWrapper bordered errorMessage={errorMessage} label={label} name={name}>
       <textarea
         {...register(name)}
+        autoComplete='off'
         className='w-full outline-none placeholder-gray-500 bg-transparent text-sm p-2 resize-none'
         defaultValue={defaultValue}
         id={name}
         placeholder={placeholder}
         rows={4}
+        spellCheck={false}
         type='text'
       />
     </FormFieldWrapper>
