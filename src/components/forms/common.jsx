@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import { ExclamationCircleIcon } from '@heroicons/react/solid'
+import clsx from 'clsx'
 import PropTypes from 'prop-types'
 
 /**
@@ -8,17 +9,25 @@ import PropTypes from 'prop-types'
  * @param {object} props
  * @param {string} props.name form field name for registering in react-hook-form (required)
  * @param {string} props.label text label that displayed above input (required)}
+ * @param {node} props.children input component
  * @returns {*} Enhanced Component
  */
 
-export function FormField(props) {
-  const { name, label, children } = props
+export function FormFieldWrapper(props) {
+  const {
+    name, label, children, bordered,
+  } = props
   // eslint-disable-next-line no-console
   console.log('📝', props)
   return (
     <div className='py-2 font-titillium text-general'>
       <label className='font-semibold' htmlFor={name}>{label}</label>
-      <div className='flex items-center border-input w-full focus-within:border-input-focus my-1 px-2 font-nunito rounded transition-all duration-300'>
+      <div
+        className={clsx(
+          bordered && 'border-input focus-within:border-input-focus',
+          'flex items-center w-full my-1 px-2 font-nunito rounded transition-all duration-300',
+        )}
+      >
         {children}
       </div>
       <div className='flex items-center'>
@@ -29,8 +38,14 @@ export function FormField(props) {
   )
 }
 
-FormField.propTypes = {
-  name: PropTypes.string,
-  label: PropTypes.string,
+FormFieldWrapper.propTypes = {
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
   children: PropTypes.node,
+  bordered: PropTypes.bool,
+}
+
+FormFieldWrapper.defaultProps = {
+  children: null,
+  bordered: false,
 }
