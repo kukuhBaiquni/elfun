@@ -1,18 +1,15 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import PropTypes from 'prop-types'
-import { Fragment, useEffect } from 'react'
+import { useEffect, memo } from 'react'
 import { CheckIcon } from '@heroicons/react/solid'
 import { useFormContext } from 'react-hook-form'
 
-export default function Checkbox(props) {
-  const {
-    name, label, options = [],
-  } = props
-  const {
-    setValue, register, watch,
-  } = useFormContext()
+function Checkbox(props) {
+  const { name, label, options = [] } = props
 
-  const currentValue = watch(name) ?? []
+  const { setValue, register, watch } = useFormContext()
+
+  const currentValue = watch(name)
 
   useEffect(() => {
     register(name) // registering virtual input
@@ -27,19 +24,18 @@ export default function Checkbox(props) {
       setValue(name, [...watch(name), item.value])
     }
   }
+
   return (
     <div className='py-2 text-general font-titillium'>
       <span className='font-semibold block'>{label}</span>
       <div className='grid grid-cols-3 gap-2'>
         {options.map((item) => (
-          <Fragment key={item.label}>
-            <button className='flex items-center' type='button' onClick={() => onCheckboxClick(item)}>
-              <div className='h-4 w-4 rounded border border-input flex items-center justify-center relative'>
-                {currentValue.includes(item.value) && <CheckIcon className='w-4 h-4 text-sky-500' />}
-              </div>
-              <span className='ml-2 text-left'>{item.label}</span>
-            </button>
-          </Fragment>
+          <button className='flex items-center' key={item.value} type='button' onClick={() => onCheckboxClick(item)}>
+            <div className='h-4 w-4 rounded border border-input flex items-center justify-center relative'>
+              {currentValue.includes(item.value) && <CheckIcon className='w-4 h-4 text-sky-500' />}
+            </div>
+            <span className='ml-2 text-left'>{item.label}</span>
+          </button>
         ))}
       </div>
     </div>
@@ -51,3 +47,5 @@ Checkbox.propTypes = {
   label: PropTypes.string,
   options: PropTypes.array,
 }
+
+export default memo(Checkbox)

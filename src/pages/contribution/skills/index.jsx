@@ -2,7 +2,7 @@ import Layout from 'layouts'
 import Head from 'next/head'
 import InputText from 'components/forms/input-text/input-text'
 import Textarea from 'components/forms/input-text/textarea'
-import Select from 'components/forms/select'
+import Select from 'components/forms/select/select'
 import Checkbox from 'components/forms/checkbox'
 import InputImage from 'components/forms/input-image'
 import { useForm, FormProvider } from 'react-hook-form'
@@ -13,7 +13,8 @@ export default function Skills() {
     defaultValues: {
       skillName: '',
       skillDescription: '',
-      skillCategory: [],
+      skillCategory: {},
+      skillAttributes: [],
     },
   })
   console.log('📝', methods.watch())
@@ -34,8 +35,12 @@ export default function Skills() {
             <Checkbox
               defaultValue={[]}
               label='Skills'
-              name='skillCategory'
-              options={SKILL_CATEGORIES}
+              name='skillAttributes'
+              options={[
+                { label: 'Use HP', value: 0 },
+                { label: 'Use MP', value: 1 },
+                { label: 'Use CD', value: 2 },
+              ]}
             />
             <InputImage />
           </FormProvider>

@@ -1,11 +1,15 @@
 import PropTypes from 'prop-types'
 import { memo } from 'react'
+import { useFormContext } from 'react-hook-form'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 
 function Textarea(props) {
   const {
-    name, register, label, placeholder, defaultValue,
+    name, label, placeholder, defaultValue,
   } = props
+
+  const { register } = useFormContext()
+
   return (
     <FormFieldWrapper bordered label={label} name={name}>
       <textarea
@@ -28,7 +32,6 @@ export default memo(
 
 Textarea.propTypes = {
   name: PropTypes.string,
-  register: PropTypes.func,
   label: PropTypes.string,
   defaultValue: PropTypes.string,
   placeholder: PropTypes.string,
@@ -36,7 +39,6 @@ Textarea.propTypes = {
 
 Textarea.defaultProps = {
   name: 'Name',
-  register: () => {},
   label: 'Label',
   placeholder: 'placeholder',
   defaultValue: '',

@@ -1,11 +1,15 @@
 import PropTypes from 'prop-types'
 import { memo } from 'react'
+import { useFormContext } from 'react-hook-form'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 
 function InputText(props) {
   const {
-    name, register, label, placeholder, defaultValue,
+    name, label, placeholder, defaultValue,
   } = props
+
+  const { register } = useFormContext()
+
   return (
     <FormFieldWrapper bordered label={label} name={name}>
       <input
@@ -24,7 +28,6 @@ export default memo(InputText, (prevProps, nextProps) => prevProps.isDirty === n
 
 InputText.propTypes = {
   name: PropTypes.string,
-  register: PropTypes.func,
   label: PropTypes.string,
   defaultValue: PropTypes.string,
   placeholder: PropTypes.string,
@@ -32,7 +35,6 @@ InputText.propTypes = {
 
 InputText.defaultProps = {
   name: 'Name',
-  register: () => {},
   label: 'Label',
   placeholder: 'placeholder',
   defaultValue: '',

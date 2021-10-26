@@ -1,17 +1,24 @@
 /* eslint-disable no-shadow */
-import { useState, memo } from 'react'
+import { useState, useEffect, memo } from 'react'
 import Transition from 'components/common/transition'
-import { CheckIcon, ChevronDownIcon, ExclamationCircleIcon } from '@heroicons/react/solid'
+import { CheckIcon, ChevronDownIcon } from '@heroicons/react/solid'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
+import { useFormContext } from 'react-hook-form'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 
 function Select(props) {
   const {
-    name, label, options, placeholder,
+    name, label, options,
   } = props
-  const [selected, setSelected] = useState(options[0] || {})
   const [isVisible, setIsVisible] = useState(false)
+
+  const { register, setValue, watch } = useFormContext()
+  const currentValue = watch(name)
+
+  useEffect(() => {
+    register(name)
+  }, [register, name])
 
   return (
     <FormFieldWrapper bordered label={label} name={name}>
@@ -21,7 +28,7 @@ function Select(props) {
         onBlur={() => setIsVisible(false)}
         onFocus={() => setIsVisible(true)}
       >
-        <span>{selected?.label}</span>
+        <span>{currentValue?.label || options[0].label}</span>
         <ChevronDownIcon className='h-5 w-5' />
       </button>
       <div className='absolute top-20 left-0 z-50 w-full'>
@@ -31,18 +38,18 @@ function Select(props) {
               {options.map((item, index) => (
                 <button
                   className={clsx(
-                    item.value === selected.value
+                    item.value === currentValue?.value
                       ? 'bg-sky-500 cursor-default text-white'
                       : 'hover:bg-gray-300 dark:hover:bg-gray-600',
                     'p-2 text-left rounded flex',
                   )}
-                  disabled={item.value === selected.value}
+                  disabled={item.value === currentValue?.value}
                   key={index}
                   type='button'
-                  onClick={() => setSelected(item)}
+                  onClick={() => setValue(name, item)}
                 >
                   {item.label}
-                  {item.value === selected.value && (
+                  {item.value === currentValue?.value && (
                     <CheckIcon className='h-5 w-5 text-sky-500 ml-2' />
                   )}
                 </button>
@@ -59,15 +66,10 @@ Select.propTypes = {
   options: PropTypes.array,
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  placeholder: PropTypes.string,
 }
 
 Select.defaultProps = {
   options: [],
-  placeholder: 'Please select..',
 }
 
-export default memo(
-  Select,
-  (prevProps, nextProps) => prevProps.isDirty === nextProps.isDirty,
-)
+export default memo(Select)
