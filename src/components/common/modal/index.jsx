@@ -1,12 +1,12 @@
-/* eslint-disable max-len */
-/* eslint-disable react/prop-types */
 import { Fragment, useRef } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
+import PropTypes from 'prop-types'
+import clsx from 'clsx'
 
 export default function Modal(props) {
   const cancelButtonRef = useRef(null)
   const {
-    isVisible, setIsVisible, render, persist,
+    isVisible, setIsVisible, render, persist, size,
   } = props
 
   return (
@@ -36,7 +36,12 @@ export default function Modal(props) {
             leaveFrom='opacity-100 translate-y-0 sm:scale-100'
             leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
           >
-            <div className='inline-block w-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs sm:text-sm whitespace-nowrap text-center sm:text-left overflow-hidden shadow-xl font-titillium max-w-lg transform transition-all'>
+            <div className={clsx(
+              size,
+              'inline-block w-full bg-general whitespace-nowrap text-center overflow-hidden shadow-xl',
+              'sm:text-sm sm:text-left text-general text-xs font-titillium transform transition-all',
+            )}
+            >
               {render}
             </div>
           </Transition.Child>
@@ -45,4 +50,16 @@ export default function Modal(props) {
       </Dialog>
     </Transition.Root>
   )
+}
+
+Modal.propTypes = {
+  isVisible: PropTypes.bool,
+  setIsVisible: PropTypes.func,
+  render: PropTypes.node,
+  persist: PropTypes.bool,
+  size: PropTypes.string,
+}
+
+Modal.defaultProps = {
+  size: 'max-w-lg',
 }

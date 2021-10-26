@@ -1,16 +1,30 @@
-import React from 'react'
+import { useState } from 'react'
 import Button from 'components/common/button'
 import { TemplateIcon } from '@heroicons/react/solid'
 import PropTypes from 'prop-types'
+import Modal from 'components/common/modal'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 
 export default function TableComposer(props) {
   const { label, name } = props
+  const [isVisible, setIsVisible] = useState(false)
+
   return (
     <FormFieldWrapper label={label} name={name}>
       <Button
         label='Create Table'
         leftIcon={<TemplateIcon className='h-5 w-5 mr-2' />}
+        onClick={() => setIsVisible(true)}
+      />
+      <Modal
+        isVisible={isVisible}
+        render={(
+          <div>
+            Test
+          </div>
+        )}
+        setIsVisible={setIsVisible}
+        size='max-w-screen-lg'
       />
     </FormFieldWrapper>
   )
