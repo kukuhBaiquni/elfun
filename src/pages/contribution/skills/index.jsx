@@ -5,12 +5,12 @@ import Textarea from 'components/forms/input-text/textarea'
 import Select from 'components/forms/select/select'
 import Checkbox from 'components/forms/checkbox'
 import InputImage from 'components/forms/input-image'
-import Button from 'components/common/button'
 import { useForm, FormProvider } from 'react-hook-form'
-import { TemplateIcon } from '@heroicons/react/solid'
+
 import SKILL_CATEGORIES from 'constant/skill-categories'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers'
+import TableComposer from 'components/forms/table-composer'
 
 export default function Skills() {
   // const schema = yup.object().shape({
@@ -78,11 +78,7 @@ export default function Skills() {
             />
             <InputImage label='Skill Icon' name='skillIcon' />
           </FormProvider>
-          <Button
-            label='JancoQs'
-            leftIcon={<TemplateIcon className='h-5 w-5 mr-2' />}
-            rightIcon={<TemplateIcon className='h-5 w-5 ml-2' />}
-          />
+          <TableComposer label='Create Table' name='table' />
         </section>
       </main>
     </div>

@@ -33,11 +33,15 @@ Button.propTypes = {
   onClick: PropTypes.func,
   leftIcon: PropTypes.node,
   rightIcon: PropTypes.node,
+  fluid: PropTypes.bool,
+  outlined: PropTypes.bool,
 }
 
 Button.defaultProps = {
   type: 'button',
   label: 'Button',
+  fluid: false,
+  outlined: false,
   onClick: () => {},
   leftIcon: <span />,
   rightIcon: <span />,
