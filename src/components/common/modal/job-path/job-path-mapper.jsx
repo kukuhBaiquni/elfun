@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/prop-types */
 import { Fragment } from 'react'
 import Image from 'next/image'
@@ -27,11 +28,12 @@ export default function JobPathMapper(props) {
       <div className='p-2 mt-3 flex flex-col'>
         <div className='flex flex-col justify-center items-center'>
           <div className={clsx(selectedCharacter?.name === data?.name ? data?.bgColor : 'dark:bg-gray-500 bg-gray-400', 'p-1 mb-1 flex flex-col items-center cursor-pointer hover:opacity-75 transition-all duration-300 relative')}>
-            <Image
+            <img
               alt={data?.name}
-              blurDataURL={loader(54, 54)}
+              // blurDataURL={loader(54, 54)}
               height={54}
-              placeholder='blur'
+              // placeholder='blur'
+              // priority
               src={data?.img}
               width={54}
               onClick={() => onSelectCharacter(data?.name, data?.img, data?.bgColor)}
@@ -70,11 +72,12 @@ function SecondPath(props) {
               <ChevronDoubleDownIcon className={`w-5 h-5 mb-2 ${data.textColor}`} />
             )}
             <div className={`p-1 mb-1 flex flex-col items-center ${selectedCharacter?.name === item?.name ? data.bgColor : 'dark:bg-gray-500 bg-gray-400'} cursor-pointer hover:opacity-75 transition-all duration-300`}>
-              <Image
+              <img
                 alt={item.name}
-                blurDataURL={loader(54, 54)}
+                // blurDataURL={loader(54, 54)}
                 height={54}
-                placeholder='blur'
+                // placeholder='blur'
+                // priority
                 src={item.img}
                 width={54}
                 onClick={
@@ -111,11 +114,11 @@ function LastPath(props) {
             <ChevronDoubleDownIcon className={`w-5 h-5 mb-2 ${textColor}`} />
           )}
           <div className={`p-1 mb-1 flex flex-col items-center ${selectedCharacter?.name === job.name ? bgColor : 'dark:bg-gray-500 bg-gray-400'} cursor-pointer hover:opacity-75 transition-all duration-300`}>
-            <Image
+            <img
               alt={job.name}
-              blurDataURL={loader(54, 54)}
+              // blurDataURL={loader(54, 54)}
               height={54}
-              placeholder='blur'
+              // placeholder='blur'
               src={job.img}
               width={54}
               onClick={

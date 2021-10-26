@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types'
 import { memo } from 'react'
-import { FormField } from '../common'
+import { FormFieldWrapper } from '../common'
 
 function InputText(props) {
   const {
-    name = 'Name', register = () => {}, label = 'Label', placeholder = '',
-    defaultValue = '',
+    name, register, label, placeholder, defaultValue,
   } = props
   return (
-    <FormField label={label} name={name}>
+    <FormFieldWrapper bordered label={label} name={name}>
       <input
         {...register(name)}
         className='w-full outline-none placeholder-gray-500 bg-transparent text-sm py-2'
@@ -17,7 +16,7 @@ function InputText(props) {
         placeholder={placeholder}
         type='text'
       />
-    </FormField>
+    </FormFieldWrapper>
   )
 }
 
@@ -29,4 +28,12 @@ InputText.propTypes = {
   label: PropTypes.string,
   defaultValue: PropTypes.string,
   placeholder: PropTypes.string,
+}
+
+InputText.defaultProps = {
+  name: 'Name',
+  register: () => {},
+  label: 'Label',
+  placeholder: 'placeholder',
+  defaultValue: '',
 }

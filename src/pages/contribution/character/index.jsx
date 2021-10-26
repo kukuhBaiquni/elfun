@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Fragment, useState, useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -36,7 +37,7 @@ export default function Character() {
         <div className='grid grid-cols-3 sm:grid-cols-5 gap-2 max-w-screen-sm'>
           {characters.map((item) => (
             <button className={`p-1 ${item.bgColor} flex items-center hover:opacity-70`} key={item.name} type='button' onClick={() => showModalAndSetData(item)}>
-              <Image alt={item.name} height={20} src={item.img} width={20} />
+              <img alt={item.name} height={20} src={item.img} width={20} />
               <span className={clsx(item.hoverTextColor ? 'text-gray-600' : 'text-white', 'ml-2 font-titillium')}>{item.name}</span>
             </button>
           ))}
