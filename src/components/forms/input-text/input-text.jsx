@@ -8,16 +8,19 @@ function InputText(props) {
     name, label, placeholder, defaultValue,
   } = props
 
-  const { register } = useFormContext()
+  const { register, formState: { errors } } = useFormContext()
+  const errorMessage = Object.keys(errors).includes(name) ? errors[name].message : ''
 
   return (
-    <FormFieldWrapper bordered label={label} name={name}>
+    <FormFieldWrapper bordered errorMessage={errorMessage} label={label} name={name}>
       <input
         {...register(name)}
+        autoComplete='off'
         className='w-full outline-none placeholder-gray-500 bg-transparent text-sm p-2'
         defaultValue={defaultValue}
         id={name}
         placeholder={placeholder}
+        spellCheck={false}
         type='text'
       />
     </FormFieldWrapper>

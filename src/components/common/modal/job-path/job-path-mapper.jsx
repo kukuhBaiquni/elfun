@@ -19,13 +19,25 @@ export default function JobPathMapper(props) {
 
   return (
     <Fragment>
-      <div className={clsx(data?.bgColor, data?.hoverTextColor ? 'text-gray-600' : 'text-white', 'py-2 px-3 text-lg flex justify-between items-center')}>
+      <div className={clsx(
+        data?.bgColor, data?.hoverTextColor
+          ? 'text-gray-600'
+          : 'text-white',
+        'py-2 px-3 text-lg flex justify-between items-center',
+      )}
+      >
         <h5>Choose Character Path</h5>
         <XIcon className='w-6 h-6 cursor-pointer' onClick={() => setIsVisible(false)} />
       </div>
-      <div className='p-2 mt-3 flex flex-col'>
+      <div className='p-2 mt-3 flex flex-col sm:text-sm text-xs font-titillium'>
         <div className='flex flex-col justify-center items-center'>
-          <div className={clsx(selectedCharacter?.name === data?.name ? data?.bgColor : 'dark:bg-gray-500 bg-gray-400', 'p-1 mb-1 flex flex-col items-center cursor-pointer hover:opacity-75 transition-all duration-300 relative')}>
+          <div className={clsx(
+            selectedCharacter?.name === data?.name
+              ? data?.bgColor
+              : 'dark:bg-gray-500 bg-gray-400',
+            'p-1 mb-1 flex flex-col items-center cursor-pointer hover:opacity-75 transition-all duration-300 relative',
+          )}
+          >
             <img
               alt={data?.name}
               height={54}
@@ -42,7 +54,13 @@ export default function JobPathMapper(props) {
           />
         </div>
         <button
-          className={clsx(data?.bgColor, data?.hoverTextColor ? 'text-gray-600' : 'text-white', 'text-base px-12 py-2 rounded ml-auto hover:opacity-75 sm:w-3/4 disabled:bg-gray-500 disabled:cursor-not-allowed mt-8 mb-0 sm:mb-2 w-full mx-auto transition-all duration-300')}
+          className={clsx(
+            data?.bgColor, data?.hoverTextColor
+              ? 'text-gray-600'
+              : 'text-white',
+            'text-base px-12 py-2 rounded ml-auto hover:opacity-75 sm:w-3/4 disabled:bg-gray-500',
+            'disabled:cursor-not-allowed mt-8 mb-0 sm:mb-2 w-full mx-auto transition-all duration-300',
+          )}
           disabled={!selectedCharacter}
           type='button'
           onClick={() => push(`${pathname}/create?character=${selectedCharacter?.name}`)}
@@ -66,7 +84,13 @@ function SecondPath(props) {
             ) : (
               <ChevronDoubleDownIcon className={`w-5 h-5 mb-2 ${data.textColor}`} />
             )}
-            <div className={`p-1 mb-1 flex flex-col items-center ${selectedCharacter?.name === item?.name ? data.bgColor : 'dark:bg-gray-500 bg-gray-400'} cursor-pointer hover:opacity-75 transition-all duration-300`}>
+            <div className={clsx(
+              selectedCharacter?.name === item?.name
+                ? data.bgColor
+                : 'dark:bg-gray-500 bg-gray-400',
+              'p-1 mb-1 flex flex-col items-center cursor-pointer hover:opacity-75 transition-all duration-300',
+            )}
+            >
               <img
                 alt={item.name}
                 height={54}
@@ -105,7 +129,11 @@ function LastPath(props) {
           ) : (
             <ChevronDoubleDownIcon className={`w-5 h-5 mb-2 ${textColor}`} />
           )}
-          <div className={`p-1 mb-1 flex flex-col items-center ${selectedCharacter?.name === job.name ? bgColor : 'dark:bg-gray-500 bg-gray-400'} cursor-pointer hover:opacity-75 transition-all duration-300`}>
+          <div className={clsx(
+            selectedCharacter?.name === job.name ? bgColor : 'dark:bg-gray-500 bg-gray-400',
+            'p-1 mb-1 flex flex-col items-center cursor-pointer hover:opacity-75 transition-all duration-300',
+          )}
+          >
             <img
               alt={job.name}
               height={54}

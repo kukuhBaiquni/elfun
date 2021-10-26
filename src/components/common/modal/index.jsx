@@ -1,18 +1,18 @@
-/* eslint-disable max-len */
-/* eslint-disable react/prop-types */
 import { Fragment, useRef } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
+import PropTypes from 'prop-types'
+import clsx from 'clsx'
 
 export default function Modal(props) {
   const cancelButtonRef = useRef(null)
   const {
-    isVisible, setIsVisible, render, persist,
+    isVisible, setIsVisible, render, persist, size,
   } = props
 
   return (
     <Transition.Root as={Fragment} show={persist || isVisible}>
       <Dialog as='div' className='fixed z-50 inset-0 overflow-y-auto' initialFocus={cancelButtonRef} onClose={setIsVisible}>
-        <div className='flex items-end sm:items-center justify-center min-h-screen text-center sm:p-0'>
+        <div className='flex items-end sm:items-center justify-center min-h-screen sm:p-0'>
           <Transition.Child
             as={Fragment}
             enter='ease-out duration-300'
@@ -36,7 +36,12 @@ export default function Modal(props) {
             leaveFrom='opacity-100 translate-y-0 sm:scale-100'
             leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
           >
-            <div className='inline-block w-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400 text-xs sm:text-sm whitespace-nowrap text-center sm:text-left overflow-hidden shadow-xl font-titillium max-w-lg transform transition-all'>
+            <div className={clsx(
+              size,
+              'inline-block w-full bg-general whitespace-nowrap overflow-hidden shadow-xl',
+              'sm:text-left text-general transform transition-all',
+            )}
+            >
               {render}
             </div>
           </Transition.Child>
@@ -45,4 +50,16 @@ export default function Modal(props) {
       </Dialog>
     </Transition.Root>
   )
+}
+
+Modal.propTypes = {
+  isVisible: PropTypes.bool,
+  setIsVisible: PropTypes.func,
+  render: PropTypes.node,
+  persist: PropTypes.bool,
+  size: PropTypes.string,
+}
+
+Modal.defaultProps = {
+  size: 'max-w-lg',
 }

@@ -8,17 +8,20 @@ function Textarea(props) {
     name, label, placeholder, defaultValue,
   } = props
 
-  const { register } = useFormContext()
+  const { register, formState: { errors } } = useFormContext()
+  const errorMessage = Object.keys(errors).includes(name) ? errors[name].message : ''
 
   return (
-    <FormFieldWrapper bordered label={label} name={name}>
+    <FormFieldWrapper bordered errorMessage={errorMessage} label={label} name={name}>
       <textarea
         {...register(name)}
+        autoComplete='off'
         className='w-full outline-none placeholder-gray-500 bg-transparent text-sm p-2 resize-none'
         defaultValue={defaultValue}
         id={name}
         placeholder={placeholder}
         rows={4}
+        spellCheck={false}
         type='text'
       />
     </FormFieldWrapper>

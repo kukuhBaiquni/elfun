@@ -18,7 +18,7 @@
     @apply text-gray-600 dark:text-gray-400;
   }
   .bg-general {
-    @apply bg-gray-200 dark:bg-gray-700;
+    @apply bg-gray-200 dark:bg-gray-800;
   }
   .border-general {
     @apply border dark:border-gray-600 border-gray-300;
@@ -31,6 +31,9 @@
   }
   li .job-nesting:hover > div {
     opacity: 1;
+  }
+  .cursor-grab {
+    cursor: grab;
   }
   @import "component/scroll";
 }

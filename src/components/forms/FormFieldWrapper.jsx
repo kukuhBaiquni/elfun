@@ -5,7 +5,7 @@ import clsx from 'clsx'
 
 export function FormFieldWrapper(props) {
   const {
-    name, label, children, bordered,
+    name, label, children, bordered, errorMessage,
   } = props
   // eslint-disable-next-line no-console
   // console.log('📝', props)
@@ -19,10 +19,12 @@ export function FormFieldWrapper(props) {
       >
         {children}
       </div>
-      <div className='flex items-center'>
-        <ExclamationCircleIcon className='w-4 h-4 text-red-500 dark:text-red-700' />
-        <span className='text-red-500 dark:text-red-700 ml-1 text-sm' role='alert'>Error Message!</span>
-      </div>
+      {errorMessage && (
+        <div className='flex items-center'>
+          <ExclamationCircleIcon className='w-4 h-4 text-red-500 dark:text-red-700' />
+          <span className='text-red-500 dark:text-red-700 ml-1 text-sm' role='alert'>{errorMessage}</span>
+        </div>
+      )}
     </div>
   )
 }
@@ -32,6 +34,7 @@ FormFieldWrapper.propTypes = {
   label: PropTypes.string.isRequired,
   children: PropTypes.node,
   bordered: PropTypes.bool,
+  errorMessage: PropTypes.string,
 }
 
 FormFieldWrapper.defaultProps = {

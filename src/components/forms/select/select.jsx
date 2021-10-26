@@ -33,15 +33,15 @@ function Select(props) {
       </button>
       <div className='absolute top-20 left-0 z-50 w-full'>
         <Transition isVisible={isVisible}>
-          <div className='w-full p-2 bg-gray-200 dark:bg-gray-700 border-input-focus rounded text-xs sm:text-sm shadow-xl'>
+          <div className='w-full p-2 bg-sky-100 dark:bg-gray-700 border-input-focus rounded text-xs sm:text-sm shadow-xl'>
             <div className='custom-scroll max-h-[300px] overflow-y-auto pr-2 flex flex-col'>
               {options.map((item, index) => (
                 <button
                   className={clsx(
                     item.value === currentValue
                       ? 'bg-sky-500 cursor-default text-white'
-                      : 'hover:bg-gray-300 dark:hover:bg-gray-600',
-                    'p-2 text-left rounded flex',
+                      : 'hover:bg-sky-300 dark:hover:bg-gray-600',
+                    'p-2 text-left rounded-sm flex',
                   )}
                   disabled={item.value === currentValue}
                   key={index}

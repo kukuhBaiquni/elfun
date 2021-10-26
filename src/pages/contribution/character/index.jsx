@@ -28,7 +28,7 @@ export default function Character() {
         <meta content='Contribution guide for filling submission article form' name='description' />
         <meta content='Elfun Contribution Guide, Contribution Elfun, Elfun' name='keywords' />
       </Head>
-      <main className='text-gray-600 dark:text-gray-400 px-2'>
+      <main className='text-general px-2'>
         <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Create New Character Information</h2>
         <p className='my-2'>
           Choose which character you want to add information:

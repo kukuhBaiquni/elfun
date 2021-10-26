@@ -22,8 +22,12 @@ function TransitionComponent(props) {
 
 TransitionComponent.propTypes = {
   children: PropTypes.node.isRequired,
-  isVisible: PropTypes.bool.isRequired,
+  isVisible: PropTypes.bool,
 }
+TransitionComponent.defaultProps = {
+  isVisible: true,
+}
+
 export default memo(
   TransitionComponent,
 )

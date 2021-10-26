@@ -5,12 +5,12 @@ import Textarea from 'components/forms/input-text/textarea'
 import Select from 'components/forms/select/select'
 import Checkbox from 'components/forms/checkbox'
 import InputImage from 'components/forms/input-image'
-import Button from 'components/common/button'
 import { useForm, FormProvider } from 'react-hook-form'
-import { TemplateIcon } from '@heroicons/react/solid'
+
 import SKILL_CATEGORIES from 'constant/skill-categories'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers'
+import TableComposer from 'components/forms/table-composer'
 
 export default function Skills() {
   // const schema = yup.object().shape({
@@ -34,7 +34,7 @@ export default function Skills() {
       skillName: '',
       skillDescription: '',
       skillCategory: '',
-      skillAttributes: [],
+      // skillAttributes: [],
       skillIcon: {},
     },
   })
@@ -47,7 +47,7 @@ export default function Skills() {
         <meta content='Contribution guide for filling submission article form' name='description' />
         <meta content='Elfun Contribution Guide, Contribution Elfun, Elfun' name='keywords' />
       </Head>
-      <main>
+      <main className='px-2'>
         <section className='max-w-xl'>
           <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Add New Skill: Optimus</h2>
           <FormProvider {...methods}>
@@ -66,7 +66,7 @@ export default function Skills() {
               name='skillCategory'
               options={SKILL_CATEGORIES}
             />
-            <Checkbox
+            {/* <Checkbox
               defaultValue={[]}
               label='Skills'
               name='skillAttributes'
@@ -75,14 +75,10 @@ export default function Skills() {
                 { label: 'Use MP', value: 1 },
                 { label: 'Use CD', value: 2 },
               ]}
-            />
+            /> */}
             <InputImage label='Skill Icon' name='skillIcon' />
           </FormProvider>
-          <Button
-            label='JancoQs'
-            leftIcon={<TemplateIcon className='h-5 w-5 mr-2' />}
-            rightIcon={<TemplateIcon className='h-5 w-5 ml-2' />}
-          />
+          <TableComposer label='Table Information' name='table' />
         </section>
       </main>
     </div>

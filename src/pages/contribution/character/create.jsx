@@ -16,7 +16,7 @@ export default function Create() {
         <title>Elfun - Create Character Information</title>
         <meta content='Create Character Information' name='description' />
       </Head>
-      <main className='text-gray-600 dark:text-gray-400 px-2'>
+      <main className='text-general px-2'>
         <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Add {query.character} Information</h2>
         <p className='my-2'>
           Choose which character you want to add information:
