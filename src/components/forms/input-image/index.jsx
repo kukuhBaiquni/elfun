@@ -3,8 +3,10 @@ import React, { Fragment } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { PhotographIcon } from '@heroicons/react/solid'
 import { FormFieldWrapper } from '../FormFieldWrapper'
+import PropTypes from 'prop-types'
 
-export default function InputImage() {
+
+export default function InputImage(props) {
   const { getRootProps, getInputProps } = useDropzone({
     accept: '.jpg, .jpeg, .png,',
     multiple: false,
@@ -15,9 +17,6 @@ export default function InputImage() {
       // })));
     },
   })
-
-  console.log(getRootProps())
-  console.log(getInputProps())
 
   return (
     <FormFieldWrapper label='Skill Icon' name='skillIcon'>

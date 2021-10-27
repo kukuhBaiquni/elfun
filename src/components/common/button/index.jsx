@@ -45,7 +45,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   type: 'button',
-  label: 'Button',
+  label: '',
   fluid: false,
   outlined: false,
   onClick: () => {},
