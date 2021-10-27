@@ -1,10 +1,11 @@
-import { PlusIcon, XIcon, SwitchVerticalIcon } from '@heroicons/react/solid'
+import {
+  PlusIcon, XIcon, SwitchVerticalIcon, TrashIcon, PencilIcon,
+} from '@heroicons/react/solid'
 import Button from 'components/common/button'
 import { Fragment } from 'react'
 import { useFieldArray, useFormContext } from 'react-hook-form'
 import PropTypes from 'prop-types'
 import { ReactSortable } from 'react-sortablejs'
-import Transition from 'components/common/transition'
 import InputText from '../input-text/input-text'
 
 export default function TableComposerBody(props) {
@@ -31,7 +32,7 @@ export default function TableComposerBody(props) {
             name='tableName'
             placeholder='Table Name..'
           />
-          <ReactSortable
+          {/* <ReactSortable
             animation={150}
             filter='.filtered'
             ghostClass='opacity-60'
@@ -39,22 +40,28 @@ export default function TableComposerBody(props) {
             list={fields}
             setList={() => { }}
             onEnd={(evt) => move(evt.oldIndex, evt.newIndex)}
-          >
-            {fields.map((field, index) => (
-              <Transition key={field.$id}>
-                <div className='bg-gray-300 dark:bg-gray-900 rounded mb-2 p-2'>
-                  <SwitchVerticalIcon className='h-5 w-5 handle cursor-grab' />
+          > */}
+          {fields.map((field, index) => (
+            <div className='bg-gray-300 dark:bg-gray-900 rounded mb-2 p-2 handle cursor-grab' key={field.$id}>
+              <div className='flex justify-between'>
+                <div className='flex gap-2'>
+                  <SwitchVerticalIcon className='h-5 w-5' />
                   <p>{field.name}</p>
-                  <InputText
-                    defaultValue={field.name}
-                    label='Attribute Name'
-                    name={`skillAttributes.${index}.name`}
-                    placeholder='Attribute Name..'
-                  />
                 </div>
-              </Transition>
-            ))}
-          </ReactSortable>
+                <div className='flex'>
+                  <PencilIcon className='h-6 w-6 hover:bg-gray-800 cursor-pointer p-1 text-sky-500' />
+                  <TrashIcon className='h-6 w-6 hover:bg-gray-800 cursor-pointer p-1 text-red-500' onClick={() => remove(index)} />
+                </div>
+              </div>
+              <InputText
+                defaultValue={field.name}
+                label='Attribute Name'
+                name={`skillAttributes.${index}.name`}
+                placeholder='Attribute Name..'
+              />
+            </div>
+          ))}
+          {/* </ReactSortable> */}
           <Button
             label='Add Attribute'
             leftIcon={<PlusIcon className='h-3.5 w-3.5 mr-1' />}
