@@ -2,17 +2,14 @@ import {
   PlusIcon, XIcon, SwitchVerticalIcon, TrashIcon, PencilIcon,
 } from '@heroicons/react/solid'
 import Button from 'components/common/button'
-import { Fragment, useState } from 'react'
+import { Fragment } from 'react'
 import { useFieldArray, useFormContext } from 'react-hook-form'
 import PropTypes from 'prop-types'
 import { ReactSortable } from 'react-sortablejs'
-import Modal from 'components/common/modal'
 import InputText from '../input-text/input-text'
-import TableAttrBody from './table-attr-body'
 
 export default function TableComposerBody(props) {
-  const [isVisibleAttrModal, setIsVisibleAttrModal] = useState(false)
-  const { setIsVisible } = props
+  const { setIsVisibleAttrModal } = props
   const { control } = useFormContext()
   const {
     fields, append, remove, move,
@@ -25,15 +22,15 @@ export default function TableComposerBody(props) {
   return (
     <Fragment>
       <div className='bg-sky-500 dark:bg-gray-700 text-white py-2 px-3 text-lg flex justify-between items-center'>
-        <h5>Create Table</h5>
-        <XIcon className='w-6 h-6 cursor-pointer' onClick={() => setIsVisible(false)} />
+        <h5>Create Attribute</h5>
+        <XIcon className='w-6 h-6 cursor-pointer' onClick={() => setIsVisibleAttrModal(false)} />
       </div>
       <div className='py-2 pl-3 pr-2 mt-3'>
         <div className='h-[700px] overflow-y-auto custom-scroll pr-2'>
           <InputText
-            label='Table Name'
-            name='tableName'
-            placeholder='Table Name..'
+            label='Attribute Name'
+            name='attrName'
+            placeholder='Attribute Name..'
           />
           <ReactSortable
             animation={150}
@@ -71,14 +68,6 @@ export default function TableComposerBody(props) {
             size='sm'
             onClick={() => setIsVisibleAttrModal(true)}
           />
-          <Modal
-            isVisible={isVisibleAttrModal}
-            render={(
-              <TableAttrBody setIsVisibleAttrModal={setIsVisibleAttrModal} />
-            )}
-            setIsVisible={setIsVisibleAttrModal}
-            size='max-w-xl'
-          />
         </div>
       </div>
     </Fragment>
@@ -86,5 +75,5 @@ export default function TableComposerBody(props) {
 }
 
 TableComposerBody.propTypes = {
-  setIsVisible: PropTypes.func,
+  setIsVisibleAttrModal: PropTypes.func,
 }
