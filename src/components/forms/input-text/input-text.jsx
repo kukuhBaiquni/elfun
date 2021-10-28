@@ -1,15 +1,13 @@
 /* eslint-disable jsx-a11y/no-autofocus */
 import PropTypes from 'prop-types'
 import { memo } from 'react'
-import { useFormContext } from 'react-hook-form'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 
 function InputText(props) {
   const {
-    name, label, placeholder, defaultValue,
+    name, label, placeholder, defaultValue, register, errors,
   } = props
 
-  const { register, formState: { errors } } = useFormContext()
   const errorMessage = Object.keys(errors).includes(name) ? errors[name].message : ''
 
   return (
@@ -36,6 +34,8 @@ InputText.propTypes = {
   label: PropTypes.string,
   defaultValue: PropTypes.string,
   placeholder: PropTypes.string,
+  register: PropTypes.func,
+  errors: PropTypes.object,
 }
 
 InputText.defaultProps = {
@@ -43,4 +43,5 @@ InputText.defaultProps = {
   label: 'Label',
   placeholder: 'placeholder',
   defaultValue: '',
+  errors: {},
 }

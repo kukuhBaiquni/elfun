@@ -6,12 +6,17 @@ import clsx from 'clsx'
 export default function Modal(props) {
   const cancelButtonRef = useRef(null)
   const {
-    isVisible, setIsVisible, render, persist, size,
+    isVisible, closeModal, render, persist, size,
   } = props
 
   return (
     <Transition.Root as={Fragment} show={persist || isVisible}>
-      <Dialog as='div' className='fixed z-50 inset-0 overflow-y-auto' initialFocus={cancelButtonRef} onClose={setIsVisible}>
+      <Dialog
+        as='div'
+        className='fixed z-50 inset-0 overflow-y-auto'
+        initialFocus={cancelButtonRef}
+        onClose={closeModal}
+      >
         <div className='flex items-end sm:items-center justify-center min-h-screen sm:p-0'>
           <Transition.Child
             as={Fragment}
@@ -54,7 +59,7 @@ export default function Modal(props) {
 
 Modal.propTypes = {
   isVisible: PropTypes.bool,
-  setIsVisible: PropTypes.func,
+  closeModal: PropTypes.func,
   render: PropTypes.node,
   persist: PropTypes.bool,
   size: PropTypes.string,
@@ -62,4 +67,5 @@ Modal.propTypes = {
 
 Modal.defaultProps = {
   size: 'max-w-lg',
+  closeModal: () => {},
 }

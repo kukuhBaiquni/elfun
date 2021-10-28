@@ -4,24 +4,24 @@ import Transition from 'components/common/transition'
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/solid'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
-import { useFormContext } from 'react-hook-form'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 
 function Select(props) {
   const {
-    name, label, options,
+    name, label, options, register, setValue, watch, errors,
   } = props
   const [isVisible, setIsVisible] = useState(false)
 
-  const { register, setValue, watch } = useFormContext()
   const currentValue = watch(name)
   const displayLabel = options.find((item) => item.value === currentValue)
   useEffect(() => {
     register(name)
   }, [register, name])
 
+  const errorMessage = Object.keys(errors).includes(name) ? errors[name].message : ''
+
   return (
-    <FormFieldWrapper bordered label={label} name={name}>
+    <FormFieldWrapper bordered errorMessage={errorMessage} label={label} name={name}>
       <button
         className='p-2 w-full flex justify-between text-sm relative'
         type='button'
@@ -66,6 +66,10 @@ Select.propTypes = {
   options: PropTypes.array,
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  register: PropTypes.func,
+  setValue: PropTypes.func,
+  watch: PropTypes.func,
+  errors: PropTypes.object,
 }
 
 Select.defaultProps = {

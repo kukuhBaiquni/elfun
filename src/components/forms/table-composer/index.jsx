@@ -2,34 +2,34 @@ import { useState } from 'react'
 import Button from 'components/common/button'
 import { TemplateIcon } from '@heroicons/react/solid'
 import PropTypes from 'prop-types'
-import { FormProvider, useForm } from 'react-hook-form'
+
 import Modal from 'components/common/modal'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 import TableComposerBody from './table-composer-body'
 
 export default function TableComposer(props) {
-  const { label, name } = props
+  const {
+    label, name, assignTable,
+  } = props
   const [isVisible, setIsVisible] = useState(false)
-  const methods = useForm()
 
-  console.log('TEMP____', methods.watch())
   return (
     <FormFieldWrapper label={label} name={name}>
-      <FormProvider {...methods}>
-        <Button
-          label='Create Table'
-          leftIcon={<TemplateIcon className='h-5 w-5 mr-2' />}
-          onClick={() => setIsVisible(true)}
-        />
-        <Modal
-          isVisible={isVisible}
-          render={(
-            <TableComposerBody setIsVisible={setIsVisible} />
-          )}
-          setIsVisible={setIsVisible}
-          size='max-w-xl'
-        />
-      </FormProvider>
+      <Button
+        label='Create Table'
+        leftIcon={<TemplateIcon className='h-5 w-5 mr-2' />}
+        onClick={() => setIsVisible(true)}
+      />
+      <Modal
+        isVisible={isVisible}
+        render={(
+          <TableComposerBody
+            assignTable={assignTable}
+            closeModal={() => setIsVisible(false)}
+          />
+        )}
+        size='max-w-xl'
+      />
     </FormFieldWrapper>
   )
 }
@@ -37,4 +37,5 @@ export default function TableComposer(props) {
 TableComposer.propTypes = {
   label: PropTypes.string,
   name: PropTypes.string,
+  assignTable: PropTypes.func,
 }

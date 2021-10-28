@@ -7,7 +7,7 @@ import clsx from 'clsx'
 
 export default function JobPathMapper(props) {
   const {
-    data, selectedCharacter, setSelectedCharacter, setIsVisible,
+    data, selectedCharacter, setSelectedCharacter, closeModal,
   } = props
   const { push, pathname } = useRouter()
 
@@ -27,7 +27,7 @@ export default function JobPathMapper(props) {
       )}
       >
         <h5>Choose Character Path</h5>
-        <XIcon className='w-6 h-6 cursor-pointer' onClick={() => setIsVisible(false)} />
+        <XIcon className='w-6 h-6 cursor-pointer' onClick={closeModal} />
       </div>
       <div className='p-2 mt-3 flex flex-col sm:text-sm text-xs font-titillium'>
         <div className='flex flex-col justify-center items-center'>
