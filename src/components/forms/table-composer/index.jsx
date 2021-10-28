@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 import Modal from 'components/common/modal'
 import { FormFieldWrapper } from '../FormFieldWrapper'
-import TableComposerBody from './table-composer-body'
+import TableComposerBody from './table-composer-body-form'
 
 export default function TableComposer(props) {
   const {

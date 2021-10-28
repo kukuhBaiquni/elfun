@@ -1,5 +1,5 @@
 import {
-  PlusIcon, XIcon, SwitchVerticalIcon, TrashIcon, PencilIcon,
+  PlusIcon, XIcon, SwitchVerticalIcon, TrashIcon,
 } from '@heroicons/react/solid'
 import Button from 'components/common/button'
 import { Fragment } from 'react'
@@ -7,6 +7,7 @@ import { useFieldArray, useForm } from 'react-hook-form'
 import PropTypes from 'prop-types'
 import { ReactSortable } from 'react-sortablejs'
 import InputText from '../input-text/input-text'
+import TableComposerAttributeForm from './table-composer-attribute-form'
 
 export default function TableComposerBody(props) {
   const { closeModal, assignTable } = props
@@ -22,7 +23,6 @@ export default function TableComposerBody(props) {
   })
 
   const onSubmit = (data) => {
-    console.log('SUBMITED TABLE___', data)
     assignTable(data)
     closeModal()
   }
@@ -57,10 +57,9 @@ export default function TableComposerBody(props) {
                     <SwitchVerticalIcon className='h-5 w-5' />
                     <p>{field.name}</p>
                   </div>
-                  <div className='flex'>
-                    <PencilIcon className='h-6 w-6 hover:bg-gray-800 cursor-pointer p-1 text-sky-500' />
+                  <div className='flex items-center'>
                     <TrashIcon
-                      className='h-6 w-6 hover:bg-gray-800 cursor-pointer p-1 text-red-500'
+                      className='h-7 w-7 dark:hover:bg-gray-800 hover:bg-gray-200 cursor-pointer p-1 text-red-500'
                       onClick={() => remove(index)}
                     />
                   </div>
@@ -71,6 +70,11 @@ export default function TableComposerBody(props) {
                   name={`tableField.${index}.fieldName`}
                   placeholder='Field Name..'
                   register={register}
+                />
+                <TableComposerAttributeForm
+                  fieldIndex={index}
+                  name={`tableField.${index}.attributes`}
+                  {...{ control, register }}
                 />
               </div>
             ))}
@@ -84,7 +88,7 @@ export default function TableComposerBody(props) {
             })}
           />
         </div>
-        <div className='flex justify-end mb-1 gap-2'>
+        <div className='flex justify-end mt-2 mb-1 gap-2'>
           <Button
             label='Cancel'
             variant='danger-solid'
