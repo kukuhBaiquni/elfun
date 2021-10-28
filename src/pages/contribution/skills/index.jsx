@@ -3,7 +3,6 @@ import Head from 'next/head'
 import InputText from 'components/forms/input-text/input-text'
 import Textarea from 'components/forms/input-text/textarea'
 import Select from 'components/forms/select/select'
-import Checkbox from 'components/forms/checkbox'
 import InputImage from 'components/forms/input-image'
 import { useForm, useFieldArray } from 'react-hook-form'
 
@@ -82,16 +81,6 @@ export default function Skills() {
             setValue={setValue}
             watch={watch}
           />
-          {/* <Checkbox
-              defaultValue={[]}
-              label='Skills'
-              name='skillAttributes'
-              options={[
-                { label: 'Use HP', value: 0 },
-                { label: 'Use MP', value: 1 },
-                { label: 'Use CD', value: 2 },
-              ]}
-            /> */}
           <InputImage label='Skill Icon' name='skillIcon' />
           {fields.map((field, index) => {
             console.log('FIELD', field)

@@ -1,5 +1,5 @@
 import {
-  PlusIcon, XIcon, SwitchVerticalIcon, TrashIcon, PencilIcon, ChevronDownIcon,
+  PlusIcon, XIcon, SwitchVerticalIcon, TrashIcon,
 } from '@heroicons/react/solid'
 import Button from 'components/common/button'
 import { Fragment } from 'react'

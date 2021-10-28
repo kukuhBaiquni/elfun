@@ -1,11 +1,12 @@
 import { PlusIcon, TrashIcon } from '@heroicons/react/solid'
 import Button from 'components/common/button'
 import { useFieldArray } from 'react-hook-form'
+import PropTypes from 'prop-types'
 import InputText from '../input-text/input-text'
 
 export default function TableComposerAttributeForm(props) {
   const {
-    fieldIndex, control, register, name,
+    control, register, name,
   } = props
   const { fields, append, remove } = useFieldArray({
     name,
@@ -48,4 +49,10 @@ export default function TableComposerAttributeForm(props) {
       </div>
     </div>
   )
+}
+
+TableComposerAttributeForm.propTypes = {
+  control: PropTypes.object,
+  register: PropTypes.func,
+  name: PropTypes.string,
 }
