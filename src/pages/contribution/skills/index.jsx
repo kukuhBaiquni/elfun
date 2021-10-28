@@ -36,6 +36,7 @@ export default function Skills() {
       skillCategory: '',
       // skillAttributes: [],
       skillIcon: {},
+      table: [],
     },
   })
 
@@ -77,8 +78,8 @@ export default function Skills() {
               ]}
             /> */}
             <InputImage label='Skill Icon' name='skillIcon' />
+            <TableComposer label='Table Information' name='table' />
           </FormProvider>
-          <TableComposer label='Table Information' name='table' />
         </section>
       </main>
     </div>

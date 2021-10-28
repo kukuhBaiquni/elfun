@@ -21,7 +21,7 @@ export default function TableComposerBody(props) {
     control,
     keyName: '$id',
   })
-
+  console.log('FIELDS', fields)
   return (
     <Fragment>
       <div className='bg-sky-500 dark:bg-gray-700 text-white py-2 px-3 text-lg flex justify-between items-center'>
@@ -53,15 +53,18 @@ export default function TableComposerBody(props) {
                   </div>
                   <div className='flex'>
                     <PencilIcon className='h-6 w-6 hover:bg-gray-800 cursor-pointer p-1 text-sky-500' />
-                    <TrashIcon className='h-6 w-6 hover:bg-gray-800 cursor-pointer p-1 text-red-500' onClick={() => remove(index)} />
+                    <TrashIcon
+                      className='h-6 w-6 hover:bg-gray-800 cursor-pointer p-1 text-red-500'
+                      onClick={() => remove(index)}
+                    />
                   </div>
                 </div>
-                {/* <InputText
+                <InputText
                   defaultValue={field.name}
                   label='Attribute Name'
                   name={`skillAttributes.${index}.name`}
                   placeholder='Attribute Name..'
-                /> */}
+                />
               </div>
             ))}
           </ReactSortable>
@@ -69,7 +72,9 @@ export default function TableComposerBody(props) {
             label='Add Attribute'
             leftIcon={<PlusIcon className='h-3.5 w-3.5 mr-1' />}
             size='sm'
-            onClick={() => setIsVisibleAttrModal(true)}
+            onClick={() => append({
+              name: 'TJIMENC',
+            })}
           />
           <Modal
             isVisible={isVisibleAttrModal}

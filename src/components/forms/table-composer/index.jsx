@@ -15,21 +15,21 @@ export default function TableComposer(props) {
   console.log('TEMP____', methods.watch())
   return (
     <FormFieldWrapper label={label} name={name}>
-      <FormProvider {...methods}>
-        <Button
-          label='Create Table'
-          leftIcon={<TemplateIcon className='h-5 w-5 mr-2' />}
-          onClick={() => setIsVisible(true)}
-        />
-        <Modal
-          isVisible={isVisible}
-          render={(
-            <TableComposerBody setIsVisible={setIsVisible} />
-          )}
-          setIsVisible={setIsVisible}
-          size='max-w-xl'
-        />
-      </FormProvider>
+      {/* <FormProvider {...methods}> */}
+      <Button
+        label='Create Table'
+        leftIcon={<TemplateIcon className='h-5 w-5 mr-2' />}
+        onClick={() => setIsVisible(true)}
+      />
+      <Modal
+        isVisible={isVisible}
+        render={(
+          <TableComposerBody setIsVisible={setIsVisible} />
+        )}
+        setIsVisible={setIsVisible}
+        size='max-w-xl'
+      />
+      {/* </FormProvider> */}
     </FormFieldWrapper>
   )
 }
