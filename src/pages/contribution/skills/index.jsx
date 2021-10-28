@@ -5,7 +5,7 @@ import Textarea from 'components/forms/input-text/textarea'
 import Select from 'components/forms/select/select'
 import Checkbox from 'components/forms/checkbox'
 import InputImage from 'components/forms/input-image'
-import { useForm, FormProvider } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 
 import SKILL_CATEGORIES from 'constant/skill-categories'
 import * as yup from 'yup'
@@ -29,7 +29,9 @@ export default function Skills() {
   //     .oneOf([yup.ref('password'), null], 'Passwords must match'),
   // })
 
-  const methods = useForm({
+  const {
+    register, setValue, watch, formState: { errors }, control,
+  } = useForm({
     defaultValues: {
       skillName: '',
       skillDescription: '',
@@ -40,7 +42,7 @@ export default function Skills() {
     },
   })
 
-  console.log('📝', methods.watch())
+  console.log('📝', watch())
   return (
     <div>
       <Head>
@@ -51,23 +53,30 @@ export default function Skills() {
       <main className='px-2'>
         <section className='max-w-xl'>
           <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Add New Skill: Optimus</h2>
-          <FormProvider {...methods}>
-            <InputText
-              label='Skill Name'
-              name='skillName'
-              placeholder='Skill Name..'
-            />
-            <Textarea
-              label='Description'
-              name='skillDescription'
-              placeholder='Description..'
-            />
-            <Select
-              label='Skill Category'
-              name='skillCategory'
-              options={SKILL_CATEGORIES}
-            />
-            {/* <Checkbox
+          <InputText
+            errors={errors}
+            label='Skill Name'
+            name='skillName'
+            placeholder='Skill Name..'
+            register={register}
+          />
+          <Textarea
+            errors={errors}
+            label='Description'
+            name='skillDescription'
+            placeholder='Description..'
+            register={register}
+          />
+          <Select
+            errors={errors}
+            label='Skill Category'
+            name='skillCategory'
+            options={SKILL_CATEGORIES}
+            register={register}
+            setValue={setValue}
+            watch={watch}
+          />
+          {/* <Checkbox
               defaultValue={[]}
               label='Skills'
               name='skillAttributes'
@@ -77,9 +86,13 @@ export default function Skills() {
                 { label: 'Use CD', value: 2 },
               ]}
             /> */}
-            <InputImage label='Skill Icon' name='skillIcon' />
-            <TableComposer label='Table Information' name='table' />
-          </FormProvider>
+          <InputImage label='Skill Icon' name='skillIcon' />
+          <TableComposer
+            control={control}
+            label='Table Information'
+            name='table'
+            register={register}
+          />
         </section>
       </main>
     </div>

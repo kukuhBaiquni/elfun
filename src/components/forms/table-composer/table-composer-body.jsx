@@ -3,7 +3,7 @@ import {
 } from '@heroicons/react/solid'
 import Button from 'components/common/button'
 import { Fragment, useState } from 'react'
-import { useFieldArray, useFormContext } from 'react-hook-form'
+import { useFieldArray } from 'react-hook-form'
 import PropTypes from 'prop-types'
 import { ReactSortable } from 'react-sortablejs'
 import Modal from 'components/common/modal'
@@ -12,8 +12,7 @@ import TableAttrBody from './table-attr-body'
 
 export default function TableComposerBody(props) {
   const [isVisibleAttrModal, setIsVisibleAttrModal] = useState(false)
-  const { setIsVisible } = props
-  const { control } = useFormContext()
+  const { setIsVisible, control, register } = props
   const {
     fields, append, remove, move,
   } = useFieldArray({
@@ -21,7 +20,7 @@ export default function TableComposerBody(props) {
     control,
     keyName: '$id',
   })
-  console.log('FIELDS', fields)
+
   return (
     <Fragment>
       <div className='bg-sky-500 dark:bg-gray-700 text-white py-2 px-3 text-lg flex justify-between items-center'>
@@ -34,6 +33,7 @@ export default function TableComposerBody(props) {
             label='Table Name'
             name='tableName'
             placeholder='Table Name..'
+            register={register}
           />
           <ReactSortable
             animation={150}
@@ -64,6 +64,7 @@ export default function TableComposerBody(props) {
                   label='Attribute Name'
                   name={`skillAttributes.${index}.name`}
                   placeholder='Attribute Name..'
+                  register={register}
                 />
               </div>
             ))}
@@ -92,4 +93,6 @@ export default function TableComposerBody(props) {
 
 TableComposerBody.propTypes = {
   setIsVisible: PropTypes.func,
+  control: PropTypes.object,
+  register: PropTypes.func,
 }
