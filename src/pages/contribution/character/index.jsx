@@ -42,16 +42,16 @@ export default function Character() {
           ))}
         </div>
         <Modal
+          closeModal={() => setIsVisible(false)}
           isVisible={isVisible}
           render={(
             <JobPathMapper
+              closeModal={() => setIsVisible(false)}
               data={data}
               selectedCharacter={selectedCharacter}
-              setIsVisible={setIsVisible}
               setSelectedCharacter={setSelectedCharacter}
             />
           )}
-          setIsVisible={setIsVisible}
         />
       </main>
     </Fragment>

@@ -90,6 +90,7 @@ export default function Skills() {
           <TableComposer
             label='Table Information'
             name='table'
+            setValue={setValue}
           />
         </section>
       </main>

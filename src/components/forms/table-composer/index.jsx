@@ -9,7 +9,7 @@ import TableComposerBody from './table-composer-body'
 
 export default function TableComposer(props) {
   const {
-    label, name,
+    label, name, setValue,
   } = props
   const [isVisible, setIsVisible] = useState(false)
 
@@ -21,13 +21,14 @@ export default function TableComposer(props) {
         onClick={() => setIsVisible(true)}
       />
       <Modal
+        closeModal={() => setIsVisible(false)}
         isVisible={isVisible}
         render={(
           <TableComposerBody
-            setIsVisible={setIsVisible}
+            closeModal={() => setIsVisible(false)}
+            setValue={setValue}
           />
         )}
-        setIsVisible={setIsVisible}
         size='max-w-xl'
       />
     </FormFieldWrapper>
@@ -37,4 +38,5 @@ export default function TableComposer(props) {
 TableComposer.propTypes = {
   label: PropTypes.string,
   name: PropTypes.string,
+  setValue: PropTypes.func,
 }

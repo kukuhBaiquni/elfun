@@ -9,7 +9,7 @@ import { ReactSortable } from 'react-sortablejs'
 import InputText from '../input-text/input-text'
 
 export default function TableComposerBody(props) {
-  const { setIsVisible } = props
+  const { closeModal } = props
   const { control, register, watch } = useForm()
   console.log('NEST FORM___', watch())
   const {
@@ -24,7 +24,7 @@ export default function TableComposerBody(props) {
     <Fragment>
       <div className='bg-sky-500 dark:bg-gray-700 text-white py-2 px-3 text-lg flex justify-between items-center'>
         <h5>Create Table</h5>
-        <XIcon className='w-6 h-6 cursor-pointer' onClick={() => setIsVisible(false)} />
+        <XIcon className='w-6 h-6 cursor-pointer' onClick={closeModal} />
       </div>
       <div className='py-2 pl-3 pr-2 mt-3'>
         <div className='h-[700px] overflow-y-auto custom-scroll pr-2'>
@@ -77,9 +77,15 @@ export default function TableComposerBody(props) {
             })}
           />
         </div>
-        <div className='flex justify-end mb-1'>
+        <div className='flex justify-end mb-1 gap-2'>
+          <Button
+            label='Cancel'
+            variant='danger-solid'
+            onClick={closeModal}
+          />
           <Button
             label='Done'
+
           />
         </div>
       </div>
@@ -88,5 +94,5 @@ export default function TableComposerBody(props) {
 }
 
 TableComposerBody.propTypes = {
-  setIsVisible: PropTypes.func,
+  closeModal: PropTypes.func,
 }
