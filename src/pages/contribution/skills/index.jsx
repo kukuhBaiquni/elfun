@@ -30,7 +30,7 @@ export default function Skills() {
   // })
 
   const {
-    register, setValue, watch, formState: { errors }, control,
+    register, setValue, watch, formState: { errors },
   } = useForm({
     defaultValues: {
       skillName: '',
@@ -88,10 +88,8 @@ export default function Skills() {
             /> */}
           <InputImage label='Skill Icon' name='skillIcon' />
           <TableComposer
-            control={control}
             label='Table Information'
             name='table'
-            register={register}
           />
         </section>
       </main>

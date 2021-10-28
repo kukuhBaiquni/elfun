@@ -2,13 +2,14 @@ import { useState } from 'react'
 import Button from 'components/common/button'
 import { TemplateIcon } from '@heroicons/react/solid'
 import PropTypes from 'prop-types'
+
 import Modal from 'components/common/modal'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 import TableComposerBody from './table-composer-body'
 
 export default function TableComposer(props) {
   const {
-    label, name, control, register,
+    label, name,
   } = props
   const [isVisible, setIsVisible] = useState(false)
 
@@ -23,8 +24,6 @@ export default function TableComposer(props) {
         isVisible={isVisible}
         render={(
           <TableComposerBody
-            control={control}
-            register={register}
             setIsVisible={setIsVisible}
           />
         )}
@@ -38,6 +37,4 @@ export default function TableComposer(props) {
 TableComposer.propTypes = {
   label: PropTypes.string,
   name: PropTypes.string,
-  control: PropTypes.object,
-  register: PropTypes.func,
 }

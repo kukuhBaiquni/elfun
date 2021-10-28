@@ -2,21 +2,20 @@ import {
   PlusIcon, XIcon, SwitchVerticalIcon, TrashIcon, PencilIcon,
 } from '@heroicons/react/solid'
 import Button from 'components/common/button'
-import { Fragment, useState } from 'react'
-import { useFieldArray } from 'react-hook-form'
+import { Fragment } from 'react'
+import { useFieldArray, useForm } from 'react-hook-form'
 import PropTypes from 'prop-types'
 import { ReactSortable } from 'react-sortablejs'
-import Modal from 'components/common/modal'
 import InputText from '../input-text/input-text'
-import TableAttrBody from './table-attr-body'
 
 export default function TableComposerBody(props) {
-  const [isVisibleAttrModal, setIsVisibleAttrModal] = useState(false)
-  const { setIsVisible, control, register } = props
+  const { setIsVisible } = props
+  const { control, register, watch } = useForm()
+  console.log('NEST FORM___', watch())
   const {
     fields, append, remove, move,
   } = useFieldArray({
-    name: 'skillAttributes',
+    name: 'tableAttributes',
     control,
     keyName: '$id',
   })
@@ -62,7 +61,7 @@ export default function TableComposerBody(props) {
                 <InputText
                   defaultValue={field.name}
                   label='Attribute Name'
-                  name={`skillAttributes.${index}.name`}
+                  name={`tableAttributes.${index}.name`}
                   placeholder='Attribute Name..'
                   register={register}
                 />
@@ -77,13 +76,10 @@ export default function TableComposerBody(props) {
               name: 'TJIMENC',
             })}
           />
-          <Modal
-            isVisible={isVisibleAttrModal}
-            render={(
-              <TableAttrBody setIsVisibleAttrModal={setIsVisibleAttrModal} />
-            )}
-            setIsVisible={setIsVisibleAttrModal}
-            size='max-w-xl'
+        </div>
+        <div className='flex justify-end mb-1'>
+          <Button
+            label='Done'
           />
         </div>
       </div>
@@ -93,6 +89,4 @@ export default function TableComposerBody(props) {
 
 TableComposerBody.propTypes = {
   setIsVisible: PropTypes.func,
-  control: PropTypes.object,
-  register: PropTypes.func,
 }
