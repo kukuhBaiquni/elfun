@@ -5,7 +5,7 @@ import Textarea from 'components/forms/input-text/textarea'
 import Select from 'components/forms/select/select'
 import Checkbox from 'components/forms/checkbox'
 import InputImage from 'components/forms/input-image'
-import { useForm } from 'react-hook-form'
+import { useForm, useFieldArray } from 'react-hook-form'
 
 import SKILL_CATEGORIES from 'constant/skill-categories'
 import * as yup from 'yup'
@@ -30,7 +30,7 @@ export default function Skills() {
   // })
 
   const {
-    register, setValue, watch, formState: { errors },
+    register, setValue, watch, control, formState: { errors },
   } = useForm({
     defaultValues: {
       skillName: '',
@@ -40,6 +40,12 @@ export default function Skills() {
       skillIcon: {},
       table: [],
     },
+  })
+
+  const { fields, append, remove } = useFieldArray({
+    name: 'table',
+    control,
+    keyName: '$id',
   })
 
   console.log('📝', watch())
@@ -87,10 +93,18 @@ export default function Skills() {
               ]}
             /> */}
           <InputImage label='Skill Icon' name='skillIcon' />
+          {fields.map((field, index) => {
+            console.log('FIELD', field)
+            return (
+              <div className='p-2 bg-lime-500' key={field.$id}>
+                {field.tableName}
+              </div>
+            )
+          })}
           <TableComposer
+            assignTable={(tableData) => append(tableData)}
             label='Table Information'
             name='table'
-            setValue={setValue}
           />
         </section>
       </main>

@@ -67,4 +67,5 @@ Modal.propTypes = {
 
 Modal.defaultProps = {
   size: 'max-w-lg',
+  closeModal: () => {},
 }

@@ -9,16 +9,23 @@ import { ReactSortable } from 'react-sortablejs'
 import InputText from '../input-text/input-text'
 
 export default function TableComposerBody(props) {
-  const { closeModal } = props
-  const { control, register, watch } = useForm()
-  console.log('NEST FORM___', watch())
+  const { closeModal, assignTable } = props
+  const {
+    control, register, handleSubmit,
+  } = useForm()
   const {
     fields, append, remove, move,
   } = useFieldArray({
-    name: 'tableAttributes',
+    name: 'tableField',
     control,
     keyName: '$id',
   })
+
+  const onSubmit = (data) => {
+    console.log('SUBMITED TABLE___', data)
+    assignTable(data)
+    closeModal()
+  }
 
   return (
     <Fragment>
@@ -60,20 +67,20 @@ export default function TableComposerBody(props) {
                 </div>
                 <InputText
                   defaultValue={field.name}
-                  label='Attribute Name'
-                  name={`tableAttributes.${index}.name`}
-                  placeholder='Attribute Name..'
+                  label='Field Name'
+                  name={`tableField.${index}.fieldName`}
+                  placeholder='Field Name..'
                   register={register}
                 />
               </div>
             ))}
           </ReactSortable>
           <Button
-            label='Add Attribute'
+            label='Add Field'
             leftIcon={<PlusIcon className='h-3.5 w-3.5 mr-1' />}
             size='sm'
             onClick={() => append({
-              name: 'TJIMENC',
+              fieldName: '',
             })}
           />
         </div>
@@ -85,7 +92,7 @@ export default function TableComposerBody(props) {
           />
           <Button
             label='Done'
-
+            onClick={handleSubmit(onSubmit)}
           />
         </div>
       </div>
@@ -95,4 +102,5 @@ export default function TableComposerBody(props) {
 
 TableComposerBody.propTypes = {
   closeModal: PropTypes.func,
+  assignTable: PropTypes.func,
 }

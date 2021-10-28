@@ -9,7 +9,7 @@ import TableComposerBody from './table-composer-body'
 
 export default function TableComposer(props) {
   const {
-    label, name, setValue,
+    label, name, assignTable,
   } = props
   const [isVisible, setIsVisible] = useState(false)
 
@@ -21,12 +21,11 @@ export default function TableComposer(props) {
         onClick={() => setIsVisible(true)}
       />
       <Modal
-        closeModal={() => setIsVisible(false)}
         isVisible={isVisible}
         render={(
           <TableComposerBody
+            assignTable={assignTable}
             closeModal={() => setIsVisible(false)}
-            setValue={setValue}
           />
         )}
         size='max-w-xl'
@@ -38,5 +37,5 @@ export default function TableComposer(props) {
 TableComposer.propTypes = {
   label: PropTypes.string,
   name: PropTypes.string,
-  setValue: PropTypes.func,
+  assignTable: PropTypes.func,
 }
