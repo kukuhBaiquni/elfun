@@ -40,7 +40,7 @@ InputText.propTypes = {
 
 InputText.defaultProps = {
   name: 'Name',
-  label: 'Label',
+  label: '',
   placeholder: 'placeholder',
   defaultValue: '',
   errors: {},

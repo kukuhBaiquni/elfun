@@ -1,5 +1,5 @@
 /* eslint-disable no-shadow */
-import { useState, useEffect, memo } from 'react'
+import { useState, useEffect } from 'react'
 import Transition from 'components/common/transition'
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/solid'
 import PropTypes from 'prop-types'
@@ -76,4 +76,4 @@ Select.defaultProps = {
   options: [],
 }
 
-export default memo(Select)
+export default Select
