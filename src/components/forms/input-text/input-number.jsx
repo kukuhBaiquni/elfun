@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/no-autofocus */
 import PropTypes from 'prop-types'
 import { memo } from 'react'
+import NumberFormat from 'react-number-format'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 
 function InputText(props) {
@@ -19,17 +20,27 @@ function InputText(props) {
       label={label}
       name={name}
     >
-      <input
-        {...register(name)}
-        autoComplete='off'
-        autoFocus={false}
-        className='w-full outline-none placeholder-gray-500 bg-transparent text-sm p-2'
+      <NumberFormat
+        customInput={(
+          <input
+            {...register(name)}
+            autoComplete='off'
+            autoFocus={false}
+            className='w-full outline-none placeholder-gray-500 bg-transparent text-sm p-2'
+            defaultValue={defaultValue}
+            id={name}
+            placeholder={placeholder}
+            spellCheck={false}
+            type='text'
+          />
+        )}
+        decimalScale={0}
         defaultValue={defaultValue}
-        id={name}
+        isNumericString
         placeholder={placeholder}
-        spellCheck={false}
-        type='text'
+        thousandSeparator
       />
+
     </FormFieldWrapper>
   )
 }
