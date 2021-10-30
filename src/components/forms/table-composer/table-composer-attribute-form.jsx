@@ -27,16 +27,17 @@ export default function TableComposerAttributeForm(props) {
               placeholder='Attribute Name'
               register={register}
             />
-            <InputText
+            {/* <InputText
               className='col-span-5'
               name={`${name}.${index}.value`}
               placeholder='Value'
               register={register}
-            />
+            /> */}
             <InputNumber
+              className='col-span-5'
+              control={control}
               name={`${name}.${index}.suffix`}
               placeholder='Suffix'
-              register={register}
             />
           </div>
           <TrashIcon
