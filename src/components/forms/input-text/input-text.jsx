@@ -6,12 +6,19 @@ import { FormFieldWrapper } from '../FormFieldWrapper'
 function InputText(props) {
   const {
     name, label, placeholder, defaultValue, register, errors,
+    className,
   } = props
 
   const errorMessage = Object.keys(errors).includes(name) ? errors[name].message : ''
 
   return (
-    <FormFieldWrapper bordered errorMessage={errorMessage} label={label} name={name}>
+    <FormFieldWrapper
+      bordered
+      className={className}
+      errorMessage={errorMessage}
+      label={label}
+      name={name}
+    >
       <input
         {...register(name)}
         autoComplete='off'
@@ -36,6 +43,7 @@ InputText.propTypes = {
   placeholder: PropTypes.string,
   register: PropTypes.func,
   errors: PropTypes.object,
+  className: PropTypes.string,
 }
 
 InputText.defaultProps = {

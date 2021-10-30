@@ -6,11 +6,16 @@ import clsx from 'clsx'
 export function FormFieldWrapper(props) {
   const {
     name, label, children, bordered, errorMessage,
+    className,
   } = props
   // eslint-disable-next-line no-console
   // console.log('📝', props)
   return (
-    <div className='py-2 font-titillium text-general relative'>
+    <div className={clsx(
+      'py-2 font-titillium text-general relative',
+      className,
+    )}
+    >
       <label className='font-semibold' htmlFor={name}>{label}</label>
       <div className={clsx(
         bordered && 'border-input focus-within:border-input-focus',
@@ -35,6 +40,7 @@ FormFieldWrapper.propTypes = {
   children: PropTypes.node,
   bordered: PropTypes.bool,
   errorMessage: PropTypes.string,
+  className: PropTypes.string,
 }
 
 FormFieldWrapper.defaultProps = {

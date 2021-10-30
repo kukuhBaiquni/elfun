@@ -3,6 +3,7 @@ import Button from 'components/common/button'
 import { useFieldArray } from 'react-hook-form'
 import PropTypes from 'prop-types'
 import InputText from '../input-text/input-text'
+import InputNumber from '../input-text/input-number'
 
 export default function TableComposerAttributeForm(props) {
   const {
@@ -19,16 +20,24 @@ export default function TableComposerAttributeForm(props) {
       <h6 className='text-sky-500 font-titillium font-bold'>Attributes</h6>
       {fields.map((field, index) => (
         <div className='flex items-center' key={field.$id}>
-          <div className='grid grid-cols-2 gap-2 flex-grow'>
+          <div className='grid grid-cols-11 gap-2 flex-grow'>
             <InputText
+              className='col-span-5'
               name={`${name}.${index}.attributeName`}
               placeholder='Attribute Name'
               register={register}
             />
-            <InputText
+            {/* <InputText
+              className='col-span-5'
               name={`${name}.${index}.value`}
               placeholder='Value'
               register={register}
+            /> */}
+            <InputNumber
+              className='col-span-5'
+              control={control}
+              name={`${name}.${index}.suffix`}
+              placeholder='Suffix'
             />
           </div>
           <TrashIcon

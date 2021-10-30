@@ -1,7 +1,7 @@
 /* eslint-disable no-shadow */
 import { useState, useEffect } from 'react'
 import Transition from 'components/common/transition'
-import { CheckIcon, ChevronDownIcon } from '@heroicons/react/solid'
+import { ChevronDownIcon } from '@heroicons/react/solid'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
 import { FormFieldWrapper } from '../FormFieldWrapper'
@@ -9,6 +9,7 @@ import { FormFieldWrapper } from '../FormFieldWrapper'
 function Select(props) {
   const {
     name, label, options, register, setValue, watch, errors,
+    className,
   } = props
   const [isVisible, setIsVisible] = useState(false)
 
@@ -21,7 +22,13 @@ function Select(props) {
   const errorMessage = Object.keys(errors).includes(name) ? errors[name].message : ''
 
   return (
-    <FormFieldWrapper bordered errorMessage={errorMessage} label={label} name={name}>
+    <FormFieldWrapper
+      bordered
+      className={className}
+      errorMessage={errorMessage}
+      label={label}
+      name={name}
+    >
       <button
         className='p-2 w-full flex justify-between text-sm relative'
         type='button'
@@ -41,7 +48,7 @@ function Select(props) {
                     item.value === currentValue
                       ? 'bg-sky-500 cursor-default text-white'
                       : 'hover:bg-sky-300 dark:hover:bg-gray-600',
-                    'p-2 text-left rounded-sm flex',
+                    'p-2 text-left rounded-sm',
                   )}
                   disabled={item.value === currentValue}
                   key={index}
@@ -49,9 +56,6 @@ function Select(props) {
                   onClick={() => setValue(name, item.value)}
                 >
                   {item.label}
-                  {item.value === currentValue?.value && (
-                    <CheckIcon className='h-5 w-5 text-sky-500 ml-2' />
-                  )}
                 </button>
               ))}
             </div>
@@ -64,16 +68,19 @@ function Select(props) {
 
 Select.propTypes = {
   options: PropTypes.array,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   name: PropTypes.string.isRequired,
   register: PropTypes.func,
   setValue: PropTypes.func,
   watch: PropTypes.func,
   errors: PropTypes.object,
+  className: PropTypes.string,
 }
 
 Select.defaultProps = {
   options: [],
+  label: '',
+  errors: {},
 }
 
 export default Select
