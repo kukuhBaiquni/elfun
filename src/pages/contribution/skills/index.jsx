@@ -2,7 +2,7 @@ import Layout from 'layouts'
 import Head from 'next/head'
 import InputText from 'components/forms/input-text/input-text'
 import Textarea from 'components/forms/input-text/textarea'
-import Select from 'components/forms/select/select'
+import Select from 'components/forms/input-select/input-select'
 import InputImage from 'components/forms/input-image'
 import { useForm, useFieldArray } from 'react-hook-form'
 
@@ -34,7 +34,7 @@ export default function Skills() {
     defaultValues: {
       skillName: '',
       skillDescription: '',
-      skillCategory: '',
+      // skillCategory: '',
       // skillAttributes: [],
       skillIcon: {},
       table: [],
@@ -73,6 +73,8 @@ export default function Skills() {
             register={register}
           />
           <Select
+            control={control}
+            defaultValue=''
             errors={errors}
             label='Skill Category'
             name='skillCategory'

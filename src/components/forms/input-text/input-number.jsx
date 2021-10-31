@@ -8,7 +8,7 @@ import { FormFieldWrapper } from '../FormFieldWrapper'
 
 function InputText(props) {
   const {
-    name, label, placeholder, defaultValue, control, errors,
+    name, label, placeholder, defaultValue = '1234', control, errors,
     className,
   } = props
   const [number, setNumber] = useState('')
@@ -59,7 +59,7 @@ function InputText(props) {
             placeholder={placeholder}
             thousandSeparator
             // value={value}
-            onValueChange={onChange}
+            onValueChange={(result) => onChange(result.value)}
           />
         )}
       />
@@ -75,7 +75,7 @@ InputText.propTypes = {
   label: PropTypes.string,
   defaultValue: PropTypes.string,
   placeholder: PropTypes.string,
-  register: PropTypes.func,
+  // register: PropTypes.func,
   errors: PropTypes.object,
   className: PropTypes.string,
 }

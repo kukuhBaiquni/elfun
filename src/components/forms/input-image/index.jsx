@@ -2,9 +2,8 @@ import clsx from 'clsx'
 import React, { Fragment } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { PhotographIcon } from '@heroicons/react/solid'
-import { FormFieldWrapper } from '../FormFieldWrapper'
 import PropTypes from 'prop-types'
-
+import { FormFieldWrapper } from '../FormFieldWrapper'
 
 export default function InputImage(props) {
   const { getRootProps, getInputProps } = useDropzone({
