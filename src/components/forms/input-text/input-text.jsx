@@ -10,7 +10,7 @@ function InputText(props) {
   } = props
 
   const errorMessage = Object.keys(errors).includes(name) ? errors[name].message : ''
-  console.log('>>>', errors)
+
   return (
     <FormFieldWrapper
       bordered

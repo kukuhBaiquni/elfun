@@ -26,10 +26,7 @@ function Textarea(props) {
   )
 }
 
-export default memo(
-  Textarea,
-  (prevProps, nextProps) => prevProps.isDirty === nextProps.isDirty,
-)
+export default memo(Textarea)
 
 Textarea.propTypes = {
   name: PropTypes.string,

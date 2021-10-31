@@ -2,7 +2,6 @@ import InputText from 'components/forms/input-text/input-text'
 import Textarea from 'components/forms/input-text/textarea'
 import Select from 'components/forms/input-select/input-select'
 import InputImage from 'components/forms/input-image'
-import { useFieldArray } from 'react-hook-form'
 import SKILL_CATEGORIES from 'constant/skill-categories'
 import TableComposer from 'components/forms/table-composer'
 import PropTypes from 'prop-types'
@@ -14,11 +13,6 @@ export default function ContributionSkillsForm(props) {
     register, watch, control, formState: { errors },
     handleSubmit,
   } = form
-  const { fields, append } = useFieldArray({
-    name: 'table',
-    control,
-    keyName: '$id',
-  })
 
   console.log('📝', watch())
   console.log('🚧', errors)
@@ -49,13 +43,8 @@ export default function ContributionSkillsForm(props) {
         options={SKILL_CATEGORIES}
       />
       <InputImage label='Skill Icon' name='skillIcon' />
-      {fields.map((field) => (
-        <div className='p-2 bg-lime-500' key={field.$id}>
-          {field.tableName}
-        </div>
-      ))}
       <TableComposer
-        assignTable={(tableData) => append(tableData)}
+        control={control}
         label='Table Information'
         name='table'
       />

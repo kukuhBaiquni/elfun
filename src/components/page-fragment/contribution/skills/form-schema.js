@@ -7,22 +7,7 @@ const schema = yup.object().shape({
   skillDescription: yup.string().required('Skill Description is required!'),
   skillCategory: yup.string().oneOf(SKILL_CATEGORIES.map((item) => item.value)).required('Skill Category is required!'),
   skillIcon: yup.array().required('Skill Icon is required!').length(1),
-  table: yup.array().of(
-    yup.object({
-      tableName: yup.string().required('Table Name is required!'),
-      tableField: yup.array().required('Table Field is required!').of(
-        yup.object({
-          attributes: yup.array().of(
-            yup.object({
-              attributeName: yup.string().required('Attribute Name is required!'),
-              value: yup.string().required('Value is required!'),
-            }),
-          ),
-          fieldName: yup.string().required('Field Name is required!'),
-        }),
-      ),
-    }), 'Table must be provided!',
-  ),
+  table: yup.array(),
 })
 
 export default yupResolver(schema)
