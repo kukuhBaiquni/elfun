@@ -1,23 +1,25 @@
 /* eslint-disable no-shadow */
-import { useState, useEffect } from 'react'
+import { useState, memo } from 'react'
 import Transition from 'components/common/transition'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import PropTypes from 'prop-types'
+import { useController } from 'react-hook-form'
 import clsx from 'clsx'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 
 function Select(props) {
   const {
-    name, label, options, register, setValue, watch, errors,
-    className,
+    name, label, options, errors,
+    className, control, defaultValue,
   } = props
   const [isVisible, setIsVisible] = useState(false)
+  const { field: { onChange, value } } = useController({
+    name,
+    control,
+    defaultValue: defaultValue || options[0].value,
+  })
 
-  const currentValue = watch(name)
-  const displayLabel = options.find((item) => item.value === currentValue)
-  useEffect(() => {
-    register(name)
-  }, [register, name])
+  const displayLabel = options.find((item) => item.value === value)
 
   const errorMessage = Object.keys(errors).includes(name) ? errors[name].message : ''
 
@@ -45,15 +47,15 @@ function Select(props) {
               {options.map((item, index) => (
                 <button
                   className={clsx(
-                    item.value === currentValue
+                    item.value === value
                       ? 'bg-sky-500 cursor-default text-white'
                       : 'hover:bg-sky-300 dark:hover:bg-gray-600',
                     'p-2 text-left rounded-sm',
                   )}
-                  disabled={item.value === currentValue}
+                  disabled={item.value === value}
                   key={index}
                   type='button'
-                  onClick={() => setValue(name, item.value)}
+                  onClick={() => onChange(item.value)}
                 >
                   {item.label}
                 </button>
@@ -70,17 +72,17 @@ Select.propTypes = {
   options: PropTypes.array,
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
-  register: PropTypes.func,
-  setValue: PropTypes.func,
-  watch: PropTypes.func,
   errors: PropTypes.object,
   className: PropTypes.string,
+  control: PropTypes.object,
+  defaultValue: PropTypes.string,
 }
 
 Select.defaultProps = {
   options: [],
   label: '',
   errors: {},
+  defaultValue: '',
 }
 
-export default Select
+export default memo(Select)
