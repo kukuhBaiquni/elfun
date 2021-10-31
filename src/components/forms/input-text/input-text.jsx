@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/no-autofocus */
 import PropTypes from 'prop-types'
 import { memo } from 'react'
+import resolvePath from 'utils/resolvePath'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 
 function InputText(props) {
@@ -9,8 +10,8 @@ function InputText(props) {
     className,
   } = props
 
-  const errorMessage = Object.keys(errors).includes(name) ? errors[name].message : ''
-
+  const errorMessage = resolvePath(errors, `${name}.message`) ?? ''
+  console.log('name >>>', name)
   return (
     <FormFieldWrapper
       bordered

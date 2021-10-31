@@ -27,7 +27,7 @@ export default function TableComposerBody(props) {
 
   const formSubmit = () => {
     if (!Object.keys(errors).length) {
-      handleSubmit(onSubmit)
+      handleSubmit(onSubmit)()
     }
   }
 
@@ -42,6 +42,7 @@ export default function TableComposerBody(props) {
       <div className='py-2 pl-3 pr-2 mt-3'>
         <div className='h-[700px] overflow-y-auto custom-scroll pr-2'>
           <InputText
+            errors={errors}
             label='Table Name'
             name='tableName'
             placeholder='Table Name..'
@@ -72,6 +73,7 @@ export default function TableComposerBody(props) {
                 </div>
                 <InputText
                   defaultValue={field.name}
+                  errors={errors}
                   label='Field Name'
                   name={`tableField.${index}.fieldName`}
                   placeholder='Field Name..'
@@ -81,6 +83,7 @@ export default function TableComposerBody(props) {
                   fieldIndex={index}
                   name={`tableField.${index}.attributes`}
                   {...{ control, register }}
+                  errors={errors}
                 />
               </div>
             ))}
