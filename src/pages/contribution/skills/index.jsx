@@ -8,37 +8,35 @@ import { useForm, useFieldArray } from 'react-hook-form'
 
 import SKILL_CATEGORIES from 'constant/skill-categories'
 import * as yup from 'yup'
-import { yupResolver } from '@hookform/resolvers'
+import { yupResolver } from '@hookform/resolvers/yup'
 import TableComposer from 'components/forms/table-composer'
 
 export default function Skills() {
-  // const schema = yup.object().shape({
-  //   skillName: yup.string().required(),
-  //   skillDescription: yup.string().required(),
-  //   skillCategory: yup.string().oneOf(SKILL_CATEGORIES.map((item) => item.value)).required(),
-  //   skillAttributes: yup.
-
-  //   password: yup.string().required(),
-  //   siblings: yup.string().required(),
-  //   gender: yup.string().required(),
-  //   name: yup.string().required(),
-  //   period: yup.lazy((val) => (Array.isArray(val)
-  //     ? yup.array().ensure().of(yup.number()).length(2) : yup.number().required())),
-  //   passwordConfirmation: yup.string()
-  //     .oneOf([yup.ref('password'), null], 'Passwords must match'),
-  // })
+  const schema = yup.object().shape({
+    skillName: yup.string().required(),
+    skillDescription: yup.string().required(),
+    skillCategory: yup.string().oneOf(SKILL_CATEGORIES.map((item) => item.value)).required(),
+    skillIcon: yup.array().required().length(1),
+    table: yup.object({
+      tableName: yup.string().required(),
+      tableField: yup.array().required().of(
+        yup.object({
+          attributes: yup.array().of(
+            yup.object({
+              attributeName: yup.string().required(),
+              value: yup.string().required(),
+            }),
+          ),
+          fieldName: yup.string().required(),
+        }),
+      ),
+    }),
+  })
 
   const {
     register, setValue, watch, control, formState: { errors },
   } = useForm({
-    defaultValues: {
-      skillName: '',
-      skillDescription: '',
-      // skillCategory: '',
-      // skillAttributes: [],
-      skillIcon: {},
-      table: [],
-    },
+    resolver: yupResolver(schema),
   })
 
   const { fields, append, remove } = useFieldArray({
