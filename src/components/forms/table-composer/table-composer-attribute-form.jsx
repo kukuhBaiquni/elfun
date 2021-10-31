@@ -7,7 +7,7 @@ import InputNumber from '../input-text/input-number'
 
 export default function TableComposerAttributeForm(props) {
   const {
-    control, register, name,
+    control, register, name, errors,
   } = props
   const { fields, append, remove } = useFieldArray({
     name,
@@ -23,6 +23,7 @@ export default function TableComposerAttributeForm(props) {
           <div className='grid grid-cols-11 gap-2 flex-grow'>
             <InputText
               className='col-span-5'
+              errors={errors}
               name={`${name}.${index}.attributeName`}
               placeholder='Attribute Name'
               register={register}
@@ -36,6 +37,7 @@ export default function TableComposerAttributeForm(props) {
             <InputNumber
               className='col-span-5'
               control={control}
+              errors={errors}
               name={`${name}.${index}.suffix`}
               placeholder='Suffix'
             />
