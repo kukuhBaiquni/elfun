@@ -55,6 +55,7 @@ export default function TableComposerAttributeForm(props) {
           size='sm'
           onClick={() => append({
             attributeName: '',
+            value: '',
           })}
         />
       </div>

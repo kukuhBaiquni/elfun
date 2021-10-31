@@ -8,8 +8,8 @@ import PropTypes from 'prop-types'
 import { ReactSortable } from 'react-sortablejs'
 import _ from 'lodash/get'
 import InputText from '../input-text/input-text'
-import TableComposerAttributeForm from './table-composer-attribute-form'
-import FormSchema from './table-field-form-schema'
+import TableComposerAttributeForm from './table-composer-attributes-form'
+import FormSchema from './table-fields-form-schema'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 
 export default function TableComposerBody(props) {
@@ -94,7 +94,6 @@ export default function TableComposerBody(props) {
             ))}
           </ReactSortable>
           <FormFieldWrapper
-            bordered
             errorMessage={errorMessage}
             name={name}
           >
@@ -104,6 +103,7 @@ export default function TableComposerBody(props) {
               size='sm'
               onClick={() => append({
                 fieldName: '',
+                attributes: [],
               })}
             />
           </FormFieldWrapper>
