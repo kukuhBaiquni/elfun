@@ -10,7 +10,7 @@ function InputText(props) {
   } = props
 
   const errorMessage = Object.keys(errors).includes(name) ? errors[name].message : ''
-
+  console.log('>>>', errors)
   return (
     <FormFieldWrapper
       bordered
@@ -34,7 +34,7 @@ function InputText(props) {
   )
 }
 
-export default memo(InputText, (prevProps, nextProps) => prevProps.isDirty === nextProps.isDirty)
+export default memo(InputText)
 
 InputText.propTypes = {
   name: PropTypes.string,
