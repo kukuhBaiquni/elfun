@@ -2,23 +2,26 @@ import InputText from 'components/forms/input-text/input-text'
 import Textarea from 'components/forms/input-text/textarea'
 import Select from 'components/forms/input-select/input-select'
 import InputImage from 'components/forms/input-image'
-import { useForm, useFieldArray } from 'react-hook-form'
+import { useFieldArray } from 'react-hook-form'
 import SKILL_CATEGORIES from 'constant/skill-categories'
 import TableComposer from 'components/forms/table-composer'
-import FormSchema from './form-schema'
+import PropTypes from 'prop-types'
+import Button from 'components/common/button'
 
-export default function ContributionSkillsForm() {
+export default function ContributionSkillsForm(props) {
+  const { form, onSubmit } = props
   const {
-    register, setValue, watch, control, formState: { errors },
-  } = useForm({
-    resolver: FormSchema,
-  })
-
+    register, watch, control, formState: { errors },
+    handleSubmit,
+  } = form
   const { fields, append } = useFieldArray({
     name: 'table',
     control,
     keyName: '$id',
   })
+
+  console.log('📝', watch())
+  console.log('🚧', errors)
 
   return (
     <section className='max-w-xl'>
@@ -44,9 +47,6 @@ export default function ContributionSkillsForm() {
         label='Skill Category'
         name='skillCategory'
         options={SKILL_CATEGORIES}
-        register={register}
-        setValue={setValue}
-        watch={watch}
       />
       <InputImage label='Skill Icon' name='skillIcon' />
       {fields.map((field) => (
@@ -59,6 +59,15 @@ export default function ContributionSkillsForm() {
         label='Table Information'
         name='table'
       />
+      <Button
+        label='Submit'
+        onClick={handleSubmit(onSubmit)}
+      />
     </section>
   )
+}
+
+ContributionSkillsForm.propTypes = {
+  form: PropTypes.object,
+  onSubmit: PropTypes.func,
 }
