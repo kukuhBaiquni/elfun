@@ -45,6 +45,7 @@ export default function ContributionSkillsForm(props) {
       <InputImage label='Skill Icon' name='skillIcon' />
       <TableComposer
         control={control}
+        errors={errors}
         label='Table Information'
         name='table'
       />

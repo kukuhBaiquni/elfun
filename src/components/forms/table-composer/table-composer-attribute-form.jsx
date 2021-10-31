@@ -38,8 +38,8 @@ export default function TableComposerAttributeForm(props) {
               className='col-span-5'
               control={control}
               errors={errors}
-              name={`${name}.${index}.suffix`}
-              placeholder='Suffix'
+              name={`${name}.${index}.value`}
+              placeholder='Value'
             />
           </div>
           <TrashIcon

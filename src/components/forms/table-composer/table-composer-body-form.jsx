@@ -6,9 +6,11 @@ import { Fragment } from 'react'
 import { useFieldArray, useForm } from 'react-hook-form'
 import PropTypes from 'prop-types'
 import { ReactSortable } from 'react-sortablejs'
+import _ from 'lodash/get'
 import InputText from '../input-text/input-text'
 import TableComposerAttributeForm from './table-composer-attribute-form'
 import FormSchema from './table-field-form-schema'
+import { FormFieldWrapper } from '../FormFieldWrapper'
 
 export default function TableComposerBody(props) {
   const { closeModal, onSubmit } = props
@@ -17,10 +19,12 @@ export default function TableComposerBody(props) {
   } = useForm({
     resolver: FormSchema,
   })
+
+  const name = 'tableField'
   const {
     fields, append, remove, move,
   } = useFieldArray({
-    name: 'tableField',
+    name,
     control,
     keyName: '$id',
   })
@@ -31,6 +35,7 @@ export default function TableComposerBody(props) {
     }
   }
 
+  const errorMessage = _(errors, `${name}.message`) ?? ''
   console.log('ERRORS IN TABLE FIELD', errors)
 
   return (
@@ -88,14 +93,20 @@ export default function TableComposerBody(props) {
               </div>
             ))}
           </ReactSortable>
-          <Button
-            label='Add Field'
-            leftIcon={<PlusIcon className='h-3.5 w-3.5 mr-1' />}
-            size='sm'
-            onClick={() => append({
-              fieldName: '',
-            })}
-          />
+          <FormFieldWrapper
+            bordered
+            errorMessage={errorMessage}
+            name={name}
+          >
+            <Button
+              label='Add Field'
+              leftIcon={<PlusIcon className='h-3.5 w-3.5 mr-1' />}
+              size='sm'
+              onClick={() => append({
+                fieldName: '',
+              })}
+            />
+          </FormFieldWrapper>
         </div>
         <div className='flex justify-end mt-2 mb-1 gap-2'>
           <Button

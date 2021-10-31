@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/no-autofocus */
 import PropTypes from 'prop-types'
-import { memo } from 'react'
-import resolvePath from 'utils/resolvePath'
+import _ from 'lodash/get'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 
 function InputText(props) {
@@ -10,8 +9,8 @@ function InputText(props) {
     className,
   } = props
 
-  const errorMessage = resolvePath(errors, `${name}.message`) ?? ''
-  console.log('name >>>', name)
+  const errorMessage = _(errors, `${name}.message`) ?? ''
+
   return (
     <FormFieldWrapper
       bordered
@@ -35,7 +34,7 @@ function InputText(props) {
   )
 }
 
-export default memo(InputText)
+export default InputText
 
 InputText.propTypes = {
   name: PropTypes.string,
