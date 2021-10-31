@@ -26,16 +26,18 @@ export default function TableComposer(props) {
 
   return (
     <FormFieldWrapper label={label} name={name}>
+      <div className='mb-2'>
+        {fields.map((field) => (
+          <div className='p-2 bg-lime-500' key={field.$id}>
+            {field.tableName}
+          </div>
+        ))}
+      </div>
       <Button
         label='Create Table'
         leftIcon={<TemplateIcon className='h-5 w-5 mr-2' />}
         onClick={() => setIsVisible(true)}
       />
-      {fields.map((field) => (
-        <div className='p-2 bg-lime-500' key={field.$id}>
-          {field.tableName}
-        </div>
-      ))}
       <Modal
         isVisible={isVisible}
         render={(

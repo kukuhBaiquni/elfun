@@ -8,12 +8,15 @@ import PropTypes from 'prop-types'
 import { ReactSortable } from 'react-sortablejs'
 import InputText from '../input-text/input-text'
 import TableComposerAttributeForm from './table-composer-attribute-form'
+import FormSchema from './table-field-form-schema'
 
 export default function TableComposerBody(props) {
   const { closeModal, onSubmit } = props
   const {
-    control, register, handleSubmit,
-  } = useForm()
+    control, register, handleSubmit, formState: { errors },
+  } = useForm({
+    resolver: FormSchema,
+  })
   const {
     fields, append, remove, move,
   } = useFieldArray({
@@ -21,6 +24,14 @@ export default function TableComposerBody(props) {
     control,
     keyName: '$id',
   })
+
+  const formSubmit = () => {
+    if (!Object.keys(errors).length) {
+      handleSubmit(onSubmit)
+    }
+  }
+
+  console.log('ERRORS IN TABLE FIELD', errors)
 
   return (
     <Fragment>
@@ -91,7 +102,7 @@ export default function TableComposerBody(props) {
           />
           <Button
             label='Done'
-            onClick={handleSubmit(onSubmit)}
+            onClick={formSubmit}
           />
         </div>
       </div>

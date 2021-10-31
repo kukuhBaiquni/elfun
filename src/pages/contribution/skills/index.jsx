@@ -1,7 +1,7 @@
 import Layout from 'layouts'
 import Head from 'next/head'
 import { useForm } from 'react-hook-form'
-import FormSchema from 'components/page-fragment/contribution/skills/form-schema'
+import FormSchema from 'components/page-fragment/contribution/skills/contribution-skills-form-schema'
 import ContributionSkillsForm from 'components/page-fragment/contribution/skills/contribution-skills-form'
 
 export default function Skills() {
