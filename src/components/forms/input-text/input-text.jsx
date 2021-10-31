@@ -34,7 +34,7 @@ function InputText(props) {
   )
 }
 
-export default memo(InputText, (prevProps, nextProps) => prevProps.isDirty === nextProps.isDirty)
+export default memo(InputText)
 
 InputText.propTypes = {
   name: PropTypes.string,

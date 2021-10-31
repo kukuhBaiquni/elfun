@@ -10,7 +10,7 @@ import InputText from '../input-text/input-text'
 import TableComposerAttributeForm from './table-composer-attribute-form'
 
 export default function TableComposerBody(props) {
-  const { closeModal, assignTable } = props
+  const { closeModal, onSubmit } = props
   const {
     control, register, handleSubmit,
   } = useForm()
@@ -21,11 +21,6 @@ export default function TableComposerBody(props) {
     control,
     keyName: '$id',
   })
-
-  const onSubmit = (data) => {
-    assignTable(data)
-    closeModal()
-  }
 
   return (
     <Fragment>
@@ -106,5 +101,5 @@ export default function TableComposerBody(props) {
 
 TableComposerBody.propTypes = {
   closeModal: PropTypes.func,
-  assignTable: PropTypes.func,
+  onSubmit: PropTypes.func,
 }

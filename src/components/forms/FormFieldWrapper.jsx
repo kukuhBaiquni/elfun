@@ -25,9 +25,9 @@ export function FormFieldWrapper(props) {
         {children}
       </div>
       {errorMessage && (
-        <div className='flex items-center'>
-          <ExclamationCircleIcon className='w-4 h-4 text-red-500 dark:text-red-700' />
-          <span className='text-red-500 dark:text-red-700 ml-1 text-sm' role='alert'>{errorMessage}</span>
+        <div className='flex items-center text-red-500 dark:text-red-600'>
+          <ExclamationCircleIcon className='w-4 h-4' />
+          <span className='ml-1 text-sm' role='alert'>{errorMessage}</span>
         </div>
       )}
     </div>

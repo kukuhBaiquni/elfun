@@ -1,29 +1,21 @@
 /* eslint-disable no-restricted-globals */
 /* eslint-disable jsx-a11y/no-autofocus */
 import PropTypes from 'prop-types'
-import { memo, useState } from 'react'
+import { memo } from 'react'
 import NumberFormat from 'react-number-format'
-import { Controller } from 'react-hook-form'
+import { useController } from 'react-hook-form'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 
 function InputText(props) {
   const {
-    name, label, placeholder, defaultValue = '1234', control, errors,
+    name, label, placeholder, defaultValue, control, errors,
     className,
   } = props
-  const [number, setNumber] = useState('')
-
-  const filterInput = ({ value }) => {
-    if (!isNaN(value)) {
-      if (parseInt(value, 10) >= 0 && value[0] !== '0') {
-        return +value <= 5e7 ? value : 5e7
-      } if (value === '') {
-        return +value <= 5e7 ? value : 5e7
-      }
-    }
-    return value
-  }
-
+  const { field: { onChange, value } } = useController({
+    name,
+    control,
+    defaultValue,
+  })
   const errorMessage = Object.keys(errors).includes(name) ? errors[name].message : ''
 
   return (
@@ -34,50 +26,31 @@ function InputText(props) {
       label={label}
       name={name}
     >
-      <Controller
-        control={control}
+      <NumberFormat
+        className='w-full outline-none placeholder-gray-500 bg-transparent text-sm p-2'
+        decimalScale={0}
         defaultValue={defaultValue}
-        name={name}
-        render={({ field: { onChange, value } }) => (
-          <NumberFormat
-            // customInput={(prop) => (
-            //   <input
-            //     {...prop}
-            //     autoComplete='off'
-            //     autoFocus={false}
-            //     className='w-full outline-none placeholder-gray-500 bg-transparent text-sm p-2'
-            //     // defaultValue={defaultValue}
-            //     id={name}
-            //     placeholder={placeholder}
-            //     spellCheck={false}
-            //     type='text'
-            //   />
-            // )}
-            decimalScale={0}
-            defaultValue={defaultValue}
-            isNumericString
-            placeholder={placeholder}
-            thousandSeparator
-            // value={value}
-            onValueChange={(result) => onChange(result.value)}
-          />
-        )}
+        id={name}
+        isNumericString
+        placeholder={placeholder}
+        thousandSeparator
+        value={value}
+        onValueChange={(result) => onChange(result.value)}
       />
-
     </FormFieldWrapper>
   )
 }
 
-export default memo(InputText, (prevProps, nextProps) => prevProps.isDirty === nextProps.isDirty)
+export default memo(InputText)
 
 InputText.propTypes = {
   name: PropTypes.string,
   label: PropTypes.string,
   defaultValue: PropTypes.string,
   placeholder: PropTypes.string,
-  // register: PropTypes.func,
   errors: PropTypes.object,
   className: PropTypes.string,
+  control: PropTypes.object,
 }
 
 InputText.defaultProps = {
