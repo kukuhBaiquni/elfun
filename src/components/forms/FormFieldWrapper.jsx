@@ -36,7 +36,7 @@ export function FormFieldWrapper(props) {
 
 FormFieldWrapper.propTypes = {
   name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   children: PropTypes.node,
   bordered: PropTypes.bool,
   errorMessage: PropTypes.string,
@@ -46,4 +46,5 @@ FormFieldWrapper.propTypes = {
 FormFieldWrapper.defaultProps = {
   children: null,
   bordered: false,
+  label: '',
 }

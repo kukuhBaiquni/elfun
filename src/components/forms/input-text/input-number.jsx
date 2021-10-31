@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/no-autofocus */
 import PropTypes from 'prop-types'
 import { memo } from 'react'
+import _ from 'lodash/get'
 import NumberFormat from 'react-number-format'
 import { useController } from 'react-hook-form'
 import { FormFieldWrapper } from '../FormFieldWrapper'
@@ -16,7 +17,8 @@ function InputText(props) {
     control,
     defaultValue,
   })
-  const errorMessage = Object.keys(errors).includes(name) ? errors[name].message : ''
+
+  const errorMessage = _(errors, `${name}.message`) ?? ''
 
   return (
     <FormFieldWrapper

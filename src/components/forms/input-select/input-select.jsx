@@ -5,6 +5,7 @@ import { ChevronDownIcon } from '@heroicons/react/solid'
 import PropTypes from 'prop-types'
 import { useController } from 'react-hook-form'
 import clsx from 'clsx'
+import _ from 'lodash/get'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 
 function Select(props) {
@@ -21,7 +22,7 @@ function Select(props) {
 
   const displayLabel = options.find((item) => item.value === value)
 
-  const errorMessage = Object.keys(errors).includes(name) ? errors[name].message : ''
+  const errorMessage = _(errors, `${name}.message`) ?? ''
 
   return (
     <FormFieldWrapper

@@ -1,26 +1,29 @@
-import {
-  PlusIcon, XIcon, SwitchVerticalIcon, TrashIcon,
-} from '@heroicons/react/solid'
+import { PlusIcon, XIcon } from '@heroicons/react/solid'
 import Button from 'components/common/button'
 import { Fragment } from 'react'
 import { useFieldArray, useForm } from 'react-hook-form'
 import PropTypes from 'prop-types'
-import { ReactSortable } from 'react-sortablejs'
+import _ from 'lodash/get'
 import InputText from '../input-text/input-text'
-import TableComposerAttributeForm from './table-composer-attribute-form'
-import FormSchema from './table-field-form-schema'
+
+import FormSchema from './table-fields-form-schema'
+import { FormFieldWrapper } from '../FormFieldWrapper'
+import TableComposerFieldsForm from './table-composer-fields-form'
 
 export default function TableComposerBody(props) {
   const { closeModal, onSubmit } = props
   const {
-    control, register, handleSubmit, formState: { errors },
+    control, register, handleSubmit, formState: { errors }, watch,
+    clearErrors,
   } = useForm({
     resolver: FormSchema,
   })
+
+  const name = 'tableField'
   const {
     fields, append, remove, move,
   } = useFieldArray({
-    name: 'tableField',
+    name,
     control,
     keyName: '$id',
   })
@@ -31,7 +34,9 @@ export default function TableComposerBody(props) {
     }
   }
 
+  const errorMessage = _(errors, `${name}.message`) ?? ''
   console.log('ERRORS IN TABLE FIELD', errors)
+  console.log('FORM in Table Field', watch())
 
   return (
     <Fragment>
@@ -48,54 +53,32 @@ export default function TableComposerBody(props) {
             placeholder='Table Name..'
             register={register}
           />
-          <ReactSortable
-            animation={150}
-            filter='.filtered'
-            ghostClass='opacity-60'
-            handle='.handle'
-            list={fields}
-            setList={() => { }}
-            onEnd={(evt) => move(evt.oldIndex, evt.newIndex)}
-          >
-            {fields.map((field, index) => (
-              <div className='bg-gray-300 dark:bg-gray-900 rounded mb-2 p-2 handle cursor-grab' key={field.$id}>
-                <div className='flex justify-between'>
-                  <div className='flex gap-2'>
-                    <SwitchVerticalIcon className='h-5 w-5' />
-                    <p>{field.name}</p>
-                  </div>
-                  <div className='flex items-center'>
-                    <TrashIcon
-                      className='h-7 w-7 dark:hover:bg-gray-800 hover:bg-gray-200 cursor-pointer p-1 text-red-500'
-                      onClick={() => remove(index)}
-                    />
-                  </div>
-                </div>
-                <InputText
-                  defaultValue={field.name}
-                  errors={errors}
-                  label='Field Name'
-                  name={`tableField.${index}.fieldName`}
-                  placeholder='Field Name..'
-                  register={register}
-                />
-                <TableComposerAttributeForm
-                  fieldIndex={index}
-                  name={`tableField.${index}.attributes`}
-                  {...{ control, register }}
-                  errors={errors}
-                />
-              </div>
-            ))}
-          </ReactSortable>
-          <Button
-            label='Add Field'
-            leftIcon={<PlusIcon className='h-3.5 w-3.5 mr-1' />}
-            size='sm'
-            onClick={() => append({
-              fieldName: '',
-            })}
+          <TableComposerFieldsForm
+            clearErrors={clearErrors}
+            control={control}
+            errors={errors}
+            fields={fields}
+            move={move}
+            register={register}
+            remove={remove}
           />
+          <FormFieldWrapper
+            errorMessage={errorMessage}
+            name={name}
+          >
+            <Button
+              label='Add Field'
+              leftIcon={<PlusIcon className='h-3.5 w-3.5 mr-1' />}
+              size='sm'
+              onClick={() => {
+                clearErrors(name)
+                append({
+                  fieldName: '',
+                  attributes: [],
+                })
+              }}
+            />
+          </FormFieldWrapper>
         </div>
         <div className='flex justify-end mt-2 mb-1 gap-2'>
           <Button
