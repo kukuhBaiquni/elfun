@@ -2,18 +2,32 @@ import { PlusIcon, TrashIcon } from '@heroicons/react/solid'
 import Button from 'components/common/button'
 import { useFieldArray } from 'react-hook-form'
 import PropTypes from 'prop-types'
+import _ from 'lodash/get'
 import InputText from '../input-text/input-text'
 import InputNumber from '../input-text/input-number'
+import { FormFieldWrapper } from '../FormFieldWrapper'
 
 export default function TableComposerAttributeForm(props) {
   const {
-    control, register, name, errors,
+    control, register, name, errors, clearErrors,
   } = props
   const { fields, append, remove } = useFieldArray({
     name,
     control,
     keyName: '$id',
   })
+
+  const addAttributes = () => {
+    if (!Array.isArray(_(errors, name))) {
+      clearErrors(name)
+      append({
+        attributeName: '',
+        value: '',
+      })
+    }
+  }
+
+  const errorMessage = _(errors, `${name}.message`) ?? ''
 
   return (
     <div className='bg-gray-200 dark:bg-gray-800 p-2 cursor-default rounded'>
@@ -48,17 +62,19 @@ export default function TableComposerAttributeForm(props) {
           />
         </div>
       ))}
-      <div className='flex justify-start'>
-        <Button
-          label='Add Attribute'
-          leftIcon={<PlusIcon className='h-3.5 w-3.5' />}
-          size='sm'
-          onClick={() => append({
-            attributeName: '',
-            value: '',
-          })}
-        />
-      </div>
+      <FormFieldWrapper
+        errorMessage={errorMessage}
+        name={name}
+      >
+        <div className='flex justify-start'>
+          <Button
+            label='Add Attribute'
+            leftIcon={<PlusIcon className='h-3.5 w-3.5' />}
+            size='sm'
+            onClick={addAttributes}
+          />
+        </div>
+      </FormFieldWrapper>
     </div>
   )
 }

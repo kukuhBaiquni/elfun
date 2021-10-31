@@ -6,7 +6,7 @@ import { useFieldArray } from 'react-hook-form'
 import Modal from 'components/common/modal'
 import _ from 'lodash/get'
 import { FormFieldWrapper } from '../FormFieldWrapper'
-import TableComposerBody from './table-composer-fields-form'
+import TableComposerBody from './table-composer-body-form'
 
 export default function TableComposer(props) {
   const {
