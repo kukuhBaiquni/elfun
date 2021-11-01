@@ -38,10 +38,6 @@ export default function TableComposerBody(props) {
   }
 
   const errorMessage = _(errors, `${name}.message`) ?? ''
-  console.log('ERRORS IN TABLE FIELD', errors)
-  console.log('FORM in Table Field', watch())
-
-  console.log('TJIMENC', defaultValues)
 
   return (
     <Fragment>
