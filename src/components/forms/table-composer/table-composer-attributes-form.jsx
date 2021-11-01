@@ -7,6 +7,7 @@ import InputText from '../input-text/input-text'
 import InputNumber from '../input-text/input-number'
 import InputSelect from '../input-select/input-select'
 import { FormFieldWrapper } from '../FormFieldWrapper'
+import InputRadio from '../input-radio'
 
 export default function TableComposerAttributeForm(props) {
   const {
@@ -32,6 +33,12 @@ export default function TableComposerAttributeForm(props) {
 
   return (
     <div className='bg-sky-50 dark:bg-gray-900 cursor-default rounded'>
+      <InputRadio
+        control={control}
+        errors={errors}
+        label='Value Type'
+        name='type'
+      />
       {fields.map((field, index) => (
         <div className='dark:bg-gray-900 bg-sky-50 p-2 border-b dark:border-gray-600 border-gray-300' key={field.$id}>
           <div className='grid grid-cols-1 sm:grid-cols-12 gap-2 flex-grow'>
@@ -44,16 +51,6 @@ export default function TableComposerAttributeForm(props) {
               placeholder='Attribute Name'
               register={register}
             />
-            <div>
-              <label>
-                <input checked className='option-input radio' name='example' type='radio' />
-                <span className='ml-2'>Fixed</span>
-              </label>
-              <label>
-                <input checked className='option-input radio' name='example' type='radio' />
-                <span className='ml-2'>Range</span>
-              </label>
-            </div>
             <InputNumber
               className='sm:col-span-6'
               control={control}
