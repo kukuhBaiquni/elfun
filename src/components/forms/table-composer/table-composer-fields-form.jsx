@@ -48,7 +48,7 @@ export default function TableComposerFieldsForm(props) {
           </Collapse>
           <div className='mt-2 flex justify-end'>
             <Button
-              label='Delete Field'
+              label='Remove this Field'
               leftIcon={<TrashIcon className='h-3.5 w-3.5 mr-1' />}
               size='sm'
               variant='danger-solid'

@@ -44,6 +44,16 @@ export default function TableComposerAttributeForm(props) {
               placeholder='Attribute Name'
               register={register}
             />
+            <div>
+              <label>
+                <input checked className='option-input radio' name='example' type='radio' />
+                <span className='ml-2'>Fixed</span>
+              </label>
+              <label>
+                <input checked className='option-input radio' name='example' type='radio' />
+                <span className='ml-2'>Range</span>
+              </label>
+            </div>
             <InputNumber
               className='sm:col-span-6'
               control={control}
@@ -67,7 +77,7 @@ export default function TableComposerAttributeForm(props) {
               ]}
             />
           </div>
-          <div className='mt-2'>
+          <div className='mt-2 flex justify-end'>
             <Button
               label='Remove this Attribute'
               leftIcon={<TrashIcon className='h-3.5 w-3.5 mr-1' />}
@@ -78,7 +88,7 @@ export default function TableComposerAttributeForm(props) {
           </div>
         </div>
       ))}
-      <div className='flex justify-start px-2 bg-gray-800'>
+      <div className='flex justify-start px-2 dark:bg-gray-800 bg-gray-200'>
         <FormFieldWrapper
           errorMessage={errorMessage}
           name={name}
