@@ -7,6 +7,7 @@ import Modal from 'components/common/modal'
 import _ from 'lodash/get'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 import TableComposerBody from './table-composer-body-form'
+import TableComponent from './table-component'
 
 export default function TableComposer(props) {
   const {
@@ -30,17 +31,8 @@ export default function TableComposer(props) {
   return (
     <FormFieldWrapper errorMessage={errorMessage} label={label} name={name}>
       <div className='mb-2'>
-        {fields.map((field) => (
-          <div className='bg-gray-900 p-2' key={field.$id}>
-            {field.tableName}
-            <section className='grid grid-cols-4'>
-              {field.tableFields.map((item) => (
-                <div className='col-span-2' key={item.fieldName}>
-                  {item.fieldName}
-                </div>
-              ))}
-            </section>
-          </div>
+        {fields.map((field, index) => (
+          <TableComponent field={field} fieldIndex={index} key={field.$id} />
         ))}
       </div>
       <Button
