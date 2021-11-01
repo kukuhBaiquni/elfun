@@ -29,6 +29,7 @@ function InputText(props) {
       name={name}
     >
       <NumberFormat
+        autoComplete='off'
         className='w-full outline-none placeholder-gray-500 bg-transparent text-sm p-2'
         decimalScale={0}
         defaultValue={defaultValue}
