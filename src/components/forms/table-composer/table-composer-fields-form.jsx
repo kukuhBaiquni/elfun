@@ -8,8 +8,9 @@ import InputText from '../input-text/input-text'
 export default function TableComposerFieldsForm(props) {
   const {
     fields, remove, move, control, errors, register,
-    clearErrors, name,
+    clearErrors, name, defaultValues = [],
   } = props
+
   return (
     <ReactSortable
       animation={150}
@@ -35,7 +36,7 @@ export default function TableComposerFieldsForm(props) {
             </div>
           </div>
           <InputText
-            defaultValue={field.name}
+            defaultValue={defaultValues[index]?.fieldName}
             errors={errors}
             label='Field Name'
             name={`${name}.${index}.fieldName`}
@@ -44,6 +45,7 @@ export default function TableComposerFieldsForm(props) {
           />
           <TableComposerAttributeForm
             clearErrors={clearErrors}
+            defaultValues={defaultValues?.attributes}
             fieldIndex={index}
             name={`${name}.${index}.attributes`}
             {...{ control, register }}
@@ -62,4 +64,5 @@ TableComposerFieldsForm.propTypes = {
   control: PropTypes.object,
   errors: PropTypes.object,
   register: PropTypes.func,
+  defaultValues: PropTypes.array,
 }

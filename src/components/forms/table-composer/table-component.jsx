@@ -1,11 +1,12 @@
-import { Fragment, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
 import { TrashIcon, PencilIcon } from '@heroicons/react/solid'
 import gridClass from './grid-class'
 
 export default function TableComponent(props) {
-  const { field, fieldIndex } = props
+  const {
+    field, fieldIndex, openModal, deleteTable,
+  } = props
   const { tableName, tableFields } = field
 
   return (
@@ -13,8 +14,8 @@ export default function TableComponent(props) {
       <div className='flex justify-between items-center'>
         <h5 className='font-bold'>{tableName}</h5>
         <div className='flex gap-1'>
-          <PencilIcon className='w-5 h-5 text-sky-500 cursor-pointer hover:bg-gray-800 p-0.5 rounded' />
-          <TrashIcon className='w-5 h-5 text-red-500 cursor-pointer hover:bg-gray-800 p-0.5 rounded' />
+          <PencilIcon className='w-5 h-5 text-sky-500 cursor-pointer hover:bg-gray-800 p-0.5 rounded' onClick={() => openModal(field)} />
+          <TrashIcon className='w-5 h-5 text-red-500 cursor-pointer hover:bg-gray-800 p-0.5 rounded' onClick={deleteTable} />
         </div>
       </div>
       <section className={clsx(
@@ -48,4 +49,6 @@ export default function TableComponent(props) {
 TableComponent.propTypes = {
   field: PropTypes.object,
   fieldIndex: PropTypes.number,
+  openModal: PropTypes.func,
+  deleteTable: PropTypes.func,
 }

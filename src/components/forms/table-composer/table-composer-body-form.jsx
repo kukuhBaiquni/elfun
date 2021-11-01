@@ -11,11 +11,12 @@ import { FormFieldWrapper } from '../FormFieldWrapper'
 import TableComposerFieldsForm from './table-composer-fields-form'
 
 export default function TableComposerBody(props) {
-  const { closeModal, onSubmit } = props
+  const { closeModal, onSubmit, defaultValues = {} } = props
   const {
     control, register, handleSubmit, formState: { errors }, watch,
     clearErrors,
   } = useForm({
+    defaultValues,
     resolver: FormSchema,
   })
 
@@ -38,6 +39,8 @@ export default function TableComposerBody(props) {
   console.log('ERRORS IN TABLE FIELD', errors)
   console.log('FORM in Table Field', watch())
 
+  console.log('TJIMENC', defaultValues)
+
   return (
     <Fragment>
       <div className='bg-sky-500 dark:bg-gray-700 text-white py-2 px-3 text-lg flex justify-between items-center'>
@@ -47,6 +50,7 @@ export default function TableComposerBody(props) {
       <div className='py-2 pl-3 pr-2 mt-3'>
         <div className='h-[700px] overflow-y-auto custom-scroll pr-2'>
           <InputText
+            defaultValue={defaultValues?.tableName}
             errors={errors}
             label='Table Name'
             name='tableName'
@@ -56,6 +60,7 @@ export default function TableComposerBody(props) {
           <TableComposerFieldsForm
             clearErrors={clearErrors}
             control={control}
+            defaultValues={defaultValues?.tableFields}
             errors={errors}
             fields={fields}
             move={move}
@@ -100,4 +105,5 @@ export default function TableComposerBody(props) {
 TableComposerBody.propTypes = {
   closeModal: PropTypes.func,
   onSubmit: PropTypes.func,
+  defaultValues: PropTypes.object,
 }
