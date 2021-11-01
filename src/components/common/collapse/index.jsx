@@ -13,9 +13,13 @@ export default function ChangeJobQuest(props) {
       <Disclosure>
         {({ open }) => (
           <Fragment>
-            <Disclosure.Button className='flex justify-between w-full p-2 font-medium bg-gray-300 dark:bg-gray-800 border-general text-left hover:bg-opacity-80 text-sky-500'>
+            <Disclosure.Button className='flex justify-between w-full p-2 font-medium bg-sky-500 border-general text-left hover:bg-opacity-80 text-white'>
               <span>{title}</span>
-              <ChevronUpIcon className={clsx(open ? '-transform rotate-180' : 'transform rotate-0', 'w-5 h-5 text-gray-600 transition-all duration-300')} />
+              <ChevronUpIcon className={clsx(
+                open ? '-transform rotate-180' : 'transform rotate-0',
+                'w-5 h-5 text-gray-white transition-all duration-300',
+              )}
+              />
             </Disclosure.Button>
             <Transition
               enter='transition duration-100 ease-out'

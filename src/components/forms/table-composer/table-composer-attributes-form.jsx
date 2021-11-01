@@ -77,19 +77,19 @@ export default function TableComposerAttributeForm(props) {
           </div>
         </div>
       ))}
-      <FormFieldWrapper
-        errorMessage={errorMessage}
-        name={name}
-      >
-        <div className='flex justify-start px-2'>
+      <div className='flex justify-start px-2 bg-gray-800'>
+        <FormFieldWrapper
+          errorMessage={errorMessage}
+          name={name}
+        >
           <Button
             label='Add Attribute'
             leftIcon={<PlusIcon className='h-3.5 w-3.5' />}
             size='sm'
             onClick={addAttributes}
           />
-        </div>
-      </FormFieldWrapper>
+        </FormFieldWrapper>
+      </div>
     </div>
   )
 }
