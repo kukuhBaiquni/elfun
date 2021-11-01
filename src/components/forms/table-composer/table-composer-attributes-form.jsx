@@ -34,13 +34,6 @@ export default function TableComposerAttributeForm(props) {
 
   return (
     <div className='bg-sky-50 dark:bg-gray-900 cursor-default rounded'>
-      <InputRadio
-        control={control}
-        errors={errors}
-        label='Value Type'
-        name='type'
-        options={INPUT_TYPE}
-      />
       {fields.map((field, index) => (
         <div className='dark:bg-gray-900 bg-sky-50 p-2 border-b dark:border-gray-600 border-gray-300' key={field.$id}>
           <div className='grid grid-cols-1 sm:grid-cols-12 gap-2 flex-grow'>
@@ -53,12 +46,20 @@ export default function TableComposerAttributeForm(props) {
               placeholder='Attribute Name'
               register={register}
             />
+            <InputRadio
+              className='sm:col-span-12'
+              control={control}
+              errors={errors}
+              label='Value Type'
+              name='type'
+              options={INPUT_TYPE}
+            />
             <InputNumber
               className='sm:col-span-6'
               control={control}
               defaultValue={defaultValues[index]?.value.amount}
               errors={errors}
-              label='Amount'
+              label='Value'
               name={`${name}.${index}.value.amount`}
               placeholder='Value'
             />

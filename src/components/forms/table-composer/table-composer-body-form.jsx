@@ -12,17 +12,19 @@ import TableComposerFieldsForm from './table-composer-fields-form'
 
 export default function TableComposerBody(props) {
   const { closeModal, onSubmit, defaultValues = {} } = props
-  const {
-    control, register, handleSubmit, formState: { errors }, watch,
-    clearErrors,
-  } = useForm({
+  const form = useForm({
     defaultValues,
     resolver: FormSchema,
   })
 
+  const {
+    control, register, handleSubmit, formState: { errors },
+    clearErrors, watch,
+  } = form
+
   const name = 'tableFields'
   const {
-    fields, append, remove, move,
+    fields, append, remove,
   } = useFieldArray({
     name,
     control,
@@ -58,14 +60,10 @@ export default function TableComposerBody(props) {
             register={register}
           />
           <TableComposerFieldsForm
-            clearErrors={clearErrors}
-            control={control}
             defaultValues={defaultValues?.tableFields}
-            errors={errors}
             fields={fields}
-            move={move}
+            form={form}
             name={name}
-            register={register}
             remove={remove}
           />
           <FormFieldWrapper
