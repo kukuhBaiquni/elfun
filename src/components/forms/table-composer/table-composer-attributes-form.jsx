@@ -3,6 +3,7 @@ import Button from 'components/common/button'
 import { useFieldArray } from 'react-hook-form'
 import PropTypes from 'prop-types'
 import _ from 'lodash/get'
+import { VALUE_SUFFIX, INPUT_TYPE } from 'constant/options'
 import InputText from '../input-text/input-text'
 import InputNumber from '../input-text/input-number'
 import InputSelect from '../input-select/input-select'
@@ -38,6 +39,7 @@ export default function TableComposerAttributeForm(props) {
         errors={errors}
         label='Value Type'
         name='type'
+        options={INPUT_TYPE}
       />
       {fields.map((field, index) => (
         <div className='dark:bg-gray-900 bg-sky-50 p-2 border-b dark:border-gray-600 border-gray-300' key={field.$id}>
@@ -66,12 +68,7 @@ export default function TableComposerAttributeForm(props) {
               defaultValue={defaultValues[index]?.value.suffix}
               label='Suffix'
               name={`${name}.${index}.value.suffix`}
-              options={[
-                { label: 'none', value: '-' },
-                { label: '%', value: '%' },
-                { label: 'Seconds', value: 's' },
-                { label: 'MP', value: 'mp' },
-              ]}
+              options={VALUE_SUFFIX}
             />
           </div>
           <div className='mt-2 flex justify-end'>
