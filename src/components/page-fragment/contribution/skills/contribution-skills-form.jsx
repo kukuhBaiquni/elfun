@@ -1,6 +1,6 @@
 import InputText from 'components/forms/input-text/input-text'
 import Textarea from 'components/forms/input-text/textarea'
-import Select from 'components/forms/input-select/input-select'
+import InputSelect from 'components/forms/input-select/input-select'
 import InputImage from 'components/forms/input-image'
 import SKILL_CATEGORIES from 'constant/skill-categories'
 import TableComposer from 'components/forms/table-composer'
@@ -34,7 +34,7 @@ export default function ContributionSkillsForm(props) {
         placeholder='Description..'
         register={register}
       />
-      <Select
+      <InputSelect
         control={control}
         defaultValue=''
         errors={errors}

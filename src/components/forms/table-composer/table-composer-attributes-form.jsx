@@ -5,11 +5,12 @@ import PropTypes from 'prop-types'
 import _ from 'lodash/get'
 import InputText from '../input-text/input-text'
 import InputNumber from '../input-text/input-number'
+import InputSelect from '../input-select/input-select'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 
 export default function TableComposerAttributeForm(props) {
   const {
-    control, register, name, errors, clearErrors,
+    control, register, name, errors, clearErrors, defaultValues = {},
   } = props
   const { fields, append, remove } = useFieldArray({
     name,
@@ -37,23 +38,29 @@ export default function TableComposerAttributeForm(props) {
           <div className='grid grid-cols-11 gap-2 flex-grow'>
             <InputText
               className='col-span-5'
+              defaultValue={defaultValues[index]?.attributeName}
               errors={errors}
               name={`${name}.${index}.attributeName`}
               placeholder='Attribute Name'
               register={register}
             />
-            {/* <InputText
-              className='col-span-5'
-              name={`${name}.${index}.value`}
-              placeholder='Value'
-              register={register}
-            /> */}
             <InputNumber
               className='col-span-5'
               control={control}
+              defaultValue={defaultValues[index]?.value.amount}
               errors={errors}
               name={`${name}.${index}.value`}
               placeholder='Value'
+            />
+            <InputSelect
+              control={control}
+              defaultValue={defaultValues[index]?.value.suffix}
+              name={`${name}.${index}.suffix`}
+              options={[
+                { label: '%', value: '%' },
+                { label: 'Seconds', value: 's' },
+                { label: 'MP', value: 'mp' },
+              ]}
             />
           </div>
           <TrashIcon
@@ -89,4 +96,5 @@ TableComposerAttributeForm.propTypes = {
   name: PropTypes.string,
   errors: PropTypes.object,
   clearErrors: PropTypes.func,
+  defaultValues: PropTypes.object,
 }
