@@ -31,8 +31,15 @@ export default function TableComposer(props) {
     <FormFieldWrapper errorMessage={errorMessage} label={label} name={name}>
       <div className='mb-2'>
         {fields.map((field) => (
-          <div className='p-2 bg-lime-500' key={field.$id}>
+          <div className='bg-gray-900 p-2' key={field.$id}>
             {field.tableName}
+            <section className='grid grid-cols-4'>
+              {field.tableFields.map((item) => (
+                <div className='col-span-2' key={item.fieldName}>
+                  {item.fieldName}
+                </div>
+              ))}
+            </section>
           </div>
         ))}
       </div>

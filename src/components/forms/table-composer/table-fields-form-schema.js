@@ -3,7 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 
 const schema = yup.object().shape({
   tableName: yup.string().required('Table Name is required!'),
-  tableField: yup.array().required().min(1, 'Table Field is required!').of(
+  tableFields: yup.array().required().min(1, 'Table Field is required!').of(
     yup.object({
       attributes: yup.array().required().min(1, 'Attributes is required!').of(
         yup.object({

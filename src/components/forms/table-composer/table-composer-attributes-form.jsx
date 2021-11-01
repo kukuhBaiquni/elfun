@@ -58,7 +58,11 @@ export default function TableComposerAttributeForm(props) {
           </div>
           <TrashIcon
             className='h-5 w-5 ml-2 text-red-500 cursor-pointer'
-            onClick={() => remove(index)}
+            onClick={() => {
+              if (fields.length > 1) {
+                remove(index)
+              }
+            }}
           />
         </div>
       ))}
@@ -83,4 +87,6 @@ TableComposerAttributeForm.propTypes = {
   control: PropTypes.object,
   register: PropTypes.func,
   name: PropTypes.string,
+  errors: PropTypes.object,
+  clearErrors: PropTypes.func,
 }

@@ -19,7 +19,7 @@ export default function TableComposerBody(props) {
     resolver: FormSchema,
   })
 
-  const name = 'tableField'
+  const name = 'tableFields'
   const {
     fields, append, remove, move,
   } = useFieldArray({
@@ -59,6 +59,7 @@ export default function TableComposerBody(props) {
             errors={errors}
             fields={fields}
             move={move}
+            name={name}
             register={register}
             remove={remove}
           />
