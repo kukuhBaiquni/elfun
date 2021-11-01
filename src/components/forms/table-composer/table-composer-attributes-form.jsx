@@ -31,30 +31,33 @@ export default function TableComposerAttributeForm(props) {
   const errorMessage = _(errors, `${name}.message`) ?? ''
 
   return (
-    <div className='bg-gray-200 dark:bg-gray-800 p-2 cursor-default rounded'>
-      <h6 className='text-sky-500 font-titillium font-bold'>Attributes</h6>
+    <div className='bg-sky-50 dark:bg-gray-900 cursor-default rounded'>
       {fields.map((field, index) => (
-        <div className='flex items-center' key={field.$id}>
-          <div className='grid grid-cols-11 gap-2 flex-grow'>
+        <div className='dark:bg-gray-900 bg-sky-50 p-2 border-b dark:border-gray-600 border-gray-300' key={field.$id}>
+          <div className='grid grid-cols-1 sm:grid-cols-12 gap-2 flex-grow'>
             <InputText
-              className='col-span-5'
+              className='sm:col-span-12'
               defaultValue={defaultValues[index]?.attributeName}
               errors={errors}
+              label='Attribute Name'
               name={`${name}.${index}.attributeName`}
               placeholder='Attribute Name'
               register={register}
             />
             <InputNumber
-              className='col-span-5'
+              className='sm:col-span-6'
               control={control}
               defaultValue={defaultValues[index]?.value.amount}
               errors={errors}
+              label='Amount'
               name={`${name}.${index}.value`}
               placeholder='Value'
             />
             <InputSelect
+              className='sm:col-span-6'
               control={control}
               defaultValue={defaultValues[index]?.value.suffix}
+              label='Suffix'
               name={`${name}.${index}.suffix`}
               options={[
                 { label: '%', value: '%' },
@@ -63,29 +66,30 @@ export default function TableComposerAttributeForm(props) {
               ]}
             />
           </div>
-          <TrashIcon
-            className='h-5 w-5 ml-2 text-red-500 cursor-pointer'
-            onClick={() => {
-              if (fields.length > 1) {
-                remove(index)
-              }
-            }}
-          />
+          <div className='mt-2'>
+            <Button
+              label='Remove this Attribute'
+              leftIcon={<TrashIcon className='h-3.5 w-3.5 mr-1' />}
+              size='sm'
+              variant='danger-solid'
+              onClick={() => remove(index)}
+            />
+          </div>
         </div>
       ))}
-      <FormFieldWrapper
-        errorMessage={errorMessage}
-        name={name}
-      >
-        <div className='flex justify-start'>
+      <div className='flex justify-start px-2 bg-gray-800'>
+        <FormFieldWrapper
+          errorMessage={errorMessage}
+          name={name}
+        >
           <Button
             label='Add Attribute'
             leftIcon={<PlusIcon className='h-3.5 w-3.5' />}
             size='sm'
             onClick={addAttributes}
           />
-        </div>
-      </FormFieldWrapper>
+        </FormFieldWrapper>
+      </div>
     </div>
   )
 }
