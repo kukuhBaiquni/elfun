@@ -1,30 +1,44 @@
 import { Fragment, useMemo } from 'react'
 import PropTypes from 'prop-types'
+import clsx from 'clsx'
+import { TrashIcon, PencilIcon } from '@heroicons/react/solid'
+import gridClass from './grid-class'
 
 export default function TableComponent(props) {
   const { field, fieldIndex } = props
   const { tableName, tableFields } = field
 
   return (
-    <div className='bg-gray-900 p-2 font-titillium rounded mb-2'>
-      <h5 className='font-bold'>{tableName}</h5>
-      <section className='grid grid-cols-2 mt-1 gap-1'>
+    <div className='bg-gray-900 p-2 font-titillium mb-2 overflow-x-auto'>
+      <div className='flex justify-between items-center'>
+        <h5 className='font-bold'>{tableName}</h5>
+        <div className='flex gap-1'>
+          <PencilIcon className='w-5 h-5 text-sky-500 cursor-pointer hover:bg-gray-800 p-0.5 rounded' />
+          <TrashIcon className='w-5 h-5 text-red-500 cursor-pointer hover:bg-gray-800 p-0.5 rounded' />
+        </div>
+      </div>
+      <section className={clsx(
+        'mt-1 gap-1 grid grid-cols-1 sm:grid-cols-2',
+      )}
+      >
         {tableFields.map((item) => (
-          <Fragment key={item.fieldName}>
-            <div className='p-1 text-center'>
-              <div className='bg-gray-700 mb-1 rounded'>
-                <p className='font-bold'>{item.fieldName}</p>
-              </div>
-              <div className='grid grid-cols-2 gap-1'>
-                {item.attributes.map((attr) => (
-                  <div className='bg-gray-700 p-1 text-sm rounded' key={attr.attributeName}>
-                    <p className='mb-0.5'>{attr.attributeName}</p>
-                    <p className='bg-gray-900 rounded'>{attr.value}</p>
-                  </div>
-                ))}
-              </div>
+          <div className='text-center' key={item.fieldName}>
+            <div className='bg-rena text-white mb-1'>
+              <p className='font-bold'>{item.fieldName}</p>
             </div>
-          </Fragment>
+            <div className={clsx(
+              'gap-1 grid grid-cols-2',
+              // gridClass[item.attributes.length],
+            )}
+            >
+              {item.attributes.map((attr) => (
+                <div className='bg-gray-700 p-1 text-sm overflow-hidden' key={attr.attributeName}>
+                  <p className='mb-0.5 whitespace-nowrap overflow-ellipsis'>{attr.attributeName}</p>
+                  <p className='bg-gray-900 font-bold text-rena rounded'>{attr.value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         ))}
       </section>
     </div>
