@@ -50,7 +50,7 @@ export default function TableComposerAttributeForm(props) {
               defaultValue={defaultValues[index]?.value.amount}
               errors={errors}
               label='Amount'
-              name={`${name}.${index}.value`}
+              name={`${name}.${index}.value.amount`}
               placeholder='Value'
             />
             <InputSelect
@@ -58,8 +58,9 @@ export default function TableComposerAttributeForm(props) {
               control={control}
               defaultValue={defaultValues[index]?.value.suffix}
               label='Suffix'
-              name={`${name}.${index}.suffix`}
+              name={`${name}.${index}.value.suffix`}
               options={[
+                { label: 'none', value: '-' },
                 { label: '%', value: '%' },
                 { label: 'Seconds', value: 's' },
                 { label: 'MP', value: 'mp' },
