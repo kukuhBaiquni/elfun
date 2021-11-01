@@ -46,7 +46,7 @@ export default function ContributionSkillsForm(props) {
       <TableComposer
         control={control}
         errors={errors}
-        label='Table Information'
+        label='Table Information List'
         name='table'
       />
       <Button
