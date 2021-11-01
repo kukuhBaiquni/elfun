@@ -5,7 +5,7 @@ import gridClass from './grid-class'
 
 export default function TableComponent(props) {
   const {
-    field, fieldIndex, openModal, deleteTable,
+    field, openModal, deleteTable,
   } = props
   const { tableName, tableFields } = field
 
@@ -48,7 +48,6 @@ export default function TableComponent(props) {
 
 TableComponent.propTypes = {
   field: PropTypes.object,
-  fieldIndex: PropTypes.number,
   openModal: PropTypes.func,
   deleteTable: PropTypes.func,
 }

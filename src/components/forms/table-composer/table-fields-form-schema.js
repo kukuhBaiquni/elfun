@@ -11,7 +11,7 @@ const schema = yup.object().shape({
           value: yup.object({
             type: yup.string().oneOf(['FIX', 'RANGE']),
             suffix: yup.string().required('Suffix is required'),
-            amount: yup.string().required('Amount is Required'),
+            amount: yup.string().required('Value is Required'),
             range: yup.array().length(2),
           }),
         }),

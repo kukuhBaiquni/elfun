@@ -1,6 +1,5 @@
 import { Fragment } from 'react'
-import { ReactSortable } from 'react-sortablejs'
-import { SwitchVerticalIcon, TrashIcon } from '@heroicons/react/solid'
+import { TrashIcon } from '@heroicons/react/solid'
 import PropTypes from 'prop-types'
 import Collapse from 'components/common/collapse'
 import Button from 'components/common/button'
@@ -9,20 +8,13 @@ import InputText from '../input-text/input-text'
 
 export default function TableComposerFieldsForm(props) {
   const {
-    fields, remove, move, control, errors, register,
-    clearErrors, name, defaultValues = [],
+    fields, remove, form, name, defaultValues = [],
   } = props
+  const {
+    control, formState: { errors }, register, clearErrors,
+  } = form
 
   return (
-    // <ReactSortable
-    //   animation={150}
-    //   filter='.filtered'
-    //   ghostClass='opacity-60'
-    //   handle='.handle'
-    //   list={fields}
-    //   setList={() => { }}
-    //   onEnd={(evt) => move(evt.oldIndex, evt.newIndex)}
-    // >
     <Fragment>
       {fields.map((field, index) => (
         <div className='bg-sky-50 dark:bg-gray-900 rounded mb-2 p-2' key={field.$id}>
@@ -58,7 +50,6 @@ export default function TableComposerFieldsForm(props) {
         </div>
       ))}
     </Fragment>
-    // </ReactSortable>
   )
 }
 
@@ -66,8 +57,7 @@ TableComposerFieldsForm.propTypes = {
   fields: PropTypes.array,
   remove: PropTypes.func,
   move: PropTypes.func,
-  control: PropTypes.object,
-  errors: PropTypes.object,
-  register: PropTypes.func,
+  name: PropTypes.string,
+  form: PropTypes.object,
   defaultValues: PropTypes.array,
 }
