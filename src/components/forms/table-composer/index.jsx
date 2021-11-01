@@ -15,15 +15,22 @@ export default function TableComposer(props) {
   } = props
   const [isVisible, setIsVisible] = useState(false)
   const [focusedData, setFocusedData] = useState({})
+  const [focusedDataIndex, setFocusedDataIndex] = useState(-1)
 
-  const { fields, append, remove } = useFieldArray({
+  const {
+    fields, append, remove, update,
+  } = useFieldArray({
     name: 'table',
     control,
     keyName: '$id',
   })
 
   const onSubmit = (data) => {
-    append(data)
+    if (Object.keys(focusedData)) {
+      update(focusedDataIndex, data)
+    } else {
+      append(data)
+    }
     setIsVisible(false)
   }
 
@@ -40,6 +47,7 @@ export default function TableComposer(props) {
             openModal={(data) => {
               setIsVisible(true)
               setFocusedData(data)
+              setFocusedDataIndex(index)
             }}
           />
         ))}
@@ -50,6 +58,7 @@ export default function TableComposer(props) {
         onClick={() => {
           setFocusedData({})
           setIsVisible(true)
+          setFocusedDataIndex(-1)
         }}
       />
       <Modal

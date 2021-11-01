@@ -24,7 +24,7 @@ export default function TableComponent(props) {
       >
         {tableFields.map((item) => (
           <div className='text-center' key={item.fieldName}>
-            <div className='bg-sky-500 text-white mb-1'>
+            <div className='bg-sky-500 text-white mb-1 px-1'>
               <p>{item.fieldName}</p>
             </div>
             <div className={clsx(
@@ -35,7 +35,7 @@ export default function TableComponent(props) {
               {item.attributes.map((attr) => (
                 <div className='dark:bg-gray-700 bg-gray-300 p-1 text-sm overflow-hidden' key={attr.attributeName}>
                   <p className='mb-0.5 whitespace-nowrap overflow-ellipsis'>{attr.attributeName}</p>
-                  <p className='dark:bg-gray-900 font-bold bg-gray-100 text-sky-500 rounded'>{attr.value}</p>
+                  <p className='dark:bg-gray-900 font-bold bg-gray-100 text-sky-500 py-1 font-nunito text-xs'>{`${new Intl.NumberFormat().format(attr.value.amount)}${attr.value.suffix}`}</p>
                 </div>
               ))}
             </div>
