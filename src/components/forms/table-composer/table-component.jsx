@@ -28,14 +28,14 @@ export default function TableComponent(props) {
               <p>{item.fieldName}</p>
             </div>
             <div className={clsx(
-              'gap-1 grid grid-cols-2',
-              // gridClass[item.attributes.length],
+              'gap-1 grid',
+              gridClass[item.attributes.length],
             )}
             >
               {item.attributes.map((attr) => (
                 <div className='dark:bg-gray-700 bg-gray-300 p-1 text-sm overflow-hidden' key={attr.attributeName}>
                   <p className='mb-0.5 whitespace-nowrap overflow-ellipsis'>{attr.attributeName}</p>
-                  <p className='dark:bg-gray-900 font-bold bg-gray-100 text-sky-500 py-1 font-nunito text-xs'>{`${new Intl.NumberFormat().format(attr.value.amount)}${attr.value.suffix}`}</p>
+                  <p className='dark:bg-gray-900 font-bold bg-gray-100 text-general py-1 font-nunito text-xs'>{`${new Intl.NumberFormat().format(attr.value.amount)}${attr.value.suffix}`}</p>
                 </div>
               ))}
             </div>
