@@ -8,12 +8,7 @@ const schema = yup.object().shape({
       attributes: yup.array().required().min(1, 'Attributes is required!').of(
         yup.object({
           attributeName: yup.string().required('Attribute Name is required!'),
-          value: yup.object({
-            type: yup.string().oneOf(['FIX', 'RANGE']),
-            suffix: yup.string().required('Suffix is required'),
-            amount: yup.string().required('Value is Required'),
-            range: yup.array().length(2),
-          }),
+          value: yup.string().required('Value is Required'),
         }),
       ),
       fieldName: yup.string().required('Field Name is required!'),

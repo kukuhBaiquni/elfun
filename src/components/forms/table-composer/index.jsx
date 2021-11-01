@@ -26,7 +26,7 @@ export default function TableComposer(props) {
   })
 
   const onSubmit = (data) => {
-    if (Object.keys(focusedData)) {
+    if (focusedDataIndex !== -1) {
       update(focusedDataIndex, data)
     } else {
       append(data)

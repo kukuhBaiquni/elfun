@@ -17,7 +17,7 @@ function InputText(props) {
     control,
     defaultValue,
   })
-
+  console.log('DEFAULT NUMBER', defaultValue, value)
   const errorMessage = _(errors, `${name}.message`) ?? ''
 
   return (

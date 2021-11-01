@@ -57,18 +57,18 @@ export default function TableComposerAttributeForm(props) {
             <InputNumber
               className='sm:col-span-6'
               control={control}
-              defaultValue={defaultValues[index]?.value.amount}
+              defaultValue={defaultValues[index]?.value}
               errors={errors}
               label='Value'
-              name={`${name}.${index}.value.amount`}
+              name={`${name}.${index}.value`}
               placeholder='Value'
             />
             <InputSelect
               className='sm:col-span-6'
               control={control}
-              defaultValue={defaultValues[index]?.value.suffix}
+              defaultValue={defaultValues[index]?.suffix}
               label='Suffix'
-              name={`${name}.${index}.value.suffix`}
+              name={`${name}.${index}.suffix`}
               options={VALUE_SUFFIX}
             />
           </div>
