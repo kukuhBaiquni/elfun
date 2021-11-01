@@ -9,8 +9,10 @@ const schema = yup.object().shape({
         yup.object({
           attributeName: yup.string().required('Attribute Name is required!'),
           value: yup.object({
+            type: yup.string().oneOf(['FIX', 'RANGE']),
             suffix: yup.string().required('Suffix is required'),
             amount: yup.string().required('Amount is Required'),
+            range: yup.array().length(2),
           }),
         }),
       ),

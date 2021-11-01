@@ -1,4 +1,4 @@
-import SKILL_CATEGORIES from 'constant/skill-categories'
+import { SKILL_CATEGORIES } from 'constant/options'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 
