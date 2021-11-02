@@ -19,7 +19,7 @@ export default function TableComposerBody(props) {
 
   const {
     control, register, handleSubmit, formState: { errors },
-    clearErrors, watch,
+    clearErrors,
   } = form
 
   const name = 'tableFields'
