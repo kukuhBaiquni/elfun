@@ -1,4 +1,4 @@
-import { PlusIcon, TrashIcon } from '@heroicons/react/solid'
+import { PlusIcon, TrashIcon, ArrowNarrowRightIcon } from '@heroicons/react/solid'
 import Button from 'components/common/button'
 import { useFieldArray } from 'react-hook-form'
 import PropTypes from 'prop-types'
@@ -12,7 +12,8 @@ import InputRadio from '../input-radio'
 
 export default function TableComposerAttributeForm(props) {
   const {
-    control, register, name, errors, clearErrors, defaultValues = {},
+    control, register, name, errors, clearErrors, defaultValues = [],
+    watch,
   } = props
   const { fields, append, remove } = useFieldArray({
     name,
@@ -49,20 +50,49 @@ export default function TableComposerAttributeForm(props) {
             <InputRadio
               className='sm:col-span-12'
               control={control}
+              defaultValue={defaultValues[index]?.type}
               errors={errors}
               label='Value Type'
-              name='type'
+              name={`${name}.${index}.type`}
               options={INPUT_TYPE}
             />
-            <InputNumber
-              className='sm:col-span-6'
-              control={control}
-              defaultValue={defaultValues[index]?.value}
-              errors={errors}
-              label='Value'
-              name={`${name}.${index}.value`}
-              placeholder='Value'
-            />
+            {watch(`${name}.${index}.type`)?.value === 'RANGE' ? (
+              <div className='sm:col-span-6'>
+                <div className='grid grid-cols-11 gap-2'>
+                  <InputNumber
+                    className='col-span-5'
+                    control={control}
+                    defaultValue={defaultValues[index]?.valueRange[0]}
+                    errors={errors}
+                    label='From'
+                    name={`${name}.${index}.valueRange.0`}
+                    placeholder='Value'
+                  />
+                  <div className='w-full h-10 mt-auto mb-3 flex items-center justify-center'>
+                    <ArrowNarrowRightIcon className='w-4 h-4' />
+                  </div>
+                  <InputNumber
+                    className='col-span-5'
+                    control={control}
+                    defaultValue={defaultValues[index]?.valueRange[1]}
+                    errors={errors}
+                    label='To'
+                    name={`${name}.${index}.valueRange.1`}
+                    placeholder='Value'
+                  />
+                </div>
+              </div>
+            ) : (
+              <InputNumber
+                className='sm:col-span-6'
+                control={control}
+                defaultValue={defaultValues[index]?.value}
+                errors={errors}
+                label='Value'
+                name={`${name}.${index}.value`}
+                placeholder='Value'
+              />
+            )}
             <InputSelect
               className='sm:col-span-6'
               control={control}
@@ -106,5 +136,6 @@ TableComposerAttributeForm.propTypes = {
   name: PropTypes.string,
   errors: PropTypes.object,
   clearErrors: PropTypes.func,
-  defaultValues: PropTypes.object,
+  defaultValues: PropTypes.array,
+  watch: PropTypes.func,
 }

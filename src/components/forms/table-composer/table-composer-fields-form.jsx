@@ -12,6 +12,7 @@ export default function TableComposerFieldsForm(props) {
   } = props
   const {
     control, formState: { errors }, register, clearErrors,
+    watch,
   } = form
 
   return (
@@ -34,6 +35,7 @@ export default function TableComposerFieldsForm(props) {
               defaultValues={defaultValues?.attributes}
               fieldIndex={index}
               name={`${name}.${index}.attributes`}
+              watch={watch}
               {...{ control, register }}
               errors={errors}
             />
