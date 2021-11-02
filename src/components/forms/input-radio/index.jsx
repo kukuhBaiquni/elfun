@@ -24,7 +24,10 @@ export default function InputRadio(props) {
       label={label}
       name={name}
     >
-      <RadioGroup value={value || options[0]} onChange={onChange}>
+      <RadioGroup
+        value={value || options[0]}
+        onChange={onChange}
+      >
         <div className='flex'>
           {options.map((item) => (
             <RadioGroup.Option

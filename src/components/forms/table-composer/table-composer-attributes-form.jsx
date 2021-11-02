@@ -12,7 +12,7 @@ import InputRadio from '../input-radio'
 
 export default function TableComposerAttributeForm(props) {
   const {
-    control, register, name, errors, clearErrors, defaultValues = {},
+    control, register, name, errors, clearErrors, defaultValues = [],
     watch,
   } = props
   const { fields, append, remove } = useFieldArray({
@@ -32,7 +32,7 @@ export default function TableComposerAttributeForm(props) {
   }
 
   const errorMessage = _(errors, `${name}.message`) ?? ''
-  console.log('DEFAULT VALUE', defaultValues)
+
   return (
     <div className='bg-sky-50 dark:bg-gray-900 cursor-default rounded'>
       {fields.map((field, index) => (
@@ -136,6 +136,6 @@ TableComposerAttributeForm.propTypes = {
   name: PropTypes.string,
   errors: PropTypes.object,
   clearErrors: PropTypes.func,
-  defaultValues: PropTypes.object,
+  defaultValues: PropTypes.array,
   watch: PropTypes.func,
 }
