@@ -36,7 +36,6 @@ export default function ContributionSkillsForm(props) {
       />
       <InputSelect
         control={control}
-        defaultValue=''
         errors={errors}
         label='Skill Category'
         name='skillCategory'

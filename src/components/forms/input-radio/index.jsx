@@ -8,11 +8,12 @@ import { FormFieldWrapper } from '../FormFieldWrapper'
 export default function InputRadio(props) {
   const {
     label, name, control, errors, options = [],
-    className,
+    className, defaultValue,
   } = props
   const { field: { onChange, value } } = useController({
     name,
     control,
+    defaultValue: defaultValue || options[0],
   })
   const errorMessage = _(errors, `${name}.message`) ?? ''
 
@@ -24,7 +25,6 @@ export default function InputRadio(props) {
       name={name}
     >
       <RadioGroup value={value || options[0]} onChange={onChange}>
-        <RadioGroup.Label className='sr-only'>Server size</RadioGroup.Label>
         <div className='flex'>
           {options.map((item) => (
             <RadioGroup.Option
@@ -61,4 +61,5 @@ InputRadio.propTypes = {
   errors: PropTypes.object,
   options: PropTypes.array,
   className: PropTypes.string,
+  defaultValue: PropTypes.object,
 }

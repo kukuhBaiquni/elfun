@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
 import { TrashIcon, PencilIcon } from '@heroicons/react/solid'
+import numberFormat from 'utils/number-format'
 import gridClass from './grid-class'
 
 export default function TableComponent(props) {
@@ -35,7 +36,13 @@ export default function TableComponent(props) {
               {item.attributes.map((attr) => (
                 <div className='dark:bg-gray-700 bg-gray-300 p-1 text-sm overflow-hidden' key={attr.attributeName}>
                   <p className='mb-0.5 whitespace-nowrap overflow-ellipsis'>{attr.attributeName}</p>
-                  <p className='dark:bg-gray-900 font-bold bg-gray-100 text-general py-1 font-nunito text-xs'>{`${new Intl.NumberFormat().format(attr.value)}${attr.suffix}`}</p>
+                  <p className='dark:bg-gray-900 font-bold bg-gray-100 text-general py-1 font-nunito text-xs'>
+                    {attr.type?.value === 'FIXED' ? (
+                      `${numberFormat(attr.value)}${attr.suffix.label}`
+                    ) : (
+                      `${numberFormat(attr.valueRange[0])}${attr.suffix.label} - ${numberFormat(attr.valueRange[1])}${attr.suffix.label}`
+                    )}
+                  </p>
                 </div>
               ))}
             </div>

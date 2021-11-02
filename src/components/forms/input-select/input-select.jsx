@@ -80,12 +80,11 @@ InputSelect.propTypes = {
   errors: PropTypes.object,
   className: PropTypes.string,
   control: PropTypes.object,
-  defaultValue: PropTypes.string,
+  defaultValue: PropTypes.object,
 }
 
 InputSelect.defaultProps = {
   options: [],
   label: '',
   errors: {},
-  defaultValue: '',
 }
