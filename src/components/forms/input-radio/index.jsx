@@ -15,6 +15,7 @@ export default function InputRadio(props) {
     control,
     defaultValue: defaultValue || options[0],
   })
+
   const errorMessage = _(errors, `${name}.message`) ?? ''
 
   return (
@@ -31,24 +32,22 @@ export default function InputRadio(props) {
         <div className='flex'>
           {options.map((item) => (
             <RadioGroup.Option
-              className={({ checked }) => clsx(
-                checked ? 'bg-sky-500 text-white' : 'bg-transparent',
+              className={clsx(
+                value.value === item.value ? 'bg-sky-500 text-white' : 'bg-transparent',
                 'relative px-3 py-1 cursor-pointer flex focus:outline-none border-input',
                 'border-l-0 border-r-0 first:border-l last:border-r',
               )}
               key={item.label}
               value={item}
             >
-              {({ checked }) => (
-                <div className='text-sm'>
-                  <RadioGroup.Label
-                    as='p'
-                    className={clsx(checked ? 'text-white' : 'text-general')}
-                  >
-                    {item.label}
-                  </RadioGroup.Label>
-                </div>
-              )}
+              <div className='text-sm'>
+                <RadioGroup.Label
+                  as='p'
+                  className={clsx(value.value === item.value ? 'text-white' : 'text-general')}
+                >
+                  {item.label}
+                </RadioGroup.Label>
+              </div>
             </RadioGroup.Option>
           ))}
         </div>
