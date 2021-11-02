@@ -40,7 +40,7 @@ export default function TableComponent(props) {
                     {attr.type?.value === 'FIXED' ? (
                       `${numberFormat(attr.value)}${attr.suffix.label}`
                     ) : (
-                      `${numberFormat(attr.valueRange[0])}${attr.suffix.label} - ${numberFormat(attr.valueRange[1])}${attr.suffix.label}`
+                      `${numberFormat(attr.valueRangeStart)}${attr.suffix.label} - ${numberFormat(attr.valueRangeEnd)}${attr.suffix.label}`
                     )}
                   </p>
                 </div>

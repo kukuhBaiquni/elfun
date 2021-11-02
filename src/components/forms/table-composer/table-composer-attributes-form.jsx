@@ -62,10 +62,10 @@ export default function TableComposerAttributeForm(props) {
                   <InputNumber
                     className='col-span-5'
                     control={control}
-                    defaultValue={defaultValues[index]?.valueRange[0]}
+                    defaultValue={defaultValues[index]?.valueRangeStart}
                     errors={errors}
                     label='From'
-                    name={`${name}.${index}.valueRange.0`}
+                    name={`${name}.${index}.valueRangeStart`}
                     placeholder='Value'
                   />
                   <div className='w-full h-10 mt-auto mb-3 flex items-center justify-center'>
@@ -74,10 +74,10 @@ export default function TableComposerAttributeForm(props) {
                   <InputNumber
                     className='col-span-5'
                     control={control}
-                    defaultValue={defaultValues[index]?.valueRange[1]}
+                    defaultValue={defaultValues[index]?.valueRangeEnd}
                     errors={errors}
                     label='To'
-                    name={`${name}.${index}.valueRange.1`}
+                    name={`${name}.${index}.valueRangeEnd`}
                     placeholder='Value'
                   />
                 </div>
