@@ -11,8 +11,7 @@ export default function TableComposerFieldsForm(props) {
     fields, remove, form, name, defaultValues = [],
   } = props
   const {
-    control, formState: { errors }, register, clearErrors,
-    watch,
+    formState: { errors }, register,
   } = form
 
   return (
@@ -31,13 +30,9 @@ export default function TableComposerFieldsForm(props) {
             title='Attributes'
           >
             <TableComposerAttributeForm
-              clearErrors={clearErrors}
               defaultValues={defaultValues[index]?.attributes}
-              fieldIndex={index}
+              form={form}
               name={`${name}.${index}.attributes`}
-              watch={watch}
-              {...{ control, register }}
-              errors={errors}
             />
           </Collapse>
           <div className='mt-2 flex justify-end'>
@@ -58,7 +53,6 @@ export default function TableComposerFieldsForm(props) {
 TableComposerFieldsForm.propTypes = {
   fields: PropTypes.array,
   remove: PropTypes.func,
-  move: PropTypes.func,
   name: PropTypes.string,
   form: PropTypes.object,
   defaultValues: PropTypes.array,

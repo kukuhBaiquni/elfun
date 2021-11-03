@@ -13,8 +13,7 @@ export const SKILL_CATEGORIES = [
 ]
 
 export const VALUE_SUFFIX = [
-  { label: 'none', value: '-' },
   { label: '%', value: '%' },
   { label: 'Seconds', value: 's' },
-  { label: 'MP', value: 'mp' },
+  { label: 'MP', value: 'MP' },
 ]
