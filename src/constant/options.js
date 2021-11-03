@@ -16,4 +16,24 @@ export const VALUE_SUFFIX = [
   { label: '%', value: '%' },
   { label: 'Seconds', value: 's' },
   { label: 'MP', value: 'MP' },
+  { label: 'Value of current Hp', value: '% of current HP' },
+  { label: 'Value of Hp', value: '% of HP' },
+  { label: 'Value of Skill Damage', value: '% of skill Damage' },
+]
+
+export const SKILL_ATTRIBUTES = [
+  { label: 'none', value: '' },
+  { label: 'Damage', value: 'DMG' },
+  { label: 'Defense Increase', value: 'DEF+' },
+  { label: 'Physical Defense Increase', value: 'PDEF+' },
+  { label: 'Magical Defense Increase', value: 'MDEF+' },
+  { label: 'Max Hits', value: 'MH' },
+  { label: 'Duration', value: 'DUR' },
+  { label: 'Cooldown', value: 'CD' },
+  { label: 'Mana Cost', value: 'MP' },
+  { label: 'Resistance Increase', value: 'RES+' },
+  { label: 'Attack Speed Increase', value: 'AS+' },
+  { label: 'Move Speed Increase', value: 'MS+' },
+  { label: 'Move and Jump Speed Increase', value: 'MJS+' },
+  { label: 'Speed Increase', value: 'SPD+' },
 ]

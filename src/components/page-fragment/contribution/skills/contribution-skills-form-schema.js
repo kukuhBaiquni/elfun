@@ -8,6 +8,7 @@ const schema = yup.object().shape({
     label: yup.string(),
     value: yup.string(),
   }).required('Skill Category is required!'),
+  affectAnotherSkill: yup.bool(),
   skillIcon: yup.array().required('Skill Icon is required!').length(1),
   table: yup.array().required().min(1, 'Table Information is required!'),
 })
