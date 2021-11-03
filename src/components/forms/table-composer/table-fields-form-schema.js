@@ -20,6 +20,14 @@ const schema = yup.object().shape({
               awaken: yup.string(),
             }),
           ),
+          damageType: yup.object({
+            label: yup.string(),
+            value: yup.string(),
+          }),
+          suffix: yup.object({
+            label: yup.string(),
+            value: yup.string(),
+          }),
         }),
       ),
       fieldName: yup.string().required('Field Name is required!'),

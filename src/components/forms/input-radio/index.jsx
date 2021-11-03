@@ -8,7 +8,7 @@ import { FormFieldWrapper } from '../FormFieldWrapper'
 export default function InputRadio(props) {
   const {
     label, name, control, errors, options = [],
-    className, defaultValue,
+    className, defaultValue, disabled,
   } = props
   const { field: { onChange, value } } = useController({
     name,
@@ -26,6 +26,7 @@ export default function InputRadio(props) {
       name={name}
     >
       <RadioGroup
+        disabled={disabled}
         value={value || options[0]}
         onChange={onChange}
       >
@@ -33,9 +34,10 @@ export default function InputRadio(props) {
           {options.map((item) => (
             <RadioGroup.Option
               className={clsx(
-                value.value === item.value ? 'bg-sky-500 text-white' : 'bg-transparent',
+                value.value === item.value ? (disabled ? 'bg-gray-500' : 'bg-sky-500 text-white') : 'bg-transparent',
                 'relative px-3 py-2 cursor-pointer flex focus:outline-none border-input',
                 'border-l-0 border-r-0 first:border-l last:border-r',
+                disabled && 'cursor-not-allowed',
               )}
               key={item.label}
               value={item}
@@ -64,4 +66,5 @@ InputRadio.propTypes = {
   options: PropTypes.array,
   className: PropTypes.string,
   defaultValue: PropTypes.object,
+  disabled: PropTypes.bool,
 }

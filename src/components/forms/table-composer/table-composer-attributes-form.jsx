@@ -26,8 +26,15 @@ export default function TableComposerAttributeForm(props) {
       clearErrors(name)
       append({
         attributeName: '',
-        value: '',
-        valueRange: ['', ''],
+        value: {
+          normal: '',
+          awaken: '',
+        },
+        flag: { label: 'none', value: '' },
+        valueRange: [
+          { normal: '', awaken: '' },
+          { normal: '', awaken: '' },
+        ],
         type: INPUT_TYPE[0],
         suffix: VALUE_SUFFIX[0],
       })
@@ -35,7 +42,6 @@ export default function TableComposerAttributeForm(props) {
   }
 
   const errorMessage = _(errors, `${name}.message`) ?? ''
-  console.log(errors)
 
   return (
     <div className='bg-sky-50 dark:bg-gray-900 cursor-default rounded'>
@@ -60,7 +66,7 @@ export default function TableComposerAttributeForm(props) {
               options={SKILL_ATTRIBUTES}
             />
             <InputRadio
-              className='sm:col-span-6'
+              className='sm:col-span-4'
               control={control}
               defaultValue={defaultValues[index]?.type}
               errors={errors}
@@ -69,7 +75,19 @@ export default function TableComposerAttributeForm(props) {
               options={INPUT_TYPE}
             />
             <InputRadio
-              className='sm:col-span-6'
+              className='sm:col-span-4'
+              control={control}
+              defaultValue={defaultValues[index]?.damageType}
+              disabled={watch(`${name}.${index}.flag.value`) !== 'DMG'}
+              label='Damage Type'
+              name={`${name}.${index}.damageType`}
+              options={[
+                { label: 'Physical', value: 'PHY' },
+                { label: 'Magical', value: 'MAG' },
+              ]}
+            />
+            <InputRadio
+              className='sm:col-span-4'
               control={control}
               defaultValue={defaultValues[index]?.hasAwakeningEffect}
               errors={errors}
