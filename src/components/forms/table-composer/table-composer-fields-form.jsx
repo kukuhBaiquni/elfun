@@ -32,7 +32,7 @@ export default function TableComposerFieldsForm(props) {
           >
             <TableComposerAttributeForm
               clearErrors={clearErrors}
-              defaultValues={defaultValues?.attributes}
+              defaultValues={defaultValues[index]?.attributes}
               fieldIndex={index}
               name={`${name}.${index}.attributes`}
               watch={watch}
