@@ -38,3 +38,13 @@ export const SKILL_ATTRIBUTES = [
   { label: 'Move and Jump Speed Increase', value: 'MJS+' },
   { label: 'Speed Increase', value: 'SPD+' },
 ]
+
+export const DAMAGE_TYPE = [
+  { label: 'Physical', value: 'PHY' },
+  { label: 'Magical', value: 'MAG' },
+]
+
+export const YES_NO = [
+  { label: 'No', value: false },
+  { label: 'Yes', value: true },
+]

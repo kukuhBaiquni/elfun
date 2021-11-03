@@ -3,7 +3,6 @@ import clsx from 'clsx'
 import { TrashIcon, PencilIcon } from '@heroicons/react/solid'
 import numberFormat from 'utils/number-format'
 import _ from 'lodash/capitalize'
-import { Fragment } from 'react'
 import gridClass from './grid-class'
 
 export default function TableComponent(props) {
@@ -33,7 +32,7 @@ export default function TableComponent(props) {
       >
         {tableFields.map((item) => (
           <div className='text-center' key={item.fieldName}>
-            <div className='bg-pink-600 text-white mb-1 py-2'>
+            <div className='bg-pink-500 text-white mb-1 py-2'>
               <p>{item.fieldName}</p>
             </div>
             <div className={clsx(
@@ -44,20 +43,30 @@ export default function TableComponent(props) {
               {item.attributes.map((attr) => (
                 <div className='dark:bg-gray-700 bg-gray-300 p-1 text-sm overflow-hidden' key={attr.attributeName}>
                   <p className='dark:bg-gray-800 bg-gray-200 py-1 mb-1 whitespace-nowrap overflow-ellipsis'>{attr.attributeName}</p>
-                  <div className='grid grid-cols-2 gap-1'>
-                    {Object.entries(attr.value).map(([keys, value]) => (
-                      value && attr.hasAwakeningEffect?.value && (
-                        <Fragment key={keys}>
-                          <p className='dark:bg-gray-900 font-bold bg-gray-100 text-general py-1'>
-                            {_(keys)}
-                          </p>
-                          <p className='bg-pink-600 text-white py-1'>
-                            {`${value}${attr.suffix.value}`}
-                          </p>
-                        </Fragment>
-                      )
-                    ))}
-                  </div>
+                  {attr.hasAwakeningEffect.value ? (
+                    <div className='grid grid-cols-2 gap-1'>
+                      {Object.entries(attr.value).map(([keys]) => (
+                        <p className='dark:bg-gray-900 font-bold bg-gray-100 text-general py-1' key={keys}>
+                          {_(keys)}
+                        </p>
+                      ))}
+                      {Object.entries(attr.type?.value === 'FIXED' ? attr.value : attr.valueRange).map(([keys, value]) => (
+                        <p className='bg-pink-500 text-white py-1' key={keys}>
+                          {attr.type?.value === 'FIXED' ? (
+                              `${numberFormat(value)}${attr.suffix.value}`
+                          ) : (
+                              `${numberFormat(value[0])}${attr.suffix.value} → ${numberFormat(value[1])}${attr.suffix.value}`
+                          )}
+                        </p>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className='w-full h-full'>
+                      <p className='dark:bg-gray-900 bg-gray-200 py-5 text-pink-500'>
+                        {`${attr.value.normal}${attr.suffix.value}`}
+                      </p>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -73,11 +82,3 @@ TableComponent.propTypes = {
   openModal: PropTypes.func,
   deleteTable: PropTypes.func,
 }
-{ /* <p className='dark:bg-gray-900 font-bold bg-gray-100 text-general py-1 font-nunito text-xs' key={key}>
-                        {key}
-                        {attr.type?.value === 'FIXED' ? (
-                      `${numberFormat(attr.value.normal)}${attr.suffix.value}`
-                        ) : (
-                      `${numberFormat(attr.valueRange[0]?.normal)}${attr.suffix.value} - ${numberFormat(attr.valueRange[1]?.normal)}${attr.suffix.value}`
-                        )}
-                      </p> */ }

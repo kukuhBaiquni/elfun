@@ -3,7 +3,9 @@ import Button from 'components/common/button'
 import { useFieldArray } from 'react-hook-form'
 import PropTypes from 'prop-types'
 import _ from 'lodash/get'
-import { VALUE_SUFFIX, INPUT_TYPE, SKILL_ATTRIBUTES } from 'constant/options'
+import {
+  VALUE_SUFFIX, INPUT_TYPE, SKILL_ATTRIBUTES, YES_NO, DAMAGE_TYPE,
+} from 'constant/options'
 import InputText from '../input-text/input-text'
 import InputSelect from '../input-select/input-select'
 import { FormFieldWrapper } from '../FormFieldWrapper'
@@ -31,10 +33,12 @@ export default function TableComposerAttributeForm(props) {
           awaken: '',
         },
         flag: { label: 'none', value: '' },
-        valueRange: [
-          { normal: '', awaken: '' },
-          { normal: '', awaken: '' },
-        ],
+        damageType: DAMAGE_TYPE[0],
+        valueRange: {
+          normal: ['', ''],
+          awaken: ['', ''],
+        },
+        hasAwakeningEffect: YES_NO[0],
         type: INPUT_TYPE[0],
         suffix: VALUE_SUFFIX[0],
       })
@@ -42,7 +46,7 @@ export default function TableComposerAttributeForm(props) {
   }
 
   const errorMessage = _(errors, `${name}.message`) ?? ''
-
+  console.log(watch())
   return (
     <div className='bg-sky-50 dark:bg-gray-900 cursor-default rounded'>
       {fields.map((field, index) => (
@@ -81,10 +85,7 @@ export default function TableComposerAttributeForm(props) {
               disabled={watch(`${name}.${index}.flag.value`) !== 'DMG'}
               label='Damage Type'
               name={`${name}.${index}.damageType`}
-              options={[
-                { label: 'Physical', value: 'PHY' },
-                { label: 'Magical', value: 'MAG' },
-              ]}
+              options={DAMAGE_TYPE}
             />
             <InputRadio
               className='sm:col-span-4'
@@ -93,10 +94,7 @@ export default function TableComposerAttributeForm(props) {
               errors={errors}
               label='Awakening Effect'
               name={`${name}.${index}.hasAwakeningEffect`}
-              options={[
-                { label: 'No', value: false },
-                { label: 'Yes', value: true },
-              ]}
+              options={YES_NO}
             />
             <TableComposerAttributeConditionalInput
               attributeIndex={index}
