@@ -6,6 +6,7 @@ import { SKILL_CATEGORIES } from 'constant/options'
 import TableComposer from 'components/forms/table-composer'
 import PropTypes from 'prop-types'
 import Button from 'components/common/button'
+import InputRadio from 'components/forms/input-radio'
 
 export default function ContributionSkillsForm(props) {
   const { form, onSubmit } = props
@@ -40,6 +41,15 @@ export default function ContributionSkillsForm(props) {
         label='Skill Category'
         name='skillCategory'
         options={SKILL_CATEGORIES}
+      />
+      <InputRadio
+        control={control}
+        label='Affect Another Skill'
+        name='affectAnotherSkill'
+        options={[
+          { label: 'No', value: false },
+          { label: 'Yes', value: true },
+        ]}
       />
       <InputImage label='Skill Icon' name='skillIcon' />
       <TableComposer
