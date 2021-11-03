@@ -6,7 +6,7 @@ import clsx from 'clsx'
 export function FormFieldWrapper(props) {
   const {
     name, label, children, bordered, errorMessage,
-    className,
+    className, disabled,
   } = props
   // eslint-disable-next-line no-console
   // console.log('📝', props)
@@ -20,6 +20,7 @@ export function FormFieldWrapper(props) {
       <div className={clsx(
         bordered && 'border-input focus-within:border-input-focus',
         'w-full my-1 font-nunito rounded transition-all duration-300',
+        disabled && 'dark:bg-gray-600 bg-gray-300',
       )}
       >
         {children}
@@ -41,6 +42,7 @@ FormFieldWrapper.propTypes = {
   bordered: PropTypes.bool,
   errorMessage: PropTypes.string,
   className: PropTypes.string,
+  disabled: PropTypes.bool,
 }
 
 FormFieldWrapper.defaultProps = {

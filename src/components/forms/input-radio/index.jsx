@@ -34,7 +34,7 @@ export default function InputRadio(props) {
             <RadioGroup.Option
               className={clsx(
                 value.value === item.value ? 'bg-sky-500 text-white' : 'bg-transparent',
-                'relative px-3 py-1 cursor-pointer flex focus:outline-none border-input',
+                'relative px-3 py-2 cursor-pointer flex focus:outline-none border-input',
                 'border-l-0 border-r-0 first:border-l last:border-r',
               )}
               key={item.label}

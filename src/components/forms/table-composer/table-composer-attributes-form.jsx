@@ -35,12 +35,13 @@ export default function TableComposerAttributeForm(props) {
   }
 
   const errorMessage = _(errors, `${name}.message`) ?? ''
+  console.log(errors)
 
   return (
     <div className='bg-sky-50 dark:bg-gray-900 cursor-default rounded'>
       {fields.map((field, index) => (
         <div className='dark:bg-gray-900 bg-sky-50 p-2 border-b dark:border-gray-600 border-gray-300' key={field.$id}>
-          <div className='grid grid-cols-1 sm:grid-cols-12 gap-2 flex-grow'>
+          <div className='grid grid-cols-1 sm:grid-cols-12 gap-x-2 gap flex-grow'>
             <InputText
               className='sm:col-span-12'
               defaultValue={defaultValues[index]?.attributeName}
@@ -59,7 +60,7 @@ export default function TableComposerAttributeForm(props) {
               options={SKILL_ATTRIBUTES}
             />
             <InputRadio
-              className='sm:col-span-4'
+              className='sm:col-span-6'
               control={control}
               defaultValue={defaultValues[index]?.type}
               errors={errors}
@@ -68,11 +69,11 @@ export default function TableComposerAttributeForm(props) {
               options={INPUT_TYPE}
             />
             <InputRadio
-              className='sm:col-span-4'
+              className='sm:col-span-6'
               control={control}
               defaultValue={defaultValues[index]?.hasAwakeningEffect}
               errors={errors}
-              label='Has Awakening Effect'
+              label='Awakening Effect'
               name={`${name}.${index}.hasAwakeningEffect`}
               options={[
                 { label: 'No', value: false },
@@ -83,6 +84,16 @@ export default function TableComposerAttributeForm(props) {
               attributeIndex={index}
               control={control}
               defaultValues={defaultValues[index]}
+              identifier='normal'
+              inputName={`${name}.${index}`}
+              inputType={watch(`${name}.${index}.type`)?.value}
+            />
+            <TableComposerAttributeConditionalInput
+              attributeIndex={index}
+              control={control}
+              defaultValues={defaultValues[index]}
+              disabled={!watch(`${name}.${index}.hasAwakeningEffect`)?.value}
+              identifier='awaken'
               inputName={`${name}.${index}`}
               inputType={watch(`${name}.${index}.type`)?.value}
             />
@@ -94,15 +105,6 @@ export default function TableComposerAttributeForm(props) {
               name={`${name}.${index}.suffix`}
               options={VALUE_SUFFIX}
             />
-            {watch(`${name}.${index}.hasAwakeningEffect`)?.value && (
-              <TableComposerAttributeConditionalInput
-                attributeIndex={index}
-                control={control}
-                defaultValues={defaultValues[index]}
-                inputName={`${name}.${index}`}
-                inputType={watch(`${name}.${index}.type`)?.value}
-              />
-            )}
           </div>
           <div className='mt-2 flex justify-end'>
             <Button

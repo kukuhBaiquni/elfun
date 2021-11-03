@@ -5,12 +5,13 @@ import { memo } from 'react'
 import _ from 'lodash/get'
 import NumberFormat from 'react-number-format'
 import { useController } from 'react-hook-form'
+import { LockClosedIcon } from '@heroicons/react/solid'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 
 function InputText(props) {
   const {
     name, label, placeholder, defaultValue, control, errors,
-    className,
+    className, disabled,
   } = props
   const { field: { onChange, value } } = useController({
     name,
@@ -24,22 +25,27 @@ function InputText(props) {
     <FormFieldWrapper
       bordered
       className={className}
+      disabled={disabled}
       errorMessage={errorMessage}
       label={label}
       name={name}
     >
-      <NumberFormat
-        autoComplete='off'
-        className='w-full outline-none placeholder-gray-500 bg-transparent text-sm p-2'
-        decimalScale={0}
-        defaultValue={defaultValue}
-        id={name}
-        isNumericString
-        placeholder={placeholder}
-        thousandSeparator
-        value={value}
-        onValueChange={(result) => onChange(result.value)}
-      />
+      <div className='flex justify-between items-center'>
+        <NumberFormat
+          autoComplete='off'
+          className='w-full outline-none disabled:cursor-not-allowed placeholder-gray-500 bg-transparent text-sm p-2'
+          decimalScale={0}
+          defaultValue={defaultValue}
+          disabled={disabled}
+          id={name}
+          isNumericString
+          placeholder={placeholder}
+          thousandSeparator
+          value={value}
+          onValueChange={(result) => onChange(result.value)}
+        />
+        {disabled && <LockClosedIcon className='w-5 h-5 m-2' />}
+      </div>
     </FormFieldWrapper>
   )
 }
@@ -54,6 +60,7 @@ InputText.propTypes = {
   errors: PropTypes.object,
   className: PropTypes.string,
   control: PropTypes.object,
+  disabled: PropTypes.bool,
 }
 
 InputText.defaultProps = {
