@@ -32,6 +32,7 @@ export default function TableComposerAttributeForm(props) {
   }
 
   const errorMessage = _(errors, `${name}.message`) ?? ''
+  console.log('FORM IN ATTR', defaultValues)
 
   return (
     <div className='bg-sky-50 dark:bg-gray-900 cursor-default rounded'>
