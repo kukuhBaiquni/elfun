@@ -14,12 +14,10 @@ const schema = yup.object().shape({
             awaken: yup.string(),
           }),
           type: yup.object(),
-          valueRange: yup.array().length(2).of(
-            yup.object({
-              normal: yup.string(),
-              awaken: yup.string(),
-            }),
-          ),
+          valueRange: yup.object({
+            normal: yup.array().of(yup.string()),
+            awaken: yup.array().of(yup.string()),
+          }),
           damageType: yup.object({
             label: yup.string(),
             value: yup.string(),
@@ -27,6 +25,10 @@ const schema = yup.object().shape({
           suffix: yup.object({
             label: yup.string(),
             value: yup.string(),
+          }),
+          hasAwakeningEffect: yup.object({
+            label: yup.string(),
+            value: yup.bool(),
           }),
         }),
       ),

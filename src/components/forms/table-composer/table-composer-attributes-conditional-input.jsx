@@ -16,10 +16,10 @@ export default function TableComposerAttributeConditionalInput(props) {
           <InputNumber
             className='col-span-5'
             control={control}
-            defaultValue={defaultValues?.valueRange[0]?.[identifier]}
+            defaultValue={defaultValues?.valueRange?.[identifier][0]}
             disabled={disabled}
             label={`From (${_(identifier)})`}
-            name={`${inputName}.valueRange.0.${identifier}`}
+            name={`${inputName}.valueRange.${identifier}.0`}
             placeholder='Value'
           />
           <div className='w-full h-10 mt-auto mb-3 flex items-center justify-center'>
@@ -28,10 +28,10 @@ export default function TableComposerAttributeConditionalInput(props) {
           <InputNumber
             className='col-span-5'
             control={control}
-            defaultValue={defaultValues?.valueRange[1]?.[identifier]}
+            defaultValue={defaultValues?.valueRange?.[identifier][1]}
             disabled={disabled}
             label={`To (${_(identifier)})`}
-            name={`${inputName}.valueRange.1.${identifier}`}
+            name={`${inputName}.valueRange.${identifier}.1`}
             placeholder='Value'
           />
         </div>
