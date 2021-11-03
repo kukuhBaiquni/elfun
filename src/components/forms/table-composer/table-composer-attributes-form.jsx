@@ -11,10 +11,10 @@ import { FormFieldWrapper } from '../FormFieldWrapper'
 import InputRadio from '../input-radio'
 
 export default function TableComposerAttributeForm(props) {
+  const { name, defaultValues = [], form } = props
   const {
-    control, register, name, errors, clearErrors, defaultValues = [],
-    watch,
-  } = props
+    control, register, clearErrors, watch, formState: { errors },
+  } = form
   const { fields, append, remove } = useFieldArray({
     name,
     control,
@@ -27,6 +27,9 @@ export default function TableComposerAttributeForm(props) {
       append({
         attributeName: '',
         value: '',
+        valueRange: ['', ''],
+        type: INPUT_TYPE[0],
+        suffix: VALUE_SUFFIX[0],
       })
     }
   }
@@ -63,10 +66,10 @@ export default function TableComposerAttributeForm(props) {
                   <InputNumber
                     className='col-span-5'
                     control={control}
-                    defaultValue={defaultValues[index]?.valueRangeStart}
+                    defaultValue={defaultValues[index]?.valueRange[0]}
                     errors={errors}
                     label='From'
-                    name={`${name}.${index}.valueRangeStart`}
+                    name={`${name}.${index}.valueRange.0`}
                     placeholder='Value'
                   />
                   <div className='w-full h-10 mt-auto mb-3 flex items-center justify-center'>
@@ -75,10 +78,10 @@ export default function TableComposerAttributeForm(props) {
                   <InputNumber
                     className='col-span-5'
                     control={control}
-                    defaultValue={defaultValues[index]?.valueRangeEnd}
+                    defaultValue={defaultValues[index]?.valueRange[1]}
                     errors={errors}
                     label='To'
-                    name={`${name}.${index}.valueRangeEnd`}
+                    name={`${name}.${index}.valueRange.1`}
                     placeholder='Value'
                   />
                 </div>
@@ -132,11 +135,7 @@ export default function TableComposerAttributeForm(props) {
 }
 
 TableComposerAttributeForm.propTypes = {
-  control: PropTypes.object,
-  register: PropTypes.func,
   name: PropTypes.string,
-  errors: PropTypes.object,
-  clearErrors: PropTypes.func,
   defaultValues: PropTypes.array,
-  watch: PropTypes.func,
+  form: PropTypes.object,
 }
