@@ -4,20 +4,18 @@ import InputNumber from '../input-text/input-number'
 
 export default function TableComposerAttributeConditionalInput(props) {
   const {
-    form, name, defaultValues, attributeIndex,
+    control, name, defaultValues, attributeIndex, inputType,
   } = props
-  const { control, watch, formState: { errors } } = form
-  if (watch(`${name}.${attributeIndex}.type`)?.value === 'RANGE') {
+  if (inputType === 'RANGE') {
     return (
       <div className='sm:col-span-6'>
         <div className='grid grid-cols-11 gap-2'>
           <InputNumber
             className='col-span-5'
             control={control}
-            defaultValue={defaultValues[attributeIndex]?.valueRange[0]}
-            errors={errors}
+            defaultValue={defaultValues?.valueRange[0]}
             label='From (Normal)'
-            name={`${name}.${attributeIndex}.valueRange.0`}
+            name={`${name}.valueRange.0`}
             placeholder='Value'
           />
           <div className='w-full h-10 mt-auto mb-3 flex items-center justify-center'>
@@ -26,10 +24,9 @@ export default function TableComposerAttributeConditionalInput(props) {
           <InputNumber
             className='col-span-5'
             control={control}
-            defaultValue={defaultValues[attributeIndex]?.valueRange[1]}
-            errors={errors}
+            defaultValue={defaultValues?.valueRange[1]}
             label='To (Normal)'
-            name={`${name}.${attributeIndex}.valueRange.1`}
+            name={`${name}.valueRange.1`}
             placeholder='Value'
           />
         </div>
@@ -37,11 +34,10 @@ export default function TableComposerAttributeConditionalInput(props) {
     )
   }
   return (
-    <inputNumber
+    <InputNumber
       className='sm:col-span-6'
       control={control}
-      defaultValue={defaultValues[attributeIndex]?.value}
-      errors={errors}
+      defaultValue={defaultValues?.value}
       label='Value (Normal)'
       name={`${name}.${attributeIndex}.value`}
       placeholder='Value'
@@ -50,8 +46,9 @@ export default function TableComposerAttributeConditionalInput(props) {
 }
 
 TableComposerAttributeConditionalInput.propTypes = {
-  form: PropTypes.object,
+  control: PropTypes.object,
   name: PropTypes.string,
-  defaultValues: PropTypes.object,
+  defaultValues: PropTypes.array,
   attributeIndex: PropTypes.number,
+  inputType: PropTypes.string,
 }

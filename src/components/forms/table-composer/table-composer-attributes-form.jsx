@@ -1,11 +1,10 @@
-import { PlusIcon, TrashIcon, ArrowNarrowRightIcon } from '@heroicons/react/solid'
+import { PlusIcon, TrashIcon } from '@heroicons/react/solid'
 import Button from 'components/common/button'
 import { useFieldArray } from 'react-hook-form'
 import PropTypes from 'prop-types'
 import _ from 'lodash/get'
 import { VALUE_SUFFIX, INPUT_TYPE, SKILL_ATTRIBUTES } from 'constant/options'
 import InputText from '../input-text/input-text'
-import InputNumber from '../input-text/input-number'
 import InputSelect from '../input-select/input-select'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 import InputRadio from '../input-radio'
@@ -14,7 +13,7 @@ import TableComposerAttributeConditionalInput from './table-composer-attributes-
 export default function TableComposerAttributeForm(props) {
   const { name, defaultValues = [], form } = props
   const {
-    control, register, clearErrors, formState: { errors },
+    control, register, watch, clearErrors, formState: { errors },
   } = form
   const { fields, append, remove } = useFieldArray({
     name,
@@ -82,9 +81,10 @@ export default function TableComposerAttributeForm(props) {
             />
             <TableComposerAttributeConditionalInput
               attributeIndex={index}
-              defaultValues={defaultValues}
-              form={form}
-              name={name}
+              control={control}
+              defaultValues={defaultValues[index]}
+              inputName={`${name}.${index}`}
+              inputType={watch(`${name}.${index}.type`)?.value}
             />
             <InputSelect
               className='sm:col-span-6'
@@ -94,6 +94,15 @@ export default function TableComposerAttributeForm(props) {
               name={`${name}.${index}.suffix`}
               options={VALUE_SUFFIX}
             />
+            {watch(`${name}.${index}.hasAwakeningEffect`)?.value && (
+              <TableComposerAttributeConditionalInput
+                attributeIndex={index}
+                control={control}
+                defaultValues={defaultValues[index]}
+                inputName={`${name}.${index}`}
+                inputType={watch(`${name}.${index}.type`)?.value}
+              />
+            )}
           </div>
           <div className='mt-2 flex justify-end'>
             <Button
