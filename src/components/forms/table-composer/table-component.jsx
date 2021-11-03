@@ -38,9 +38,9 @@ export default function TableComponent(props) {
                   <p className='mb-0.5 whitespace-nowrap overflow-ellipsis'>{attr.attributeName}</p>
                   <p className='dark:bg-gray-900 font-bold bg-gray-100 text-general py-1 font-nunito text-xs'>
                     {attr.type?.value === 'FIXED' ? (
-                      `${numberFormat(attr.value)}${attr.suffix.value}`
+                      `${numberFormat(attr.value.normal)}${attr.suffix.value}`
                     ) : (
-                      `${numberFormat(attr.valueRange[0])}${attr.suffix.value} - ${numberFormat(attr.valueRange[1])}${attr.suffix.value}`
+                      `${numberFormat(attr.valueRange[0]?.normal)}${attr.suffix.value} - ${numberFormat(attr.valueRange[1]?.normal)}${attr.suffix.value}`
                     )}
                   </p>
                 </div>

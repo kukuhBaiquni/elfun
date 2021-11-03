@@ -1,11 +1,14 @@
 import { ArrowNarrowRightIcon } from '@heroicons/react/solid'
 import PropTypes from 'prop-types'
+import _ from 'lodash/capitalize'
 import InputNumber from '../input-text/input-number'
 
 export default function TableComposerAttributeConditionalInput(props) {
   const {
-    control, name, defaultValues, attributeIndex, inputType,
+    control, inputName, defaultValues, inputType,
+    disabled, identifier,
   } = props
+
   if (inputType === 'RANGE') {
     return (
       <div className='sm:col-span-6'>
@@ -13,9 +16,10 @@ export default function TableComposerAttributeConditionalInput(props) {
           <InputNumber
             className='col-span-5'
             control={control}
-            defaultValue={defaultValues?.valueRange[0]}
-            label='From (Normal)'
-            name={`${name}.valueRange.0`}
+            defaultValue={defaultValues?.valueRange[0]?.[identifier]}
+            disabled={disabled}
+            label={`From (${_(identifier)})`}
+            name={`${inputName}.valueRange.0.${identifier}`}
             placeholder='Value'
           />
           <div className='w-full h-10 mt-auto mb-3 flex items-center justify-center'>
@@ -24,9 +28,10 @@ export default function TableComposerAttributeConditionalInput(props) {
           <InputNumber
             className='col-span-5'
             control={control}
-            defaultValue={defaultValues?.valueRange[1]}
-            label='To (Normal)'
-            name={`${name}.valueRange.1`}
+            defaultValue={defaultValues?.valueRange[1]?.[identifier]}
+            disabled={disabled}
+            label={`To (${_(identifier)})`}
+            name={`${inputName}.valueRange.1.${identifier}`}
             placeholder='Value'
           />
         </div>
@@ -37,9 +42,10 @@ export default function TableComposerAttributeConditionalInput(props) {
     <InputNumber
       className='sm:col-span-6'
       control={control}
-      defaultValue={defaultValues?.value}
-      label='Value (Normal)'
-      name={`${name}.${attributeIndex}.value`}
+      defaultValue={defaultValues?.value?.identifier}
+      disabled={disabled}
+      label={`Value (${_(identifier)})`}
+      name={`${inputName}.value.${identifier}`}
       placeholder='Value'
     />
   )
@@ -47,8 +53,9 @@ export default function TableComposerAttributeConditionalInput(props) {
 
 TableComposerAttributeConditionalInput.propTypes = {
   control: PropTypes.object,
-  name: PropTypes.string,
-  defaultValues: PropTypes.array,
-  attributeIndex: PropTypes.number,
+  inputName: PropTypes.string,
+  defaultValues: PropTypes.object,
   inputType: PropTypes.string,
+  disabled: PropTypes.bool,
+  identifier: PropTypes.string,
 }

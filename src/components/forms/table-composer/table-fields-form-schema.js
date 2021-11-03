@@ -9,9 +9,17 @@ const schema = yup.object().shape({
         yup.object({
           flag: yup.object(),
           attributeName: yup.string().required('Attribute Name is required!'),
-          value: yup.string(),
+          value: yup.object({
+            normal: yup.string(),
+            awaken: yup.string(),
+          }),
           type: yup.object(),
-          valueRange: yup.array().length(2).of(yup.string()),
+          valueRange: yup.array().length(2).of(
+            yup.object({
+              normal: yup.string(),
+              awaken: yup.string(),
+            }),
+          ),
         }),
       ),
       fieldName: yup.string().required('Field Name is required!'),
