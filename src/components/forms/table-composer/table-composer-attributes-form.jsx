@@ -9,6 +9,7 @@ import {
 import InputText from '../input-text/input-text'
 import InputSelect from '../input-select/input-select'
 import { FormFieldWrapper } from '../FormFieldWrapper'
+import InputSwitch from '../input-switch'
 import InputRadio from '../input-radio'
 import TableComposerAttributeConditionalInput from './table-composer-attributes-conditional-input'
 
@@ -69,7 +70,14 @@ export default function TableComposerAttributeForm(props) {
               name={`${name}.${index}.flag`}
               options={SKILL_ATTRIBUTES}
             />
-            {watch(`${name}.${index}.flag.value`) === 'DMG' && (
+            <InputSwitch
+              className='sm:col-span-12'
+              control={control}
+              defaultValue={defaultValues[index]?.isDealingDamage}
+              label='Is Dealing Damage'
+              name={`${name}.${index}.isDealingDamage`}
+            />
+            {watch(`${name}.${index}.isDealingDamage`) && (
               <InputRadio
                 className='sm:col-span-12'
                 control={control}
