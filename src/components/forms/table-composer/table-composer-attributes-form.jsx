@@ -39,14 +39,14 @@ export default function TableComposerAttributeForm(props) {
           awaken: ['', ''],
         },
         hasAwakeningEffect: YES_NO[0],
-        type: INPUT_TYPE[0],
+        valueType: INPUT_TYPE[0],
         suffix: VALUE_SUFFIX[0],
       })
     }
   }
 
   const errorMessage = _(errors, `${name}.message`) ?? ''
-  console.log(watch())
+
   return (
     <div className='bg-sky-50 dark:bg-gray-900 cursor-default rounded'>
       {fields.map((field, index) => (
@@ -69,26 +69,28 @@ export default function TableComposerAttributeForm(props) {
               name={`${name}.${index}.flag`}
               options={SKILL_ATTRIBUTES}
             />
+            {watch(`${name}.${index}.flag.value`) === 'DMG' && (
+              <InputRadio
+                className='sm:col-span-12'
+                control={control}
+                defaultValue={defaultValues[index]?.damageType}
+                disabled={watch(`${name}.${index}.flag.value`) !== 'DMG'}
+                label='Damage Type'
+                name={`${name}.${index}.damageType`}
+                options={DAMAGE_TYPE}
+              />
+            )}
             <InputRadio
-              className='sm:col-span-4'
+              className='sm:col-span-6'
               control={control}
-              defaultValue={defaultValues[index]?.type}
+              defaultValue={defaultValues[index]?.valueType}
               errors={errors}
               label='Value Type'
-              name={`${name}.${index}.type`}
+              name={`${name}.${index}.valueType`}
               options={INPUT_TYPE}
             />
             <InputRadio
-              className='sm:col-span-4'
-              control={control}
-              defaultValue={defaultValues[index]?.damageType}
-              disabled={watch(`${name}.${index}.flag.value`) !== 'DMG'}
-              label='Damage Type'
-              name={`${name}.${index}.damageType`}
-              options={DAMAGE_TYPE}
-            />
-            <InputRadio
-              className='sm:col-span-4'
+              className='sm:col-span-6'
               control={control}
               defaultValue={defaultValues[index]?.hasAwakeningEffect}
               errors={errors}
@@ -102,7 +104,7 @@ export default function TableComposerAttributeForm(props) {
               defaultValues={defaultValues[index]}
               identifier='normal'
               inputName={`${name}.${index}`}
-              inputType={watch(`${name}.${index}.type`)?.value}
+              inputType={watch(`${name}.${index}.valueType`)?.value}
             />
             <TableComposerAttributeConditionalInput
               attributeIndex={index}
@@ -111,7 +113,7 @@ export default function TableComposerAttributeForm(props) {
               disabled={!watch(`${name}.${index}.hasAwakeningEffect`)?.value}
               identifier='awaken'
               inputName={`${name}.${index}`}
-              inputType={watch(`${name}.${index}.type`)?.value}
+              inputType={watch(`${name}.${index}.valueType`)?.value}
             />
             <InputSelect
               className='sm:col-span-6'

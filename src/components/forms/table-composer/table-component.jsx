@@ -47,12 +47,12 @@ export default function TableComponent(props) {
                     <div className='grid grid-cols-2 gap-1'>
                       {Object.entries(attr.value).map(([keys]) => (
                         <p className='dark:bg-gray-900 font-bold bg-gray-100 text-general py-1' key={keys}>
-                          {_(keys)}
+                          {_(keys)} {attr.flag.value === 'DMG' && `(${attr.damageType.label})`}
                         </p>
                       ))}
-                      {Object.entries(attr.type?.value === 'FIXED' ? attr.value : attr.valueRange).map(([keys, value]) => (
+                      {Object.entries(attr.valueType?.value === 'FIXED' ? attr.value : attr.valueRange).map(([keys, value]) => (
                         <p className='bg-pink-500 text-white py-1' key={keys}>
-                          {attr.type?.value === 'FIXED' ? (
+                          {attr.valueType?.value === 'FIXED' ? (
                               `${numberFormat(value)}${attr.suffix.value}`
                           ) : (
                               `${numberFormat(value[0])}${attr.suffix.value} → ${numberFormat(value[1])}${attr.suffix.value}`
@@ -63,7 +63,11 @@ export default function TableComponent(props) {
                   ) : (
                     <div className='w-full h-full'>
                       <p className='dark:bg-gray-900 bg-gray-200 py-5 text-pink-500'>
-                        {`${attr.value.normal}${attr.suffix.value}`}
+                        {attr.valueType?.value === 'FIXED' ? (
+                            `${attr.value.normal}${attr.suffix.value}`
+                        ) : (
+                            `${attr.valueRange.normal[0]} → ${attr.valueRange.normal[1]}`
+                        )}
                       </p>
                     </div>
                   )}
