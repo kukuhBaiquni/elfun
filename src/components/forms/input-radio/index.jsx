@@ -50,8 +50,9 @@ export default function InputRadio(props) {
                 <RadioGroup.Label
                   as='p'
                   className={clsx(
-                    value.value === item.value ? 'text-white' : 'text-general',
-                    'ml-2',
+                    value.value === item.value
+                      ? 'dark:text-gray-900 text-white'
+                      : 'text-general',
                   )}
                 >
                   {item.label}
