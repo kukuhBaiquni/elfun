@@ -30,6 +30,7 @@ const schema = yup.object().shape({
             label: yup.string(),
             value: yup.bool(),
           }),
+          isDealingDamage: yup.bool(),
         }),
       ),
       fieldName: yup.string().required('Field Name is required!'),

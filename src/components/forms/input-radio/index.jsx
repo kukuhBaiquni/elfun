@@ -8,14 +8,14 @@ import { FormFieldWrapper } from '../FormFieldWrapper'
 export default function InputRadio(props) {
   const {
     label, name, control, errors, options = [],
-    className, defaultValue, disabled, icon = null,
+    className, defaultValue, disabled,
   } = props
   const { field: { onChange, value } } = useController({
     name,
     control,
     defaultValue: defaultValue || options[0],
   })
-  console.log('icon', icon)
+
   const errorMessage = _(errors, `${name}.message`) ?? ''
 
   return (
@@ -47,7 +47,6 @@ export default function InputRadio(props) {
                 value.value === item.value ? (disabled ? 'bg-gray-500' : 'bg-green-500') : 'bg-transparent',
               )}
               >
-                {icon?.[item.value]}
                 <RadioGroup.Label
                   as='p'
                   className={clsx(
@@ -75,5 +74,4 @@ InputRadio.propTypes = {
   className: PropTypes.string,
   defaultValue: PropTypes.object,
   disabled: PropTypes.bool,
-  icon: PropTypes.object,
 }
