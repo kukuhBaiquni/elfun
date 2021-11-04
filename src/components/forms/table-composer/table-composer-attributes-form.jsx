@@ -48,7 +48,7 @@ export default function TableComposerAttributeForm(props) {
       })
     }
   }
-  console.log(watch())
+
   const errorMessage = _(errors, `${name}.message`) ?? ''
 
   return (
@@ -85,24 +85,6 @@ export default function TableComposerAttributeForm(props) {
               control={control}
               defaultValue={defaultValues[index]?.damageType}
               disabled={!watch(`${name}.${index}.isDealingDamage`)}
-              icon={{
-                PHY: (
-                  <Image
-                    alt='physical'
-                    height={18}
-                    src={physical}
-                    width={18}
-                  />
-                ),
-                MAG: (
-                  <Image
-                    alt='physical'
-                    height={18}
-                    src={magical}
-                    width={18}
-                  />
-                ),
-              }}
               label='Damage Type'
               name={`${name}.${index}.damageType`}
               options={DAMAGE_TYPE}
