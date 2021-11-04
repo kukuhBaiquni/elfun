@@ -9,7 +9,7 @@ import { FormFieldWrapper } from '../FormFieldWrapper'
 
 export default function InputSelect(props) {
   const {
-    name, label, options, errors,
+    name, label, options = [], errors = {},
     className, control, defaultValue,
   } = props
   const { field: { onChange, value } } = useController({
@@ -81,10 +81,4 @@ InputSelect.propTypes = {
   className: PropTypes.string,
   control: PropTypes.object,
   defaultValue: PropTypes.object,
-}
-
-InputSelect.defaultProps = {
-  options: [],
-  label: '',
-  errors: {},
 }

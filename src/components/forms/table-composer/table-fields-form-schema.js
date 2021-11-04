@@ -13,7 +13,7 @@ const schema = yup.object().shape({
             normal: yup.string(),
             awaken: yup.string(),
           }),
-          type: yup.object(),
+          valueType: yup.object(),
           valueRange: yup.object({
             normal: yup.array().of(yup.string()),
             awaken: yup.array().of(yup.string()),
