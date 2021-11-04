@@ -77,17 +77,15 @@ export default function TableComposerAttributeForm(props) {
               label='Is Dealing Damage'
               name={`${name}.${index}.isDealingDamage`}
             />
-            {watch(`${name}.${index}.isDealingDamage`) && (
-              <InputRadio
-                className='sm:col-span-12'
-                control={control}
-                defaultValue={defaultValues[index]?.damageType}
-                disabled={watch(`${name}.${index}.flag.value`) !== 'DMG'}
-                label='Damage Type'
-                name={`${name}.${index}.damageType`}
-                options={DAMAGE_TYPE}
-              />
-            )}
+            <InputRadio
+              className='sm:col-span-12'
+              control={control}
+              defaultValue={defaultValues[index]?.damageType}
+              disabled={!watch(`${name}.${index}.isDealingDamage`)}
+              label='Damage Type'
+              name={`${name}.${index}.damageType`}
+              options={DAMAGE_TYPE}
+            />
             <InputRadio
               className='sm:col-span-6'
               control={control}
