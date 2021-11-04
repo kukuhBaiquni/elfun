@@ -32,7 +32,7 @@ export default function TableComponent(props) {
       >
         {tableFields.map((item) => (
           <div className='text-center' key={item.fieldName}>
-            <div className='bg-pink-500 text-white mb-1 py-2'>
+            <div className='bg-orange-500 text-white mb-1 py-2'>
               <p>{item.fieldName}</p>
             </div>
             <div className={clsx(
@@ -42,16 +42,16 @@ export default function TableComponent(props) {
             >
               {item.attributes.map((attr) => (
                 <div className='dark:bg-gray-700 bg-gray-300 p-1 text-sm overflow-hidden' key={attr.attributeName}>
-                  <p className='dark:bg-gray-800 bg-gray-200 py-1 mb-1 whitespace-nowrap overflow-ellipsis'>{attr.attributeName}</p>
+                  <p className='dark:bg-gray-800 bg-gray-200 py-2 mb-1 whitespace-nowrap overflow-ellipsis'>{attr.attributeName}</p>
                   {attr.hasAwakeningEffect.value ? (
                     <div className='grid grid-cols-2 gap-1'>
                       {Object.entries(attr.value).map(([keys]) => (
-                        <p className='dark:bg-gray-900 font-bold bg-gray-100 text-general py-1' key={keys}>
-                          {_(keys)} {attr.flag.value === 'DMG' && `(${attr.damageType.label})`}
+                        <p className='dark:bg-gray-900 font-bold bg-gray-100 text-general py-2' key={keys}>
+                          {_(keys)}
                         </p>
                       ))}
                       {Object.entries(attr.valueType?.value === 'FIXED' ? attr.value : attr.valueRange).map(([keys, value]) => (
-                        <p className='bg-pink-500 text-white py-1' key={keys}>
+                        <p className='bg-orange-500 text-white py-2' key={keys}>
                           {attr.valueType?.value === 'FIXED' ? (
                               `${numberFormat(value)}${attr.suffix.value}`
                           ) : (
@@ -61,15 +61,13 @@ export default function TableComponent(props) {
                       ))}
                     </div>
                   ) : (
-                    <div className='w-full h-full'>
-                      <p className='dark:bg-gray-900 bg-gray-200 py-5 text-pink-500'>
-                        {attr.valueType?.value === 'FIXED' ? (
-                            `${attr.value.normal}${attr.suffix.value}`
-                        ) : (
-                            `${attr.valueRange.normal[0]} → ${attr.valueRange.normal[1]}`
-                        )}
-                      </p>
-                    </div>
+                    <p className=' text-orange-500 py-7 dark:bg-gray-900 bg-gray-200'>
+                      {attr.valueType?.value === 'FIXED' ? (
+                        `${attr.value.normal}${attr.suffix.value}`
+                      ) : (
+                        `${attr.valueRange.normal[0]} → ${attr.valueRange.normal[1]}`
+                      )}
+                    </p>
                   )}
                 </div>
               ))}

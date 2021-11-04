@@ -56,6 +56,6 @@ InputSwitch.propTypes = {
   control: PropTypes.object,
   errors: PropTypes.object,
   className: PropTypes.string,
-  defaultValue: PropTypes.object,
+  defaultValue: PropTypes.bool,
   disabled: PropTypes.bool,
 }

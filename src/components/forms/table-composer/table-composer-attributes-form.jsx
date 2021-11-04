@@ -3,12 +3,9 @@ import Button from 'components/common/button'
 import { useFieldArray } from 'react-hook-form'
 import PropTypes from 'prop-types'
 import _ from 'lodash/get'
-import Image from 'next/image'
 import {
   VALUE_SUFFIX, INPUT_TYPE, SKILL_ATTRIBUTES, YES_NO, DAMAGE_TYPE,
 } from 'constant/options'
-import physical from '../../../../public/images/physic-dealer.png'
-import magical from '../../../../public/images/magic-dealer.png'
 import InputText from '../input-text/input-text'
 import InputSelect from '../input-select/input-select'
 import { FormFieldWrapper } from '../FormFieldWrapper'
