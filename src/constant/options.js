@@ -48,3 +48,8 @@ export const YES_NO = [
   { label: 'No', value: false },
   { label: 'Yes', value: true },
 ]
+
+export const PERCENTAGE_OR_FLAT = [
+  { label: 'Percentage', value: 'PERCENT' },
+  { label: 'Flat', value: 'FLAT' },
+]
