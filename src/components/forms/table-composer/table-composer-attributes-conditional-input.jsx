@@ -6,10 +6,10 @@ import InputNumber from '../input-text/input-number'
 export default function TableComposerAttributeConditionalInput(props) {
   const {
     control, inputName, defaultValues, inputType,
-    disabled, identifier,
+    disabled, identifier, forceFixedInput,
   } = props
 
-  if (inputType === 'RANGE') {
+  if (inputType === 'RANGE' && !forceFixedInput) {
     return (
       <div className='sm:col-span-6'>
         <div className='grid grid-cols-11 gap-2'>
@@ -58,4 +58,5 @@ TableComposerAttributeConditionalInput.propTypes = {
   inputType: PropTypes.string,
   disabled: PropTypes.bool,
   identifier: PropTypes.string,
+  forceFixedInput: PropTypes.bool,
 }

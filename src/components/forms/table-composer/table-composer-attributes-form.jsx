@@ -146,6 +146,7 @@ export default function TableComposerAttributeForm(props) {
                   control={control}
                   defaultValues={defaultValues[index]}
                   disabled={!watch(`${name}.${index}.hasAwakeningEffect`)?.value}
+                  forceFixedInput
                   identifier='awaken'
                   inputName={`${name}.${index}`}
                   inputType={watch(`${name}.${index}.valueType`)?.value}
