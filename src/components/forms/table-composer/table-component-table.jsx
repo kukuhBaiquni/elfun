@@ -7,6 +7,17 @@ import gridClass from './grid-class'
 export default function TableComponentTable(props) {
   const { data } = props
 
+  const calculateFixedPercent = (val) => {
+    const base = +val.normal
+    const percent = +val.awaken / 100
+    return base + (base * percent)
+  }
+
+  const calculateRangePercent = (val, percent, index) => {
+    const base = +val.normal[index]
+    return base + (base * (+percent / 100))
+  }
+
   return (
     <section className={clsx(
       'mt-1 gap-1 grid grid-cols-1 sm:grid-cols-1',
@@ -35,9 +46,18 @@ export default function TableComponentTable(props) {
                     {Object.entries(attr.valueType?.value === 'FIXED' ? attr.value : attr.valueRange).map(([keys, value]) => (
                       <p className='bg-coolGray-400 dark:bg-warmGray-600 text-white py-2' key={keys}>
                         {attr.valueType?.value === 'FIXED' ? (
-                          `${numberFormat(value)}${attr.suffix.value}`
+                          attr.hasAwakeningEffect && attr.awakeningModifier.value === 'PERCENT' && keys === 'awaken' ? (
+                            `${numberFormat(calculateFixedPercent(attr.value))}${attr.suffix.value}`
+                          ) : (
+                            `${numberFormat(value)}${attr.suffix.value}`
+                          )
                         ) : (
-                          `${numberFormat(value[0])}${attr.suffix.value} → ${numberFormat(value[1])}${attr.suffix.value}`
+                          attr.hasAwakeningEffect && attr.awakeningModifier.value === 'PERCENT' && keys === 'awaken' ? (
+                            `${numberFormat(calculateRangePercent(attr.valueRange, attr.value.awaken, 0))}${attr.suffix.value} → 
+                            ${numberFormat(calculateRangePercent(attr.valueRange, attr.value.awaken, 1))}${attr.suffix.value}`
+                          ) : (
+                            `${numberFormat(value[0])}${attr.suffix.value} → ${numberFormat(value[1])}${attr.suffix.value}`
+                          )
                         )}
                       </p>
                     ))}
