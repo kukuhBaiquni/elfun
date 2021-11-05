@@ -2,9 +2,8 @@ import clsx from 'clsx'
 import numberFormat from 'utils/number-format'
 import _ from 'lodash/capitalize'
 import PropTypes from 'prop-types'
-import { Fragment, useMemo } from 'react'
+import { Fragment } from 'react'
 import TableInformation from 'components/common/table/table-information-skill'
-import tableColumnsGenerator from 'utils/table-columns-generator'
 import gridClass from './grid-class'
 
 export default function TableComponentTable(props) {
@@ -21,10 +20,6 @@ export default function TableComponentTable(props) {
     return base + (base * (+percent / 100))
   }
 
-  const columns = useMemo(() => {
-    tableColumnsGenerator(data)
-  }, [data])
-  console.log('TJICUGE', data.map((item) => item.attributes).flat())
   return (
     <Fragment>
       <section className={clsx(
@@ -92,7 +87,7 @@ export default function TableComponentTable(props) {
           </div>
         ))}
       </section>
-      <TableInformation columns={columns} data={data.map((item) => item.attributes).flat()} />
+      <TableInformation data={data} />
     </Fragment>
   )
 }
