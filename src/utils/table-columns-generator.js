@@ -1,13 +1,12 @@
 import _ from 'lodash/startCase'
 
-const tableColumnsGenerator = (data) => {
-  console.log('DJANCOQUE', data)
-  return data.map((val) => ({
-    Header: val.fieldName,
-    columns: val.attributes.map((item) => ({
+const tableColumnsGenerator = (data) => data.map((val) => ({
+  Header: val.fieldName,
+  columns: val.attributes.map((item) => (
+    {
       Header: item.attributeName,
       columns: (() => {
-        if (item.hasAwakeningEffect) {
+        if (item.hasAwakeningEffect.value) {
           if (item.valueType.value === 'FIXED') {
             return Object.keys(item.value).map((key) => (
               {
@@ -26,7 +25,7 @@ const tableColumnsGenerator = (data) => {
         if (item.valueType.value === 'FIXED') {
           return {
             Header: '',
-            accessor: Object.keys(item.value)[0],
+            accessor: (value) => value.value.normal,
           }
         }
         return {
@@ -34,9 +33,9 @@ const tableColumnsGenerator = (data) => {
           accessor: (value) => value[Object.keys(item.valueRange)[0]].join('~'),
         }
       })(),
-    })),
-  }
-  ))
+    }
+  )),
 }
+))
 
 export default tableColumnsGenerator

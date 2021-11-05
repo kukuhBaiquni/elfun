@@ -24,7 +24,7 @@ export default function TableComponentTable(props) {
   const columns = useMemo(() => {
     tableColumnsGenerator(data)
   }, [data])
-
+  console.log('TJICUGE', data.map((item) => item.attributes).flat())
   return (
     <Fragment>
       <section className={clsx(
@@ -92,7 +92,7 @@ export default function TableComponentTable(props) {
           </div>
         ))}
       </section>
-      <TableInformation columns={columns} data={data} />
+      <TableInformation columns={columns} data={data.map((item) => item.attributes).flat()} />
     </Fragment>
   )
 }
