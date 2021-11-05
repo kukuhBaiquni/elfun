@@ -51,14 +51,14 @@ export default function TableComposerAttributeForm(props) {
   }
 
   const errorMessage = _(errors, `${name}.message`) ?? ''
-  console.log('aww', fields)
+
   return (
     <div className='bg-sky-50 dark:bg-gray-900 cursor-default rounded'>
       {fields.map((field, index) => (
         <Collapse
           additionalToolbar={(
             <TrashIcon
-              className='w-5 h-5 text-red-500'
+              className='w-5 h-5 text-red-400'
               onClick={() => remove(index)}
             />
           )}
