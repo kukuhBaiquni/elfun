@@ -44,14 +44,14 @@ export default function InputRadio(props) {
               <div className={clsx(
                 'text-sm flex items-center py-1 px-2',
                 'transition-all duration-300',
-                value.value === item.value ? (disabled ? 'bg-gray-500' : 'bg-green-500') : 'bg-transparent',
+                value.value === item.value ? (disabled ? 'bg-gray-500' : 'bg-sky-500') : 'bg-transparent',
               )}
               >
                 <RadioGroup.Label
                   as='p'
                   className={clsx(
                     value.value === item.value
-                      ? 'dark:text-gray-900 text-white'
+                      ? 'text-white'
                       : 'text-general',
                   )}
                 >

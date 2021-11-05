@@ -7,22 +7,14 @@ const schema = yup.object().shape({
     yup.object({
       attributes: yup.array().required().min(1, 'Attributes is required!').of(
         yup.object({
-          flag: yup.object(),
           attributeName: yup.string().required('Attribute Name is required!'),
-          value: yup.object({
-            normal: yup.string(),
-            awaken: yup.string(),
-          }),
-          valueType: yup.object(),
-          valueRange: yup.object({
-            normal: yup.array().of(yup.string()),
-            awaken: yup.array().of(yup.string()),
-          }),
+          flag: yup.object(),
+          isDealingDamage: yup.bool(),
           damageType: yup.object({
             label: yup.string(),
             value: yup.string(),
           }),
-          suffix: yup.object({
+          valueType: yup.object({
             label: yup.string(),
             value: yup.string(),
           }),
@@ -30,7 +22,22 @@ const schema = yup.object().shape({
             label: yup.string(),
             value: yup.bool(),
           }),
-          isDealingDamage: yup.bool(),
+          awakeningModifier: yup.object({
+            label: yup.string(),
+            value: yup.string(),
+          }),
+          value: yup.object({
+            normal: yup.string(),
+            awaken: yup.string(),
+          }),
+          valueRange: yup.object({
+            normal: yup.array().of(yup.string()),
+            awaken: yup.array().of(yup.string()),
+          }),
+          suffix: yup.object({
+            label: yup.string(),
+            value: yup.string(),
+          }),
         }),
       ),
       fieldName: yup.string().required('Field Name is required!'),

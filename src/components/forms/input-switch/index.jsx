@@ -30,7 +30,7 @@ export default function InputSwitch(props) {
         checked={value}
         className={clsx(
           value ? 'bg-sky-500' : 'bg-gray-500',
-          'relative inline-flex flex-shrink-0 h-[24px] w-[48px] border-2 border-transparent',
+          'relative inline-flex flex-shrink-0 h-[22px] w-[46px] border-2 border-transparent',
           'focus:outline-none focus-visible:ring-1 focus-visible:ring-white focus-visible:ring-opacity-75',
           'rounded-full cursor-pointer transition-colors ease-in-out duration-200',
         )}
@@ -41,7 +41,7 @@ export default function InputSwitch(props) {
           aria-hidden='true'
           className={clsx(
             value ? 'translate-x-6' : 'translate-x-0',
-            'pointer-events-none inline-block h-[20px] w-[20px] rounded-full bg-white shadow-lg',
+            'pointer-events-none inline-block h-[18px] w-[18px] rounded-full bg-white shadow-lg',
             'transform ring-0 transition ease-in-out duration-200',
           )}
         />

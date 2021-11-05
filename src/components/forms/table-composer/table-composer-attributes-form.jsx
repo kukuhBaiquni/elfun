@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import _ from 'lodash/get'
 import {
   VALUE_SUFFIX, INPUT_TYPE, SKILL_ATTRIBUTES, YES_NO, DAMAGE_TYPE,
+  PERCENTAGE_OR_FLAT,
 } from 'constant/options'
 import InputText from '../input-text/input-text'
 import InputSelect from '../input-select/input-select'
@@ -78,7 +79,7 @@ export default function TableComposerAttributeForm(props) {
               name={`${name}.${index}.isDealingDamage`}
             />
             <InputRadio
-              className='sm:col-span-12'
+              className='sm:col-span-6'
               control={control}
               defaultValue={defaultValues[index]?.damageType}
               disabled={!watch(`${name}.${index}.isDealingDamage`)}
@@ -103,6 +104,16 @@ export default function TableComposerAttributeForm(props) {
               label='Awakening Effect'
               name={`${name}.${index}.hasAwakeningEffect`}
               options={YES_NO}
+            />
+            <InputRadio
+              className='sm:col-span-6'
+              control={control}
+              defaultValue={defaultValues[index]?.awakeningModifier}
+              disabled={!watch(`${name}.${index}.hasAwakeningEffect`)?.value}
+              errors={errors}
+              label='Awakening Value Modifier'
+              name={`${name}.${index}.awakeningModifier`}
+              options={PERCENTAGE_OR_FLAT}
             />
             <TableComposerAttributeConditionalInput
               attributeIndex={index}
