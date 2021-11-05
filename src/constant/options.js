@@ -50,6 +50,6 @@ export const YES_NO = [
 ]
 
 export const PERCENTAGE_OR_FLAT = [
-  { label: 'Percentage', value: 'PERCENT' },
   { label: 'Flat', value: 'FLAT' },
+  { label: 'Percentage', value: 'PERCENT' },
 ]

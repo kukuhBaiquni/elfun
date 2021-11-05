@@ -11,6 +11,10 @@ export default function TableComponent(props) {
   } = props
   const { tableName, tableFields } = field
 
+  const calculatePercentage = (val) => {
+
+  }
+
   return (
     <div className='dark:bg-gray-900 bg-gray-200 p-2 font-titillium mb-2 overflow-x-auto'>
       <div className='flex justify-between items-center'>
@@ -32,7 +36,7 @@ export default function TableComponent(props) {
       >
         {tableFields.map((item) => (
           <div className='text-center' key={item.fieldName}>
-            <div className='bg-orange-500 text-white mb-1 py-2'>
+            <div className='bg-gray-800 text-white mb-1 py-2'>
               <p>{item.fieldName}</p>
             </div>
             <div className={clsx(
@@ -51,7 +55,7 @@ export default function TableComponent(props) {
                         </p>
                       ))}
                       {Object.entries(attr.valueType?.value === 'FIXED' ? attr.value : attr.valueRange).map(([keys, value]) => (
-                        <p className='bg-orange-500 text-white py-2' key={keys}>
+                        <p className='bg-gray-800 text-white py-2' key={keys}>
                           {attr.valueType?.value === 'FIXED' ? (
                               `${numberFormat(value)}${attr.suffix.value}`
                           ) : (
@@ -61,7 +65,7 @@ export default function TableComponent(props) {
                       ))}
                     </div>
                   ) : (
-                    <p className=' text-orange-500 py-7 dark:bg-gray-900 bg-gray-200'>
+                    <p className=' text-gray-800 py-7 dark:bg-gray-900 bg-gray-200'>
                       {attr.valueType?.value === 'FIXED' ? (
                         `${attr.value.normal}${attr.suffix.value}`
                       ) : (

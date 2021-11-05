@@ -30,25 +30,27 @@ export default function TableComposerAttributeForm(props) {
       clearErrors(name)
       append({
         attributeName: '',
+        flag: { label: 'none', value: '' },
+        isDealingDamage: false,
+        damageType: DAMAGE_TYPE[0],
+        valueType: INPUT_TYPE[0],
+        hasAwakeningEffect: YES_NO[0],
+        awakeningModifier: PERCENTAGE_OR_FLAT[0],
         value: {
           normal: '',
           awaken: '',
         },
-        flag: { label: 'none', value: '' },
-        damageType: DAMAGE_TYPE[0],
         valueRange: {
           normal: ['', ''],
           awaken: ['', ''],
         },
-        hasAwakeningEffect: YES_NO[0],
-        valueType: INPUT_TYPE[0],
         suffix: VALUE_SUFFIX[0],
       })
     }
   }
 
   const errorMessage = _(errors, `${name}.message`) ?? ''
-
+  console.log(watch())
   return (
     <div className='bg-sky-50 dark:bg-gray-900 cursor-default rounded'>
       {fields.map((field, index) => (
@@ -122,6 +124,7 @@ export default function TableComposerAttributeForm(props) {
               identifier='normal'
               inputName={`${name}.${index}`}
               inputType={watch(`${name}.${index}.valueType`)?.value}
+              percentage={watch(`${name}.${index}.awakeningModifier`)?.value === 'PERCENT'}
             />
             <TableComposerAttributeConditionalInput
               attributeIndex={index}
@@ -131,6 +134,7 @@ export default function TableComposerAttributeForm(props) {
               identifier='awaken'
               inputName={`${name}.${index}`}
               inputType={watch(`${name}.${index}.valueType`)?.value}
+              percentage={watch(`${name}.${index}.awakeningModifier`)?.value === 'PERCENT'}
             />
             <InputSelect
               className='sm:col-span-6'
