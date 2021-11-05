@@ -1,25 +1,44 @@
 import PropTypes from 'prop-types'
+import { useState } from 'react'
 import clsx from 'clsx'
-import { TrashIcon, PencilIcon } from '@heroicons/react/solid'
-import numberFormat from 'utils/number-format'
-import _ from 'lodash/capitalize'
-import gridClass from './grid-class'
+import {
+  TrashIcon, PencilIcon, CodeIcon, TemplateIcon,
+} from '@heroicons/react/solid'
+import TableComponentTable from './table-component-table'
+import TableComponentRaw from './table-component-raw'
 
 export default function TableComponent(props) {
   const {
     field, openModal, deleteTable,
   } = props
   const { tableName, tableFields } = field
-
-  const calculatePercentage = (val) => {
-
-  }
+  const [showAsTable, setShowAsTable] = useState(true)
 
   return (
     <div className='dark:bg-gray-900 bg-gray-200 p-2 font-titillium mb-2 overflow-x-auto'>
-      <div className='flex justify-between items-center'>
+      <div className='flex justify-between items-center py-1'>
         <h5 className='font-bold'>{tableName}</h5>
         <div className='flex gap-1'>
+          <TemplateIcon
+            className={clsx(
+              'w-5 h-5 cursor-pointer p-0.5 rounded',
+              showAsTable
+                ? 'bg-sky-500 dark:text-gray-900 text-white'
+                : 'text-warmGray-500',
+            )}
+            title='Show as Code'
+            onClick={() => setShowAsTable(true)}
+          />
+          <CodeIcon
+            className={clsx(
+              'w-5 h-5 cursor-pointer p-0.5 rounded',
+              !showAsTable
+                ? 'bg-sky-500 dark:text-gray-900 text-white'
+                : 'text-warmGray-500',
+            )}
+            title='Show as Code'
+            onClick={() => setShowAsTable(false)}
+          />
           <PencilIcon
             className='w-5 h-5 text-sky-500 cursor-pointer dark:hover:bg-gray-800 hover:bg-gray-300 p-0.5 rounded'
             onClick={() => openModal(field)}
@@ -30,55 +49,11 @@ export default function TableComponent(props) {
           />
         </div>
       </div>
-      <section className={clsx(
-        'mt-1 gap-1 grid grid-cols-1 sm:grid-cols-1',
+      {showAsTable ? (
+        <TableComponentTable data={tableFields} />
+      ) : (
+        <TableComponentRaw data={tableFields} />
       )}
-      >
-        {tableFields.map((item) => (
-          <div className='text-center' key={item.fieldName}>
-            <div className='bg-gray-600 text-white mb-1 py-2'>
-              <p>{item.fieldName}</p>
-            </div>
-            <div className={clsx(
-              'gap-1 grid grid-cols-1',
-              gridClass[item.attributes.length],
-            )}
-            >
-              {item.attributes.map((attr) => (
-                <div className='dark:bg-gray-700 bg-gray-300 p-1 text-sm overflow-hidden' key={attr.attributeName}>
-                  <p className='dark:bg-gray-800 bg-gray-200 py-2 mb-1 whitespace-nowrap overflow-ellipsis'>{attr.attributeName}</p>
-                  {attr.hasAwakeningEffect.value ? (
-                    <div className='grid grid-cols-2 gap-1'>
-                      {Object.entries(attr.value).map(([keys]) => (
-                        <p className='dark:bg-gray-900 font-bold bg-gray-100 text-general py-2' key={keys}>
-                          {_(keys)}
-                        </p>
-                      ))}
-                      {Object.entries(attr.valueType?.value === 'FIXED' ? attr.value : attr.valueRange).map(([keys, value]) => (
-                        <p className='bg-gray-600 text-white py-2' key={keys}>
-                          {attr.valueType?.value === 'FIXED' ? (
-                              `${numberFormat(value)}${attr.suffix.value}`
-                          ) : (
-                              `${numberFormat(value[0])}${attr.suffix.value} → ${numberFormat(value[1])}${attr.suffix.value}`
-                          )}
-                        </p>
-                      ))}
-                    </div>
-                  ) : (
-                    <p className=' text-general py-7 dark:bg-gray-900 bg-gray-200'>
-                      {attr.valueType?.value === 'FIXED' ? (
-                        `${attr.value.normal}${attr.suffix.value}`
-                      ) : (
-                        `${attr.valueRange.normal[0]} → ${attr.valueRange.normal[1]}`
-                      )}
-                    </p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </section>
     </div>
   )
 }

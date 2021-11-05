@@ -7,7 +7,7 @@ import { FormFieldWrapper } from '../FormFieldWrapper'
 
 export default function InputSwitch(props) {
   const {
-    label, name, control, errors,
+    label, name, control = {}, errors,
     className, defaultValue, disabled,
   } = props
 

@@ -13,7 +13,11 @@ export default function ChangeJobQuest(props) {
       <Disclosure>
         {({ open }) => (
           <Fragment>
-            <Disclosure.Button className='flex justify-between w-full p-2 font-medium bg-sky-500 border-general text-left hover:bg-opacity-80 text-white'>
+            <Disclosure.Button className={clsx(
+              'flex justify-between w-full p-2 font-medium text-left hover:bg-opacity-80 text-white',
+              'rounded-t dark:bg-warmGray-600 bg-coolGray-400',
+            )}
+            >
               <span>{title}</span>
               <ChevronUpIcon className={clsx(
                 open ? '-transform rotate-180' : 'transform rotate-0',
@@ -29,7 +33,7 @@ export default function ChangeJobQuest(props) {
               leaveFrom='transform scale-100 opacity-100'
               leaveTo='transform scale-95 opacity-0'
             >
-              <Disclosure.Panel className='text-general border-general border-t-0'>
+              <Disclosure.Panel className='text-general border-input border-t-0'>
                 {children}
               </Disclosure.Panel>
             </Transition>
