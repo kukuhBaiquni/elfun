@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-globals */
 /* eslint-disable jsx-a11y/no-autofocus */
 import PropTypes from 'prop-types'
-import { memo, useEffect } from 'react'
+import { memo } from 'react'
 import _ from 'lodash/get'
 import NumberFormat from 'react-number-format'
 import { useController } from 'react-hook-form'
@@ -11,7 +11,7 @@ import { FormFieldWrapper } from '../FormFieldWrapper'
 function InputText(props) {
   const {
     name, label, placeholder, defaultValue, control, errors,
-    className, disabled, percentage,
+    className, disabled, limit,
   } = props
   const { field: { onChange, value } } = useController({
     name,
@@ -21,19 +21,10 @@ function InputText(props) {
 
   const errorMessage = _(errors, `${name}.message`) ?? ''
 
-  const percentageLimit = (val) => {
+  const checkLimit = (val) => {
     const input = val.value
-    return input <= 100
+    return input <= limit
   }
-
-  const flatLimit = (val) => {
-    const input = val.value
-    return input <= 1e5
-  }
-
-  useEffect(() => {
-    onChange('')
-  }, [percentage])
 
   return (
     <FormFieldWrapper
@@ -45,38 +36,20 @@ function InputText(props) {
       name={name}
     >
       <div className='flex justify-between items-center'>
-        {percentage ? (
-          <NumberFormat
-            autoComplete='off'
-            className='w-full outline-none disabled:cursor-not-allowed placeholder-gray-500 bg-transparent text-sm p-2'
-            decimalScale={0}
-            defaultValue={defaultValue}
-            disabled={disabled}
-            id={name}
-            isAllowed={percentageLimit}
-            isNumericString
-            placeholder={placeholder}
-            suffix='%'
-            thousandSeparator
-            value={value}
-            onValueChange={(result) => onChange(result.value)}
-          />
-        ) : (
-          <NumberFormat
-            autoComplete='off'
-            className='w-full outline-none disabled:cursor-not-allowed placeholder-gray-500 bg-transparent text-sm p-2'
-            decimalScale={0}
-            defaultValue={defaultValue}
-            disabled={disabled}
-            id={name}
-            isAllowed={flatLimit}
-            isNumericString
-            placeholder={placeholder}
-            thousandSeparator
-            value={value}
-            onValueChange={(result) => onChange(result.value)}
-          />
-        )}
+        <NumberFormat
+          autoComplete='off'
+          className='w-full outline-none disabled:cursor-not-allowed placeholder-gray-500 bg-transparent text-sm p-2'
+          decimalScale={0}
+          defaultValue={defaultValue}
+          disabled={disabled}
+          id={name}
+          isAllowed={checkLimit}
+          isNumericString
+          placeholder={placeholder}
+          thousandSeparator
+          value={value}
+          onValueChange={(result) => onChange(result.value)}
+        />
         {disabled && <LockClosedIcon className='w-5 h-5 m-2' />}
       </div>
     </FormFieldWrapper>
@@ -94,7 +67,7 @@ InputText.propTypes = {
   className: PropTypes.string,
   control: PropTypes.object,
   disabled: PropTypes.bool,
-  percentage: PropTypes.bool,
+  limit: PropTypes.number,
 }
 
 InputText.defaultProps = {

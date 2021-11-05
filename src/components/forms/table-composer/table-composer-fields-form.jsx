@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { TrashIcon } from '@heroicons/react/solid'
 import PropTypes from 'prop-types'
-import Collapse from 'components/common/collapse'
+
 import Button from 'components/common/button'
 import TableComposerAttributeForm from './table-composer-attributes-form'
 import InputText from '../input-text/input-text'
@@ -26,15 +26,11 @@ export default function TableComposerFieldsForm(props) {
             placeholder='Field Name..'
             register={register}
           />
-          <Collapse
-            title='Attributes'
-          >
-            <TableComposerAttributeForm
-              defaultValues={defaultValues[index]?.attributes}
-              form={form}
-              name={`${name}.${index}.attributes`}
-            />
-          </Collapse>
+          <TableComposerAttributeForm
+            defaultValues={defaultValues[index]?.attributes}
+            form={form}
+            name={`${name}.${index}.attributes`}
+          />
           <div className='mt-2 flex justify-end'>
             <Button
               label='Remove this Field'

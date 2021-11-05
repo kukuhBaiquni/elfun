@@ -6,7 +6,7 @@ import InputNumber from '../input-text/input-number'
 export default function TableComposerAttributeConditionalInput(props) {
   const {
     control, inputName, defaultValues, inputType,
-    disabled, identifier, percentage,
+    disabled, identifier,
   } = props
 
   if (inputType === 'RANGE') {
@@ -20,7 +20,6 @@ export default function TableComposerAttributeConditionalInput(props) {
             disabled={disabled}
             label={`From (${_(identifier)})`}
             name={`${inputName}.valueRange.${identifier}.0`}
-            percentage={identifier === 'awaken' && percentage}
             placeholder='Value'
           />
           <div className='w-full h-10 mt-auto mb-3 flex items-center justify-center'>
@@ -33,7 +32,6 @@ export default function TableComposerAttributeConditionalInput(props) {
             disabled={disabled}
             label={`To (${_(identifier)})`}
             name={`${inputName}.valueRange.${identifier}.1`}
-            percentage={identifier === 'awaken' && percentage}
             placeholder='Value'
           />
         </div>
@@ -48,7 +46,6 @@ export default function TableComposerAttributeConditionalInput(props) {
       disabled={disabled}
       label={`Value (${_(identifier)})`}
       name={`${inputName}.value.${identifier}`}
-      percentage={identifier === 'awaken' && percentage}
       placeholder='Value'
     />
   )
@@ -61,5 +58,4 @@ TableComposerAttributeConditionalInput.propTypes = {
   inputType: PropTypes.string,
   disabled: PropTypes.bool,
   identifier: PropTypes.string,
-  percentage: PropTypes.bool,
 }

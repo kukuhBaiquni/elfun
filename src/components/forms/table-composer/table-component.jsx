@@ -36,11 +36,11 @@ export default function TableComponent(props) {
       >
         {tableFields.map((item) => (
           <div className='text-center' key={item.fieldName}>
-            <div className='bg-gray-800 text-white mb-1 py-2'>
+            <div className='bg-gray-600 text-white mb-1 py-2'>
               <p>{item.fieldName}</p>
             </div>
             <div className={clsx(
-              'gap-1 grid',
+              'gap-1 grid grid-cols-1',
               gridClass[item.attributes.length],
             )}
             >
@@ -55,7 +55,7 @@ export default function TableComponent(props) {
                         </p>
                       ))}
                       {Object.entries(attr.valueType?.value === 'FIXED' ? attr.value : attr.valueRange).map(([keys, value]) => (
-                        <p className='bg-gray-800 text-white py-2' key={keys}>
+                        <p className='bg-gray-600 text-white py-2' key={keys}>
                           {attr.valueType?.value === 'FIXED' ? (
                               `${numberFormat(value)}${attr.suffix.value}`
                           ) : (
@@ -65,7 +65,7 @@ export default function TableComponent(props) {
                       ))}
                     </div>
                   ) : (
-                    <p className=' text-gray-800 py-7 dark:bg-gray-900 bg-gray-200'>
+                    <p className=' text-general py-7 dark:bg-gray-900 bg-gray-200'>
                       {attr.valueType?.value === 'FIXED' ? (
                         `${attr.value.normal}${attr.suffix.value}`
                       ) : (
