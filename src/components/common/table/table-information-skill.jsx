@@ -1,19 +1,25 @@
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
+import _ from 'lodash/startCase'
 
 export default function Table(props) {
   const { data } = props
-
+  const fieldNames = dummy.map((item) => ({
+    fieldName: item.fieldName,
+    attributeLength: item.attributes.length,
+  }))
+  const rawData = dummy.map((item) => item.attributes).flat()
+  console.log(fieldNames)
   return (
     <table className='border-collapse'>
       <tbody>
         <tr>
-          {dummy.map((item) => (
+          {fieldNames.map((item) => (
             <th
               className={clsx(
                 'px-3 py-1 min-w-max text-left border border-gray-300 dark:border-gray-600 transition-all duration-300',
               )}
-              colSpan={3}
+              colSpan={item.attributeLength}
               key={item.fieldName}
             >
               {item.fieldName}
@@ -21,16 +27,39 @@ export default function Table(props) {
           ))}
         </tr>
         <tr>
-          {new Array(12).fill('s').map((item, index) => (
+          {rawData.map((item, index) => (
             <th
               className={clsx(
                 'px-3 py-1 min-w-max text-left border border-gray-300 dark:border-gray-600 transition-all duration-300',
               )}
+              colSpan={item.hasAwakeningEffect.value ? 2 : 1}
               key={index}
             >
-              item {index}
+              {item.attributeName}
             </th>
           ))}
+        </tr>
+        <tr>
+          {rawData.map((item, index) => {
+            if (item.hasAwakeningEffect.value) {
+              return Object.keys(item.value).map(
+                (key) => (
+                  <th className='dark:bg-gray-900 font-bold bg-gray-100 text-general py-2' key={key}>
+                    {_(key)}
+                  </th>
+                ),
+              )
+            }
+            return (
+              <td className=' text-white py-7 bg-coolGray-500 dark:bg-warmGray-600' key={index}>
+                {item.valueType?.value === 'FIXED' ? (
+                  `${item.value.normal}${item.suffix.value}`
+                ) : (
+                  `${item.valueRange.normal[0]} → ${item.valueRange.normal[1]}`
+                )}
+              </td>
+            )
+          })}
         </tr>
       </tbody>
     </table>
