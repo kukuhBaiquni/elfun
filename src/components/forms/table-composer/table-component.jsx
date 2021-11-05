@@ -36,7 +36,7 @@ export default function TableComponent(props) {
       >
         {tableFields.map((item) => (
           <div className='text-center' key={item.fieldName}>
-            <div className='bg-gray-600 text-white mb-1 py-2'>
+            <div className='bg-coolGray-400 dark:bg-warmGray-600 text-white mb-1 py-2'>
               <p>{item.fieldName}</p>
             </div>
             <div className={clsx(
@@ -55,7 +55,7 @@ export default function TableComponent(props) {
                         </p>
                       ))}
                       {Object.entries(attr.valueType?.value === 'FIXED' ? attr.value : attr.valueRange).map(([keys, value]) => (
-                        <p className='bg-gray-600 text-white py-2' key={keys}>
+                        <p className='bg-coolGray-400 dark:bg-warmGray-600 text-white py-2' key={keys}>
                           {attr.valueType?.value === 'FIXED' ? (
                               `${numberFormat(value)}${attr.suffix.value}`
                           ) : (

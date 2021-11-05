@@ -11,7 +11,7 @@ import { FormFieldWrapper } from '../FormFieldWrapper'
 function InputText(props) {
   const {
     name, label, placeholder, defaultValue, control, errors,
-    className, disabled, limit,
+    className, disabled, limit = 1e8,
   } = props
   const { field: { onChange, value } } = useController({
     name,
