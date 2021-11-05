@@ -51,7 +51,7 @@ export default function TableComposerAttributeForm(props) {
   }
 
   const errorMessage = _(errors, `${name}.message`) ?? ''
-  console.log(watch())
+
   return (
     <div className='bg-sky-50 dark:bg-gray-900 cursor-default rounded'>
       {fields.map((field, index) => (
@@ -130,15 +130,28 @@ export default function TableComposerAttributeForm(props) {
                 inputName={`${name}.${index}`}
                 inputType={watch(`${name}.${index}.valueType`)?.value}
               />
-              <TableComposerAttributeConditionalInput
-                attributeIndex={index}
-                control={control}
-                defaultValues={defaultValues[index]}
-                disabled={!watch(`${name}.${index}.hasAwakeningEffect`)?.value}
-                identifier='awaken'
-                inputName={`${name}.${index}`}
-                inputType={watch(`${name}.${index}.valueType`)?.value}
-              />
+              {watch(`${name}.${index}.awakeningModifier`)?.value === 'FLAT' ? (
+                <TableComposerAttributeConditionalInput
+                  attributeIndex={index}
+                  control={control}
+                  defaultValues={defaultValues[index]}
+                  disabled={!watch(`${name}.${index}.hasAwakeningEffect`)?.value}
+                  identifier='awaken'
+                  inputName={`${name}.${index}`}
+                  inputType={watch(`${name}.${index}.valueType`)?.value}
+                />
+              ) : (
+                <TableComposerAttributeConditionalInput
+                  attributeIndex={index}
+                  control={control}
+                  defaultValues={defaultValues[index]}
+                  disabled={!watch(`${name}.${index}.hasAwakeningEffect`)?.value}
+                  identifier='awaken'
+                  inputName={`${name}.${index}`}
+                  inputType={watch(`${name}.${index}.valueType`)?.value}
+                  percentage
+                />
+              )}
               <InputSelect
                 className='sm:col-span-6'
                 control={control}

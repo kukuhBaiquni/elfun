@@ -6,6 +6,7 @@ import gridClass from './grid-class'
 
 export default function TableComponentTable(props) {
   const { data } = props
+
   return (
     <section className={clsx(
       'mt-1 gap-1 grid grid-cols-1 sm:grid-cols-1',
@@ -34,9 +35,9 @@ export default function TableComponentTable(props) {
                     {Object.entries(attr.valueType?.value === 'FIXED' ? attr.value : attr.valueRange).map(([keys, value]) => (
                       <p className='bg-coolGray-400 dark:bg-warmGray-600 text-white py-2' key={keys}>
                         {attr.valueType?.value === 'FIXED' ? (
-                              `${numberFormat(value)}${attr.suffix.value}`
+                          `${numberFormat(value)}${attr.suffix.value}`
                         ) : (
-                              `${numberFormat(value[0])}${attr.suffix.value} → ${numberFormat(value[1])}${attr.suffix.value}`
+                          `${numberFormat(value[0])}${attr.suffix.value} → ${numberFormat(value[1])}${attr.suffix.value}`
                         )}
                       </p>
                     ))}
