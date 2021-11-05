@@ -51,13 +51,19 @@ export default function TableComposerAttributeForm(props) {
   }
 
   const errorMessage = _(errors, `${name}.message`) ?? ''
-
+  console.log('aww', fields)
   return (
     <div className='bg-sky-50 dark:bg-gray-900 cursor-default rounded'>
       {fields.map((field, index) => (
         <Collapse
+          additionalToolbar={(
+            <TrashIcon
+              className='w-5 h-5 text-red-500'
+              onClick={() => remove(index)}
+            />
+          )}
           key={field.$id}
-          title={`Attribute ${index + 1}`}
+          title={`Attribute ${index + 1} (${field.attributeName})`}
         >
           <div className='dark:bg-gray-900 bg-sky-50 p-2'>
             <div className='grid grid-cols-1 sm:grid-cols-12 gap-x-2 gap flex-grow'>
@@ -160,15 +166,6 @@ export default function TableComposerAttributeForm(props) {
                 label='Suffix'
                 name={`${name}.${index}.suffix`}
                 options={VALUE_SUFFIX}
-              />
-            </div>
-            <div className='mt-2 flex justify-end'>
-              <Button
-                label='Remove this Attribute'
-                leftIcon={<TrashIcon className='h-3.5 w-3.5 mr-1' />}
-                size='sm'
-                variant='danger-solid'
-                onClick={() => remove(index)}
               />
             </div>
           </div>

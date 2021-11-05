@@ -7,23 +7,28 @@ import clsx from 'clsx'
 import { Fragment } from 'react'
 
 export default function ChangeJobQuest(props) {
-  const { children, title } = props
+  const { children, title, additionalToolbar } = props
   return (
     <div className='w-full mt-3'>
       <Disclosure>
         {({ open }) => (
           <Fragment>
             <Disclosure.Button className={clsx(
-              'flex justify-between w-full p-2 font-medium text-left hover:bg-opacity-80 text-white',
-              'rounded-t dark:bg-warmGray-600 bg-coolGray-400',
+              'w-full p-2 font-medium text-left hover:bg-opacity-80 text-white',
+              'rounded-t dark:bg-warmGray-600 bg-coolGray-400 border-white focus-visible:border',
             )}
             >
-              <span>{title}</span>
-              <ChevronUpIcon className={clsx(
-                open ? '-transform rotate-180' : 'transform rotate-0',
-                'w-5 h-5 text-gray-white transition-all duration-300',
-              )}
-              />
+              <div className='flex justify-between'>
+                <span>{title}</span>
+                <div className='flex gap-2 items-center'>
+                  {additionalToolbar}
+                  <ChevronUpIcon className={clsx(
+                    open ? '-transform rotate-180' : 'transform rotate-0',
+                    'w-5 h-5 text-gray-white transition-all duration-300',
+                  )}
+                  />
+                </div>
+              </div>
             </Disclosure.Button>
             <Transition
               enter='transition duration-100 ease-out'
