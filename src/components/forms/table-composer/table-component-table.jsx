@@ -5,13 +5,13 @@ import PropTypes from 'prop-types'
 import gridClass from './grid-class'
 
 export default function TableComponentTable(props) {
-  const { tableFields } = props
+  const { data } = props
   return (
     <section className={clsx(
       'mt-1 gap-1 grid grid-cols-1 sm:grid-cols-1',
     )}
     >
-      {tableFields.map((item) => (
+      {data.map((item) => (
         <div className='text-center' key={item.fieldName}>
           <div className='bg-coolGray-400 font-bold dark:bg-warmGray-600 text-white mb-1 py-2'>
             <p>{item.fieldName}</p>
@@ -60,5 +60,5 @@ export default function TableComponentTable(props) {
 }
 
 TableComponentTable.propTypes = {
-  tableFields: PropTypes.array,
+  data: PropTypes.array,
 }

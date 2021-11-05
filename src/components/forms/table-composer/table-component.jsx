@@ -5,6 +5,7 @@ import {
   TrashIcon, PencilIcon, CodeIcon, TemplateIcon,
 } from '@heroicons/react/solid'
 import TableComponentTable from './table-component-table'
+import TableComponentRaw from './table-component-raw'
 
 export default function TableComponent(props) {
   const {
@@ -12,10 +13,6 @@ export default function TableComponent(props) {
   } = props
   const { tableName, tableFields } = field
   const [showAsTable, setShowAsTable] = useState(true)
-
-  const calculatePercentage = (val) => {
-
-  }
 
   return (
     <div className='dark:bg-gray-900 bg-gray-200 p-2 font-titillium mb-2 overflow-x-auto'>
@@ -53,9 +50,9 @@ export default function TableComponent(props) {
         </div>
       </div>
       {showAsTable ? (
-        <TableComponentTable tableFields={tableFields} />
+        <TableComponentTable data={tableFields} />
       ) : (
-        <div />
+        <TableComponentRaw data={tableFields} />
       )}
     </div>
   )
