@@ -22,7 +22,7 @@ export default function TableComponentTable(props) {
 
   return (
     <Fragment>
-      <section className={clsx(
+      {/* <section className={clsx(
         'mt-1 grid grid-cols-1 mb-5',
         gridClass[data.length],
       )}
@@ -61,7 +61,7 @@ export default function TableComponentTable(props) {
                           ) : (
                             attr.hasAwakeningEffect && attr.awakeningModifier.value === 'PERCENT' && keys === 'awaken' ? (
                               <Fragment>
-                                {`${numberFormat(calculateRangePercent(attr.valueRange, attr.value.awaken, 0))}${attr.suffix.value} → 
+                                {`${numberFormat(calculateRangePercent(attr.valueRange, attr.value.awaken, 0))}${attr.suffix.value} →
                               ${numberFormat(calculateRangePercent(attr.valueRange, attr.value.awaken, 1))}${attr.suffix.value}`}
                                 <span className='dark:text-green-400 text-green-400 ml-1'>{`(${attr.value.awaken}%)↑`}</span>
                               </Fragment>
@@ -86,7 +86,7 @@ export default function TableComponentTable(props) {
             </div>
           </div>
         ))}
-      </section>
+      </section> */}
       <TableInformation data={data} />
     </Fragment>
   )
