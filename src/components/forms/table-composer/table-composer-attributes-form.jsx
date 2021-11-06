@@ -30,8 +30,7 @@ export default function TableComposerAttributeForm(props) {
     if (!Array.isArray(_(errors, name))) {
       clearErrors(name)
       append({
-        skipAttributes: false,
-        skipAwakening: false,
+        standAlone: false,
         attributeName: '',
         flag: { label: 'none', value: '' },
         isDealingDamage: false,
@@ -53,7 +52,6 @@ export default function TableComposerAttributeForm(props) {
   }
 
   const errorMessage = _(errors, `${name}.message`) ?? ''
-  console.log(errors)
 
   return (
     <div className='bg-sky-50 dark:bg-gray-900 cursor-default rounded'>
@@ -74,21 +72,14 @@ export default function TableComposerAttributeForm(props) {
                 className='sm:col-span-6'
                 clearErrors={() => clearErrors([`${name}.${index}.attributeName`])}
                 control={control}
-                defaultValue={defaultValues[index]?.skipAttributes}
-                label='Skip Attributes'
-                name={`${name}.${index}.skipAttributes`}
-              />
-              <InputSwitch
-                className='sm:col-span-6'
-                control={control}
-                defaultValue={defaultValues[index]?.skipAwakening}
-                label='Skip Awakening Check'
-                name={`${name}.${index}.skipAwakening`}
+                defaultValue={defaultValues[index]?.standAlone}
+                label='Stand Alone'
+                name={`${name}.${index}.standAlone`}
               />
               <InputText
                 className='sm:col-span-12'
                 defaultValue={defaultValues[index]?.attributeName}
-                disabled={watch(`${name}.${index}.skipAttributes`)}
+                disabled={watch(`${name}.${index}.standAlone`)}
                 errors={errors}
                 label='Attribute Name'
                 name={`${name}.${index}.attributeName`}
@@ -107,7 +98,7 @@ export default function TableComposerAttributeForm(props) {
                 className='sm:col-span-12'
                 control={control}
                 defaultValue={defaultValues[index]?.isDealingDamage}
-                disabled={watch(`${name}.${index}.skipAttributes`)}
+                disabled={watch(`${name}.${index}.standAlone`)}
                 label='Is Dealing Damage'
                 name={`${name}.${index}.isDealingDamage`}
               />
@@ -115,7 +106,7 @@ export default function TableComposerAttributeForm(props) {
                 className='sm:col-span-6'
                 control={control}
                 defaultValue={defaultValues[index]?.damageType}
-                disabled={!watch(`${name}.${index}.isDealingDamage`) || watch(`${name}.${index}.skipAttributes`)}
+                disabled={!watch(`${name}.${index}.isDealingDamage`) || watch(`${name}.${index}.standAlone`)}
                 label='Damage Type'
                 name={`${name}.${index}.damageType`}
                 options={DAMAGE_TYPE}
@@ -133,7 +124,6 @@ export default function TableComposerAttributeForm(props) {
                 className='sm:col-span-6'
                 control={control}
                 defaultValue={defaultValues[index]?.hasAwakeningEffect}
-                disabled={watch(`${name}.${index}.skipAwakening`)}
                 label='Has Awakening Effect'
                 name={`${name}.${index}.hasAwakeningEffect`}
               />
@@ -141,7 +131,7 @@ export default function TableComposerAttributeForm(props) {
                 className='sm:col-span-6'
                 control={control}
                 defaultValue={defaultValues[index]?.awakeningModifier}
-                disabled={!watch(`${name}.${index}.hasAwakeningEffect`) || watch(`${name}.${index}.skipAwakening`)}
+                disabled={!watch(`${name}.${index}.hasAwakeningEffect`)}
                 errors={errors}
                 label='Awakening Value Modifier'
                 name={`${name}.${index}.awakeningModifier`}
@@ -160,7 +150,7 @@ export default function TableComposerAttributeForm(props) {
                   attributeIndex={index}
                   control={control}
                   defaultValues={defaultValues[index]}
-                  disabled={!watch(`${name}.${index}.hasAwakeningEffect`) || watch(`${name}.${index}.skipAwakening`)}
+                  disabled={!watch(`${name}.${index}.hasAwakeningEffect`)}
                   identifier='awaken'
                   inputName={`${name}.${index}`}
                   inputType={watch(`${name}.${index}.valueType`)?.value}
@@ -170,7 +160,7 @@ export default function TableComposerAttributeForm(props) {
                   attributeIndex={index}
                   control={control}
                   defaultValues={defaultValues[index]}
-                  disabled={!watch(`${name}.${index}.hasAwakeningEffect`) || watch(`${name}.${index}.skipAwakening`)}
+                  disabled={!watch(`${name}.${index}.hasAwakeningEffect`)}
                   forceFixedInput
                   identifier='awaken'
                   inputName={`${name}.${index}`}
@@ -190,17 +180,19 @@ export default function TableComposerAttributeForm(props) {
           </div>
         </Collapse>
       ))}
-      <FormFieldWrapper
-        errorMessage={errorMessage}
-        name={name}
-      >
-        <Button
-          label='Add Attribute'
-          leftIcon={<PlusIcon className='h-3.5 w-3.5' />}
-          size='sm'
-          onClick={addAttributes}
-        />
-      </FormFieldWrapper>
+      {!fields[0]?.standAlone && (
+        <FormFieldWrapper
+          errorMessage={errorMessage}
+          name={name}
+        >
+          <Button
+            label='Add Attribute'
+            leftIcon={<PlusIcon className='h-3.5 w-3.5' />}
+            size='sm'
+            onClick={addAttributes}
+          />
+        </FormFieldWrapper>
+      )}
     </div>
   )
 }
