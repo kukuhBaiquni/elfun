@@ -7,6 +7,8 @@ const schema = yup.object().shape({
     yup.object({
       attributes: yup.array().required().min(1, 'Attributes is required!').of(
         yup.object({
+          skipAttributes: yup.bool(),
+          skipAwakening: yup.bool(),
           attributeName: yup.string().required('Attribute Name is required!'),
           flag: yup.object(),
           isDealingDamage: yup.bool(),
@@ -18,10 +20,7 @@ const schema = yup.object().shape({
             label: yup.string(),
             value: yup.string(),
           }),
-          hasAwakeningEffect: yup.object({
-            label: yup.string(),
-            value: yup.bool(),
-          }),
+          hasAwakeningEffect: yup.bool(),
           awakeningModifier: yup.object({
             label: yup.string(),
             value: yup.string(),

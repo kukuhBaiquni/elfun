@@ -30,12 +30,14 @@ export default function TableComposerAttributeForm(props) {
     if (!Array.isArray(_(errors, name))) {
       clearErrors(name)
       append({
+        skipAttributes: false,
+        skipAwakening: false,
         attributeName: '',
         flag: { label: 'none', value: '' },
         isDealingDamage: false,
         damageType: DAMAGE_TYPE[0],
         valueType: INPUT_TYPE[0],
-        hasAwakeningEffect: YES_NO[0],
+        hasAwakeningEffect: false,
         awakeningModifier: PERCENTAGE_OR_FLAT[0],
         value: {
           normal: '',
@@ -67,6 +69,20 @@ export default function TableComposerAttributeForm(props) {
         >
           <div className='dark:bg-gray-900 bg-sky-50 p-2'>
             <div className='grid grid-cols-1 sm:grid-cols-12 gap-x-2 gap flex-grow'>
+              <InputSwitch
+                className='sm:col-span-6'
+                control={control}
+                defaultValue={defaultValues[index]?.skipAttributes}
+                label='Skip Attributes'
+                name={`${name}.${index}.skipAttributes`}
+              />
+              <InputSwitch
+                className='sm:col-span-6'
+                control={control}
+                defaultValue={defaultValues[index]?.skipAwakening}
+                label='Skip Awakening Check'
+                name={`${name}.${index}.skipAwakening`}
+              />
               <InputText
                 className='sm:col-span-12'
                 defaultValue={defaultValues[index]?.attributeName}
@@ -109,14 +125,12 @@ export default function TableComposerAttributeForm(props) {
                 name={`${name}.${index}.valueType`}
                 options={INPUT_TYPE}
               />
-              <InputRadio
+              <InputSwitch
                 className='sm:col-span-6'
                 control={control}
                 defaultValue={defaultValues[index]?.hasAwakeningEffect}
-                errors={errors}
-                label='Awakening Effect'
+                label='Has Awakening Effect'
                 name={`${name}.${index}.hasAwakeningEffect`}
-                options={YES_NO}
               />
               <InputRadio
                 className='sm:col-span-6'
