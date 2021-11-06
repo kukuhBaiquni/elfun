@@ -1,15 +1,33 @@
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
 import _ from 'lodash/startCase'
+import numberFormat from 'utils/number-format'
 
 export default function Table(props) {
   const { data } = props
-  const fieldNames = dummy.map((item) => ({
+  const fieldNames = data.map((item) => ({
     fieldName: item.fieldName,
-    attributeLength: item.attributes.length,
+    attributeLength: item.attributes.reduce((prev, cur) => {
+      if (cur.hasAwakeningEffect.value) {
+        return prev + Object.keys(cur.value).length
+      }
+      return prev + 1
+    }, 0),
   }))
-  const rawData = dummy.map((item) => item.attributes).flat()
-  console.log(fieldNames)
+  const rawData = data.map((item) => item.attributes).flat()
+
+  const calculateFixedPercent = (val) => {
+    const base = +val.normal
+    const percent = +val.awaken / 100
+    return base + (base * percent)
+  }
+
+  const calculateRangePercent = (val, percent, index) => {
+    const base = +val.normal[index]
+    return base + (base * (+percent / 100))
+  }
+
+  console.log(rawData)
   return (
     <table className='border-collapse'>
       <tbody>
@@ -17,7 +35,7 @@ export default function Table(props) {
           {fieldNames.map((item) => (
             <th
               className={clsx(
-                'px-3 py-1 min-w-max text-left border border-gray-300 dark:border-gray-600 transition-all duration-300',
+                'px-3 py-1 min-w-max text-center border border-gray-300 dark:border-gray-600',
               )}
               colSpan={item.attributeLength}
               key={item.fieldName}
@@ -30,7 +48,7 @@ export default function Table(props) {
           {rawData.map((item, index) => (
             <th
               className={clsx(
-                'px-3 py-1 min-w-max text-left border border-gray-300 dark:border-gray-600 transition-all duration-300',
+                'px-3 py-1 min-w-max text-center border border-gray-300 dark:border-gray-600',
               )}
               colSpan={item.hasAwakeningEffect.value ? 2 : 1}
               key={index}
@@ -44,20 +62,62 @@ export default function Table(props) {
             if (item.hasAwakeningEffect.value) {
               return Object.keys(item.value).map(
                 (key) => (
-                  <th className='dark:bg-gray-900 font-bold bg-gray-100 text-general py-2' key={key}>
+                  <th className='px-3 py-1 min-w-max text-center border border-gray-300 dark:border-gray-600' key={key}>
                     {_(key)}
                   </th>
                 ),
               )
             }
             return (
-              <td className=' text-white py-7 bg-coolGray-500 dark:bg-warmGray-600' key={index}>
+              <td className='px-3 py-1 min-w-max text-center border border-gray-300 dark:border-gray-600' key={index} rowSpan={2}>
                 {item.valueType?.value === 'FIXED' ? (
                   `${item.value.normal}${item.suffix.value}`
                 ) : (
                   `${item.valueRange.normal[0]} → ${item.valueRange.normal[1]}`
                 )}
               </td>
+            )
+          })}
+        </tr>
+        <tr>
+          {rawData.map((item, index) => {
+            if (item.hasAwakeningEffect.value) {
+              if (item.valueType?.value === 'FIXED') {
+                return Object.entries(item.value).map(([key, value]) => {
+                  if (item.awakeningModifier?.value === 'PERCENT' && key === 'awaken') {
+                    return (
+                      <td className='px-3 py-1 min-w-max text-center border border-gray-300 dark:border-gray-600' key={index}>
+                        {`${numberFormat(calculateFixedPercent(item.value))}${item.suffix.value}`}
+                        <span className='dark:text-green-400 text-green-400 ml-1'>{`(${value}%)↑`}</span>
+                      </td>
+                    )
+                  }
+                  return (
+                    <td className='px-3 py-1 min-w-max text-center border border-gray-300 dark:border-gray-600' key={index}>
+                      {`${numberFormat(value)}${item.suffix.value}`}
+                    </td>
+                  )
+                })
+              }
+              return Object.entries(item.valueRange).map(([key, value]) => {
+                if (item.awakeningModifier?.value === 'PERCENT' && key === 'awaken') {
+                  return (
+                    <td className='px-3 py-1 min-w-max text-center border border-gray-300 dark:border-gray-600' key={index}>
+                      {`${numberFormat(calculateRangePercent(item.valueRange, item.value.awaken, 0))}${item.suffix.value} → 
+                      ${numberFormat(calculateRangePercent(item.valueRange, item.value.awaken, 1))}${item.suffix.value}`}
+                      <span className='dark:text-green-400 text-green-400 ml-1'>{`(${item.value.awaken}%)↑`}</span>
+                    </td>
+                  )
+                }
+                return (
+                  <td className='px-3 py-1 min-w-max text-center border border-gray-300 dark:border-gray-600' key={index}>
+                    {`${numberFormat(value[0])}${item.suffix.value} → ${numberFormat(value[1])}${item.suffix.value}`}
+                  </td>
+                )
+              })
+            }
+            return (
+              null
             )
           })}
         </tr>
