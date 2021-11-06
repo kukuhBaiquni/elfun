@@ -44,6 +44,5 @@ const schema = yup.object().shape({
     }),
   ),
 })
-console.log(schema)
 
 export default yupResolver(schema)

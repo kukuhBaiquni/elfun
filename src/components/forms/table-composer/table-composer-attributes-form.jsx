@@ -160,7 +160,7 @@ export default function TableComposerAttributeForm(props) {
                   attributeIndex={index}
                   control={control}
                   defaultValues={defaultValues[index]}
-                  disabled={!watch(`${name}.${index}.hasAwakeningEffect`)?.value}
+                  disabled={!watch(`${name}.${index}.hasAwakeningEffect`) || watch(`${name}.${index}.skipAwakening`)}
                   identifier='awaken'
                   inputName={`${name}.${index}`}
                   inputType={watch(`${name}.${index}.valueType`)?.value}
@@ -170,7 +170,7 @@ export default function TableComposerAttributeForm(props) {
                   attributeIndex={index}
                   control={control}
                   defaultValues={defaultValues[index]}
-                  disabled={!watch(`${name}.${index}.hasAwakeningEffect`)?.value}
+                  disabled={!watch(`${name}.${index}.hasAwakeningEffect`) || watch(`${name}.${index}.skipAwakening`)}
                   forceFixedInput
                   identifier='awaken'
                   inputName={`${name}.${index}`}

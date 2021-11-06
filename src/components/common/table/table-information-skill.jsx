@@ -9,10 +9,19 @@ function Table(props) {
   const fieldNames = data.map((item) => ({
     fieldName: item.fieldName,
     attributeLength: item.attributes.reduce((prev, cur) => {
-      if (cur.hasAwakeningEffect.value) {
+      if (cur.hasAwakeningEffect) {
         return prev + Object.keys(cur.value).length
       }
       return prev + 1
+    }, 0),
+    rowSpan: item.attributes.reduce((prev, cur) => {
+      if (cur.skipAttributes && cur.skipAwakening) {
+        return prev + 3
+      }
+      if (cur.skipAttributes || cur.skipAwakening) {
+        return prev + 2
+      }
+      return 1
     }, 0),
   }))
   const rawData = data.map((item) => item.attributes).flat()
@@ -36,35 +45,41 @@ function Table(props) {
           {fieldNames.map((item) => (
             <th
               className={clsx(
-                'px-3 py-2 min-w-max text-center border border-gray-300 dark:border-gray-600',
+                'px-3 py-2 min-w-max text-center border-input',
               )}
               colSpan={item.attributeLength}
               key={item.fieldName}
+              rowSpan={item.rowSpan}
             >
               {item.fieldName}
             </th>
           ))}
         </tr>
         <tr>
-          {rawData.map((item, index) => (
-            <th
-              className={clsx(
-                'px-3 py-2 min-w-max text-center border border-gray-300 dark:border-gray-600',
-              )}
-              colSpan={item.hasAwakeningEffect.value ? 2 : 1}
-              key={index}
-              rowSpan={item.hasAwakeningEffect.value ? 1 : 2}
-            >
-              {item.attributeName} {item.isDealingDamage && `(${item.damageType.label})`}
-            </th>
-          ))}
+          {rawData.map((item, index) => {
+            if (item.skipAttributes && item.skipAwakening) {
+              return null
+            }
+            return (
+              <th
+                className={clsx(
+                  'px-3 py-2 min-w-max text-center border-input',
+                )}
+                colSpan={item.hasAwakeningEffect ? 2 : 1}
+                key={index}
+                rowSpan={item.hasAwakeningEffect ? 1 : 2}
+              >
+                {item.attributeName} {item.isDealingDamage && `(${item.damageType.label})`}
+              </th>
+            )
+          })}
         </tr>
         <tr>
           {rawData.map((item, index) => {
-            if (item.hasAwakeningEffect.value) {
+            if (item.hasAwakeningEffect) {
               return Object.keys(item.value).map(
                 (key) => (
-                  <th className='px-3 py-2 min-w-max text-center border border-gray-300 dark:border-gray-600' key={key}>
+                  <th className='px-3 py-2 min-w-max text-center border-input' key={key}>
                     {_(key)}
                   </th>
                 ),
@@ -75,14 +90,14 @@ function Table(props) {
         </tr>
         <tr>
           {rawData.map((item, index) => {
-            if (item.hasAwakeningEffect.value) {
+            if (item.hasAwakeningEffect) {
               if (item.valueType?.value === 'FIXED') {
                 return Object.entries(item.value).map(([key, value]) => {
                   if (item.awakeningModifier?.value === 'PERCENT' && key === 'awaken') {
                     return (
                       <td
-                        className='px-3 py-2 min-w-max text-center border border-gray-300 dark:border-gray-600'
-                        key={`${item.hasAwakeningEffect.value}${item.valueType.value}${item.awakeningModifier.value}${index}`}
+                        className='px-3 py-2 min-w-max text-center border-input'
+                        key={`${item.hasAwakeningEffect}${item.valueType.value}${item.awakeningModifier.value}${index}`}
                       >
                         {`${numberFormat(calculateFixedPercent(item.value))}${item.suffix.value}`}
                         <span className='dark:text-green-400 text-green-400 ml-1'>{`(${value}%)↑`}</span>
@@ -91,8 +106,8 @@ function Table(props) {
                   }
                   return (
                     <td
-                      className='px-3 py-2 min-w-max text-center border border-gray-300 dark:border-gray-600'
-                      key={`${item.hasAwakeningEffect.value}${item.valueType.value}${index}${item.awakeningModifier.value}`}
+                      className='px-3 py-2 min-w-max text-center border-input'
+                      key={`${item.valueType.value}${item.hasAwakeningEffect}${index}${item.awakeningModifier.value}${value}`}
                     >
                       {`${numberFormat(value)}${item.suffix.value}`}
                     </td>
@@ -103,8 +118,8 @@ function Table(props) {
                 if (item.awakeningModifier?.value === 'PERCENT' && key === 'awaken') {
                   return (
                     <td
-                      className='px-3 py-2 min-w-max text-center border border-gray-300 dark:border-gray-600'
-                      key={`${item.hasAwakeningEffect.value}${index}${item.valueType.value}${item.awakeningModifier.value}`}
+                      className='px-3 py-2 min-w-max text-center border-input'
+                      key={`${item.hasAwakeningEffect}${index}${item.valueType.value}${item.awakeningModifier.value}`}
                     >
                       {`${numberFormat(calculateRangePercent(item.valueRange, item.value.awaken, 0))}${item.suffix.value} → 
                       ${numberFormat(calculateRangePercent(item.valueRange, item.value.awaken, 1))}${item.suffix.value}`}
@@ -114,8 +129,8 @@ function Table(props) {
                 }
                 return (
                   <td
-                    className='px-3 py-2 min-w-max text-center border border-gray-300 dark:border-gray-600'
-                    key={`${index}${item.hasAwakeningEffect.value}${item.valueType.value}${item.awakeningModifier.value}`}
+                    className='px-3 py-2 min-w-max text-center border-input'
+                    key={`${index}${item.hasAwakeningEffect}${item.valueType.value}${item.awakeningModifier.value}`}
                   >
                     {`${numberFormat(value[0])}${item.suffix.value} → ${numberFormat(value[1])}${item.suffix.value}`}
                   </td>
@@ -124,8 +139,8 @@ function Table(props) {
             }
             return (
               <td
-                className='px-3 py-2 min-w-max text-center border border-gray-300 dark:border-gray-600'
-                key={`${item.hasAwakeningEffect.value}${item.awakeningModifier.value}${item.valueType.value}${index}`}
+                className='px-3 py-2 min-w-max text-center border-input'
+                key={`${item.hasAwakeningEffect}${item.awakeningModifier.value}${item.valueType.value}${index}`}
               >
                 {item.valueType?.value === 'FIXED' ? (
                   `${item.value.normal}${item.suffix.value}`
