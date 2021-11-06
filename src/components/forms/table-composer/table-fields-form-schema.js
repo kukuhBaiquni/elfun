@@ -9,7 +9,8 @@ const schema = yup.object().shape({
         yup.object({
           skipAttributes: yup.bool(),
           skipAwakening: yup.bool(),
-          attributeName: yup.string().required('Attribute Name is required!'),
+          attributeName: yup.string().when('skipAttributes',
+            (skipAttributes, obj) => (skipAttributes ? obj : obj.required('Attribute Name is required!'))),
           flag: yup.object(),
           isDealingDamage: yup.bool(),
           damageType: yup.object({

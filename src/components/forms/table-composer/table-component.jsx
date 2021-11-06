@@ -15,7 +15,7 @@ export default function TableComponent(props) {
   const [showAsTable, setShowAsTable] = useState(true)
 
   return (
-    <div className='dark:bg-gray-900 bg-warmGray-300 p-2 font-titillium mb-2 overflow-x-auto'>
+    <div className='dark:bg-gray-900 bg-warmGray-200 p-2 font-titillium mb-2 overflow-x-auto'>
       <div className='flex justify-between items-center py-1'>
         <h5 className='font-bold'>{tableName}</h5>
         <div className='flex gap-1'>
