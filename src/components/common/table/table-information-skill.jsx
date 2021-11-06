@@ -14,15 +14,7 @@ function Table(props) {
       }
       return prev + 1
     }, 0),
-    rowSpan: item.attributes.reduce((prev, cur) => {
-      if (cur.skipAttributes && cur.skipAwakening) {
-        return prev + 3
-      }
-      if (cur.skipAttributes || cur.skipAwakening) {
-        return prev + 2
-      }
-      return 1
-    }, 0),
+    rowSpan: item.attributes.every((attr) => !attr.standAlone) ? 1 : 3,
   }))
   const rawData = data.map((item) => item.attributes).flat()
 
@@ -37,7 +29,7 @@ function Table(props) {
     return base + (base * (+percent / 100))
   }
 
-  console.log(rawData)
+  console.log(fieldNames)
   return (
     <table className='border-collapse'>
       <tbody>
@@ -57,7 +49,7 @@ function Table(props) {
         </tr>
         <tr>
           {rawData.map((item, index) => {
-            if (item.skipAttributes && item.skipAwakening) {
+            if (item.standAlone) {
               return null
             }
             return (
