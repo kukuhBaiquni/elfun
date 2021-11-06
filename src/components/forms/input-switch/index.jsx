@@ -3,11 +3,12 @@ import clsx from 'clsx'
 import _ from 'lodash/get'
 import PropTypes from 'prop-types'
 import { useController } from 'react-hook-form'
+import { XIcon } from '@heroicons/react/solid'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 
 export default function InputSwitch(props) {
   const {
-    label, name, control = {}, errors,
+    label, name, control = {}, errors, clearErrors,
     className, defaultValue, disabled,
   } = props
 
@@ -21,20 +22,25 @@ export default function InputSwitch(props) {
   return (
     <FormFieldWrapper
       className={className}
-      disabled={disabled}
       errorMessage={errorMessage}
       label={label}
       name={name}
     >
       <Switch
-        checked={value}
+        checked={disabled ? false : value}
         className={clsx(
-          value ? 'bg-sky-500' : 'bg-gray-500',
+          value && !disabled ? 'bg-sky-500' : 'bg-gray-500',
+          disabled && 'bg-gray-500 cursor-not-allowed',
           'relative inline-flex flex-shrink-0 h-[22px] w-[46px] border-2 border-transparent',
           'focus:outline-none focus-visible:ring-1 focus-visible:ring-white focus-visible:ring-opacity-75',
           'rounded-full cursor-pointer transition-colors ease-in-out duration-200',
         )}
-        onChange={onChange}
+        onChange={disabled ? () => {} : (val) => {
+          onChange(val)
+          if (clearErrors) {
+            clearErrors()
+          }
+        }}
       >
         <span className='sr-only'>Use setting</span>
         <span
@@ -44,7 +50,9 @@ export default function InputSwitch(props) {
             'pointer-events-none inline-block h-[18px] w-[18px] rounded-full bg-white shadow-lg',
             'transform ring-0 transition ease-in-out duration-200',
           )}
-        />
+        >
+          {disabled && <XIcon />}
+        </span>
       </Switch>
     </FormFieldWrapper>
   )
@@ -58,4 +66,5 @@ InputSwitch.propTypes = {
   className: PropTypes.string,
   defaultValue: PropTypes.bool,
   disabled: PropTypes.bool,
+  clearErrors: PropTypes.func,
 }

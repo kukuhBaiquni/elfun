@@ -4,7 +4,7 @@ import { useFieldArray } from 'react-hook-form'
 import PropTypes from 'prop-types'
 import _ from 'lodash/get'
 import {
-  VALUE_SUFFIX, INPUT_TYPE, SKILL_ATTRIBUTES, YES_NO, DAMAGE_TYPE,
+  VALUE_SUFFIX, INPUT_TYPE, SKILL_ATTRIBUTES, DAMAGE_TYPE,
   PERCENTAGE_OR_FLAT,
 } from 'constant/options'
 import Collapse from 'components/common/collapse'
@@ -53,6 +53,7 @@ export default function TableComposerAttributeForm(props) {
   }
 
   const errorMessage = _(errors, `${name}.message`) ?? ''
+  console.log(errors)
 
   return (
     <div className='bg-sky-50 dark:bg-gray-900 cursor-default rounded'>
@@ -71,6 +72,7 @@ export default function TableComposerAttributeForm(props) {
             <div className='grid grid-cols-1 sm:grid-cols-12 gap-x-2 gap flex-grow'>
               <InputSwitch
                 className='sm:col-span-6'
+                clearErrors={() => clearErrors([`${name}.${index}.attributeName`])}
                 control={control}
                 defaultValue={defaultValues[index]?.skipAttributes}
                 label='Skip Attributes'
@@ -86,6 +88,7 @@ export default function TableComposerAttributeForm(props) {
               <InputText
                 className='sm:col-span-12'
                 defaultValue={defaultValues[index]?.attributeName}
+                disabled={watch(`${name}.${index}.skipAttributes`)}
                 errors={errors}
                 label='Attribute Name'
                 name={`${name}.${index}.attributeName`}
@@ -104,6 +107,7 @@ export default function TableComposerAttributeForm(props) {
                 className='sm:col-span-12'
                 control={control}
                 defaultValue={defaultValues[index]?.isDealingDamage}
+                disabled={watch(`${name}.${index}.skipAttributes`)}
                 label='Is Dealing Damage'
                 name={`${name}.${index}.isDealingDamage`}
               />
@@ -111,7 +115,7 @@ export default function TableComposerAttributeForm(props) {
                 className='sm:col-span-6'
                 control={control}
                 defaultValue={defaultValues[index]?.damageType}
-                disabled={!watch(`${name}.${index}.isDealingDamage`)}
+                disabled={!watch(`${name}.${index}.isDealingDamage`) || watch(`${name}.${index}.skipAttributes`)}
                 label='Damage Type'
                 name={`${name}.${index}.damageType`}
                 options={DAMAGE_TYPE}
@@ -129,6 +133,7 @@ export default function TableComposerAttributeForm(props) {
                 className='sm:col-span-6'
                 control={control}
                 defaultValue={defaultValues[index]?.hasAwakeningEffect}
+                disabled={watch(`${name}.${index}.skipAwakening`)}
                 label='Has Awakening Effect'
                 name={`${name}.${index}.hasAwakeningEffect`}
               />
@@ -136,7 +141,7 @@ export default function TableComposerAttributeForm(props) {
                 className='sm:col-span-6'
                 control={control}
                 defaultValue={defaultValues[index]?.awakeningModifier}
-                disabled={!watch(`${name}.${index}.hasAwakeningEffect`)?.value}
+                disabled={!watch(`${name}.${index}.hasAwakeningEffect`) || watch(`${name}.${index}.skipAwakening`)}
                 errors={errors}
                 label='Awakening Value Modifier'
                 name={`${name}.${index}.awakeningModifier`}

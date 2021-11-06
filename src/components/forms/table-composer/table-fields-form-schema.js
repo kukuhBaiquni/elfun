@@ -1,5 +1,7 @@
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
+import _ from 'lodash/isEqual'
+import { INPUT_TYPE } from 'constant/options'
 
 const schema = yup.object().shape({
   tableName: yup.string().required('Table Name is required!'),
@@ -9,7 +11,8 @@ const schema = yup.object().shape({
         yup.object({
           skipAttributes: yup.bool(),
           skipAwakening: yup.bool(),
-          attributeName: yup.string().required('Attribute Name is required!'),
+          attributeName: yup.string().when('skipAttributes',
+            (skipAttributes, obj) => (skipAttributes ? obj : obj.required('Attribute Name is required!'))),
           flag: yup.object(),
           isDealingDamage: yup.bool(),
           damageType: yup.object({
@@ -26,12 +29,12 @@ const schema = yup.object().shape({
             value: yup.string(),
           }),
           value: yup.object({
-            normal: yup.string(),
+            normal: yup.string().when('valueType', {
+              is: (val) => _(val, INPUT_TYPE[0]),
+              then: yup.string().required('This field is required!'),
+              otherwise: yup.string(),
+            }),
             awaken: yup.string(),
-          }),
-          valueRange: yup.object({
-            normal: yup.array().of(yup.string()),
-            awaken: yup.array().of(yup.string()),
           }),
           suffix: yup.object({
             label: yup.string(),
@@ -43,5 +46,6 @@ const schema = yup.object().shape({
     }),
   ),
 })
+console.log(schema)
 
 export default yupResolver(schema)
