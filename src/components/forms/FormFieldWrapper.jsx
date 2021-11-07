@@ -1,12 +1,12 @@
 /* eslint-disable import/prefer-default-export */
-import { ExclamationCircleIcon } from '@heroicons/react/solid'
+import { ExclamationCircleIcon, InformationCircleIcon } from '@heroicons/react/solid'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
 
 export function FormFieldWrapper(props) {
   const {
     name, label, children, bordered, errorMessage,
-    className, disabled,
+    className, disabled, showInfo,
   } = props
   // eslint-disable-next-line no-console
   // console.log('📝', props)
@@ -16,7 +16,10 @@ export function FormFieldWrapper(props) {
       className,
     )}
     >
-      <label className='font-semibold' htmlFor={name}>{label}</label>
+      <label className='font-semibold flex items-center' htmlFor={name}>
+        {label}
+        {showInfo && <InformationCircleIcon className='ml-1 w-4 h-4' />}
+      </label>
       <div className={clsx(
         bordered && 'border-input focus-within:border-input-focus',
         'w-full my-1 font-nunito rounded transition-all duration-300',
@@ -43,6 +46,7 @@ FormFieldWrapper.propTypes = {
   errorMessage: PropTypes.string,
   className: PropTypes.string,
   disabled: PropTypes.bool,
+  showInfo: PropTypes.bool,
 }
 
 FormFieldWrapper.defaultProps = {
