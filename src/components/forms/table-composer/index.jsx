@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import Button from 'components/common/button'
-import { TemplateIcon } from '@heroicons/react/solid'
+import { SwitchVerticalIcon, TemplateIcon, TrashIcon } from '@heroicons/react/solid'
 import PropTypes from 'prop-types'
 import { useFieldArray } from 'react-hook-form'
 import Modal from 'components/common/modal'
 import _ from 'lodash/get'
+import Collapse from 'components/common/collapse'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 import TableComposerBodyForm from './table-composer-body-form'
 import TableComponent from './table-component'
@@ -39,17 +40,29 @@ export default function TableComposer(props) {
     <FormFieldWrapper errorMessage={errorMessage} label={label} name={name}>
       <div className='mb-2'>
         {fields.map((field, index) => (
-          <TableComponent
-            deleteTable={() => remove(index)}
-            field={field}
-            fieldIndex={index}
+          <Collapse
+            additionalToolbar={(
+              <TrashIcon
+                className='w-5 h-5 text-red-400'
+                onClick={() => remove(index)}
+              />
+            )}
             key={field.$id}
-            openModal={(data) => {
-              setIsVisible(true)
-              setFocusedData(data)
-              setFocusedDataIndex(index)
-            }}
-          />
+            preIcon={<SwitchVerticalIcon className='h-5 w-5 handle cursor-grab' />}
+            title={`Field ${index + 1} (${field.fieldName})`}
+          >
+            <TableComponent
+              deleteTable={() => remove(index)}
+              field={field}
+              fieldIndex={index}
+              key={field.$id}
+              openModal={(data) => {
+                setIsVisible(true)
+                setFocusedData(data)
+                setFocusedDataIndex(index)
+              }}
+            />
+          </Collapse>
         ))}
       </div>
       <Button

@@ -17,7 +17,7 @@ export default function ChangeJobQuest(props) {
           <Fragment>
             <Disclosure.Button className={clsx(
               'w-full p-2 font-medium text-left hover:bg-opacity-80 text-white',
-              'rounded-t dark:bg-warmGray-600 bg-coolGray-400 border-white focus-visible:border',
+              'rounded-t dark:bg-warmGray-600 bg-sky-500 border-white focus-visible:border',
             )}
             >
               <div className='flex justify-between'>
