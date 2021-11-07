@@ -40,8 +40,8 @@ function Table(props) {
   }
 
   return (
-    <div className='p-10 pr-20'>
-      <table className='border-collapse pr-20'>
+    <div className='overflow-x-auto'>
+      <table className='border-collapse'>
         <tbody>
           <tr>
             {fieldNames.map((item) => (

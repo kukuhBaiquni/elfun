@@ -63,7 +63,7 @@ export default function TableComposer(props) {
             preIcon={<SwitchVerticalIcon className='h-5 w-5 handle cursor-grab' />}
             title={`${field.tableName}`}
           >
-            <div className='overflow-x-auto p-20'>
+            <div className='overflow-x-auto p-2'>
               <TableInformation data={field.tableFields} />
             </div>
           </Collapse>
