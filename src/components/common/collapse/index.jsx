@@ -7,7 +7,9 @@ import clsx from 'clsx'
 import { Fragment } from 'react'
 
 export default function ChangeJobQuest(props) {
-  const { children, title, additionalToolbar } = props
+  const {
+    children, title, additionalToolbar, preIcon,
+  } = props
   return (
     <div className='w-full mt-3'>
       <Disclosure>
@@ -19,7 +21,10 @@ export default function ChangeJobQuest(props) {
             )}
             >
               <div className='flex justify-between'>
-                <span>{title}</span>
+                <div className='flex gap-2 items-center'>
+                  {preIcon}
+                  <span>{title}</span>
+                </div>
                 <div className='flex gap-2 items-center'>
                   {additionalToolbar}
                   <ChevronUpIcon className={clsx(

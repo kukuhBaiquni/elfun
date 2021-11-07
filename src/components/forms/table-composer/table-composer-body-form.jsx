@@ -24,7 +24,7 @@ export default function TableComposerBody(props) {
 
   const name = 'tableFields'
   const {
-    fields, append, remove,
+    fields, append, remove, move,
   } = useFieldArray({
     name,
     control,
@@ -59,6 +59,7 @@ export default function TableComposerBody(props) {
             defaultValues={defaultValues?.tableFields}
             fields={fields}
             form={form}
+            move={move}
             name={name}
             remove={remove}
           />
