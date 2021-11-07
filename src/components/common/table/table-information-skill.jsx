@@ -125,7 +125,7 @@ function Table(props) {
                       >
                         {`${numberFormat(calculateRangePercent(item.valueRange, item.value.awaken, 0))}${item.suffix.value} → 
                       ${numberFormat(calculateRangePercent(item.valueRange, item.value.awaken, 1))}${item.suffix.value}`}
-                        <span className='dark:text-green-400 whitespace-nowrap text-green-400 ml-1'>{`|${item.value.awaken}%↑`}</span>
+                        <span className='dark:text-green-400 whitespace-nowrap text-green-400 ml-1'>{`(${item.value.awaken}%)↑`}</span>
                       </td>
                     )
                   }

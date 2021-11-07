@@ -1,4 +1,4 @@
-import LayoutNoSidebar from 'layouts/layout-no-sidebar'
+import Layout from 'layouts'
 import Head from 'next/head'
 import { useForm } from 'react-hook-form'
 import FormSchema from 'components/page-fragment/contribution/skills/contribution-skills-form-schema'
@@ -31,7 +31,7 @@ export default function Skills() {
 }
 
 Skills.getLayout = (page) => (
-  <LayoutNoSidebar>
+  <Layout>
     {page}
-  </LayoutNoSidebar>
+  </Layout>
 )
