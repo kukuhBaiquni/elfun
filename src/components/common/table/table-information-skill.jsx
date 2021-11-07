@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
 import _ from 'lodash/startCase'
-import { memo } from 'react'
+import { Fragment, memo } from 'react'
 import numberFormat from 'utils/number-format'
 
 function Table(props) {
@@ -99,7 +99,7 @@ function Table(props) {
                       return (
                         <td
                           className='px-3 py-2 text-center border-input'
-                          key={`${item.hasAwakeningEffect}${item.valueType.value}${item.awakeningModifier.value}${index}`}
+                          key={`${key}${index}`}
                         >
                           {`${numberFormat(calculateFixedPercent(item.value))}${item.suffix.value}`}
                           <span className='dark:text-green-400 whitespace-nowrap text-green-400 ml-1'>{`(${value}%)↑`}</span>
@@ -109,7 +109,7 @@ function Table(props) {
                     return (
                       <td
                         className='px-3 py-2 text-center border-input whitespace-nowrap'
-                        key={`${item.valueType.value}${item.hasAwakeningEffect}${index}${item.awakeningModifier.value}${value}`}
+                        key={`${value}${index}`}
                       >
                         {`${numberFormat(value)}${item.suffix.value}`}
                       </td>
@@ -121,18 +121,18 @@ function Table(props) {
                     return (
                       <td
                         className='px-3 py-2 text-center border-input whitespace-nowrap'
-                        key={`${item.hasAwakeningEffect}${index}${item.valueType.value}${item.awakeningModifier.value}`}
+                        key={`${key}${index}`}
                       >
                         {`${numberFormat(calculateRangePercent(item.valueRange, item.value.awaken, 0))}${item.suffix.value} → 
                       ${numberFormat(calculateRangePercent(item.valueRange, item.value.awaken, 1))}${item.suffix.value}`}
-                        <span className='dark:text-green-400 whitespace-nowrap text-green-400 ml-1'>{`(${item.value.awaken}%)↑`}</span>
+                        <span className='dark:text-green-400 whitespace-nowrap text-green-400 ml-1'>{`|${item.value.awaken}%↑`}</span>
                       </td>
                     )
                   }
                   return (
                     <td
                       className='px-3 py-2 text-center border-input whitespace-nowrap'
-                      key={`${index}${item.hasAwakeningEffect}${item.valueType.value}${item.awakeningModifier.value}`}
+                      key={`${key}${index}`}
                     >
                       {`${numberFormat(value[0])}${item.suffix.value} → ${numberFormat(value[1])}${item.suffix.value}`}
                     </td>
@@ -142,12 +142,16 @@ function Table(props) {
               return (
                 <td
                   className='px-3 py-2 text-center border-input'
-                  key={`${item.hasAwakeningEffect}${item.awakeningModifier.value}${item.valueType.value}${index}`}
+                  key={index}
                 >
                   {item.valueType?.value === 'FIXED' ? (
-                  `${item.value.normal}${item.suffix.value}`
+                    `${numberFormat(item.value.normal)}${item.suffix.value}`
                   ) : (
-                  `${item.valueRange.normal[0]} → ${item.valueRange.normal[1]}`
+                    <Fragment>
+                      {`${numberFormat(item.valueRange.normal[0])}${item.suffix.value} →
+                      ${numberFormat(item.valueRange.normal[1])}${item.suffix.value}`}
+                      <span className='dark:text-green-400 whitespace-nowrap text-green-400 ml-1'>{`|${item.value.awaken}%↑`}</span>
+                    </Fragment>
                   )}
                 </td>
               )
