@@ -1,14 +1,16 @@
 import { useState } from 'react'
 import Button from 'components/common/button'
-import { SwitchVerticalIcon, TemplateIcon, TrashIcon } from '@heroicons/react/solid'
+import {
+  PencilIcon, SwitchVerticalIcon, TemplateIcon, TrashIcon,
+} from '@heroicons/react/solid'
 import PropTypes from 'prop-types'
 import { useFieldArray } from 'react-hook-form'
 import Modal from 'components/common/modal'
 import _ from 'lodash/get'
 import Collapse from 'components/common/collapse'
+import TableInformation from 'components/common/table/table-information-skill'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 import TableComposerBodyForm from './table-composer-body-form'
-import TableComponent from './table-component'
 
 export default function TableComposer(props) {
   const {
@@ -42,26 +44,28 @@ export default function TableComposer(props) {
         {fields.map((field, index) => (
           <Collapse
             additionalToolbar={(
-              <TrashIcon
-                className='w-5 h-5 text-red-400'
-                onClick={() => remove(index)}
-              />
+              <div className='flex gap-1'>
+                <PencilIcon
+                  className='w-5 h-5 text-sky-500 cursor-pointer dark:hover:bg-gray-800 hover:bg-gray-300 p-0.5 rounded'
+                  onClick={() => {
+                    setIsVisible(true)
+                    setFocusedData(field)
+                    setFocusedDataIndex(index)
+                  }}
+                />
+                <TrashIcon
+                  className='w-5 h-5 text-red-500 cursor-pointer dark:hover:bg-gray-800 hover:bg-gray-300 p-0.5 rounded'
+                  onClick={() => remove(index)}
+                />
+              </div>
             )}
             key={field.$id}
             preIcon={<SwitchVerticalIcon className='h-5 w-5 handle cursor-grab' />}
-            title={`Field ${index + 1} (${field.fieldName})`}
+            title={`${field.tableName}`}
           >
-            <TableComponent
-              deleteTable={() => remove(index)}
-              field={field}
-              fieldIndex={index}
-              key={field.$id}
-              openModal={(data) => {
-                setIsVisible(true)
-                setFocusedData(data)
-                setFocusedDataIndex(index)
-              }}
-            />
+            <div className='overflow-x-auto p-20'>
+              <TableInformation data={field.tableFields} />
+            </div>
           </Collapse>
         ))}
       </div>

@@ -54,13 +54,13 @@ export default function ContributionSkillsForm(props) {
           ]}
         />
         <InputImage label='Skill Icon' name='skillIcon' />
-        <TableComposer
-          control={control}
-          errors={errors}
-          label='Table Information List'
-          name='table'
-        />
       </section>
+      <TableComposer
+        control={control}
+        errors={errors}
+        label='Table Information List'
+        name='table'
+      />
       <Button
         label='Submit'
         onClick={handleSubmit(onSubmit)}
