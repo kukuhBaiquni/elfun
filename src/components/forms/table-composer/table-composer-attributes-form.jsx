@@ -30,7 +30,7 @@ export default function TableComposerAttributeForm(props) {
     if (!Array.isArray(_(errors, name))) {
       clearErrors(name)
       append({
-        standAlone: false,
+        skipAttributeName: false,
         attributeName: '',
         flag: { label: 'none', value: '' },
         isDealingDamage: false,
@@ -72,14 +72,14 @@ export default function TableComposerAttributeForm(props) {
                 className='sm:col-span-6'
                 clearErrors={() => clearErrors([`${name}.${index}.attributeName`])}
                 control={control}
-                defaultValue={defaultValues[index]?.standAlone}
-                label='Stand Alone'
-                name={`${name}.${index}.standAlone`}
+                defaultValue={defaultValues[index]?.skipAttributeName}
+                label='Skip Attribute Name'
+                name={`${name}.${index}.skipAttributeName`}
               />
               <InputText
                 className='sm:col-span-12'
                 defaultValue={defaultValues[index]?.attributeName}
-                disabled={watch(`${name}.${index}.standAlone`)}
+                disabled={watch(`${name}.${index}.skipAttributeName`)}
                 errors={errors}
                 label='Attribute Name'
                 name={`${name}.${index}.attributeName`}
@@ -98,7 +98,6 @@ export default function TableComposerAttributeForm(props) {
                 className='sm:col-span-12'
                 control={control}
                 defaultValue={defaultValues[index]?.isDealingDamage}
-                disabled={watch(`${name}.${index}.standAlone`)}
                 label='Is Dealing Damage'
                 name={`${name}.${index}.isDealingDamage`}
               />
@@ -106,7 +105,7 @@ export default function TableComposerAttributeForm(props) {
                 className='sm:col-span-6'
                 control={control}
                 defaultValue={defaultValues[index]?.damageType}
-                disabled={!watch(`${name}.${index}.isDealingDamage`) || watch(`${name}.${index}.standAlone`)}
+                disabled={!watch(`${name}.${index}.isDealingDamage`)}
                 label='Damage Type'
                 name={`${name}.${index}.damageType`}
                 options={DAMAGE_TYPE}
@@ -180,19 +179,17 @@ export default function TableComposerAttributeForm(props) {
           </div>
         </Collapse>
       ))}
-      {!fields[0]?.standAlone && (
-        <FormFieldWrapper
-          errorMessage={errorMessage}
-          name={name}
-        >
-          <Button
-            label='Add Attribute'
-            leftIcon={<PlusIcon className='h-3.5 w-3.5' />}
-            size='sm'
-            onClick={addAttributes}
-          />
-        </FormFieldWrapper>
-      )}
+      <FormFieldWrapper
+        errorMessage={errorMessage}
+        name={name}
+      >
+        <Button
+          label='Add Attribute'
+          leftIcon={<PlusIcon className='h-3.5 w-3.5' />}
+          size='sm'
+          onClick={addAttributes}
+        />
+      </FormFieldWrapper>
     </div>
   )
 }

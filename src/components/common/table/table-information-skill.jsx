@@ -6,6 +6,16 @@ import numberFormat from 'utils/number-format'
 
 function Table(props) {
   const { data } = props
+
+  const setRowSpan = (obj) => {
+    if (obj.attributes.some((attr) => attr.skipAttributeName)) {
+      if (obj.attributes.some((attr) => attr.hasAwakeningEffect)) {
+        return 2
+      }
+      return 3
+    }
+    return 1
+  }
   const fieldNames = data.map((item) => ({
     fieldName: item.fieldName,
     attributeLength: item.attributes.reduce((prev, cur) => {
@@ -14,7 +24,7 @@ function Table(props) {
       }
       return prev + 1
     }, 0),
-    rowSpan: item.attributes.every((attr) => !attr.standAlone) ? 1 : 3,
+    rowSpan: setRowSpan(item),
   }))
   const rawData = data.map((item) => item.attributes).flat()
 
@@ -28,7 +38,6 @@ function Table(props) {
     const base = +val.normal[index]
     return base + (base * (+percent / 100))
   }
-
   console.log(fieldNames)
   return (
     <table className='border-collapse'>
@@ -49,7 +58,7 @@ function Table(props) {
         </tr>
         <tr>
           {rawData.map((item, index) => {
-            if (item.standAlone) {
+            if (item.skipAttributeName) {
               return null
             }
             return (
@@ -67,7 +76,7 @@ function Table(props) {
           })}
         </tr>
         <tr>
-          {rawData.map((item, index) => {
+          {rawData.map((item) => {
             if (item.hasAwakeningEffect) {
               return Object.keys(item.value).map(
                 (key) => (

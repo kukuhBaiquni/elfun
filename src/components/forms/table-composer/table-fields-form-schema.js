@@ -7,9 +7,9 @@ const schema = yup.object().shape({
     yup.object({
       attributes: yup.array().required().min(1, 'Attributes is required!').of(
         yup.object({
-          standAlone: yup.bool(),
-          attributeName: yup.string().when('standAlone',
-            (standAlone, obj) => (standAlone ? obj : obj.required('Attribute Name is required!'))),
+          skipAttributeName: yup.bool(),
+          attributeName: yup.string().when('skipAttributeName',
+            (skipAttributeName, obj) => (skipAttributeName ? obj : obj.required('Attribute Name is required!'))),
           flag: yup.object(),
           isDealingDamage: yup.bool(),
           damageType: yup.object({
