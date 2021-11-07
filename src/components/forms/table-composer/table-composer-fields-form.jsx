@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { TrashIcon, SwitchVerticalIcon } from '@heroicons/react/solid'
 import PropTypes from 'prop-types'
-
+import Collapse from 'components/common/collapse'
 import Button from 'components/common/button'
 import { ReactSortable } from 'react-sortablejs'
 import TableComposerAttributeForm from './table-composer-attributes-form'
@@ -28,31 +28,33 @@ export default function TableComposerFieldsForm(props) {
         onEnd={(evt) => move(evt.oldIndex, evt.newIndex)}
       >
         {fields.map((field, index) => (
-          <div className='bg-sky-50 dark:bg-gray-900 rounded mb-2 p-2 handle cursor-grab' key={field.$id}>
-            <SwitchVerticalIcon className='w-5 h-5' />
-            <InputText
-              defaultValue={defaultValues[index]?.fieldName}
-              errors={errors}
-              label='Field Name'
-              name={`${name}.${index}.fieldName`}
-              placeholder='Field Name..'
-              register={register}
-            />
-            <TableComposerAttributeForm
-              defaultValues={defaultValues[index]?.attributes}
-              form={form}
-              name={`${name}.${index}.attributes`}
-            />
-            <div className='mt-2 flex justify-end'>
-              <Button
-                label='Remove this Field'
-                leftIcon={<TrashIcon className='h-3.5 w-3.5 mr-1' />}
-                size='sm'
-                variant='danger-solid'
+          <Collapse
+            additionalToolbar={(
+              <TrashIcon
+                className='w-5 h-5 text-red-400'
                 onClick={() => remove(index)}
               />
+            )}
+            key={field.$id}
+            preIcon={<SwitchVerticalIcon className='h-5 w-5 handle cursor-grab' />}
+            title={`Field ${index + 1} (${field.fieldName})`}
+          >
+            <div className='bg-sky-50 dark:bg-gray-900 rounded p-2'>
+              <InputText
+                defaultValue={defaultValues[index]?.fieldName}
+                errors={errors}
+                label='Field Name'
+                name={`${name}.${index}.fieldName`}
+                placeholder='Field Name..'
+                register={register}
+              />
+              <TableComposerAttributeForm
+                defaultValues={defaultValues[index]?.attributes}
+                form={form}
+                name={`${name}.${index}.attributes`}
+              />
             </div>
-          </div>
+          </Collapse>
         ))}
       </ReactSortable>
     </Fragment>
