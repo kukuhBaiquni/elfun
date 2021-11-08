@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types'
 import { memo } from 'react'
+import _ from 'lodash/get'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 
 function Textarea(props) {
   const {
     name, label, placeholder, defaultValue, register, errors,
+    rows = 6,
   } = props
 
-  const errorMessage = Object.keys(errors).includes(name) ? errors[name].message : ''
+  const errorMessage = _(errors, `${name}.message`) ?? ''
 
   return (
     <FormFieldWrapper bordered errorMessage={errorMessage} label={label} name={name}>
@@ -18,7 +20,7 @@ function Textarea(props) {
         defaultValue={defaultValue}
         id={name}
         placeholder={placeholder}
-        rows={6}
+        rows={rows}
         spellCheck={false}
         type='text'
       />
@@ -35,6 +37,7 @@ Textarea.propTypes = {
   placeholder: PropTypes.string,
   register: PropTypes.func,
   errors: PropTypes.object,
+  rows: PropTypes.number,
 }
 
 Textarea.defaultProps = {
