@@ -15,7 +15,7 @@ function Layout({ children }) {
         <div className='w-full pt-24'>
           <div className='flex px-1.5'>
             <Sidebar />
-            <div className='grid grid-cols-1'>
+            <div className='w-full'>
               {children}
             </div>
           </div>
