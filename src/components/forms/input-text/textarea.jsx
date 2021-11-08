@@ -14,11 +14,11 @@ function Textarea(props) {
       <textarea
         {...register(name)}
         autoComplete='off'
-        className='w-full outline-none placeholder-gray-500 bg-transparent text-sm p-2 resize-none'
+        className='w-full outline-none placeholder-gray-500 bg-transparent text-sm p-2 resize-none custom-scroll'
         defaultValue={defaultValue}
         id={name}
         placeholder={placeholder}
-        rows={4}
+        rows={6}
         spellCheck={false}
         type='text'
       />
