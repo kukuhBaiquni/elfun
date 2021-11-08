@@ -7,6 +7,7 @@ import TableComposer from 'components/forms/table-composer'
 import PropTypes from 'prop-types'
 import Button from 'components/common/button'
 import InputRadio from 'components/forms/input-radio'
+import PopoverForm from 'components/forms/popover-form'
 import { Fragment } from 'react'
 
 export default function ContributionSkillsForm(props) {
@@ -21,40 +22,45 @@ export default function ContributionSkillsForm(props) {
 
   return (
     <Fragment>
-      <section className='max-w-xl'>
-        <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Add New Skill: Optimus</h2>
-        <InputText
-          errors={errors}
-          label='Skill Name'
-          name='skillName'
-          placeholder='Skill Name..'
-          register={register}
-        />
-        <Textarea
-          errors={errors}
-          label='Description'
-          name='skillDescription'
-          placeholder='Description..'
-          register={register}
-        />
-        <InputSelect
-          control={control}
-          errors={errors}
-          label='Skill Category'
-          name='skillCategory'
-          options={SKILL_CATEGORIES}
-        />
-        <InputRadio
-          control={control}
-          label='Affect Another Skill'
-          name='affectAnotherSkill'
-          options={[
-            { label: 'No', value: false },
-            { label: 'Yes', value: true },
-          ]}
-        />
-        <InputImage label='Skill Icon' name='skillIcon' />
-      </section>
+      <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Add New Skill: Optimus</h2>
+      <div className='grid sm:grid-cols-2 grid-cols-1 sm:gap-3'>
+        <section className='max-w-xl'>
+          <InputText
+            errors={errors}
+            label='Skill Name'
+            name='skillName'
+            placeholder='Skill Name..'
+            register={register}
+          />
+          <Textarea
+            errors={errors}
+            label='Description'
+            name='skillDescription'
+            placeholder='Description..'
+            register={register}
+          />
+          <InputSelect
+            control={control}
+            errors={errors}
+            label='Skill Category'
+            name='skillCategory'
+            options={SKILL_CATEGORIES}
+          />
+          <InputRadio
+            control={control}
+            label='Affect Another Skill'
+            name='affectAnotherSkill'
+            options={[
+              { label: 'No', value: false },
+              { label: 'Yes', value: true },
+            ]}
+          />
+          <InputImage label='Skill Icon' name='skillIcon' />
+        </section>
+        <section>
+          <PopoverForm />
+        </section>
+      </div>
       <TableComposer
         control={control}
         errors={errors}
