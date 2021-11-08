@@ -3,7 +3,7 @@ import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Button from '.'
 
-describe('Should jancok', () => {
+describe('Test Button Component', () => {
   it('Render label correctly', () => {
     const label = 'button'
     const { getByText } = render(<Button label={label} />)

@@ -40,7 +40,7 @@ function Table(props) {
   }
 
   return (
-    <div className='overflow-x-auto grid grid-cols-1'>
+    <div className='overflow-x-auto grid grid-cols-1 py-3 mb-5'>
       <table className='border-collapse'>
         <tbody>
           <tr>
