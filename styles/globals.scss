@@ -29,6 +29,10 @@
   .border-input-focus {
     @apply border border-sky-500 dark:border-gray-500 bg-sky-100 dark:bg-gray-700;
   }
+  .action-icon {
+    @apply cursor-pointer dark:hover:bg-gray-800 hover:bg-gray-300 p-0.5 rounded;
+  }
+
   li .job-nesting:hover > div {
     opacity: 1;
   }

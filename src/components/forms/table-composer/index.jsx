@@ -44,9 +44,9 @@ export default function TableComposer(props) {
           <div key={field.$id}>
             <div className='p-2 dark:bg-gray-900 bg-gray-300 flex items-center justify-between max-w-xl'>
               <h6 className='uppercase font-bold'>{`${field.tableName}`}</h6>
-              <div className='flex gap-1'>
+              <div className='flex'>
                 <PencilIcon
-                  className='w-5 h-5 text-sky-500 cursor-pointer dark:hover:bg-gray-800 hover:bg-gray-300 p-0.5 rounded'
+                  className='w-5 h-5 text-sky-500 action-icon'
                   onClick={() => {
                     setIsVisible(true)
                     setFocusedData(field)
@@ -54,7 +54,7 @@ export default function TableComposer(props) {
                   }}
                 />
                 <TrashIcon
-                  className='w-5 h-5 text-red-500 cursor-pointer dark:hover:bg-gray-800 hover:bg-gray-300 p-0.5 rounded'
+                  className='w-5 h-5 text-red-500 action-icon'
                   onClick={() => remove(index)}
                 />
               </div>

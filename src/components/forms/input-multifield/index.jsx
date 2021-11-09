@@ -29,12 +29,10 @@ export default function InputMultifield(props) {
   })
 
   const formSubmit = (data) => {
-    console.log('DATA___', data)
-    console.log(focusedIndex)
     if (focusedIndex === -1) {
       append(data)
     } else {
-      update(data, focusedIndex)
+      update(focusedIndex, data)
     }
     setIsVisible(false)
   }
@@ -51,7 +49,7 @@ export default function InputMultifield(props) {
         onEnd={(evt) => move(evt.oldIndex, evt.newIndex)}
       >
         {fields.map((field, index) => (
-          <div className='p-2 dark:bg-gray-700 handle cursor-grab bg-warmGray-200 flex justify-between mb-2 border-input' key={field.$id}>
+          <div className='p-2 dark:bg-gray-700 handle cursor-grab bg-warmGray-200 rounded flex justify-between mb-2 border-input' key={field.$id}>
             <div>
               <SwitchVerticalIcon className='w-5 h-5' />
               <div>
@@ -59,16 +57,19 @@ export default function InputMultifield(props) {
                 <p className='text-sm'>{field.description}</p>
               </div>
             </div>
-            <div className='flex gap-2 items-start'>
+            <div className='flex items-start'>
               <PencilIcon
-                className='w-4 h-4 text-sky-500 cursor-pointer'
+                className='w-5 h-5 text-sky-500 action-icon'
                 onClick={() => {
                   setFocusedData(field)
                   setFocusedIndex(index)
                   setIsVisible(true)
                 }}
               />
-              <TrashIcon className='w-4 h-4 text-red-500 cursor-pointer' onClick={() => remove(index)} />
+              <TrashIcon
+                className='w-5 h-5 text-red-500 action-icon'
+                onClick={() => remove(index)}
+              />
             </div>
           </div>
         ))}
