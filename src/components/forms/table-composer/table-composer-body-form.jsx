@@ -46,7 +46,7 @@ export default function TableComposerBody(props) {
         <XIcon className='w-6 h-6 cursor-pointer' onClick={closeModal} />
       </div>
       <div className='py-2 pl-3 pr-2 mt-3'>
-        <div className='h-[700px] overflow-y-auto custom-scroll pr-2'>
+        <div className='max-h-[700px] min-h-[300px] overflow-y-auto custom-scroll pr-2'>
           <InputText
             defaultValue={defaultValues?.tableName}
             errors={errors}
