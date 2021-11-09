@@ -28,10 +28,10 @@ export default function TableComposer(props) {
   })
 
   const onSubmit = (data) => {
-    if (focusedDataIndex !== -1) {
-      update(focusedDataIndex, data)
-    } else {
+    if (focusedDataIndex === -1) {
       append(data)
+    } else {
+      update(focusedDataIndex, data)
     }
     setIsVisible(false)
   }

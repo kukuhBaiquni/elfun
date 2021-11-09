@@ -22,7 +22,7 @@ export default function Button(props) {
         buttonVariant,
         size === 'sm'
           ? 'py-1.5 px-3 text-sm'
-          : 'py-2 px-8',
+          : 'py-2 px-3',
         fluid && 'w-full',
         'flex items-center justify-center rounded transition-all duration-300',
       )}
