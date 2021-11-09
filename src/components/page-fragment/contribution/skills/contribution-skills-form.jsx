@@ -60,8 +60,15 @@ export default function ContributionSkillsForm(props) {
         <section>
           <InputMultifield
             buttonLabel='Add Special Feature'
-            control={control}
-            errors={errors}
+            components={[
+              {
+                Node: InputText, name: 'name', label: 'Name', placeholder: 'Feature Name..',
+              },
+              {
+                Node: Textarea, name: 'description', label: 'Description', placeholder: 'Description..',
+              },
+            ]}
+            form={form}
             label='Special Features'
             name='specialFeatures'
           />
