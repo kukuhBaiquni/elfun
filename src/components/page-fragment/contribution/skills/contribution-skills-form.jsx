@@ -7,7 +7,7 @@ import TableComposer from 'components/forms/table-composer'
 import PropTypes from 'prop-types'
 import Button from 'components/common/button'
 import InputRadio from 'components/forms/input-radio'
-import PopoverForm from 'components/forms/popover-form'
+import InputMultifield from 'components/forms/input-multifield'
 import { Fragment } from 'react'
 
 export default function ContributionSkillsForm(props) {
@@ -58,7 +58,13 @@ export default function ContributionSkillsForm(props) {
           <InputImage label='Skill Icon' name='skillIcon' />
         </section>
         <section>
-          <PopoverForm />
+          <InputMultifield
+            buttonLabel='Add Special Feature'
+            control={control}
+            errors={errors}
+            label='Special Features'
+            name='specialFeatures'
+          />
         </section>
       </div>
       <TableComposer
