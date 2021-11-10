@@ -2,6 +2,7 @@
 import { ExclamationCircleIcon, InformationCircleIcon } from '@heroicons/react/solid'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
+import Popover from 'components/common/popover'
 
 export function FormFieldWrapper(props) {
   const {
@@ -18,7 +19,11 @@ export function FormFieldWrapper(props) {
     >
       <label className='font-semibold flex items-center' htmlFor={name}>
         {label}
-        {showInfo && <InformationCircleIcon className='ml-1 w-4 h-4' />}
+        {showInfo && (
+          <Popover>
+            <InformationCircleIcon className='ml-1 w-4 h-4' />
+          </Popover>
+        )}
       </label>
       <div className={clsx(
         bordered && 'border-input focus-within:border-input-focus',
