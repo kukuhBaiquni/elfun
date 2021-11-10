@@ -4,7 +4,6 @@ import { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { useForm } from 'react-hook-form'
 import FormSchema from 'components/page-fragment/contribution/skills/special-features-schema'
-import { yupResolver } from '@hookform/resolvers/yup'
 
 export default function InputMultifieldBody(props) {
   const {
@@ -13,7 +12,7 @@ export default function InputMultifieldBody(props) {
   } = props
   const { formState: { errors }, register, handleSubmit } = useForm({
     defaultValues,
-    resolver: yupResolver(FormSchema),
+    resolver: FormSchema,
   })
 
   return (
@@ -33,6 +32,7 @@ export default function InputMultifieldBody(props) {
               name={Component.name}
               placeholder={Component.placeholder}
               register={register}
+              showInfo
             />
           ))}
         </div>

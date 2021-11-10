@@ -6,13 +6,19 @@ import { FormFieldWrapper } from '../FormFieldWrapper'
 function Textarea(props) {
   const {
     name, label, placeholder, defaultValue, register, errors,
-    rows = 6,
+    rows = 6, showInfo,
   } = props
 
   const errorMessage = _(errors, `${name}.message`) ?? ''
 
   return (
-    <FormFieldWrapper bordered errorMessage={errorMessage} label={label} name={name}>
+    <FormFieldWrapper
+      bordered
+      errorMessage={errorMessage}
+      label={label}
+      name={name}
+      showInfo={showInfo}
+    >
       <textarea
         {...register(name)}
         autoComplete='off'
@@ -38,6 +44,7 @@ Textarea.propTypes = {
   register: PropTypes.func,
   errors: PropTypes.object,
   rows: PropTypes.number,
+  showInfo: PropTypes.bool,
 }
 
 Textarea.defaultProps = {
