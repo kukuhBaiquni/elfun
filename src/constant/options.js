@@ -53,3 +53,21 @@ export const PERCENTAGE_OR_FLAT = [
   { label: 'Flat', value: 'FLAT' },
   { label: 'Percentage', value: 'PERCENT' },
 ]
+
+export const STATISTIC = {
+  speed: [
+    { label: 'Slow', value: 'SLOW' },
+    { label: 'Average', value: 'AVERAGE' },
+    { label: 'Fast', value: 'FAST' },
+  ],
+  attackRange: [
+    { label: 'Short', value: 'SHORT' },
+    { label: 'Medium', value: 'MEDIUM' },
+    { label: 'Long', value: 'LONG' },
+  ],
+  difficulty: [
+    { label: 'Easy', value: 'EASY' },
+    { label: 'Normal', value: 'NORMAL' },
+    { label: 'Hard', value: 'HARD' },
+  ],
+}
