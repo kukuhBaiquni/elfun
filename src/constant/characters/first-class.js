@@ -7,7 +7,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-elsword',
     characterId: 0,
     classId: 1,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Magic Knight',
@@ -17,7 +17,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-elsword',
     characterId: 0,
     classId: 1,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Sheath Knight',
@@ -27,7 +27,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-elsword',
     characterId: 0,
     classId: 1,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Root Knight',
@@ -37,7 +37,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-elsword',
     characterId: 0,
     classId: 1,
-    pathId: 4,
+    pathId: 3,
   },
   {
     name: 'High Magician',
@@ -47,7 +47,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-aisha',
     characterId: 1,
     classId: 1,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Dark Magician',
@@ -57,7 +57,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-aisha',
     characterId: 1,
     classId: 1,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Battle Magician',
@@ -67,7 +67,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-aisha',
     characterId: 1,
     classId: 1,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Combat Ranger',
@@ -77,7 +77,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-rena',
     characterId: 2,
     classId: 1,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Sniping Ranger',
@@ -87,7 +87,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-rena',
     characterId: 2,
     classId: 1,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Trapping Ranger',
@@ -97,7 +97,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-rena',
     characterId: 2,
     classId: 1,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Sword Taker',
@@ -107,7 +107,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-raven',
     characterId: 3,
     classId: 1,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Over Taker',
@@ -117,7 +117,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-raven',
     characterId: 3,
     classId: 1,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Weapon Taker',
@@ -127,7 +127,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-raven',
     characterId: 3,
     classId: 1,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Code: Exotic',
@@ -137,7 +137,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-eve',
     characterId: 4,
     classId: 1,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Code: Architecture',
@@ -147,7 +147,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-eve',
     characterId: 4,
     classId: 1,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Code: Electra',
@@ -157,7 +157,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-eve',
     characterId: 4,
     classId: 1,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Code: Unknown',
@@ -167,7 +167,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-eve',
     characterId: 4,
     classId: 1,
-    pathId: 4,
+    pathId: 3,
   },
   {
     name: 'Fury Guardian',
@@ -177,7 +177,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-chung',
     characterId: 5,
     classId: 1,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Shooting Guardian',
@@ -187,7 +187,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-chung',
     characterId: 5,
     classId: 1,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Shelling Guardian',
@@ -197,7 +197,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-chung',
     characterId: 5,
     classId: 1,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Little Hsien',
@@ -207,7 +207,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-ara',
     characterId: 6,
     classId: 1,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Little Devil',
@@ -217,7 +217,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-ara',
     characterId: 6,
     classId: 1,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Little Specter',
@@ -227,7 +227,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-ara',
     characterId: 6,
     classId: 1,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Saber Knight',
@@ -237,7 +237,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-elesis',
     characterId: 7,
     classId: 1,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Pyro Knight',
@@ -247,7 +247,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-elesis',
     characterId: 7,
     classId: 1,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Dark Knight',
@@ -257,7 +257,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-elesis',
     characterId: 7,
     classId: 1,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Psyshic Tracer',
@@ -267,7 +267,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-add',
     characterId: 8,
     classId: 1,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Arc Tracer',
@@ -277,7 +277,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-add',
     characterId: 8,
     classId: 1,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Time Tracer',
@@ -287,7 +287,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-add',
     characterId: 8,
     classId: 1,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Chiliarch',
@@ -297,7 +297,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-luciel',
     characterId: 9,
     classId: 1,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Noblesse',
@@ -307,7 +307,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-luciel',
     characterId: 9,
     classId: 1,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Diabla',
@@ -317,7 +317,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-luciel',
     characterId: 9,
     classId: 1,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Dreadlord',
@@ -327,7 +327,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-luciel',
     characterId: 10,
     classId: 1,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Royal Guard',
@@ -337,7 +337,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-luciel',
     characterId: 10,
     classId: 1,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Demonio',
@@ -347,7 +347,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-luciel',
     characterId: 10,
     classId: 1,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Heavy Barrel',
@@ -358,7 +358,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-rose',
     characterId: 11,
     classId: 1,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Bloodia',
@@ -369,7 +369,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-rose',
     characterId: 11,
     classId: 1,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Valkyrie',
@@ -380,7 +380,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-rose',
     characterId: 11,
     classId: 1,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Metal Heart',
@@ -391,7 +391,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-rose',
     characterId: 11,
     classId: 1,
-    pathId: 4,
+    pathId: 3,
   },
   {
     name: 'Lofty: Executor',
@@ -401,7 +401,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-ain',
     characterId: 12,
     classId: 1,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Lofty: Anpassen',
@@ -411,7 +411,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-ain',
     characterId: 12,
     classId: 1,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Lofty: Wanderer',
@@ -421,7 +421,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-ain',
     characterId: 12,
     classId: 1,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Sparky Child',
@@ -431,7 +431,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-laby',
     characterId: 13,
     classId: 1,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Twinkle Child',
@@ -441,7 +441,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-laby',
     characterId: 13,
     classId: 1,
-    pathId: 2,
+    pathId: 1,
   }, {
     name: 'Rusty Child',
     img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Flaby%2Frusty-child.png?alt=media&token=48bd851a-768c-4a7c-a871-233f9bcfc745',
@@ -450,7 +450,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-laby',
     characterId: 13,
     classId: 1,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Second Revenger',
@@ -460,7 +460,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-noah',
     characterId: 14,
     classId: 1,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Second Selection',
@@ -470,7 +470,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-noah',
     characterId: 14,
     classId: 1,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Second Grief',
@@ -480,7 +480,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-noah',
     characterId: 14,
     classId: 1,
-    pathId: 3,
+    pathId: 2,
   },
 ]
 

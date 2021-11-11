@@ -3,6 +3,9 @@
 import { Fragment } from 'react'
 import { useRouter } from 'next/router'
 import { ChevronDoubleDownIcon, CheckCircleIcon, XIcon } from '@heroicons/react/solid'
+import {
+  firstClass, secondClass, transcendentClass, thirdClass,
+} from 'constant/characters'
 import clsx from 'clsx'
 
 export default function JobPathMapper(props) {
@@ -10,12 +13,6 @@ export default function JobPathMapper(props) {
     data, selectedCharacter, setSelectedCharacter, closeModal,
   } = props
   const { push, pathname } = useRouter()
-
-  const onSelectCharacter = (name, img, bgColor) => {
-    setSelectedCharacter({
-      name, img, bgColor,
-    })
-  }
 
   return (
     <Fragment>
@@ -43,14 +40,14 @@ export default function JobPathMapper(props) {
               height={54}
               src={data?.img}
               width={54}
-              onClick={() => onSelectCharacter(data?.name, data?.img, data?.bgColor)}
+              onClick={() => setSelectedCharacter(data)}
             />
           </div>
           <span>{data?.name}</span>
           <SecondPath
             data={data}
             selectedCharacter={selectedCharacter}
-            onSelectCharacter={onSelectCharacter}
+            setSelectedCharacter={setSelectedCharacter}
           />
         </div>
         <button
@@ -63,7 +60,10 @@ export default function JobPathMapper(props) {
           )}
           disabled={!selectedCharacter}
           type='button'
-          onClick={() => push(`${pathname}/create?character=${selectedCharacter?.name}`)}
+          onClick={() => push({
+            pathname: `${pathname}/create`,
+            query: selectedCharacter,
+          })}
         >
           Start Now!
         </button>
@@ -73,10 +73,15 @@ export default function JobPathMapper(props) {
 }
 
 function SecondPath(props) {
-  const { data, onSelectCharacter, selectedCharacter } = props
+  const { data, setSelectedCharacter, selectedCharacter } = props
+  const firstClassData = firstClass.filter((cls) => cls.characterId === data.characterId)
   return (
-    <div className={`grid ${data?.child.length === 3 ? 'grid-cols-3' : 'grid-cols-4'} gap-3 mt-1`}>
-      {data?.child.map((item) => (
+    <div className={clsx(
+      firstClassData?.length === 3 ? 'grid-cols-3' : 'grid-cols-4',
+      'grid gap-3 mt-1',
+    )}
+    >
+      {firstClassData.map((item) => (
         <Fragment key={item.name}>
           <div className='flex flex-col items-center'>
             {selectedCharacter?.name === item.name ? (
@@ -96,9 +101,7 @@ function SecondPath(props) {
                 height={54}
                 src={item.img}
                 width={54}
-                onClick={
-                  () => onSelectCharacter(item.name, item.img, data.bgColor)
-                }
+                onClick={() => setSelectedCharacter(item)}
               />
             </div>
             <span>{item.name}</span>
@@ -106,8 +109,8 @@ function SecondPath(props) {
               bgColor={data.bgColor}
               data={item}
               selectedCharacter={selectedCharacter}
+              setSelectedCharacter={setSelectedCharacter}
               textColor={data.textColor}
-              onSelectCharacter={onSelectCharacter}
             />
           </div>
         </Fragment>
@@ -118,33 +121,38 @@ function SecondPath(props) {
 
 function LastPath(props) {
   const {
-    data, textColor, bgColor, onSelectCharacter, selectedCharacter,
+    data, textColor, bgColor, setSelectedCharacter, selectedCharacter,
   } = props
+  const secondClassData = [
+    ...secondClass,
+    ...transcendentClass,
+    ...thirdClass,
+  ].filter((cls) => cls.characterId === data.characterId && cls.pathId === data.pathId)
   return (
     <div className='grid grid-cols-1 gap-3 mt-3'>
-      {data.child.map((job) => (
-        <div className='flex flex-col items-center' key={job.name}>
-          {selectedCharacter?.name === job.name ? (
+      {secondClassData.map((cls) => (
+        <div className='flex flex-col items-center' key={cls.name}>
+          {selectedCharacter?.name === cls.name ? (
             <CheckCircleIcon className='w-5 h-5 mb-2 text-green-600' />
           ) : (
             <ChevronDoubleDownIcon className={`w-5 h-5 mb-2 ${textColor}`} />
           )}
           <div className={clsx(
-            selectedCharacter?.name === job.name ? bgColor : 'dark:bg-gray-500 bg-gray-400',
+            selectedCharacter?.name === cls.name ? bgColor : 'dark:bg-gray-500 bg-gray-400',
             'p-1 mb-1 flex flex-col items-center cursor-pointer hover:opacity-75 transition-all duration-300',
           )}
           >
             <img
-              alt={job.name}
+              alt={cls.name}
               height={54}
-              src={job.img}
+              src={cls.img}
               width={54}
               onClick={
-                () => onSelectCharacter(job.name, job.img, bgColor)
+                () => setSelectedCharacter(cls)
               }
             />
           </div>
-          <span>{job.name}</span>
+          <span>{cls.name}</span>
         </div>
       ))}
     </div>

@@ -2,10 +2,10 @@
 import { Fragment, useState, useEffect } from 'react'
 import Head from 'next/head'
 import Layout from 'layouts'
-import characters from 'store/character-data'
 import Modal from 'components/common/modal'
 import JobPathMapper from 'components/common/modal/job-path/job-path-mapper'
 import clsx from 'clsx'
+import baseClass from 'constant/characters/base-class'
 
 export default function Character() {
   const [isVisible, setIsVisible] = useState(false)
@@ -34,7 +34,7 @@ export default function Character() {
           Choose which character you want to add information:
         </p>
         <div className='grid grid-cols-3 sm:grid-cols-5 gap-2 max-w-screen-sm'>
-          {characters.map((item) => (
+          {baseClass.map((item) => (
             <button
               className={clsx(
                 'p-1 flex items-center hover:opacity-70',

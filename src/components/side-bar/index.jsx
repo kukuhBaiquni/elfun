@@ -2,7 +2,6 @@ import Link from 'next/link'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { useImmer } from 'use-immer'
 import { Fragment, useCallback } from 'react'
-import characters from 'store/character-data'
 import towns from 'store/town-data'
 import clsx from 'clsx'
 import Characters from './characters'
@@ -17,14 +16,14 @@ const routes = [{
 }, {
   name: 'Characters',
   path: '',
-  childData: characters,
-  childRenderer: <Characters data={characters} />,
+  childData: true,
+  childRenderer: <Characters />,
   collapsed: true,
   h: 'h-[480px]',
 }, {
   name: 'Towns',
   path: '',
-  childData: towns,
+  childData: true,
   childRenderer: <Towns data={towns} />,
   collapsed: true,
   h: 'h-[540px]',
@@ -69,7 +68,7 @@ function Sidebar() {
                   className='px-2 py-1 flex items-center hover:text-white cursor-pointer text-gray-600 dark:text-gray-400 hover:bg-gray-400 dark:hover:bg-gray-600'
                   onClick={() => onToggle(item.name)}
                 >
-                  <p className='mr-2'> {item.name}({item.childData.length}) </p>
+                  <p className='mr-2'> {item.name}</p>
                   <ChevronDownIcon className={clsx(
                     item.collapsed ? 'transform rotate-0' : 'transform -rotate-180',
                     'w-5 h-5 transition-transform duration-300',
