@@ -32,7 +32,6 @@ export default function InputMultifieldBody(props) {
               name={Component.name}
               placeholder={Component.placeholder}
               register={register}
-              showInfo
             />
           ))}
         </div>

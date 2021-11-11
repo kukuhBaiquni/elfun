@@ -2,13 +2,13 @@ import InputText from 'components/forms/input-text/input-text'
 import Textarea from 'components/forms/input-text/textarea'
 import InputSelect from 'components/forms/input-select/input-select'
 import InputImage from 'components/forms/input-image'
-import { SKILL_CATEGORIES } from 'constant/options'
+import { SKILL_CATEGORIES, YES_NO } from 'constant/options'
 import TableComposer from 'components/forms/table-composer'
 import PropTypes from 'prop-types'
 import Button from 'components/common/button'
-import InputRadio from 'components/forms/input-radio'
 import InputMultifield from 'components/forms/input-multifield'
 import { Fragment } from 'react'
+import InputSwitch from 'components/forms/input-switch'
 
 export default function ContributionSkillsForm(props) {
   const { form, onSubmit } = props
@@ -46,18 +46,21 @@ export default function ContributionSkillsForm(props) {
             name='skillCategory'
             options={SKILL_CATEGORIES}
           />
-          <InputRadio
+          <InputSwitch
             control={control}
             label='Affect Another Skill'
             name='affectAnotherSkill'
-            options={[
-              { label: 'No', value: false },
-              { label: 'Yes', value: true },
-            ]}
           />
           <InputImage label='Skill Icon' name='skillIcon' />
         </section>
         <section>
+          <InputSelect
+            control={control}
+            errors={errors}
+            label='Required Level'
+            name='requiredLevel'
+            options={YES_NO}
+          />
           <InputMultifield
             buttonLabel='Add Special Feature'
             components={[
