@@ -6,6 +6,8 @@ import clsx from 'clsx'
 import JobPath from './job-path'
 
 function Characters({ data }) {
+  const p = data.map((item) => item.child.map((c) => c.child[c.child.length - 1]))
+  console.log(JSON.stringify(p.flat(), null, 2))
   return (
     <Fragment>
       {data.map((item) => (
