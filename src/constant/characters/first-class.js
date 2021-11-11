@@ -17,7 +17,7 @@ const firstClass = [
     hoverBgColor: 'hover:bg-elsword',
     characterId: 0,
     classId: 1,
-    pathId: 0,
+    pathId: 1,
   },
   {
     name: 'Sheath Knight',

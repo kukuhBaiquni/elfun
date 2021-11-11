@@ -9,6 +9,7 @@ import Warning from 'components/common/modal/feedback/warning'
 export default function Create() {
   const [isVisible, setIsVisible] = useState(true)
   const { query } = useRouter()
+  console.log(query)
 
   return (
     <Fragment>

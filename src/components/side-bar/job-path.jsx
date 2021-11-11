@@ -2,10 +2,9 @@
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
-import firstClass from 'constant/characters/first-class'
-import secondClass from 'constant/characters/second-class'
-import transcendentClass from 'constant/characters/transcendent-class'
-import thirdClass from 'constant/characters/third-class'
+import {
+  firstClass, secondClass, transcendentClass, thirdClass,
+} from 'constant/characters'
 
 function JobPath({ characterIndex }) {
   const url = (text) => text.toLowerCase().replace(/\s/g, '-')
