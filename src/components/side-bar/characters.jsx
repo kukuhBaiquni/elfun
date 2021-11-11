@@ -3,14 +3,13 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { Fragment } from 'react'
 import clsx from 'clsx'
+import baseClass from 'constant/characters/base-class'
 import JobPath from './job-path'
 
 function Characters({ data }) {
-  const p = data.map((item) => item.child.map((c) => c.child[c.child.length - 1]))
-  console.log(JSON.stringify(p.flat(), null, 2))
   return (
     <Fragment>
-      {data.map((item) => (
+      {data.map((item, index) => (
         <li
           className={clsx('relative z-10 pl-1 group hover:translate-x-2 cursor-pointer transition-transform-opacity duration-300 dark:text-gray-400 text-gray-600', item.hoverBgColor, item.hoverTextColor || 'hover:text-white dark:hover:text-white')}
           key={item.name}
@@ -21,7 +20,7 @@ function Characters({ data }) {
               <p className='ml-1.5'>{item.name}</p>
             </a>
           </Link>
-          <JobPath data={item} />
+          <JobPath characterIndex={index} data={item} />
         </li>
       ))}
     </Fragment>

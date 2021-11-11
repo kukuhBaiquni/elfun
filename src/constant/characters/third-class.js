@@ -7,7 +7,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-elsword',
     characterId: 0,
     classId: 4,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Rune Master',
@@ -17,7 +17,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-elsword',
     characterId: 0,
     classId: 4,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Immortal',
@@ -27,7 +27,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-elsword',
     characterId: 0,
     classId: 4,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Genesis',
@@ -37,7 +37,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-elsword',
     characterId: 0,
     classId: 4,
-    pathId: 4,
+    pathId: 3,
   },
   {
     name: 'Aether Sage',
@@ -47,7 +47,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-aisha',
     characterId: 1,
     classId: 4,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Oz Sorcerer',
@@ -57,7 +57,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-aisha',
     characterId: 1,
     classId: 4,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Metamorphy',
@@ -67,7 +67,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-aisha',
     characterId: 1,
     classId: 4,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Anemos',
@@ -75,9 +75,9 @@ const thirdClass = [
     bgColor: 'bg-rena',
     textColor: 'text-rena',
     hoverBgColor: 'hover:bg-rena',
-    characterId: 1,
+    characterId: 2,
     classId: 4,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Daybreaker',
@@ -85,9 +85,9 @@ const thirdClass = [
     bgColor: 'bg-rena',
     textColor: 'text-rena',
     hoverBgColor: 'hover:bg-rena',
-    characterId: 1,
+    characterId: 2,
     classId: 4,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Twilight',
@@ -95,9 +95,9 @@ const thirdClass = [
     bgColor: 'bg-rena',
     textColor: 'text-rena',
     hoverBgColor: 'hover:bg-rena',
-    characterId: 1,
+    characterId: 2,
     classId: 4,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Furious Blade',
@@ -107,7 +107,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-raven',
     characterId: 3,
     classId: 4,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Rage Hearts',
@@ -117,7 +117,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-raven',
     characterId: 3,
     classId: 4,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Nova Imperator',
@@ -127,7 +127,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-raven',
     characterId: 3,
     classId: 4,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Code: Ultimate',
@@ -137,7 +137,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-eve',
     characterId: 4,
     classId: 4,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Code: Essencia',
@@ -147,7 +147,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-eve',
     characterId: 4,
     classId: 4,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Code: Sariel',
@@ -157,7 +157,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-eve',
     characterId: 4,
     classId: 4,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Code: Antithese',
@@ -167,7 +167,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-eve',
     characterId: 4,
     classId: 4,
-    pathId: 4,
+    pathId: 3,
   },
   {
     name: 'Comet Crusader',
@@ -177,7 +177,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-chung',
     characterId: 5,
     classId: 4,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Fatal Phantom',
@@ -187,7 +187,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-chung',
     characterId: 5,
     classId: 4,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Centurion',
@@ -197,7 +197,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-chung',
     characterId: 5,
     classId: 4,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Apsara',
@@ -207,7 +207,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-ara',
     characterId: 6,
     classId: 4,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Devi',
@@ -217,7 +217,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-ara',
     characterId: 6,
     classId: 4,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Shakti',
@@ -227,7 +227,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-ara',
     characterId: 6,
     classId: 4,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Empire Sword',
@@ -237,7 +237,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-elesis',
     characterId: 7,
     classId: 4,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Flame Lord',
@@ -247,7 +247,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-elesis',
     characterId: 7,
     classId: 4,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Bloody Queen',
@@ -257,7 +257,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-elesis',
     characterId: 7,
     classId: 4,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Doom Bringer',
@@ -267,7 +267,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-add',
     characterId: 8,
     classId: 4,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Dominator',
@@ -277,7 +277,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-add',
     characterId: 8,
     classId: 4,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Mad Paradox',
@@ -287,7 +287,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-add',
     characterId: 8,
     classId: 4,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Catastrophe(Timoria)',
@@ -297,7 +297,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-luciel',
     characterId: 9,
     classId: 4,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Innocent(Ishtar)',
@@ -307,7 +307,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-luciel',
     characterId: 9,
     classId: 4,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Diangelion(Iblis)',
@@ -317,7 +317,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-luciel',
     characterId: 9,
     classId: 4,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Catastrophe(Abysser)',
@@ -327,7 +327,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-luciel',
     characterId: 10,
     classId: 4,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Innocent(Chevalier)',
@@ -337,7 +337,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-luciel',
     characterId: 10,
     classId: 4,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Diangelion(Anular)',
@@ -347,7 +347,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-luciel',
     characterId: 10,
     classId: 4,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Tempest Burster',
@@ -358,7 +358,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-rose',
     characterId: 11,
     classId: 4,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Black Massacre',
@@ -369,7 +369,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-rose',
     characterId: 11,
     classId: 4,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Minerva',
@@ -380,7 +380,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-rose',
     characterId: 11,
     classId: 4,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Prime Operator',
@@ -391,7 +391,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-rose',
     characterId: 11,
     classId: 4,
-    pathId: 4,
+    pathId: 3,
   },
   {
     name: 'Ritcher',
@@ -401,7 +401,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-ain',
     characterId: 12,
     classId: 4,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Bluhen',
@@ -411,7 +411,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-ain',
     characterId: 12,
     classId: 2,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Herrscher',
@@ -421,7 +421,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-ain',
     characterId: 12,
     classId: 2,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Eternity Winter',
@@ -431,7 +431,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-laby',
     characterId: 13,
     classId: 4,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Radiant Soul',
@@ -441,7 +441,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-laby',
     characterId: 13,
     classId: 4,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Nisha Labyrinth',
@@ -451,7 +451,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-laby',
     characterId: 13,
     classId: 4,
-    pathId: 3,
+    pathId: 2,
   },
   {
     name: 'Liberator',
@@ -461,7 +461,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-noah',
     characterId: 14,
     classId: 4,
-    pathId: 1,
+    pathId: 0,
   },
   {
     name: 'Celestia',
@@ -471,7 +471,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-noah',
     characterId: 14,
     classId: 4,
-    pathId: 2,
+    pathId: 1,
   },
   {
     name: 'Nyx Pieta',
@@ -481,7 +481,7 @@ const thirdClass = [
     hoverBgColor: 'hover:bg-noah',
     characterId: 14,
     classId: 4,
-    pathId: 3,
+    pathId: 2,
   },
 ]
 
