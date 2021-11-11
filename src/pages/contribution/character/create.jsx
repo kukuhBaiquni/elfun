@@ -7,7 +7,7 @@ import Modal from 'components/common/modal'
 import Warning from 'components/common/modal/feedback/warning'
 
 export default function Create() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
   const { query } = useRouter()
 
   return (
