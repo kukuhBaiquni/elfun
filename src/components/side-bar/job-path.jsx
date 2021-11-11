@@ -9,7 +9,13 @@ function JobPath({ data }) {
   return (
     <ul className='absolute floatig-list w-52 z-10 hidden group-hover:flex flex-col top-0 left-28 bg-gray-200 dark:bg-gray-700 drop-shadow-xl group-hover:translate-x-10 transition-transform duration-300'>
       {data.child.map((item) => (
-        <li className={clsx(data.textColor, data.hoverBgColor, data.hoverTextColor || 'hover:text-white dark:hover:text-white', 'job-nesting relative')} key={item.name}>
+        <li
+          className={clsx(
+            data.textColor, data.hoverBgColor, data.hoverTextColor || 'hover:text-white dark:hover:text-white',
+            'job-nesting relative',
+          )}
+          key={item.name}
+        >
           <Link href={`/character/${url(item.name)}`}>
             <a className='py-1 px-2 flex items-center'>
               <img alt={item.name} height={20} src={item.img} width={20} />
@@ -21,7 +27,10 @@ function JobPath({ data }) {
               {item.child.map((job) => (
                 <li key={job.name}>
                   <Link href={`/character/${url(job.name)}`}>
-                    <a className={clsx(data.textColor, data.hoverBgColor, data.hoverTextColor || 'hover:text-white dark:hover:text-white', 'flex items-center py-1 px-2 pr-16')}>
+                    <a className={clsx(
+                      data.textColor, data.hoverBgColor, data.hoverTextColor || 'hover:text-white dark:hover:text-white', 'flex items-center py-1 px-2 pr-16',
+                    )}
+                    >
                       <img alt={job.name} height={20} src={job.img} width={20} />
                       <p className='ml-1.5'>{job.name}</p>
                     </a>
