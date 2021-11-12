@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { QueryClientProvider, QueryClient } from 'react-query'
 
 const queryClient = new QueryClient({

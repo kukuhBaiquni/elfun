@@ -7,16 +7,13 @@
     "hoverBgColor":"hover:bg-ruben",
     "child":[
       {
-        "name":"Tree of Life",
-        "img":"../../public/images/dungeons/tree-of-life.png"
+        "name":"Tree of Life"
       },
       {
-        "name":"Forest Ruins",
-        "img":"../../public/images/dungeons/forest-ruins.png"
+        "name":"Forest Ruins"
       },
       {
-        "name":"White Mist Swamp",
-        "img":"../../public/images/dungeons/white-mist-swamp.png"
+        "name":"White Mist Swamp"
       }
     ]
   },
@@ -28,8 +25,7 @@
     "hoverBgColor":"hover:bg-elder",
     "child":[
       {
-        "name":"Shadow Forest",
-        "img":"../../public/images/dungeons/shadow-forest.png"
+        "name":"Shadow Forest"
       },
       {
         "name":"Banthus Cave"

@@ -3,6 +3,7 @@ import Layout from 'layouts'
 import { Fragment } from 'react'
 import Head from 'next/head'
 import { useForm } from 'react-hook-form'
+import { useQuery } from 'react-query'
 import FormSchema from 'components/page-fragment/contribution/skills/contribution-skills-form-schema'
 import ContributionSkillsForm from 'components/page-fragment/contribution/skills/contribution-skills-form'
 import { useRouter } from 'next/router'
@@ -10,7 +11,6 @@ import clsx from 'clsx'
 import classType from 'constant/class-type'
 import FormLoader from 'components/page-fragment/contribution/form-loader'
 import { getCharacterUtility } from 'api/character-utility'
-import { useQuery } from 'react-query'
 import InvalidAccess from 'components/page-fragment/contribution/invalid-access'
 
 export default function Skills() {
@@ -26,9 +26,7 @@ export default function Skills() {
       classId: query.classId,
       pathId: query.pathId,
     },
-  ], getCharacterUtility, {
-    // enabled: !_(query),
-  })
+  ], getCharacterUtility)
 
   const onSubmit = (data) => {
     // eslint-disable-next-line no-console
