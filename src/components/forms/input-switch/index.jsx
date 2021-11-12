@@ -15,7 +15,7 @@ export default function InputSwitch(props) {
   const { field: { onChange, value } } = useController({
     name,
     control,
-    defaultValue,
+    defaultValue: defaultValue || false,
   })
 
   const errorMessage = _(errors, `${name}.message`) ?? ''
