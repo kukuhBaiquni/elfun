@@ -71,3 +71,37 @@ export const STATISTIC = {
     { label: 'Hard', value: 'HARD' },
   ],
 }
+
+export const SKILL_LEVEL = {
+  0: [
+    { label: '1', value: 1 },
+    { label: '5', value: 5 },
+    { label: '10', value: 10 },
+    { label: '15', value: 15 },
+    { label: '20', value: 20 },
+  ],
+  1: [
+    { label: '15', value: 15 },
+    { label: '25', value: 25 },
+    { label: '30', value: 30 },
+    { label: '35', value: 35 },
+    { label: '40', value: 40 },
+  ],
+  2: [
+    { label: '35', value: 35 },
+    { label: '45', value: 45 },
+    { label: '50', value: 50 },
+    { label: '55', value: 55 },
+    { label: '60', value: 60 },
+    { label: '65', value: 65 },
+  ],
+  3: [
+    { label: '70', value: 70 },
+    { label: '80', value: 80 },
+    { label: '90', value: 90 },
+    { label: '95', value: 95 },
+  ],
+  4: [
+    { label: '99', value: 99 },
+  ],
+}
