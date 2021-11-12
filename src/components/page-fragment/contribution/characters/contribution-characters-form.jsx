@@ -3,37 +3,40 @@ import InputText from 'components/forms/input-text/input-text'
 import Textarea from 'components/forms/input-text/textarea'
 import InputRadio from 'components/forms/input-radio'
 import PropTypes from 'prop-types'
-import { useForm } from 'react-hook-form'
 import { STATISTIC, DAMAGE_TYPE } from 'constant/options'
 
 export default function ContributionCharacterForm(props) {
-  const { query } = props
-  const { register, control } = useForm()
+  const { query, form } = props
+  const { register, control, formState: { errors } } = form
 
   return (
     <div className='grid sm:grid-cols-2 grid-cols-1 sm:gap-10'>
       <section className='max-w-xl'>
         <InputText
+          errors={errors}
           label='Name'
-          name='name'
+          name='characterName'
           placeholder='Character Name..'
           register={register}
         />
         <InputText
           defaultValue={query.name}
           disabled
+          errors={errors}
           label='Class'
-          name='class'
+          name='className'
           placeholder='Class..'
           register={register}
         />
         <InputText
+          errors={errors}
           label='Quote'
           name='quote'
           placeholder='Quote..'
           register={register}
         />
         <InputText
+          errors={errors}
           label='Innate'
           name='innate'
           placeholder='Innate..'
@@ -48,6 +51,7 @@ export default function ContributionCharacterForm(props) {
       </section>
       <section>
         <InputText
+          errors={errors}
           label='Weapon'
           name='weapon'
           placeholder='Weapon..'
@@ -60,6 +64,7 @@ export default function ContributionCharacterForm(props) {
           placeholder='Age..'
         />
         <InputText
+          errors={errors}
           label='Race'
           name='race'
           placeholder='Race..'
@@ -96,4 +101,5 @@ export default function ContributionCharacterForm(props) {
 
 ContributionCharacterForm.propTypes = {
   query: PropTypes.object,
+  form: PropTypes.object,
 }

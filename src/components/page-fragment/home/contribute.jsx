@@ -8,6 +8,7 @@ import character from '../../../../public/images/categories/rena-head.png'
 import title from '../../../../public/images/categories/title.png'
 import town from '../../../../public/images/categories/town.png'
 import npc from '../../../../public/images/categories/npc.png'
+import skill from '../../../../public/images/categories/skill.png'
 
 const content = [{
   name: 'Characters',
@@ -15,6 +16,15 @@ const content = [{
   img: character,
   list: [
     'Add/Edit Character data (with permission)',
+    'Add picture to gallery (with permission)',
+    'Submit suggestion/repair for broken link or image',
+  ],
+}, {
+  name: 'Skills',
+  path: '/contribution/skill',
+  img: skill,
+  list: [
+    'Add/Edit Skill data (with permission)',
     'Add picture to gallery (with permission)',
     'Submit suggestion/repair for broken link or image',
   ],

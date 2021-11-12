@@ -22,7 +22,6 @@ export default function ContributionSkillsForm(props) {
 
   return (
     <Fragment>
-      <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Add New Skill: Optimus</h2>
       <div className='grid sm:grid-cols-2 grid-cols-1 sm:gap-3'>
         <section className='max-w-xl'>
           <InputText
