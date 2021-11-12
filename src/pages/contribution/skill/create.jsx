@@ -10,6 +10,7 @@ import clsx from 'clsx'
 import classType from 'constant/class-type'
 import _ from 'lodash/isEmpty'
 import Button from 'components/common/button'
+import { CogIcon } from '@heroicons/react/solid'
 
 export default function Skills() {
   const [isValidAccess, setIsValidAccess] = useState(false)
@@ -44,8 +45,9 @@ export default function Skills() {
       )}
       >
         {isLoading ? (
-          <div>
-            <h5>Preparing Form..</h5>
+          <div className='text-general flex items-center border-input p-2 rounded justify-center'>
+            <CogIcon className='animate-spin w-10 h-10 mr-2' />
+            <h5 className='text-lg font-titillium'>Preparing Form</h5>
           </div>
         ) : (
           isValidAccess ? (
