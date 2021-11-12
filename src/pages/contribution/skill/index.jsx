@@ -3,7 +3,7 @@ import { Fragment, useState, useEffect } from 'react'
 import Head from 'next/head'
 import Layout from 'layouts'
 import Modal from 'components/common/modal'
-import ClassTree from 'components/page-fragment/contribution/characters/class-tree'
+import ClassTree from 'components/page-fragment/contribution/class-tree'
 import clsx from 'clsx'
 import baseClass from 'constant/characters/base-class'
 
