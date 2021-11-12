@@ -2,16 +2,20 @@ import InputText from 'components/forms/input-text/input-text'
 import Textarea from 'components/forms/input-text/textarea'
 import InputSelect from 'components/forms/input-select/input-select'
 import InputImage from 'components/forms/input-image'
-import { SKILL_CATEGORIES, YES_NO } from 'constant/options'
+import InputRadio from 'components/forms/input-radio'
+import { SKILL_CATEGORIES, YES_NO, SKILL_LEVEL } from 'constant/options'
 import TableComposer from 'components/forms/table-composer'
 import PropTypes from 'prop-types'
 import Button from 'components/common/button'
 import InputMultifield from 'components/forms/input-multifield'
 import { Fragment } from 'react'
 import InputSwitch from 'components/forms/input-switch'
+import _ from 'lodash/isEmpty'
+import { useRouter } from 'next/router'
 
 export default function ContributionSkillsForm(props) {
   const { form, onSubmit } = props
+  const { query } = useRouter()
   const {
     register, watch, control, formState: { errors },
     handleSubmit,
@@ -19,7 +23,6 @@ export default function ContributionSkillsForm(props) {
 
   console.log('📝', watch())
   console.log('🚧', errors)
-
   return (
     <Fragment>
       <div className='grid sm:grid-cols-2 grid-cols-1 sm:gap-3'>
@@ -53,13 +56,15 @@ export default function ContributionSkillsForm(props) {
           <InputImage label='Skill Icon' name='skillIcon' />
         </section>
         <section>
-          <InputSelect
-            control={control}
-            errors={errors}
-            label='Required Level'
-            name='requiredLevel'
-            options={YES_NO}
-          />
+          {!_(query) && (
+            <InputRadio
+              control={control}
+              errors={errors}
+              label='Required Level'
+              name='requiredLevel'
+              options={SKILL_LEVEL[query.classId]}
+            />
+          )}
           <InputMultifield
             buttonLabel='Add Special Feature'
             components={[
