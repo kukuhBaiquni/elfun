@@ -62,7 +62,11 @@ export default function JobPathMapper(props) {
           type='button'
           onClick={() => push({
             pathname: `${pathname}/create`,
-            query: selectedCharacter,
+            query: {
+              characterId: selectedCharacter.characterId,
+              classId: selectedCharacter.classId,
+              pathId: selectedCharacter.pathId,
+            },
           })}
         >
           Start Now!
