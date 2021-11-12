@@ -42,7 +42,7 @@ export default function TableComposer(props) {
       <div className='mb-2'>
         {fields.map((field, index) => (
           <div key={field.$id}>
-            <div className='p-2 dark:bg-gray-900 bg-gray-300 flex items-center justify-between max-w-xl'>
+            <div className='p-2 dark:bg-gray-800 border-input rounded bg-sky-300 flex items-center justify-between max-w-xl'>
               <h6 className='uppercase font-bold'>{`${field.tableName}`}</h6>
               <div className='flex'>
                 <PencilIcon

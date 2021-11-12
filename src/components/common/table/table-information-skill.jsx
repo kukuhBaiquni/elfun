@@ -42,7 +42,11 @@ function Table(props) {
   return (
     <div className='overflow-x-auto grid grid-cols-1 py-3 mb-5'>
       <table className='border-collapse'>
-        <tbody>
+        <thead className={clsx(
+          'bg-gradient-to-t dark:from-gray-600 dark:to-gray-900 font-titillium dark:text-white',
+          'from-sky-200 to-sky-300 text-gray-600',
+        )}
+        >
           <tr>
             {fieldNames.map((item) => (
               <th
@@ -90,6 +94,8 @@ function Table(props) {
               return null
             })}
           </tr>
+        </thead>
+        <tbody>
           <tr>
             {rawData.map((item, index) => {
               if (item.hasAwakeningEffect) {
@@ -102,7 +108,7 @@ function Table(props) {
                           key={`${key}${index}`}
                         >
                           {`${numberFormat(calculateFixedPercent(item.value))}${item.suffix.value}`}
-                          <span className='dark:text-green-400 whitespace-nowrap text-green-400 ml-1'>{`(${value}%)↑`}</span>
+                          <span className='dark:text-green-400 whitespace-nowrap text-green-600 ml-1'>{`(${value}%)↑`}</span>
                         </td>
                       )
                     }
@@ -125,7 +131,7 @@ function Table(props) {
                       >
                         {`${numberFormat(calculateRangePercent(item.valueRange, item.value.awaken, 0))}${item.suffix.value} → 
                       ${numberFormat(calculateRangePercent(item.valueRange, item.value.awaken, 1))}${item.suffix.value}`}
-                        <span className='dark:text-green-400 whitespace-nowrap text-green-400 ml-1'>{`(${item.value.awaken}%)↑`}</span>
+                        <span className='dark:text-green-400 whitespace-nowrap text-green-600 ml-1'>{`(${item.value.awaken}%)↑`}</span>
                       </td>
                     )
                   }

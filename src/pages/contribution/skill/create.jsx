@@ -40,7 +40,7 @@ export default function Skills() {
             width={60}
           />
           <div>
-            <p className={query.textColor}>{query.name}</p>
+            <p className={clsx(query.textColor, 'font-bold font-titillium text-lg')}>{query.name}</p>
             <p className='leading-5 text-sm'>({classType[query.classId]})</p>
           </div>
         </div>
