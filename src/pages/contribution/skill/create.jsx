@@ -11,11 +11,19 @@ import classType from 'constant/class-type'
 import _ from 'lodash/isEmpty'
 import Button from 'components/common/button'
 import { CogIcon } from '@heroicons/react/solid'
+import useSelectedCharacter from 'hooks/useSelectedCharacter'
 
 export default function Skills() {
   const [isValidAccess, setIsValidAccess] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const { query, back } = useRouter()
+  const character = useSelectedCharacter({
+    characterId: +query.characterId,
+    classId: +query.classId,
+    pathId: +query.pathId,
+  })
+  console.log('QUERY', query)
+  console.log('PONC', character)
   const form = useForm({
     resolver: FormSchema,
   })
@@ -23,14 +31,14 @@ export default function Skills() {
   useEffect(() => {
     if (!_(query)) {
       setIsValidAccess(true)
-      setIsLoading(false)
     }
+    setIsLoading(false)
   }, [query])
 
   const onSubmit = (data) => {
     console.log('__DATA FINAL', data)
   }
-  console.log(isLoading, isValidAccess)
+
   return (
     <div>
       <Head>
