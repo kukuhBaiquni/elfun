@@ -2,77 +2,7 @@
 import { ExternalLinkIcon, ArrowSmRightIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
 import Image from 'next/image'
-import dungeon from '../../../../public/images/categories/dungeon.png'
-import equipment from '../../../../public/images/categories/equipment.png'
-import character from '../../../../public/images/categories/rena-head.png'
-import title from '../../../../public/images/categories/title.png'
-import town from '../../../../public/images/categories/town.png'
-import npc from '../../../../public/images/categories/npc.png'
-import skill from '../../../../public/images/categories/skill.png'
-
-const content = [{
-  name: 'Characters',
-  path: '/contribution/character',
-  img: character,
-  list: [
-    'Add/Edit Character data (with permission)',
-    'Add picture to gallery (with permission)',
-    'Submit suggestion/repair for broken link or image',
-  ],
-}, {
-  name: 'Skills',
-  path: '/contribution/skill',
-  img: skill,
-  list: [
-    'Add/Edit Skill data (with permission)',
-    'Add picture to gallery (with permission)',
-    'Submit suggestion/repair for broken link or image',
-  ],
-}, {
-  name: 'Towns',
-  path: '/contribution/town',
-  img: town,
-  list: [
-    'Add/Edit Town data (with permission)',
-    'Add picture to gallery (with permission)',
-    'Submit suggestion/repair for broken link or image',
-  ],
-}, {
-  name: 'Dungeons',
-  path: '/contribution/dungeon',
-  img: dungeon,
-  list: [
-    'Add/Edit Dungeon data (with permission)',
-    'Add picture to gallery (with permission)',
-    'Submit suggestion/repair for broken link or image',
-  ],
-}, {
-  name: 'NPC\'s',
-  path: '/contribution/npc',
-  img: npc,
-  list: [
-    'Add/Edit NPC data (with permission)',
-    'Add picture to gallery (with permission)',
-    'Submit suggestion/repair for broken link or image',
-  ],
-}, {
-  name: 'Titles',
-  path: '/contribution/title',
-  img: title,
-  list: [
-    'Add/Edit Character data (with permission)',
-    'Submit suggestion/repair for broken link or image',
-  ],
-}, {
-  name: 'Equipments',
-  path: '/contribution/npc',
-  img: equipment,
-  list: [
-    'Add/Edit Equipment data (with permission)',
-    'Add picture to gallery (with permission)',
-    'Submit suggestion/repair for broken link or image',
-  ],
-}]
+import CONTRIBUTION from 'constant/contribution'
 
 const elwiki = <a className='text-sky-500 hover:underline' href='https://elwiki.net' rel='noreferrer' target='_blank'>elwiki.net</a>
 
@@ -91,7 +21,7 @@ export default function Contribute() {
       </p>
       <p>You can participate to contribute in these following categories: </p>
       <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3 mt-4 text-sm'>
-        {content.map((item) => (
+        {CONTRIBUTION.map((item) => (
           <div className='bg-gray-200 dark:bg-gray-700 px-2 py-2 relative transition-all duration-300' key={item.name}>
             <Link href={item.path}>
               <a className='font-titillium text-base hover:underline text-lime-600 flex items-center py-1 px-2 bg-gray-300 dark:bg-gray-800 transition-all duration-300'>
