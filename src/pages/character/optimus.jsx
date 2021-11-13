@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Fragment } from 'react'
-import LayoutNoSidebar from 'layouts/layout-no-sidebar'
+import ContributionLayout from 'layouts/contribution-layout'
 import ChangeJobQuest from 'components/page-fragment/character/change-job-quest'
 import CoverHeader from 'components/page-fragment/character/cover-header'
 import Statistic from 'components/page-fragment/character/statistic'
@@ -37,7 +37,7 @@ export default function Optimus() {
 }
 
 Optimus.getLayout = (page) => (
-  <LayoutNoSidebar>
+  <ContributionLayout>
     {page}
-  </LayoutNoSidebar>
+  </ContributionLayout>
 )

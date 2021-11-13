@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types'
-import { memo } from 'react'
 import _ from 'lodash/get'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 
-function Textarea(props) {
+export default function Textarea(props) {
   const {
     name, label, placeholder, defaultValue, register, errors,
     rows = 6, showInfo,
@@ -33,8 +32,6 @@ function Textarea(props) {
     </FormFieldWrapper>
   )
 }
-
-export default memo(Textarea)
 
 Textarea.propTypes = {
   name: PropTypes.string,

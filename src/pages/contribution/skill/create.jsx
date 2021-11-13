@@ -54,7 +54,7 @@ export default function Skills() {
           <Fragment>
             <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Add Skill Information: {baseData.name}</h2>
             <p className='my-2'>
-              Fill all the required input field:
+              Fill all the required input fields:
             </p>
             <div className='flex items-center gap-2 mb-5'>
               <img
