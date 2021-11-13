@@ -49,7 +49,7 @@ export default function InputMultifield(props) {
         onEnd={(evt) => move(evt.oldIndex, evt.newIndex)}
       >
         {fields.map((field, index) => (
-          <div className='p-2 dark:bg-gray-700 handle cursor-grab bg-warmGray-200 rounded flex justify-between mb-2 border-input' key={field.$id}>
+          <div className='p-2 dark:bg-gray-800 handle cursor-grab bg-warmGray-300 rounded flex justify-between mb-2 border-input' key={field.$id}>
             <div>
               <SwitchVerticalIcon className='w-5 h-5' />
               <div>

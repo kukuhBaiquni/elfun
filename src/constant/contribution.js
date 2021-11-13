@@ -61,7 +61,7 @@ const CONTRIBUTION = [{
   ],
 }, {
   name: 'Equipments',
-  path: '/contribution/npc',
+  path: '/contribution/equipment',
   img: equipment,
   list: [
     'Add/Edit Equipment data (with permission)',

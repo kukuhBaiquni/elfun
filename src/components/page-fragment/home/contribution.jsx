@@ -6,7 +6,7 @@ import CONTRIBUTION from 'constant/contribution'
 
 const elwiki = <a className='text-sky-500 hover:underline' href='https://elwiki.net' rel='noreferrer' target='_blank'>elwiki.net</a>
 
-export default function Contribute() {
+export default function Contribution() {
   return (
     <section className='mt-8'>
       <h3 className='text-2xl font-semibold font-titillium dark:text-sky-400 text-sky-600'>Contribute</h3>
