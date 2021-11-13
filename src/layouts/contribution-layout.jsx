@@ -16,7 +16,7 @@ function ContributionLayout({ children }) {
         <div className='w-full pt-24'>
           <div className='flex px-1.5'>
             <LeftNavigation />
-            <div className='w-full'>
+            <div className='w-full dark:bg-gray-700 p-2 bg-gray-200 transition-general'>
               {children}
             </div>
             <RightNavigation />
