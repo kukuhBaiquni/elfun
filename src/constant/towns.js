@@ -1,11 +1,11 @@
-const TOWN_DUNGEON = [
+const TOWNS = [
   {
     name: 'Ruben',
     img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fruben.png?alt=media&token=d3b2870f-4dc0-49fc-8e5d-640284cd72b9',
     bgColor: 'bg-ruben',
     textColor: 'text-ruben dark:text-ruben-dark',
     hoverBgColor: 'hover:bg-ruben',
-    child: ['Tree of Life', 'Forest Ruins', 'White Mist Swamp'],
+    townId: 0,
   },
   {
     name: 'Elder',
@@ -13,7 +13,7 @@ const TOWN_DUNGEON = [
     bgColor: 'bg-elder',
     textColor: 'text-elder dark:text-elder-dark',
     hoverBgColor: 'hover:bg-elder',
-    child: ['Shadow Forest', 'Banthus Cave', 'Underground Waterway', 'Suburbs of Wally Castle', 'Wally Castle'],
+    townId: 1,
   },
   {
     name: 'Bethma',
@@ -21,26 +21,7 @@ const TOWN_DUNGEON = [
     bgColor: 'bg-bethma',
     textColor: 'text-bethma dark:text-bethma-dark',
     hoverBgColor: 'hover:bg-bethma',
-    child: [
-      {
-        name: 'Dragon Road',
-      },
-      {
-        name: 'Bethma Lake',
-      },
-      {
-        name: 'Bethma Lake Night',
-      },
-      {
-        name: 'Dragon Nest',
-      },
-      {
-        name: 'Richie Mines',
-      },
-      {
-        name: 'Cargo Airship',
-      },
-    ],
+    townId: 2,
   },
   {
     name: 'Altera',
@@ -48,26 +29,7 @@ const TOWN_DUNGEON = [
     bgColor: 'bg-altera',
     textColor: 'text-altera dark:text-altera-dark',
     hoverBgColor: 'hover:bg-altera',
-    child: [
-      {
-        name: 'The Black Crow',
-      },
-      {
-        name: 'Return Plains',
-      },
-      {
-        name: 'Transporting Tunnel B4-1',
-      },
-      {
-        name: 'Altera Plains',
-      },
-      {
-        name: 'Nasod Foundry',
-      },
-      {
-        name: 'Altera Core',
-      },
-    ],
+    townId: 3,
   },
   {
     name: 'Feita',
@@ -75,26 +37,7 @@ const TOWN_DUNGEON = [
     bgColor: 'bg-feita',
     textColor: 'text-feita dark:text-feita-dark',
     hoverBgColor: 'hover:bg-feita',
-    child: [
-      {
-        name: 'Shrine of Dedication',
-      },
-      {
-        name: 'Spiral Corridor',
-      },
-      {
-        name: 'Underground Chappel',
-      },
-      {
-        name: 'Underground Garden',
-      },
-      {
-        name: 'Heart of Spire',
-      },
-      {
-        name: 'Altar of Dedication',
-      },
-    ],
+    townId: 4,
   },
   {
     name: 'Velder',
@@ -102,26 +45,7 @@ const TOWN_DUNGEON = [
     bgColor: 'bg-velder',
     textColor: 'text-velder dark:text-velder-dark',
     hoverBgColor: 'hover:bg-velder',
-    child: [
-      {
-        name: 'Residential Area 3',
-      },
-      {
-        name: 'Hope Bridge',
-      },
-      {
-        name: 'Palace Entrance',
-      },
-      {
-        name: 'Burning Hope Bridge',
-      },
-      {
-        name: 'Commercial Area 1',
-      },
-      {
-        name: 'Southern Gate',
-      },
-    ],
+    townId: 5,
   },
   {
     name: 'Hamel',
@@ -129,29 +53,7 @@ const TOWN_DUNGEON = [
     bgColor: 'bg-hamel',
     textColor: 'text-hamel dark:text-hamel-dark',
     hoverBgColor: 'hover:bg-hamel',
-    child: [
-      {
-        name: 'Resiam Outskirt',
-      },
-      {
-        name: 'Sunken Resiam',
-      },
-      {
-        name: 'Ancient Waterway',
-      },
-      {
-        name: 'Heart of the Ancient Waterway',
-      },
-      {
-        name: 'Magmanta Cave',
-      },
-      {
-        name: 'Temple of Frozen Water',
-      },
-      {
-        name: 'Halls of Water',
-      },
-    ],
+    townId: 6,
   },
   {
     name: 'Sander',
@@ -160,26 +62,7 @@ const TOWN_DUNGEON = [
     textColor: 'text-gray-600 dark:text-sander',
     hoverTextColor: 'hover:text-gray-600 dark:hover:text-gray-600',
     hoverBgColor: 'hover:bg-sander',
-    child: [
-      {
-        name: 'Barren Sander',
-      },
-      {
-        name: 'Garpai Rock',
-      },
-      {
-        name: 'Trock Lair',
-      },
-      {
-        name: 'Calluso Tribal Village',
-      },
-      {
-        name: 'Sandtilus',
-      },
-      {
-        name: 'Heart of Behemoth',
-      },
-    ],
+    townId: 7,
   },
   {
     name: 'Lanox',
@@ -187,26 +70,7 @@ const TOWN_DUNGEON = [
     bgColor: 'bg-lanox',
     textColor: 'text-lanox dark:text-lanox-dark',
     hoverBgColor: 'hover:bg-lanox',
-    child: [
-      {
-        name: 'Burnt Forest',
-      },
-      {
-        name: 'Ash Covered Village',
-      },
-      {
-        name: 'Phantasmal Geyser',
-      },
-      {
-        name: 'Volcanic Flame Entrance',
-      },
-      {
-        name: 'Collapsing Temple of Fire',
-      },
-      {
-        name: 'Grand Cavern Chasm of the Divided Land',
-      },
-    ],
+    townId: 8,
   },
   {
     name: 'Atlas',
@@ -214,17 +78,7 @@ const TOWN_DUNGEON = [
     bgColor: 'bg-atlas',
     textColor: 'text-atlas dark:text-atlas-dark',
     hoverBgColor: 'hover:bg-atlas',
-    child: [
-      {
-        name: 'Diceon Mines',
-      },
-      {
-        name: 'Atlas City',
-      },
-      {
-        name: 'Elysion Tower',
-      },
-    ],
+    townId: 9,
   },
   {
     name: 'Elysion',
@@ -232,20 +86,7 @@ const TOWN_DUNGEON = [
     bgColor: 'bg-elysion',
     textColor: 'text-elysion dark:text-elysion-dark',
     hoverBgColor: 'hover:bg-elysion',
-    child: [
-      {
-        name: 'Celestial Crossroad',
-      },
-      {
-        name: 'Adrian Palace',
-      },
-      {
-        name: 'Solace Fortress',
-      },
-      {
-        name: 'Halted Sun Memory',
-      },
-    ],
+    townId: 10,
   },
   {
     name: 'Elrianode',
@@ -253,26 +94,7 @@ const TOWN_DUNGEON = [
     bgColor: 'bg-elrianode',
     textColor: 'text-elrianode dark:text-elrianode-dark',
     hoverBgColor: 'hover:bg-elrianode',
-    child: [
-      {
-        name: 'Hall of El',
-      },
-      {
-        name: 'Water Dragon Sanctum',
-      },
-      {
-        name: 'Elrianode City',
-      },
-      {
-        name: 'Debrian Laboratory',
-      },
-      {
-        name: 'El Tower Defense',
-      },
-      {
-        name: 'Forgotten Elrian Sanctum',
-      },
-    ],
+    townId: 11,
   },
   {
     name: 'Varnimyr',
@@ -280,32 +102,7 @@ const TOWN_DUNGEON = [
     bgColor: 'bg-varnimyr',
     textColor: 'dark:text-gray-400 text-varnimyr',
     hoverBgColor: 'hover:bg-varnimyr',
-    child: [
-      {
-        name: 'Labyrinth of Ruin',
-      },
-      {
-        name: 'Guardian Forest',
-      },
-      {
-        name: 'Dark Elves Outpost',
-      },
-      {
-        name: 'Forsaken Spirit Asylum',
-      },
-      {
-        name: 'Crimson Tower of Howling Flames',
-      },
-      {
-        name: 'Never Ending Darkness',
-      },
-      {
-        name: 'Crimson Cradle of Flames',
-      },
-      {
-        name: 'Shadow Vein',
-      },
-    ],
+    townId: 12,
   },
   {
     name: 'Rigomor',
@@ -313,40 +110,32 @@ const TOWN_DUNGEON = [
     bgColor: 'bg-rigomor',
     textColor: 'text-rigomor dark:text-rigomor-dark',
     hoverBgColor: 'hover:bg-rigomor',
-    child: [
-
-    ],
+    townId: 13,
   },
   {
     name: 'Master Road',
+    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fgeneral.png?alt=media&token=7ff1d45d-76d9-403b-9cb0-b04442a9d8d7',
     bgColor: 'bg-master-road',
     textColor: 'text-master-road dark:text-master-road-dark',
     hoverBgColor: 'hover:bg-master-road',
-    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fgeneral.png?alt=media&token=7ff1d45d-76d9-403b-9cb0-b04442a9d8d7',
-    child: [
-
-    ],
+    townId: 14,
   },
   {
     name: 'Pruinaum',
+    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fpruinaum.png?alt=media&token=68a73b33-0e7c-4fa6-8036-d952ab02f467',
     bgColor: 'bg-pruinaum',
     textColor: 'text-pruinaum dark:text-pruinaum-dark',
     hoverBgColor: 'hover:bg-pruinaum',
-    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fpruinaum.png?alt=media&token=68a73b33-0e7c-4fa6-8036-d952ab02f467',
-    child: [
-
-    ],
+    townId: 15,
   },
   {
     name: 'Pruinaum Outskirt',
+    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fgeneral.png?alt=media&token=7ff1d45d-76d9-403b-9cb0-b04442a9d8d7',
     bgColor: 'bg-pruinaum-outskirt',
     textColor: 'text-pruinaum-outskirt dark:text-pruinaum-outskirt-dark',
     hoverBgColor: 'hover:bg-pruinaum-outskirt',
-    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Ftown%2Fgeneral.png?alt=media&token=7ff1d45d-76d9-403b-9cb0-b04442a9d8d7',
-    child: [
-
-    ],
+    townId: 16,
   },
 ]
 
-export default TOWN_DUNGEON
+export default TOWNS

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { useImmer } from 'use-immer'
 import { Fragment, useCallback } from 'react'
-import towns from 'store/town-data'
+import TOWNS from 'constant/towns'
 import clsx from 'clsx'
 import Characters from './characters'
 import Towns from './towns'
@@ -24,7 +24,7 @@ const routes = [{
   name: 'Towns',
   path: '',
   childData: true,
-  childRenderer: <Towns data={towns} />,
+  childRenderer: <Towns data={TOWNS} />,
   collapsed: true,
   h: 'h-[540px]',
 }, {
