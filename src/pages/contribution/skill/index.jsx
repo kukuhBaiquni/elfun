@@ -29,7 +29,7 @@ export default function Skill() {
         <meta content='Elfun Contribution Guide, Contribution Elfun, Elfun' name='keywords' />
       </Head>
       <main className='text-general px-2'>
-        <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Create New Character Skill Information</h2>
+        <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Create Character Skill Information</h2>
         <p className='my-2'>
           Choose which character you want to add skills information:
         </p>

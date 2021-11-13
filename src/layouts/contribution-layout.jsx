@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import LeftNavigation from 'components/left-navigation'
+import RightNavigation from 'components/right-navigation/contributions'
 import dynamic from 'next/dynamic'
 
 const Header = dynamic(
@@ -7,7 +8,7 @@ const Header = dynamic(
   { ssr: false },
 )
 
-function Layout({ children }) {
+function ContributionLayout({ children }) {
   return (
     <div className='dark:bg-gray-800 bg-white transition-all duration-300 min-h-screen'>
       <Header />
@@ -18,6 +19,7 @@ function Layout({ children }) {
             <div className='w-full'>
               {children}
             </div>
+            <RightNavigation />
           </div>
         </div>
       </div>
@@ -30,8 +32,8 @@ function Layout({ children }) {
   )
 }
 
-Layout.propTypes = {
+ContributionLayout.propTypes = {
   children: PropTypes.any,
 }
 
-export default Layout
+export default ContributionLayout

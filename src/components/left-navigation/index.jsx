@@ -47,7 +47,7 @@ const routes = [{
   path: '/miscellaneous',
 }]
 
-function Sidebar() {
+export default function LeftNavigation() {
   const [navigation, setNavigation] = useImmer(routes)
 
   const onToggle = useCallback((name) => {
@@ -65,7 +65,7 @@ function Sidebar() {
             item.childData ? (
               <Fragment key={item.name}>
                 <span
-                  className='px-2 py-1 flex items-center hover:text-white cursor-pointer text-gray-600 dark:text-gray-400 hover:bg-gray-400 dark:hover:bg-gray-600'
+                  className='px-2 py-1 flex items-center hover:text-white cursor-pointer text-general hover:bg-gray-400 dark:hover:bg-gray-600'
                   onClick={() => onToggle(item.name)}
                 >
                   <p className='mr-2'> {item.name}</p>
@@ -87,7 +87,7 @@ function Sidebar() {
             ) : (
               <Link href={item.path} key={item.name}>
                 <a>
-                  <li className='hover:bg-sky-500 px-2 py-1 cursor-pointer hover:text-white dark:hover:text-white text-gray-600 dark:text-gray-400 '>
+                  <li className='hover:bg-sky-500 px-2 py-1 cursor-pointer hover:text-white text-general'>
                     {item.name}
                   </li>
                 </a>
@@ -99,5 +99,3 @@ function Sidebar() {
     </nav>
   )
 }
-
-export default Sidebar

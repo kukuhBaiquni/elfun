@@ -29,7 +29,9 @@ export default function Character() {
         <meta content='Elfun Contribution Guide, Contribution Elfun, Elfun' name='keywords' />
       </Head>
       <main className='text-general px-2'>
-        <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Create New Character Information</h2>
+        <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>
+          Create Character Information
+        </h2>
         <p className='my-2'>
           Choose which character you want to add information:
         </p>
@@ -45,7 +47,13 @@ export default function Character() {
               onClick={() => showModalAndSetData(item)}
             >
               <img alt={item.name} height={20} src={item.img} width={20} />
-              <span className={clsx(item.hoverTextColor ? 'text-gray-600' : 'text-white', 'ml-2 font-titillium')}>{item.name}</span>
+              <span className={clsx(
+                item.hoverTextColor ? 'text-gray-600' : 'text-white',
+                'ml-2 font-titillium',
+              )}
+              >
+                {item.name}
+              </span>
             </button>
           ))}
         </div>

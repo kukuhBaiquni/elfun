@@ -6,13 +6,15 @@ import PropTypes from 'prop-types'
 import { STATISTIC, DAMAGE_TYPE } from 'constant/options'
 
 export default function ContributionCharacterForm(props) {
-  const { query, form } = props
+  const { baseData, form } = props
   const { register, control, formState: { errors } } = form
 
   return (
     <div className='grid sm:grid-cols-2 grid-cols-1 sm:gap-10'>
       <section className='max-w-xl'>
         <InputText
+          defaultValue={baseData.realName}
+          disabled
           errors={errors}
           label='Name'
           name='characterName'
@@ -20,7 +22,7 @@ export default function ContributionCharacterForm(props) {
           register={register}
         />
         <InputText
-          defaultValue={query.name}
+          defaultValue={baseData.name}
           disabled
           errors={errors}
           label='Class'
@@ -40,6 +42,12 @@ export default function ContributionCharacterForm(props) {
           label='Innate'
           name='innate'
           placeholder='Innate..'
+          register={register}
+        />
+        <Textarea
+          label='Special Ability'
+          name='specialAbility'
+          placeholder='Special Ability..'
           register={register}
         />
         <Textarea
@@ -100,6 +108,6 @@ export default function ContributionCharacterForm(props) {
 }
 
 ContributionCharacterForm.propTypes = {
-  query: PropTypes.object,
+  baseData: PropTypes.object,
   form: PropTypes.object,
 }

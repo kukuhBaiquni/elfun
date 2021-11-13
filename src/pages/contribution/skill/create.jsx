@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import Layout from 'layouts'
+import ContributionLayout from 'layouts/contribution-layout'
 import { Fragment } from 'react'
 import Head from 'next/head'
 import { useForm } from 'react-hook-form'
@@ -52,7 +52,7 @@ export default function Skills() {
         {isLoading && <FormLoader />}
         {baseData && (
           <Fragment>
-            <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Add Skill Information: {query.name}</h2>
+            <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Add Skill Information: {baseData.name}</h2>
             <p className='my-2'>
               Fill all the required input field:
             </p>
@@ -81,7 +81,7 @@ export default function Skills() {
 }
 
 Skills.getLayout = (page) => (
-  <Layout>
+  <ContributionLayout>
     {page}
-  </Layout>
+  </ContributionLayout>
 )
