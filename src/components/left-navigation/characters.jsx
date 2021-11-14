@@ -10,7 +10,11 @@ export default function Characters() {
     <Fragment>
       {baseClass.map((item, index) => (
         <li
-          className={clsx('relative z-10 pl-1 group hover:translate-x-2 cursor-pointer transition-transform-opacity duration-300 dark:text-gray-400 text-gray-600', item.hoverBgColor, item.hoverTextColor || 'hover:text-white dark:hover:text-white')}
+          className={clsx(
+            'transition-transform-opacity duration-300 dark:text-gray-400 text-gray-600',
+            'relative z-10 pl-1 group hover:translate-x-2 cursor-pointer ',
+            item.hoverBgColor, item.hoverTextColor || 'hover:text-white dark:hover:text-white',
+          )}
           key={item.name}
         >
           <Link href={`/character/${item.name.toLowerCase()}`}>

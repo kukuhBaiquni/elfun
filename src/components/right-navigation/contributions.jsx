@@ -5,7 +5,7 @@ import CONTRIBUTION from 'constant/contribution'
 export default function RightNavigation() {
   return (
     <nav className='font-titillium mr-0 sm:ml-3 hidden xl:block'>
-      <ul className='py-2 px-2 bg-gray-200 dark:bg-gray-700 max-h-full w-52 transition-all duration-300 mb-3'>
+      <ul className='py-2 px-2 bg-paper-general max-h-full w-52 transition-general mb-3'>
         <div className='relative z-20'>
           <h6 className='text-sky-500 font-bold text-lg mb-1'>
             Contributions

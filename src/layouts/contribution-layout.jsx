@@ -10,13 +10,13 @@ const Header = dynamic(
 
 function ContributionLayout({ children }) {
   return (
-    <div className='dark:bg-gray-800 bg-white transition-all duration-300 min-h-screen'>
+    <div className='bg-general transition-all duration-300 min-h-screen'>
       <Header />
       <div className='mx-auto max-w-screen-2xl overflow-hidden'>
         <div className='w-full pt-24'>
           <div className='flex px-1.5'>
             <LeftNavigation />
-            <div className='w-full dark:bg-gray-700 p-2 bg-gray-200 transition-general'>
+            <div className='w-full bg-paper-general sm:p-2 transition-general'>
               {children}
             </div>
             <RightNavigation />
