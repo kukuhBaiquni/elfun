@@ -11,7 +11,7 @@ export default function InputText(props) {
   } = props
 
   const errorMessage = _(errors, `${name}.message`) ?? ''
-
+  console.log('DEFAULT', defaultValue)
   return (
     <FormFieldWrapper
       bordered
@@ -28,9 +28,9 @@ export default function InputText(props) {
           autoFocus={false}
           className='w-full outline-none disabled:cursor-not-allowed placeholder-gray-500 bg-transparent text-sm p-2'
           defaultValue={defaultValue}
-          disabled={disabled}
           id={name}
           placeholder={placeholder}
+          readOnly={disabled}
           spellCheck={false}
           type='text'
         />
