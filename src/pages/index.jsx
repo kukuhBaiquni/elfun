@@ -25,9 +25,9 @@ function Home() {
         <Alert text={alertContent} variant='info' />
         <section className='px-2 mb-10'>
           <Welcome />
-          <RelatedArticles />
-          <NewsAndUpdate />
           <Contribution />
+          <NewsAndUpdate />
+          <RelatedArticles />
         </section>
       </main>
     </Fragment>
