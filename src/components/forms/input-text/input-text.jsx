@@ -4,7 +4,7 @@ import _ from 'lodash/get'
 import { LockClosedIcon } from '@heroicons/react/solid'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 
-function InputText(props) {
+export default function InputText(props) {
   const {
     name = '', label, placeholder, defaultValue = '', register,
     errors = {}, className, disabled,
@@ -39,8 +39,6 @@ function InputText(props) {
     </FormFieldWrapper>
   )
 }
-
-export default InputText
 
 InputText.propTypes = {
   name: PropTypes.string,

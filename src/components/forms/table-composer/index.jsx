@@ -59,9 +59,7 @@ export default function TableComposer(props) {
                 />
               </div>
             </div>
-            <div className='overflow-x-auto'>
-              <TableInformation data={field.tableFields} />
-            </div>
+            <TableInformation data={field.tableFields} />
           </div>
         ))}
       </div>

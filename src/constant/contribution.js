@@ -5,6 +5,8 @@ import title from '../../public/images/categories/title.png'
 import town from '../../public/images/categories/town.png'
 import npc from '../../public/images/categories/npc.png'
 import skill from '../../public/images/categories/skill.png'
+import combo from '../../public/images/categories/combo.png'
+import gallery from '../../public/images/categories/gallery.png'
 
 const CONTRIBUTION = [{
   name: 'Characters',
@@ -22,6 +24,23 @@ const CONTRIBUTION = [{
   list: [
     'Add/Edit Skill data (with permission)',
     'Add picture to gallery (with permission)',
+    'Submit suggestion/repair for broken link or image',
+  ],
+}, {
+  name: 'Combo',
+  path: '/contribution/combo',
+  img: combo,
+  list: [
+    'Add/Edit Combo data (with permission)',
+    'Add picture to gallery (with permission)',
+    'Submit suggestion/repair for broken link or image',
+  ],
+}, {
+  name: 'Gallery',
+  path: '/contribution/gallery',
+  img: gallery,
+  list: [
+    'Add/Edit Gallery data (with permission)',
     'Submit suggestion/repair for broken link or image',
   ],
 }, {
