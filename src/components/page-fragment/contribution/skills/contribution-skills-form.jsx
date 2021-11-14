@@ -21,7 +21,7 @@ export default function ContributionSkillsForm(props) {
     handleSubmit,
   } = form
 
-  // console.log('📝', watch())
+  console.log('📝', watch())
   console.log('❌', errors)
   return (
     <Fragment>
@@ -48,11 +48,18 @@ export default function ContributionSkillsForm(props) {
             name='skillCategory'
             options={SKILL_CATEGORIES}
           />
-          <InputSwitch
-            control={control}
-            label='Affect Another Skill'
-            name='affectAnotherSkill'
-          />
+          <div className='grid grid-cols-2 gap-5'>
+            <InputSwitch
+              control={control}
+              label='Affect Another Skill'
+              name='affectAnotherSkill'
+            />
+            <InputSwitch
+              control={control}
+              label='Locked'
+              name='locked'
+            />
+          </div>
           <InputImage label='Skill Icon' name='skillIcon' />
         </section>
         <section>
