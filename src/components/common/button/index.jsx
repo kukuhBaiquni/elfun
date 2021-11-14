@@ -14,6 +14,8 @@ export default function Button(props) {
     'primary-outlined': 'border border-sky-500 bg-transparent text-sky-500 hover:bg-gray-200 dark:hover:bg-gray-700',
     'danger-solid': 'bg-red-500 text-white hover:bg-opacity-70',
     'danger-outlined': 'border border-red-500 bg-transparent text-red-500 hover:bg-gray-200 dark:hover:bg-gray-700',
+    'submit-solid': 'bg-emerald-500 text-white hover:bg-opacity-70',
+    'submit-outlined': 'border border-emerald-500 bg-transparent text-emerald-500 hover:bg-gray-200 dark:hover:bg-gray-700',
   }[variant]
 
   return (
@@ -47,8 +49,8 @@ Button.propTypes = {
     'sm', 'md',
   ]),
   variant: PropTypes.oneOf([
-    'primary-solid', 'danger-solid',
-    'primary-outlined', 'danger-outlined',
+    'primary-solid', 'danger-solid', 'submit-solid',
+    'primary-outlined', 'danger-outlined', 'submit-outlined',
   ]),
 }
 

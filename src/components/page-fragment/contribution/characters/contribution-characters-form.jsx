@@ -4,6 +4,7 @@ import Textarea from 'components/forms/input-text/textarea'
 import InputRadio from 'components/forms/input-radio'
 import PropTypes from 'prop-types'
 import { STATISTIC, DAMAGE_TYPE } from 'constant/options'
+import InputMultifield from 'components/forms/input-multifield'
 
 export default function ContributionCharacterForm(props) {
   const { baseData, form } = props
@@ -52,14 +53,6 @@ export default function ContributionCharacterForm(props) {
             register={register}
           />
         )}
-        <Textarea
-          label='Background'
-          name='background'
-          placeholder='Background..'
-          register={register}
-        />
-      </section>
-      <section>
         <InputText
           errors={errors}
           label='Weapon'
@@ -67,6 +60,15 @@ export default function ContributionCharacterForm(props) {
           placeholder='Weapon..'
           register={register}
         />
+        <Textarea
+          label='Background'
+          name='background'
+          placeholder='Background..'
+          register={register}
+          rows={5}
+        />
+      </section>
+      <section>
         <InputNumber
           control={control}
           label='Age'
@@ -106,6 +108,34 @@ export default function ContributionCharacterForm(props) {
             options={DAMAGE_TYPE}
           />
         </div>
+        <InputMultifield
+          buttonLabel='Add Tips and Details'
+          components={[
+            {
+              Node: Textarea,
+              props: {
+                name: 'description', label: 'Description', placeholder: 'Tips and Details..', rows: 2,
+              },
+            },
+          ]}
+          form={form}
+          label='Tips And Details'
+          name='tipsAndDetails'
+        />
+        <InputMultifield
+          buttonLabel='Add Trivia'
+          components={[
+            {
+              Node: Textarea,
+              props: {
+                name: 'description', label: 'Description', placeholder: 'Trivia..', rows: 2,
+              },
+            },
+          ]}
+          form={form}
+          label='Trivia'
+          name='trivia'
+        />
       </section>
     </div>
   )

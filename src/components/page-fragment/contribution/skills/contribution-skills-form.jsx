@@ -13,7 +13,6 @@ import InputSwitch from 'components/forms/input-switch'
 import _ from 'lodash/isEmpty'
 import { useRouter } from 'next/router'
 
-let renderCount = 0
 export default function ContributionSkillsForm(props) {
   const { form, onSubmit } = props
   const { query } = useRouter()
@@ -21,13 +20,12 @@ export default function ContributionSkillsForm(props) {
     register, watch, control, formState: { errors },
     handleSubmit,
   } = form
-  renderCount += 1
-  console.log('RE-RENDER', renderCount)
+
   // console.log('📝', watch())
   console.log('❌', errors)
   return (
     <Fragment>
-      <div className='grid sm:grid-cols-2 grid-cols-1 sm:gap-3'>
+      <div className='grid sm:grid-cols-2 grid-cols-1 sm:gap-10'>
         <section className='max-w-xl'>
           <InputText
             errors={errors}
@@ -71,10 +69,16 @@ export default function ContributionSkillsForm(props) {
             buttonLabel='Add Special Feature'
             components={[
               {
-                Node: InputText, name: 'name', label: 'Name', placeholder: 'Feature Name..',
+                Node: InputText,
+                props: {
+                  name: 'name', label: 'Name', placeholder: 'Feature Name..',
+                },
               },
               {
-                Node: Textarea, name: 'description', label: 'Description', placeholder: 'Description..',
+                Node: Textarea,
+                props: {
+                  name: 'description', label: 'Description', placeholder: 'Description..', rows: 3,
+                },
               },
             ]}
             form={form}

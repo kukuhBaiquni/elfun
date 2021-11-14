@@ -12,7 +12,7 @@ export default function InputMultifieldBody(props) {
   } = props
   const { formState: { errors }, register, handleSubmit } = useForm({
     defaultValues,
-    resolver: FormSchema,
+    // resolver: FormSchema,
   })
 
   return (
@@ -25,13 +25,11 @@ export default function InputMultifieldBody(props) {
         <div className='max-h-[700px] min-h-[300px] overflow-y-auto custom-scroll pr-2'>
           {components.map((Component) => (
             <Component.Node
-              defaultValue={defaultValues[Component.name]}
+              defaultValue={defaultValues[Component.props.name]}
               errors={errors}
-              key={Component.name}
-              label={Component.label}
-              name={Component.name}
-              placeholder={Component.placeholder}
+              key={Component.props.name}
               register={register}
+              {...Component.props}
             />
           ))}
         </div>

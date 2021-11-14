@@ -16,7 +16,7 @@ export default function InputMultifield(props) {
   const [focusedData, setFocusedData] = useState({})
   const [focusedIndex, setFocusedIndex] = useState(-1)
   const {
-    components, name, label, form,
+    components, name, label, form, buttonLabel,
   } = props
   const { control } = form
 
@@ -39,43 +39,47 @@ export default function InputMultifield(props) {
 
   return (
     <FormFieldWrapper label={label} name={name}>
-      <ReactSortable
-        animation={150}
-        filter='.filtered'
-        ghostClass='opacity-60'
-        handle='.handle'
-        list={fields}
-        setList={() => { }}
-        onEnd={(evt) => move(evt.oldIndex, evt.newIndex)}
-      >
-        {fields.map((field, index) => (
-          <div className='p-2 dark:bg-gray-800 handle cursor-grab bg-warmGray-300 rounded flex justify-between mb-2 border-input' key={field.$id}>
-            <div>
-              <SwitchVerticalIcon className='w-5 h-5' />
-              <div>
-                <h6 className='font-bold font-titillium'>{_(field.name)}</h6>
-                <p className='text-sm'>{field.description}</p>
+      <div className='mb-2'>
+        <div className='max-h-[200px] overflow-y-auto custom-scroll pr-2'>
+          <ReactSortable
+            animation={150}
+            filter='.filtered'
+            ghostClass='opacity-60'
+            handle='.handle'
+            list={fields}
+            setList={() => { }}
+            onEnd={(evt) => move(evt.oldIndex, evt.newIndex)}
+          >
+            {fields.map((field, index) => (
+              <div className='p-2 dark:bg-gray-800 handle cursor-grab bg-warmGray-300 rounded flex justify-between mb-2 border-input' key={field.$id}>
+                <div>
+                  <SwitchVerticalIcon className='w-5 h-5' />
+                  <div>
+                    <h6 className='font-bold font-titillium'>{_(field.name)}</h6>
+                    <p className='text-sm'>{field.description}</p>
+                  </div>
+                </div>
+                <div className='flex items-start'>
+                  <PencilIcon
+                    className='w-5 h-5 text-sky-500 action-icon'
+                    onClick={() => {
+                      setFocusedData(field)
+                      setFocusedIndex(index)
+                      setIsVisible(true)
+                    }}
+                  />
+                  <TrashIcon
+                    className='w-5 h-5 text-red-500 action-icon'
+                    onClick={() => remove(index)}
+                  />
+                </div>
               </div>
-            </div>
-            <div className='flex items-start'>
-              <PencilIcon
-                className='w-5 h-5 text-sky-500 action-icon'
-                onClick={() => {
-                  setFocusedData(field)
-                  setFocusedIndex(index)
-                  setIsVisible(true)
-                }}
-              />
-              <TrashIcon
-                className='w-5 h-5 text-red-500 action-icon'
-                onClick={() => remove(index)}
-              />
-            </div>
-          </div>
-        ))}
-      </ReactSortable>
+            ))}
+          </ReactSortable>
+        </div>
+      </div>
       <Button
-        label='Add Special Feature'
+        label={buttonLabel}
         leftIcon={<MenuAlt2Icon className='h-5 w-5 mr-2' />}
         onClick={() => {
           setIsVisible(true)
@@ -91,7 +95,7 @@ export default function InputMultifield(props) {
             components={components}
             defaultValues={focusedData}
             formSubmit={formSubmit}
-            modalTitle='Add Special Feature'
+            modalTitle={label}
           />
         )}
         size='max-w-xl'
@@ -105,4 +109,5 @@ InputMultifield.propTypes = {
   name: PropTypes.string,
   label: PropTypes.string,
   form: PropTypes.object,
+  buttonLabel: PropTypes.string,
 }

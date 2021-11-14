@@ -13,6 +13,8 @@ import FormLoader from 'components/page-fragment/contribution/form-loader'
 import { getCharacterUtility } from 'api/character-utility'
 import InvalidAccess from 'components/page-fragment/contribution/invalid-access'
 import { useQuery } from 'react-query'
+import Button from 'components/common/button'
+import { CheckCircleIcon } from '@heroicons/react/solid'
 
 export default function Create() {
   const [isVisible, setIsVisible] = useState(false)
@@ -31,6 +33,10 @@ export default function Create() {
   const baseData = queryCharacterUtility.data?.data
   const { isLoading, isError } = queryCharacterUtility
 
+  const onSubmit = (data) => {
+    console.log('DATA__', data)
+  }
+
   return (
     <Fragment>
       <Head>
@@ -46,24 +52,37 @@ export default function Create() {
         {isLoading && <FormLoader />}
         {baseData && (
           <Fragment>
-            <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Add Character Information: {baseData.name}</h2>
+            <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>
+              Add Character Information: {baseData.name}
+            </h2>
             <p className='my-2'>
               Fill all the required input fields:
             </p>
-            <div className='flex items-center gap-2 mb-5'>
-              <img
-                alt={baseData.name}
-                className={clsx(baseData.bgColor, 'p-1')}
-                height={60}
-                src={baseData.img}
-                width={60}
-              />
-              <div>
-                <p className={clsx(baseData.textColor, 'font-bold font-titillium text-lg')}>{baseData.name}</p>
-                <p className='leading-5 text-sm'>({classType[baseData.classId]})</p>
+            <div className='flex justify-between items-center'>
+              <div className='flex items-center gap-2 mb-5'>
+                <img
+                  alt={baseData.name}
+                  className={clsx(baseData.bgColor, 'p-1')}
+                  height={60}
+                  src={baseData.img}
+                  width={60}
+                />
+                <div>
+                  <p className={clsx(baseData.textColor, 'font-bold font-titillium text-lg')}>{baseData.name}</p>
+                  <p className='leading-5 text-sm'>({classType[baseData.classId]})</p>
+                </div>
               </div>
+              <Button
+                label='Save'
+                leftIcon={<CheckCircleIcon className='w-5 h-5 mr-2' />}
+                variant='submit-solid'
+                onClick={form.handleSubmit(onSubmit)}
+              />
             </div>
-            <ContributionCharacterForm baseData={baseData} form={form} />
+            <ContributionCharacterForm
+              baseData={baseData}
+              form={form}
+            />
             <Modal
               isVisible={isVisible}
               render={<Warning />}
