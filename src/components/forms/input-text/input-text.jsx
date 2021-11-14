@@ -11,7 +11,7 @@ export default function InputText(props) {
   } = props
 
   const errorMessage = _(errors, `${name}.message`) ?? ''
-  console.log('DEFAULT', defaultValue)
+
   return (
     <FormFieldWrapper
       bordered

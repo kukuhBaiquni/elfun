@@ -35,21 +35,21 @@ export default function ContributionCharacterForm(props) {
           errors={errors}
           label='Quote'
           name='quote'
-          placeholder='Quote..'
+          placeholder='Quote e.g: "Time for true display of skills!"'
           register={register}
         />
         <InputText
           errors={errors}
           label='Innate'
           name='innate'
-          placeholder='Innate..'
+          placeholder='Innate e.g: Specialized in close combat'
           register={register}
         />
         {baseData?.classId === 0 && (
           <Textarea
             label='Special Ability'
             name='specialAbility'
-            placeholder='Special Ability..'
+            placeholder='Special Ability e.g: Imbued by nature energy, this character is powerful to overpower enemy..'
             register={register}
           />
         )}
@@ -57,13 +57,13 @@ export default function ContributionCharacterForm(props) {
           errors={errors}
           label='Weapon'
           name='weapon'
-          placeholder='Weapon..'
+          placeholder='Weapon e.g: Sword, Bow, Kick'
           register={register}
         />
         <Textarea
           label='Background'
           name='background'
-          placeholder='Background..'
+          placeholder='Background e.g: Background story of this character'
           register={register}
           rows={5}
         />
@@ -73,13 +73,13 @@ export default function ContributionCharacterForm(props) {
           control={control}
           label='Age'
           name='age'
-          placeholder='Age..'
+          placeholder='Age e.g: 20 or 0 for "Unknown"'
         />
         <InputText
           errors={errors}
           label='Race'
           name='race'
-          placeholder='Race..'
+          placeholder='Race e.g: Human, Elf, Nasod'
           register={register}
         />
         <div className='grid grid-cols-1 lg:grid-cols-2 lg:gap-2'>
@@ -114,7 +114,10 @@ export default function ContributionCharacterForm(props) {
             {
               Node: Textarea,
               props: {
-                name: 'description', label: 'Description', placeholder: 'Tips and Details..', rows: 2,
+                name: 'description',
+                label: 'Description',
+                placeholder: 'Tips and Details e.g: Press X to fire arrow',
+                rows: 2,
               },
             },
           ]}
@@ -128,13 +131,40 @@ export default function ContributionCharacterForm(props) {
             {
               Node: Textarea,
               props: {
-                name: 'description', label: 'Description', placeholder: 'Trivia..', rows: 2,
+                name: 'description',
+                label: 'Description',
+                placeholder: 'Trivia e.g: Aisha full name is "Aisha Landar"',
+                rows: 2,
               },
             },
           ]}
           form={form}
           label='Trivia'
           name='trivia'
+        />
+        <InputMultifield
+          buttonLabel='Add Reference Link'
+          components={[
+            {
+              Node: InputText,
+              props: {
+                name: 'variable',
+                label: 'Variable',
+                placeholder: 'Variable e.g: Elsword, Ruben, Altera Core',
+              },
+            },
+            {
+              Node: InputText,
+              props: {
+                name: 'link',
+                label: 'Link',
+                placeholder: 'Link e.g: /character/elsword',
+              },
+            },
+          ]}
+          form={form}
+          label='Reference'
+          name='reference'
         />
       </section>
     </div>

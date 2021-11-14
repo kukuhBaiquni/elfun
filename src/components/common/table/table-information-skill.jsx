@@ -41,7 +41,7 @@ function Table(props) {
 
   return (
     <div className='overflow-x-auto grid grid-cols-1 py-3 mb-5'>
-      <table className='border-collapse'>
+      <table className='border-collapse h-[100px]'>
         <thead className={clsx(
           'bg-gradient-to-t dark:from-gray-600 dark:to-gray-900 font-titillium dark:text-white',
           'from-sky-200 to-sky-300 text-gray-600',
