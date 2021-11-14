@@ -1,5 +1,5 @@
 import {
-  ArrowUpIcon, PlusIcon, SwitchVerticalIcon, TrashIcon,
+  PlusIcon, SwitchVerticalIcon, TrashIcon,
 } from '@heroicons/react/solid'
 import Button from 'components/common/button'
 import { useFieldArray } from 'react-hook-form'
@@ -16,7 +16,7 @@ import InputSelect from '../input-select/input-select'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 import InputSwitch from '../input-switch'
 import InputRadio from '../input-radio'
-import TableComposerAttributeConditionalInput from './table-composer-attributes-conditional-input'
+import TableAttributeLevel from './table-attribute-level'
 
 export default function TableComposerAttributeForm(props) {
   const { name, defaultValues = [], form } = props
@@ -40,17 +40,10 @@ export default function TableComposerAttributeForm(props) {
         flag: { label: 'none', value: '' },
         isDealingDamage: false,
         damageType: DAMAGE_TYPE[0],
-        valueType: INPUT_TYPE[0],
+        inputType: INPUT_TYPE[0],
         hasAwakeningEffect: false,
         awakeningModifier: PERCENTAGE_OR_FLAT[0],
-        value: {
-          normal: '',
-          awaken: '',
-        },
-        valueRange: {
-          normal: ['', ''],
-          awaken: ['', ''],
-        },
+        value: [],
         suffix: VALUE_SUFFIX[0],
       })
     }
@@ -111,11 +104,18 @@ export default function TableComposerAttributeForm(props) {
                   options={SKILL_ATTRIBUTES}
                 />
                 <InputSwitch
-                  className='sm:col-span-12'
+                  className='sm:col-span-6'
                   control={control}
                   defaultValue={defaultValues[index]?.isDealingDamage}
                   label='Is Dealing Damage'
                   name={`${name}.${index}.isDealingDamage`}
+                />
+                <InputSwitch
+                  className='sm:col-span-6'
+                  control={control}
+                  defaultValue={defaultValues[index]?.hasAwakeningEffect}
+                  label='Has Awakening Effect'
+                  name={`${name}.${index}.hasAwakeningEffect`}
                 />
                 <InputRadio
                   className='sm:col-span-6'
@@ -129,22 +129,6 @@ export default function TableComposerAttributeForm(props) {
                 <InputRadio
                   className='sm:col-span-6'
                   control={control}
-                  defaultValue={defaultValues[index]?.valueType}
-                  errors={errors}
-                  label='Value Type'
-                  name={`${name}.${index}.valueType`}
-                  options={INPUT_TYPE}
-                />
-                <InputSwitch
-                  className='sm:col-span-6'
-                  control={control}
-                  defaultValue={defaultValues[index]?.hasAwakeningEffect}
-                  label='Has Awakening Effect'
-                  name={`${name}.${index}.hasAwakeningEffect`}
-                />
-                <InputRadio
-                  className='sm:col-span-6'
-                  control={control}
                   defaultValue={defaultValues[index]?.awakeningModifier}
                   disabled={!watch(`${name}.${index}.hasAwakeningEffect`)}
                   errors={errors}
@@ -152,52 +136,23 @@ export default function TableComposerAttributeForm(props) {
                   name={`${name}.${index}.awakeningModifier`}
                   options={PERCENTAGE_OR_FLAT}
                 />
-                <div className='sm:col-span-12 my-2'>
-                  <div className='py-1 px-3 bg-gray-600 text-white text-center mb-2'>
-                    <p>Level</p>
-                  </div>
-                  <div className='sm:col-span-12 grid sm:grid-cols-12 gap-x-2 grid-cols-1 p-1 px-2 bg-gray-800'>
-                    <TableComposerAttributeConditionalInput
-                      attributeIndex={index}
-                      control={control}
-                      defaultValues={defaultValues[index]}
-                      identifier='normal'
-                      inputName={`${name}.${index}`}
-                      inputType={watch(`${name}.${index}.valueType`)?.value}
-                    />
-                    {watch(`${name}.${index}.awakeningModifier`)?.value === 'FLAT' ? (
-                      <TableComposerAttributeConditionalInput
-                        attributeIndex={index}
-                        control={control}
-                        defaultValues={defaultValues[index]}
-                        disabled={!watch(`${name}.${index}.hasAwakeningEffect`)}
-                        identifier='awaken'
-                        inputName={`${name}.${index}`}
-                        inputType={watch(`${name}.${index}.valueType`)?.value}
-                      />
-                    ) : (
-                      <TableComposerAttributeConditionalInput
-                        attributeIndex={index}
-                        control={control}
-                        defaultValues={defaultValues[index]}
-                        disabled={!watch(`${name}.${index}.hasAwakeningEffect`)}
-                        forceFixedInput
-                        identifier='awaken'
-                        inputName={`${name}.${index}`}
-                        inputType={watch(`${name}.${index}.valueType`)?.value}
-                        percentage
-                      />
-                    )}
-                  </div>
-                </div>
-                <div className='sm:col-span-12 flex justify-end'>
-                  <Button
-                    label='Add Skill Level'
-                    leftIcon={<ArrowUpIcon className='w-3.5 h-3.5 mr-2' />}
-                    size='sm'
-                    variant='submit-solid'
-                  />
-                </div>
+                <InputRadio
+                  className='sm:col-span-6'
+                  control={control}
+                  defaultValue={defaultValues[index]?.valueType}
+                  errors={errors}
+                  label='Input Type'
+                  name={`${name}.${index}.inputType`}
+                  options={INPUT_TYPE}
+                />
+                <TableAttributeLevel
+                  awakeningModifier={watch(`${name}.${index}.awakeningModifier`)?.value}
+                  defaultValues={defaultValues[index]?.value}
+                  disabled={!watch(`${name}.${index}.hasAwakeningEffect`)}
+                  form={form}
+                  inputType={watch(`${name}.${index}.inputType`)?.value}
+                  name={`${name}.${index}.value`}
+                />
                 <InputSelect
                   className='sm:col-span-6'
                   control={control}
