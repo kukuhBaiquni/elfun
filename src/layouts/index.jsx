@@ -9,7 +9,7 @@ const Header = dynamic(
 
 function Layout({ children }) {
   return (
-    <div className='dark:bg-gray-800 bg-white transition-all duration-300 min-h-screen'>
+    <div className='bg-general transition-all duration-300 min-h-screen'>
       <Header />
       <div className='mx-auto max-w-screen-2xl overflow-hidden'>
         <div className='w-full pt-24'>
