@@ -16,7 +16,7 @@ const schema = yup.object().shape({
             label: yup.string(),
             value: yup.string(),
           }),
-          valueType: yup.object({
+          inputType: yup.object({
             label: yup.string(),
             value: yup.string(),
           }),
@@ -25,14 +25,18 @@ const schema = yup.object().shape({
             label: yup.string(),
             value: yup.string(),
           }),
-          value: yup.object({
-            normal: yup.string(),
-            awaken: yup.string(),
-          }),
-          valueRange: yup.object({
-            normal: yup.array().of(yup.string()),
-            awaken: yup.array().of(yup.string()),
-          }),
+          value: yup.array().of(
+            yup.object({
+              flat: yup.object({
+                normal: yup.string(),
+                awaken: yup.string(),
+              }),
+              range: yup.object({
+                normal: yup.array().of(yup.string()),
+                awaken: yup.array().of(yup.string()),
+              }),
+            }),
+          ),
           suffix: yup.object({
             label: yup.string(),
             value: yup.string(),

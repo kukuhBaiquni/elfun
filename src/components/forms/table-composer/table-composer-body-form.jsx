@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import _ from 'lodash/get'
 import InputText from '../input-text/input-text'
 
-import FormSchema from './table-fields-form-schema'
+import FormSchema from '../../page-fragment/contribution/skills/table-fields-form-schema'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 import TableComposerFieldsForm from './table-composer-fields-form'
 

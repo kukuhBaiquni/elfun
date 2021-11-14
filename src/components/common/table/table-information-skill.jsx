@@ -5,7 +5,7 @@ import { Fragment, memo } from 'react'
 import numberFormat from 'utils/number-format'
 
 function Table(props) {
-  const { data } = props
+  // const { data } = props
 
   const setRowSpan = (obj) => {
     if (obj.attributes.some((attr) => attr.skipAttributeName)) {
@@ -26,7 +26,8 @@ function Table(props) {
     }, 0),
     rowSpan: setRowSpan(item),
   }))
-  const rawData = data.map((item) => item.attributes).flat()
+  const attributes = data.map((item) => item.attributes).flat()
+  const attributeValues = [attributes.map((item) => item.value).flat()]
 
   const calculateFixedPercent = (val) => {
     const base = +val.normal
@@ -38,6 +39,11 @@ function Table(props) {
     const base = +val.normal[index]
     return base + (base * (+percent / 100))
   }
+
+  console.log('__DATA', data)
+  console.log('FIELD NAMES', fieldNames)
+  console.log('ATTRIBUTES___', attributes)
+  console.log('VALUE___', attributeValues)
 
   return (
     <div className='overflow-x-auto grid grid-cols-1 py-3 mb-5'>
@@ -62,7 +68,7 @@ function Table(props) {
             ))}
           </tr>
           <tr>
-            {rawData.map((item, index) => {
+            {attributes.map((item, index) => {
               if (item.skipAttributeName) {
                 return null
               }
@@ -81,9 +87,9 @@ function Table(props) {
             })}
           </tr>
           <tr>
-            {rawData.map((item) => {
+            {attributes.map((item) => {
               if (item.hasAwakeningEffect) {
-                return Object.keys(item.value).map(
+                return Object.keys(item.value[0].range).map(
                   (key) => (
                     <th className='px-3 py-2 whitespace-nowrap text-center border-input' key={key}>
                       {_(key)}
@@ -96,73 +102,75 @@ function Table(props) {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            {rawData.map((item, index) => {
-              if (item.hasAwakeningEffect) {
-                if (item.valueType?.value === 'FIXED') {
-                  return Object.entries(item.value).map(([key, value]) => {
+          {attributeValues.map((attr, idx) => (
+            <tr key={idx}>
+              {/* {attributes.map((item, index) => {
+                if (item.hasAwakeningEffect) {
+                  if (item.inputType?.value === 'FIXED') {
+                    return Object.entries(item.value).map(([key, value]) => {
+                      if (item.awakeningModifier?.value === 'PERCENT' && key === 'awaken') {
+                        return (
+                          <td
+                            className='px-3 py-2 text-center border-input'
+                            key={`${key}${index}`}
+                          >
+                            {`${numberFormat(calculateFixedPercent(item.value))}${item.suffix.value}`}
+                            <span className='dark:text-green-400 whitespace-nowrap text-green-600 ml-1'>{`(${value}%)↑`}</span>
+                          </td>
+                        )
+                      }
+                      return (
+                        <td
+                          className='px-3 py-2 text-center border-input whitespace-nowrap'
+                          key={`${value}${index}`}
+                        >
+                          {`${numberFormat(value)}${item.suffix.value}`}
+                        </td>
+                      )
+                    })
+                  }
+                  return Object.entries(item.valueRange).map(([key, value]) => {
                     if (item.awakeningModifier?.value === 'PERCENT' && key === 'awaken') {
                       return (
                         <td
-                          className='px-3 py-2 text-center border-input'
+                          className='px-3 py-2 text-center border-input whitespace-nowrap'
                           key={`${key}${index}`}
                         >
-                          {`${numberFormat(calculateFixedPercent(item.value))}${item.suffix.value}`}
-                          <span className='dark:text-green-400 whitespace-nowrap text-green-600 ml-1'>{`(${value}%)↑`}</span>
+                          {`${numberFormat(calculateRangePercent(item.valueRange, item.value.awaken, 0))}${item.suffix.value} →
+                      ${numberFormat(calculateRangePercent(item.valueRange, item.value.awaken, 1))}${item.suffix.value}`}
+                          <span className='dark:text-green-400 whitespace-nowrap text-green-600 ml-1'>{`(${item.value.awaken}%)↑`}</span>
                         </td>
                       )
                     }
                     return (
                       <td
                         className='px-3 py-2 text-center border-input whitespace-nowrap'
-                        key={`${value}${index}`}
+                        key={`${key}${index}`}
                       >
-                        {`${numberFormat(value)}${item.suffix.value}`}
+                        {`${numberFormat(value[0])}${item.suffix.value} → ${numberFormat(value[1])}${item.suffix.value}`}
                       </td>
                     )
                   })
                 }
-                return Object.entries(item.valueRange).map(([key, value]) => {
-                  if (item.awakeningModifier?.value === 'PERCENT' && key === 'awaken') {
-                    return (
-                      <td
-                        className='px-3 py-2 text-center border-input whitespace-nowrap'
-                        key={`${key}${index}`}
-                      >
-                        {`${numberFormat(calculateRangePercent(item.valueRange, item.value.awaken, 0))}${item.suffix.value} → 
-                      ${numberFormat(calculateRangePercent(item.valueRange, item.value.awaken, 1))}${item.suffix.value}`}
-                        <span className='dark:text-green-400 whitespace-nowrap text-green-600 ml-1'>{`(${item.value.awaken}%)↑`}</span>
-                      </td>
-                    )
-                  }
-                  return (
-                    <td
-                      className='px-3 py-2 text-center border-input whitespace-nowrap'
-                      key={`${key}${index}`}
-                    >
-                      {`${numberFormat(value[0])}${item.suffix.value} → ${numberFormat(value[1])}${item.suffix.value}`}
-                    </td>
-                  )
-                })
-              }
-              return (
-                <td
-                  className='px-3 py-2 text-center border-input'
-                  key={index}
-                >
-                  {item.valueType?.value === 'FIXED' ? (
+                return (
+                  <td
+                    className='px-3 py-2 text-center border-input'
+                    key={index}
+                  >
+                    {item.inputType?.value === 'FIXED' ? (
                     `${numberFormat(item.value.normal)}${item.suffix.value}`
-                  ) : (
-                    <Fragment>
-                      {`${numberFormat(item.valueRange.normal[0])}${item.suffix.value} →
+                    ) : (
+                      <Fragment>
+                        {`${numberFormat(item.valueRange.normal[0])}${item.suffix.value} →
                       ${numberFormat(item.valueRange.normal[1])}${item.suffix.value}`}
-                      <span className='dark:text-green-400 whitespace-nowrap text-green-400 ml-1'>{`|${item.value.awaken}%↑`}</span>
-                    </Fragment>
-                  )}
-                </td>
-              )
-            })}
-          </tr>
+                        <span className='dark:text-green-400 whitespace-nowrap text-green-400 ml-1'>{`|${item.value.awaken}%↑`}</span>
+                      </Fragment>
+                    )}
+                  </td>
+                )
+              })} */}
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
@@ -172,5 +180,155 @@ function Table(props) {
 export default memo(Table)
 
 Table.propTypes = {
-  data: PropTypes.array,
+  // data: PropTypes.array,
 }
+
+const data = [
+  {
+    fieldName: 'Shockwave',
+    attributes: [
+      {
+        skipAttributeName: false,
+        attributeName: 'Damage',
+        flag: {
+          label: 'Damage',
+          value: 'DMG',
+        },
+        isDealingDamage: true,
+        damageType: {
+          label: 'Physical',
+          value: 'PHY',
+        },
+        inputType: {
+          label: 'Fixed',
+          value: 'FIXED',
+        },
+        hasAwakeningEffect: true,
+        awakeningModifier: {
+          label: 'Percentage',
+          value: 'PERCENT',
+        },
+        value: [
+          {
+            flat: {
+              normal: '2661',
+              awaken: '35',
+            },
+            range: {
+              normal: [
+                '',
+                '',
+              ],
+              awaken: [
+                '',
+                '',
+              ],
+            },
+          },
+        ],
+        suffix: {
+          label: '%',
+          value: '%',
+        },
+      },
+    ],
+  },
+  {
+    fieldName: 'Fall',
+    attributes: [
+      {
+        skipAttributeName: false,
+        attributeName: 'Damage',
+        flag: {
+          label: 'Damage',
+          value: 'DMG',
+        },
+        isDealingDamage: true,
+        damageType: {
+          label: 'Physical',
+          value: 'PHY',
+        },
+        inputType: {
+          label: 'Fixed',
+          value: 'FIXED',
+        },
+        hasAwakeningEffect: true,
+        awakeningModifier: {
+          label: 'Percentage',
+          value: 'PERCENT',
+        },
+        value: [
+          {
+            flat: {
+              normal: '661',
+              awaken: '35',
+            },
+            range: {
+              normal: [
+                '',
+                '',
+              ],
+              awaken: [
+                '',
+                '',
+              ],
+            },
+          },
+        ],
+        suffix: {
+          label: '%',
+          value: '%',
+        },
+      },
+    ],
+  },
+  {
+    fieldName: 'Cooldown',
+    attributes: [
+      {
+        skipAttributeName: true,
+        attributeName: '',
+        flag: {
+          label: 'none',
+          value: '',
+        },
+        isDealingDamage: false,
+        damageType: {
+          label: 'Physical',
+          value: 'PHY',
+        },
+        inputType: {
+          label: 'Fixed',
+          value: 'FIXED',
+        },
+        hasAwakeningEffect: false,
+        awakeningModifier: {
+          label: 'Flat',
+          value: 'FLAT',
+        },
+        value: [
+          {
+            flat: {
+              normal: '12',
+              awaken: '',
+            },
+            range: {
+              normal: [
+                '',
+                '',
+              ],
+              awaken: [
+                '',
+                '',
+              ],
+            },
+          },
+        ],
+        suffix: {
+          label: 'Seconds',
+          value: 's',
+        },
+      },
+    ],
+  },
+]
