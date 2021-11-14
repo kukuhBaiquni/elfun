@@ -70,6 +70,16 @@ const transcendentClass = [
     pathId: 2,
   },
   {
+    name: 'Mystic Alchemist (T)',
+    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Fmystic-alchemist-transcendent.png?alt=media&token=d42bc725-c734-4b84-8019-e523ea2d4a33',
+    bgColor: 'bg-aisha',
+    textColor: 'text-aisha dark:text-aisha-dark',
+    hoverBgColor: 'hover:bg-aisha',
+    characterId: 1,
+    classId: 3,
+    pathId: 3,
+  },
+  {
     name: 'Wind Sneaker (T)',
     img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Fwind-sneaker-trans.png?alt=media&token=9fb2979e-e9c1-4e14-bb97-4fc21db0e77d',
     bgColor: 'bg-rena',

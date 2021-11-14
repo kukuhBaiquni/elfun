@@ -44,12 +44,14 @@ export default function ContributionCharacterForm(props) {
           placeholder='Innate..'
           register={register}
         />
-        <Textarea
-          label='Special Ability'
-          name='specialAbility'
-          placeholder='Special Ability..'
-          register={register}
-        />
+        {baseData?.classId === 0 && (
+          <Textarea
+            label='Special Ability'
+            name='specialAbility'
+            placeholder='Special Ability..'
+            register={register}
+          />
+        )}
         <Textarea
           label='Background'
           name='background'
@@ -78,30 +80,32 @@ export default function ContributionCharacterForm(props) {
           placeholder='Race..'
           register={register}
         />
-        <InputRadio
-          control={control}
-          label='Speed'
-          name='statistic.speed'
-          options={STATISTIC.speed}
-        />
-        <InputRadio
-          control={control}
-          label='Attack Range'
-          name='statistic.attackRange'
-          options={STATISTIC.attackRange}
-        />
-        <InputRadio
-          control={control}
-          label='Difficulty'
-          name='statistic.difficulty'
-          options={STATISTIC.difficulty}
-        />
-        <InputRadio
-          control={control}
-          label='Main Damage'
-          name='damageType'
-          options={DAMAGE_TYPE}
-        />
+        <div className='grid grid-cols-1 lg:grid-cols-2 lg:gap-2'>
+          <InputRadio
+            control={control}
+            label='Speed'
+            name='statistic.speed'
+            options={STATISTIC.speed}
+          />
+          <InputRadio
+            control={control}
+            label='Attack Range'
+            name='statistic.attackRange'
+            options={STATISTIC.attackRange}
+          />
+          <InputRadio
+            control={control}
+            label='Difficulty'
+            name='statistic.difficulty'
+            options={STATISTIC.difficulty}
+          />
+          <InputRadio
+            control={control}
+            label='Main Damage'
+            name='damageType'
+            options={DAMAGE_TYPE}
+          />
+        </div>
       </section>
     </div>
   )
