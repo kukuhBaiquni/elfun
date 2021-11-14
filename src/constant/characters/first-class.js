@@ -70,6 +70,16 @@ const firstClass = [
     pathId: 2,
   },
   {
+    name: 'Wiz Magician',
+    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Fwiz-magician.png?alt=media&token=0d58159a-0a8d-4062-bbab-19fa9c959a26',
+    bgColor: 'bg-aisha',
+    textColor: 'text-aisha dark:text-aisha-dark',
+    hoverBgColor: 'hover:bg-aisha',
+    characterId: 1,
+    classId: 1,
+    pathId: 3,
+  },
+  {
     name: 'Combat Ranger',
     img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Fcombat-ranger.png?alt=media&token=a24e9307-7c63-4b14-a605-0a69cfe7f556',
     bgColor: 'bg-rena',

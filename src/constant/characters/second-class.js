@@ -70,6 +70,16 @@ const secondClass = [
     pathId: 2,
   },
   {
+    name: 'Mystic Alchemist',
+    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Fmystic-alchemist.png?alt=media&token=3158aed9-49d3-4a90-bb4d-5f9dea77ca4a',
+    bgColor: 'bg-aisha',
+    textColor: 'text-aisha dark:text-aisha-dark',
+    hoverBgColor: 'hover:bg-aisha',
+    characterId: 1,
+    classId: 2,
+    pathId: 3,
+  },
+  {
     name: 'Wind Sneaker',
     img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Fwind-sneaker.png?alt=media&token=17eb0ebe-2293-4dbb-bf24-ee2abb1b59c4',
     bgColor: 'bg-rena',

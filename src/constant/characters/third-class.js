@@ -70,6 +70,16 @@ const thirdClass = [
     pathId: 2,
   },
   {
+    name: 'Lord Azoth',
+    img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Faisha%2Flord-azoth.png?alt=media&token=24a0b9e1-d760-4bfa-8698-863f6ae6280b',
+    bgColor: 'bg-aisha',
+    textColor: 'text-aisha dark:text-aisha-dark',
+    hoverBgColor: 'hover:bg-aisha',
+    characterId: 1,
+    classId: 4,
+    pathId: 3,
+  },
+  {
     name: 'Anemos',
     img: 'https://firebasestorage.googleapis.com/v0/b/elfun-web-app.appspot.com/o/images%2Favatar%2Frena%2Fanemos.png?alt=media&token=3a8a1108-f72a-48be-ac5c-3a24c4aebad7',
     bgColor: 'bg-rena',
