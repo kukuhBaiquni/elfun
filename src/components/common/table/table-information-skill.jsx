@@ -10,6 +10,7 @@ function Table(props) {
 
   const { headerLevel1, headerLevel2, headerLevel3 } = useTableHeader(data)
   const tableValue = useTableValue(data)
+  console.log('tablevalue', tableValue)
 
   return (
     <div className='overflow-x-auto grid grid-cols-1 py-3 mb-5'>

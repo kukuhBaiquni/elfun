@@ -2,7 +2,6 @@ import numberFormat from 'utils/number-format'
 
 export default function useTableValue(data) {
   const tempData = []
-
   // eslint-disable-next-line max-len
   data.map((item) => item.attributes).forEach((attr) => attr.forEach((value) => {
     if (value.hasAwakeningEffect) {
