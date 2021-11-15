@@ -27,7 +27,7 @@ const schema = yup.object().shape({
           }),
           value: yup.array().of(
             yup.object({
-              flat: yup.object({
+              fixed: yup.object({
                 normal: yup.string(),
                 awaken: yup.string(),
               }),
