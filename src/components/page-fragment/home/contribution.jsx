@@ -22,9 +22,9 @@ export default function Contribution() {
       <p>You can participate to contribute in these following categories: </p>
       <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3 mt-4 text-sm'>
         {CONTRIBUTION.map((item) => (
-          <div className='bg-gray-200 dark:bg-gray-700 px-2 py-2 relative transition-all duration-300' key={item.name}>
+          <div className='bg-paper-general px-2 py-2 relative transition-general' key={item.name}>
             <Link href={item.path}>
-              <a className='font-titillium text-base hover:underline text-lime-600 flex items-center py-1 px-2 bg-gray-300 dark:bg-gray-800 transition-all duration-300'>
+              <a className='font-titillium text-base hover:underline text-lime-600 flex items-center py-1 px-2 bg-gray-300 dark:bg-gray-700 transition-general'>
                 <Image alt={item.name} className='object-cover' height={20} src={item.img} width={20} />
                 <span className='mx-1'>{item.name}</span>
                 <ExternalLinkIcon className='w-4 h-4' />

@@ -26,7 +26,7 @@ export default function TableAttributeLevel(props) {
 
   const addData = useCallback(() => {
     append({
-      flat: {
+      fixed: {
         normal: '',
         awaken: '',
       },
@@ -36,9 +36,6 @@ export default function TableAttributeLevel(props) {
       },
     })
   }, [append])
-
-  console.log('FORM__', JSON.stringify(watch(), null, 3))
-  console.log('NAME__', name)
 
   return (
     <Fragment>

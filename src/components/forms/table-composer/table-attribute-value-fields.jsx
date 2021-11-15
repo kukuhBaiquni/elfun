@@ -45,7 +45,7 @@ export default function TableAttributeValueFields(props) {
       defaultValue={defaultValues?.value?.identifier}
       disabled={disabled}
       label={`Value (${_(identifier)})`}
-      name={`${name}.flat.${identifier}`}
+      name={`${name}.fixed.${identifier}`}
       placeholder='Value'
     />
   )
