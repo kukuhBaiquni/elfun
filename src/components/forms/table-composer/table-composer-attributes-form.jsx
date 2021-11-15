@@ -2,7 +2,7 @@ import {
   PlusIcon, SwitchVerticalIcon, TrashIcon,
 } from '@heroicons/react/solid'
 import Button from 'components/common/button'
-import { useFieldArray } from 'react-hook-form'
+import { useFieldArray, useController } from 'react-hook-form'
 import PropTypes from 'prop-types'
 import _ from 'lodash/get'
 import {
@@ -22,6 +22,7 @@ export default function TableComposerAttributeForm(props) {
   const { name, defaultValues = [], form } = props
   const {
     control, register, watch, clearErrors, formState: { errors },
+    setValue,
   } = form
   const {
     fields, append, remove, move,
@@ -50,6 +51,7 @@ export default function TableComposerAttributeForm(props) {
   }
 
   const errorMessage = _(errors, `${name}.message`) ?? ''
+  const modifyLevelCount = (val, index) => setValue(`${name}.${index}.levelCount`, val)
 
   return (
     <div className='bg-sky-50 dark:bg-gray-900 cursor-default rounded'>
@@ -76,6 +78,11 @@ export default function TableComposerAttributeForm(props) {
           >
             <div className='dark:bg-gray-900 bg-sky-50 p-2'>
               <div className='grid grid-cols-1 sm:grid-cols-12 gap-x-2 flex-grow'>
+                <input
+                  defaultValue={defaultValues[index]?.levelCount}
+                  hidden
+                  {...register(`${name}.${index}.levelCount`)}
+                />
                 <InputSwitch
                   className='sm:col-span-6'
                   clearErrors={() => clearErrors([`${name}.${index}.attributeName`])}
@@ -146,11 +153,13 @@ export default function TableComposerAttributeForm(props) {
                   options={INPUT_TYPE}
                 />
                 <TableAttributeLevel
+                  attributeIndex={index}
                   awakeningModifier={watch(`${name}.${index}.awakeningModifier`)?.value}
                   defaultValues={defaultValues[index]?.value}
                   disabled={!watch(`${name}.${index}.hasAwakeningEffect`)}
                   form={form}
                   inputType={watch(`${name}.${index}.inputType`)?.value}
+                  modifyLevelCount={modifyLevelCount}
                   name={`${name}.${index}.value`}
                 />
                 <InputSelect
