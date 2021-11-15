@@ -8,11 +8,10 @@ import TableComposer from 'components/forms/table-composer'
 import PropTypes from 'prop-types'
 import Button from 'components/common/button'
 import InputMultifield from 'components/forms/input-multifield'
-import { Fragment, useEffect } from 'react'
+import { Fragment } from 'react'
 import InputSwitch from 'components/forms/input-switch'
 import _ from 'lodash/isEmpty'
 import { useRouter } from 'next/router'
-import tableDummy from 'constant/table-dummy'
 
 export default function ContributionSkillsForm(props) {
   const { form, onSubmit } = props
@@ -21,11 +20,6 @@ export default function ContributionSkillsForm(props) {
     register, watch, control, formState: { errors },
     handleSubmit, setValue,
   } = form
-
-  // temp
-  useEffect(() => {
-    setValue('table', tableDummy)
-  }, [setValue])
 
   console.log('📝', watch())
   console.log('❌', errors)

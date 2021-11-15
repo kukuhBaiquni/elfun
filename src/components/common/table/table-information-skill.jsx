@@ -1,26 +1,12 @@
 import PropTypes from 'prop-types'
 import clsx from 'clsx'
 import _ from 'lodash/startCase'
-import { Fragment, memo } from 'react'
-import numberFormat from 'utils/number-format'
+import { memo } from 'react'
 import useTableHeader from 'hooks/useTableHeader'
 import useTableValue from 'hooks/useTableValue'
 
 function Table(props) {
   const { data } = props
-
-  const attributes = data.map((item) => item.attributes).flat()
-
-  const calculateFixedPercent = (val) => {
-    const base = +val.normal
-    const percent = +val.awaken / 100
-    return base + (base * percent)
-  }
-
-  const calculateRangePercent = (val, percent, index) => {
-    const base = +val.normal[index]
-    return base + (base * (+percent / 100))
-  }
 
   const { headerLevel1, headerLevel2, headerLevel3 } = useTableHeader(data)
   const tableValue = useTableValue(data)
@@ -89,7 +75,6 @@ function Table(props) {
                   val.map((vl, ix) => (
                     <td className='px-3 py-2 text-center border-input' key={ix}>
                       {vl}
-                      {/* <span className='dark:text-green-400 whitespace-nowrap text-green-600 ml-1'>{`(${0}%)↑`}</span> */}
                     </td>
                   ))
                 ) : (
