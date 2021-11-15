@@ -3,31 +3,12 @@ import clsx from 'clsx'
 import _ from 'lodash/startCase'
 import { Fragment, memo } from 'react'
 import numberFormat from 'utils/number-format'
+import useTableHeader from 'hooks/useTableHeader'
 
 function Table(props) {
   const { data } = props
 
-  const setRowSpan = (obj) => {
-    if (obj.attributes.some((attr) => attr.skipAttributeName)) {
-      if (obj.attributes.some((attr) => attr.hasAwakeningEffect)) {
-        return 2
-      }
-      return 3
-    }
-    return 1
-  }
-  const fieldNames = data.map((item) => ({
-    fieldName: item.fieldName,
-    attributeLength: item.attributes.reduce((prev, cur) => {
-      if (cur.hasAwakeningEffect) {
-        return prev + Object.keys(cur.value).length
-      }
-      return prev + 1
-    }, 0),
-    rowSpan: setRowSpan(item),
-  }))
   const attributes = data.map((item) => item.attributes).flat()
-  const attributeValues = attributes.map((item) => item.value.map((val) => val))
 
   const calculateFixedPercent = (val) => {
     const base = +val.normal
@@ -40,11 +21,7 @@ function Table(props) {
     return base + (base * (+percent / 100))
   }
 
-  console.log('__DATA', data)
-  console.log('FIELD NAMES', fieldNames)
-  console.log('ATTRIBUTES___', attributes)
-  console.log('VALUE___', attributeValues)
-
+  const { headerLevel1, headerLevel2, headerLevel3 } = useTableHeader(data)
   return (
     <div className='overflow-x-auto grid grid-cols-1 py-3 mb-5'>
       <table className='border-collapse h-[100px]'>
@@ -54,42 +31,54 @@ function Table(props) {
         )}
         >
           <tr>
-            {fieldNames.map((item) => (
+            {headerLevel1.map((item) => (
               <th
                 className={clsx(
                   'px-3 py-2 whitespace-nowrap text-center border-input',
                 )}
-                colSpan={item.attributeLength}
+                colSpan={item.colSpan}
                 key={item.fieldName}
                 rowSpan={item.rowSpan}
               >
-                {item.fieldName}
+                {_(item.fieldName)}
               </th>
             ))}
           </tr>
           <tr>
-            {attributes.map((item, index) => {
-              if (item.skipAttributeName) {
+            {headerLevel2.map(
+              (item) => item.map((header, index) => {
+                if (header.fieldName) {
+                  return (
+                    <th
+                      className='px-3 py-2 whitespace-nowrap text-center border-input'
+                      colSpan={header.colSpan}
+                      key={index}
+                      rowSpan={header.rowSpan}
+                    >
+                      {header.fieldName}
+                    </th>
+                  )
+                }
                 return null
-              }
-              return (
-                <th
-                  className={clsx(
-                    'px-3 py-2 whitespace-nowrap text-center border-input',
-                  )}
-                  colSpan={item.hasAwakeningEffect ? 2 : 1}
-                  key={index}
-                  rowSpan={item.hasAwakeningEffect ? 1 : 2}
-                >
-                  {item.attributeName} {item.isDealingDamage && `(${item.damageType.label})`}
-                </th>
-              )
-            })}
+              }),
+            )}
           </tr>
           <tr>
-            {attributes.map((item) => {
+            {headerLevel3.map(
+              (item) => item.map((header) => header.map((head, index) => (
+                <th
+                  className='px-3 py-2 whitespace-nowrap text-center border-input'
+                  colSpan={head.colSpan}
+                  key={index}
+                  rowSpan={head.rowSpan}
+                >
+                  {_(head.fieldName)}
+                </th>
+              ))),
+            )}
+            {/* {attributes.map((item) => {
               if (item.hasAwakeningEffect) {
-                return Object.keys(item.value[0].range).map(
+                return Object.keys(item.value).map(
                   (key) => (
                     <th className='px-3 py-2 whitespace-nowrap text-center border-input' key={key}>
                       {_(key)}
@@ -98,7 +87,7 @@ function Table(props) {
                 )
               }
               return null
-            })}
+            })} */}
           </tr>
         </thead>
         <tbody>
