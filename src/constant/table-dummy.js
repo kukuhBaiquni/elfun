@@ -99,7 +99,7 @@ const tableDummy = [{
             value: 'PHY',
           },
           inputType: {
-            label: 'Fixed',
+            label: 'fixed',
             value: 'FIXED',
           },
           hasAwakeningEffect: true,
@@ -115,8 +115,8 @@ const tableDummy = [{
               },
               range: {
                 normal: [
-                  '',
-                  '',
+                  '1500',
+                  '1800',
                 ],
                 awaken: [
                   '',
@@ -131,8 +131,8 @@ const tableDummy = [{
               },
               range: {
                 normal: [
-                  '',
-                  '',
+                  '2500',
+                  '2800',
                 ],
                 awaken: [
                   '',
@@ -147,8 +147,8 @@ const tableDummy = [{
               },
               range: {
                 normal: [
-                  '',
-                  '',
+                  '3500',
+                  '3800',
                 ],
                 awaken: [
                   '',

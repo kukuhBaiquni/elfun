@@ -23,7 +23,6 @@ export default function ContributionSkillsForm(props) {
   } = form
 
   // temp
-  console.log('JANCXXXXX', tableDummy)
   useEffect(() => {
     setValue('table', tableDummy)
   }, [setValue])

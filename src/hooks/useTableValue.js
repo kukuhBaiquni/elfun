@@ -1,54 +1,51 @@
 import numberFormat from 'utils/number-format'
-import useTableHeader from './useTableHeader'
 
 export default function useTableValue(data) {
-  console.log('data', data)
   const tempData = []
-  const { headerLevel3 } = useTableHeader(data)
-  console.log('header levxel 3', headerLevel3)
 
   // eslint-disable-next-line max-len
-  const tableValue = data.map((item) => item.attributes).map((attr) => attr.map((value) => {
+  data.map((item) => item.attributes).forEach((attr) => attr.forEach((value) => {
     if (value.hasAwakeningEffect) {
       if (value.inputType.value === 'FIXED') {
-        value?.value.map((vl, index) => {
+        value?.value.forEach((vl, index) => {
           const finalValue = []
-          Object.entries(vl.fixed).map(([key, val]) => {
+          Object.entries(vl.fixed).forEach(([key, val]) => {
             if (value.awakeningModifier?.value === 'PERCENT' && key === 'awaken') {
               finalValue.push(`${numberFormat(calculateFixedPercent(vl.fixed))}${value.suffix.value}`)
             } else {
               finalValue.push(`${numberFormat(val)}${value.suffix.value}`)
             }
           })
-          // console.log('vl', vl)
-          // console.log('ix', index)
           tempData[index] = [...(tempData[index] || []), finalValue]
         })
       } else {
-        value?.value.map((vl, index) => {
+        value?.value.forEach((vl, index) => {
           const finalValue = []
           Object.entries(vl.range).forEach(([key, val]) => {
             if (value.awakeningModifier?.value === 'PERCENT' && key === 'awaken') {
-              finalValue.push(`${numberFormat(calculateRangePercent(vl.range, val.awaken, 0))}${value.suffix.value} →
-              ${numberFormat(calculateRangePercent(vl.range, val.awaken, 1))}${value.suffix.value}`)
+              finalValue.push(`${numberFormat(calculateRangePercent(vl.range, vl.fixed.awaken, 0))}${value.suffix.value} →
+              ${numberFormat(calculateRangePercent(vl.range, vl.fixed.awaken, 1))}${value.suffix.value}`)
             } else {
-              finalValue.push(`${numberFormat(val.normal[0])}${value.suffix.value} → ${numberFormat(val.normal[1])}${value.suffix.value}`)
+              finalValue.push(`${numberFormat(val[0])}${value.suffix.value} → ${numberFormat(val[1])}${value.suffix.value}`)
             }
           })
-          console.log('finalValue', finalValue)
-          // tempData[index] = [...(tempData[index] || []), finalValue]
+          tempData[index] = [...(tempData[index] || []), finalValue]
         })
       }
+    } else {
+      value?.value.forEach((vl, index) => {
+        let finalValue = ''
+        if (value.inputType.value === 'FIXED') {
+          finalValue = `${numberFormat(vl.fixed.normal)}${value.suffix.value}`
+        } else {
+          finalValue = `${numberFormat(vl.range.normal[0])}${value.suffix.value} →
+                        ${numberFormat(vl.range.normal[1])}${value.suffix.value}`
+        }
+        tempData[index] = [...(tempData[index] || []), finalValue]
+      })
     }
-    return value?.value.map((vl, index) => {
-      // console.log('vl2', vl)
-      // console.log('ix', index)
-      tempData[index] = [...(tempData[index] || []), vl]
-      return vl
-    })
   }))
-  console.log(tableValue)
-  console.log('tempdata', tempData)
+  return tempData
 }
 
 const calculateFixedPercent = (val) => {

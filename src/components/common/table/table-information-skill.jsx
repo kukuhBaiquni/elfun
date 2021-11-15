@@ -34,11 +34,10 @@ function Table(props) {
         )}
         >
           <tr>
+            {tableValue.length > 1 && <th className='px-3 py-2 whitespace-nowrap text-center border-input' colSpan={1} rowSpan={3}>Level</th>}
             {headerLevel1.map((item) => (
               <th
-                className={clsx(
-                  'px-3 py-2 whitespace-nowrap text-center border-input',
-                )}
+                className='px-3 py-2 whitespace-nowrap text-center border-input'
                 colSpan={item.colSpan}
                 key={item.fieldName}
                 rowSpan={item.rowSpan}
@@ -79,88 +78,28 @@ function Table(props) {
                 </th>
               ))),
             )}
-            {/* {attributes.map((item) => {
-              if (item.hasAwakeningEffect) {
-                return Object.keys(item.value).map(
-                  (key) => (
-                    <th className='px-3 py-2 whitespace-nowrap text-center border-input' key={key}>
-                      {_(key)}
-                    </th>
-                  ),
-                )
-              }
-              return null
-            })} */}
           </tr>
         </thead>
         <tbody>
-          <tr>
-            {attributes.map((item, index) => {
-              if (item.hasAwakeningEffect) {
-                if (item.inputType?.value === 'FIXED') {
-                  return Object.entries(item.value).map(([key, value]) => {
-                    if (item.awakeningModifier?.value === 'PERCENT' && key === 'awaken') {
-                      return (
-                        <td
-                          className='px-3 py-2 text-center border-input'
-                          key={`${key}${index}`}
-                        >
-                          {`${numberFormat(calculateFixedPercent(item.value))}${item.suffix.value}`}
-                          <span className='dark:text-green-400 whitespace-nowrap text-green-600 ml-1'>{`(${value}%)↑`}</span>
-                        </td>
-                      )
-                    }
-                    return (
-                      <td
-                        className='px-3 py-2 text-center border-input whitespace-nowrap'
-                        key={`${value}${index}`}
-                      >
-                        {`${numberFormat(value)}${item.suffix.value}`}
-                      </td>
-                    )
-                  })
-                }
-                return Object.entries(item.valueRange).map(([key, value]) => {
-                  if (item.awakeningModifier?.value === 'PERCENT' && key === 'awaken') {
-                    return (
-                      <td
-                        className='px-3 py-2 text-center border-input whitespace-nowrap'
-                        key={`${key}${index}`}
-                      >
-                        {`${numberFormat(calculateRangePercent(item.valueRange, item.value.awaken, 0))}${item.suffix.value} →
-                      ${numberFormat(calculateRangePercent(item.valueRange, item.value.awaken, 1))}${item.suffix.value}`}
-                        <span className='dark:text-green-400 whitespace-nowrap text-green-600 ml-1'>{`(${item.value.awaken}%)↑`}</span>
-                      </td>
-                    )
-                  }
-                  return (
-                    <td
-                      className='px-3 py-2 text-center border-input whitespace-nowrap'
-                      key={`${key}${index}`}
-                    >
-                      {`${numberFormat(value[0])}${item.suffix.value} → ${numberFormat(value[1])}${item.suffix.value}`}
+          {tableValue.map((item, index) => (
+            <tr key={index}>
+              {tableValue.length > 1 && <td className='px-3 py-2 text-center border-input'>{index + 1}</td>}
+              {item.map((val, idx) => (
+                Array.isArray(val) ? (
+                  val.map((vl, ix) => (
+                    <td className='px-3 py-2 text-center border-input' key={ix}>
+                      {vl}
+                      {/* <span className='dark:text-green-400 whitespace-nowrap text-green-600 ml-1'>{`(${0}%)↑`}</span> */}
                     </td>
-                  )
-                })
-              }
-              return (
-                <td
-                  className='px-3 py-2 text-center border-input'
-                  key={index}
-                >
-                  {item.inputType?.value === 'FIXED' ? (
-                    `${numberFormat(item.value.normal)}${item.suffix.value}`
-                  ) : (
-                    <Fragment>
-                      {`${numberFormat(item.valueRange.normal[0])}${item.suffix.value} →
-                      ${numberFormat(item.valueRange.normal[1])}${item.suffix.value}`}
-                      <span className='dark:text-green-400 whitespace-nowrap text-green-400 ml-1'>{`|${item.value.awaken}%↑`}</span>
-                    </Fragment>
-                  )}
-                </td>
-              )
-            })}
-          </tr>
+                  ))
+                ) : (
+                  <td className='px-3 py-2 text-center border-input whitespace-nowrap' key={idx}>
+                    {val}
+                  </td>
+                )
+              ))}
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
