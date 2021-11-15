@@ -8,7 +8,7 @@ import TableAttributeValueFields from './table-attribute-value-fields'
 export default function TableAttributeLevel(props) {
   const {
     name, form, defaultValues = [], inputType, disabled,
-    awakeningModifier,
+    awakeningModifier, modifyLevelCount, attributeIndex,
   } = props
   const { control, watch } = form
 
@@ -25,6 +25,7 @@ export default function TableAttributeLevel(props) {
   }, [addData, fields.length])
 
   const addData = useCallback(() => {
+    modifyLevelCount(fields.length + 1, attributeIndex)
     append({
       fixed: {
         normal: '',
@@ -45,7 +46,10 @@ export default function TableAttributeLevel(props) {
             <p>Level {index + 1}</p>
             <TrashIcon
               className='w-5 h-5 text-red-500 action-icon'
-              onClick={() => remove(index)}
+              onClick={() => {
+                modifyLevelCount(fields.length - 1, attributeIndex)
+                remove(index)
+              }}
             />
           </div>
           <div className='sm:col-span-12 grid sm:grid-cols-12 gap-x-2 grid-cols-1 p-1 px-2 bg-gray-800'>
@@ -103,4 +107,6 @@ TableAttributeLevel.propTypes = {
   inputType: PropTypes.string,
   disabled: PropTypes.bool,
   awakeningModifier: PropTypes.string,
+  modifyLevelCount: PropTypes.func,
+  attributeIndex: PropTypes.number,
 }

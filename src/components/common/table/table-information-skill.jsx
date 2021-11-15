@@ -4,6 +4,7 @@ import _ from 'lodash/startCase'
 import { Fragment, memo } from 'react'
 import numberFormat from 'utils/number-format'
 import useTableHeader from 'hooks/useTableHeader'
+import useTableValue from 'hooks/useTableValue'
 
 function Table(props) {
   const { data } = props
@@ -22,6 +23,8 @@ function Table(props) {
   }
 
   const { headerLevel1, headerLevel2, headerLevel3 } = useTableHeader(data)
+  const tableValue = useTableValue(data)
+
   return (
     <div className='overflow-x-auto grid grid-cols-1 py-3 mb-5'>
       <table className='border-collapse h-[100px]'>
@@ -169,153 +172,3 @@ export default memo(Table)
 Table.propTypes = {
   data: PropTypes.array,
 }
-
-// const data = [
-//   {
-//     fieldName: 'Shockwave',
-//     attributes: [
-//       {
-//         skipAttributeName: false,
-//         attributeName: 'Damage',
-//         flag: {
-//           label: 'Damage',
-//           value: 'DMG',
-//         },
-//         isDealingDamage: true,
-//         damageType: {
-//           label: 'Physical',
-//           value: 'PHY',
-//         },
-//         inputType: {
-//           label: 'Fixed',
-//           value: 'FIXED',
-//         },
-//         hasAwakeningEffect: true,
-//         awakeningModifier: {
-//           label: 'Percentage',
-//           value: 'PERCENT',
-//         },
-//         value: [
-//           {
-//             flat: {
-//               normal: '2661',
-//               awaken: '35',
-//             },
-//             range: {
-//               normal: [
-//                 '',
-//                 '',
-//               ],
-//               awaken: [
-//                 '',
-//                 '',
-//               ],
-//             },
-//           },
-//         ],
-//         suffix: {
-//           label: '%',
-//           value: '%',
-//         },
-//       },
-//     ],
-//   },
-//   {
-//     fieldName: 'Fall',
-//     attributes: [
-//       {
-//         skipAttributeName: false,
-//         attributeName: 'Damage',
-//         flag: {
-//           label: 'Damage',
-//           value: 'DMG',
-//         },
-//         isDealingDamage: true,
-//         damageType: {
-//           label: 'Physical',
-//           value: 'PHY',
-//         },
-//         inputType: {
-//           label: 'Fixed',
-//           value: 'FIXED',
-//         },
-//         hasAwakeningEffect: true,
-//         awakeningModifier: {
-//           label: 'Percentage',
-//           value: 'PERCENT',
-//         },
-//         value: [
-//           {
-//             flat: {
-//               normal: '661',
-//               awaken: '35',
-//             },
-//             range: {
-//               normal: [
-//                 '',
-//                 '',
-//               ],
-//               awaken: [
-//                 '',
-//                 '',
-//               ],
-//             },
-//           },
-//         ],
-//         suffix: {
-//           label: '%',
-//           value: '%',
-//         },
-//       },
-//     ],
-//   },
-//   {
-//     fieldName: 'Cooldown',
-//     attributes: [
-//       {
-//         skipAttributeName: true,
-//         attributeName: '',
-//         flag: {
-//           label: 'none',
-//           value: '',
-//         },
-//         isDealingDamage: false,
-//         damageType: {
-//           label: 'Physical',
-//           value: 'PHY',
-//         },
-//         inputType: {
-//           label: 'Fixed',
-//           value: 'FIXED',
-//         },
-//         hasAwakeningEffect: false,
-//         awakeningModifier: {
-//           label: 'Flat',
-//           value: 'FLAT',
-//         },
-//         value: [
-//           {
-//             flat: {
-//               normal: '12',
-//               awaken: '',
-//             },
-//             range: {
-//               normal: [
-//                 '',
-//                 '',
-//               ],
-//               awaken: [
-//                 '',
-//                 '',
-//               ],
-//             },
-//           },
-//         ],
-//         suffix: {
-//           label: 'Seconds',
-//           value: 's',
-//         },
-//       },
-//     ],
-//   },
-// ]
