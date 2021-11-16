@@ -44,6 +44,7 @@ export default function Create() {
         <meta content='Create Character Information' name='description' />
       </Head>
       <main className={clsx(
+        'bg-paper-general sm:p-3 mb-10',
         baseData
           ? 'px-2 text-general'
           : 'flex items-center justify-center min-h-[50vh]',
