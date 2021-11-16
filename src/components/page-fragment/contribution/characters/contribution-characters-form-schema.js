@@ -2,16 +2,64 @@ import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 
 const schema = yup.object().shape({
-  skillName: yup.string().required('Skill Name is required!'),
-  skillDescription: yup.string().required('Skill Description is required!'),
-  skillCategory: yup.object({
+  name: yup.string().required('Name is Required!'),
+  class: yup.string().required('Class is Required!'),
+  quote: yup.string().required('Quote is Required!'),
+  innate: yup.string().required('Innate is Required!'),
+  specialAbility: yup.string(),
+  weapon: yup.string().required('Weapon is Required!'),
+  background: yup.string().required('background is Required!'),
+  age: yup.string().required('Age is Required!'),
+  race: yup.string().required('Race is Required!'),
+  statistic: yup.object({
+    speed: yup.object({
+      label: yup.string(),
+      value: yup.string(),
+    }).required('Race is Required!'),
+    attackRange: yup.object({
+      label: yup.string(),
+      value: yup.string(),
+    }).required('Attack Range is Required!'),
+    difficulty: yup.object({
+      label: yup.string(),
+      value: yup.string(),
+    }).required('Difficulty is Required!'),
+  }),
+  damageType: yup.object({
     label: yup.string(),
     value: yup.string(),
-  }).required('Skill Category is required!'),
-  specialFeatures: yup.array(),
-  affectAnotherSkill: yup.bool(),
-  skillIcon: yup.array().required('Skill Icon is required!').length(1),
-  table: yup.array().required().min(1, 'Table Information is required!'),
+  }).required('Damage Type is Required!'),
+  tipsAndDetail: yup.array().of(
+    yup.object({
+      description: yup.string().required('Description is Required!'),
+    }),
+  ),
+  trivia: yup.array().of(
+    yup.object({
+      description: yup.string().required('Description is Required!'),
+    }),
+  ),
+  reference: yup.array().of(
+    yup.object({
+      variable: yup.string().required('Variable is Required!'),
+      link: yup.string().required('Link is Required!'),
+    }),
+  ),
+  advancement: yup.array().of(
+    yup.object({
+      prerequisites: yup.array().of(
+        yup.object({
+          description: yup.string(),
+        }),
+      ),
+      objectives: yup.array().of(
+        yup.object({
+          description: yup.string(),
+        }),
+      ),
+      description: yup.string(),
+    }),
+  ),
 })
 
 export default yupResolver(schema)

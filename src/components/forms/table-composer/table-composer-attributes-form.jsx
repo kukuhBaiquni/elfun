@@ -2,7 +2,7 @@ import {
   PlusIcon, SwitchVerticalIcon, TrashIcon,
 } from '@heroicons/react/solid'
 import Button from 'components/common/button'
-import { useFieldArray, useController } from 'react-hook-form'
+import { useFieldArray } from 'react-hook-form'
 import PropTypes from 'prop-types'
 import _ from 'lodash/get'
 import {
@@ -32,7 +32,7 @@ export default function TableComposerAttributeForm(props) {
     keyName: '$id',
   })
 
-  const addAttributes = () => {
+  const addAttribute = () => {
     if (!Array.isArray(_(errors, name))) {
       clearErrors(name)
       append({
@@ -183,7 +183,7 @@ export default function TableComposerAttributeForm(props) {
           label='Add Attribute'
           leftIcon={<PlusIcon className='h-3.5 w-3.5' />}
           size='sm'
-          onClick={addAttributes}
+          onClick={addAttribute}
         />
       </FormFieldWrapper>
     </div>
