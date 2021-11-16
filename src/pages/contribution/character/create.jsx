@@ -75,8 +75,17 @@ export default function Create() {
               baseData={baseData}
               form={form}
             />
-            <div className='mt-5 flex justify-end'>
+            <div className='mt-3 sm:flex justify-end hidden'>
               <Button
+                label='Save Information'
+                leftIcon={<CheckCircleIcon className='w-5 h-5 mr-2' />}
+                variant='submit-solid'
+                onClick={form.handleSubmit(onSubmit)}
+              />
+            </div>
+            <div className='mt-2 sm:hidden py-2'>
+              <Button
+                fluid
                 label='Save Information'
                 leftIcon={<CheckCircleIcon className='w-5 h-5 mr-2' />}
                 variant='submit-solid'
