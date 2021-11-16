@@ -3,7 +3,6 @@ import Button from 'components/common/button'
 import { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { useForm } from 'react-hook-form'
-import FormSchema from 'components/page-fragment/contribution/skills/special-features-schema'
 
 export default function InputMultifieldBody(props) {
   const {
