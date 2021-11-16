@@ -27,7 +27,7 @@ const CONTRIBUTION = [{
     'Submit suggestion/repair for broken link or image',
   ],
 }, {
-  name: 'Combo',
+  name: 'Combos',
   path: '/contribution/combo',
   img: combo,
   list: [
@@ -36,7 +36,7 @@ const CONTRIBUTION = [{
     'Submit suggestion/repair for broken link or image',
   ],
 }, {
-  name: 'Gallery',
+  name: 'Galleries',
   path: '/contribution/gallery',
   img: gallery,
   list: [

@@ -8,6 +8,7 @@ import PropTypes from 'prop-types'
 import Modal from 'components/common/modal'
 import _ from 'lodash/startCase'
 import { ReactSortable } from 'react-sortablejs'
+import clsx from 'clsx'
 import { FormFieldWrapper } from '../FormFieldWrapper'
 import InputMultifieldBody from './input-multifield-body'
 
@@ -17,6 +18,7 @@ export default function InputMultifield(props) {
   const [focusedIndex, setFocusedIndex] = useState(-1)
   const {
     components, name, label, form, buttonLabel,
+    itemRender, disableSwitch,
   } = props
   const { control } = form
 
@@ -51,13 +53,16 @@ export default function InputMultifield(props) {
             onEnd={(evt) => move(evt.oldIndex, evt.newIndex)}
           >
             {fields.map((field, index) => (
-              <div className='p-2 dark:bg-gray-700 handle cursor-grab bg-warmGray-300 rounded flex justify-between mb-2 border-input' key={field.$id}>
+              <div
+                className={clsx(
+                  'p-2 dark:bg-gray-700 bg-warmGray-300 rounded flex justify-between mb-2 border-input',
+                  !disableSwitch && 'cursor-grab handle',
+                )}
+                key={field.$id}
+              >
                 <div>
-                  <SwitchVerticalIcon className='w-5 h-5' />
-                  <div>
-                    <h6 className='font-bold font-titillium'>{_(field.name)}</h6>
-                    <p className='text-sm'>{field.description}</p>
-                  </div>
+                  {!disableSwitch && <SwitchVerticalIcon className='w-5 h-5' />}
+                  {itemRender(field)}
                 </div>
                 <div className='flex items-start'>
                   <PencilIcon
@@ -110,4 +115,6 @@ InputMultifield.propTypes = {
   label: PropTypes.string,
   form: PropTypes.object,
   buttonLabel: PropTypes.string,
+  itemRender: PropTypes.func,
+  disableSwitch: PropTypes.bool,
 }

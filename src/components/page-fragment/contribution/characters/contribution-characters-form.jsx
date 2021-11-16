@@ -5,6 +5,7 @@ import InputRadio from 'components/forms/input-radio'
 import PropTypes from 'prop-types'
 import { STATISTIC, DAMAGE_TYPE } from 'constant/options'
 import InputMultifield from 'components/forms/input-multifield'
+import Link from 'next/link'
 
 export default function ContributionCharacterForm(props) {
   const { baseData, form } = props
@@ -122,6 +123,7 @@ export default function ContributionCharacterForm(props) {
             },
           ]}
           form={form}
+          itemRender={(field) => <p className='text-sm'>{field.description}</p>}
           label='Tips And Details'
           name='tipsAndDetails'
         />
@@ -139,6 +141,7 @@ export default function ContributionCharacterForm(props) {
             },
           ]}
           form={form}
+          itemRender={(field) => <p className='text-sm'>{field.description}</p>}
           label='Trivia'
           name='trivia'
         />
@@ -162,7 +165,18 @@ export default function ContributionCharacterForm(props) {
               },
             },
           ]}
+          disableSwitch
           form={form}
+          itemRender={(field) => (
+            <div className='flex items-center gap-2'>
+              <p>
+                {`${field.variable}: `}
+              </p>
+              <Link href={field.link}>
+                <a className='text-sky-500 font-titillium mb-1 hover:text-opacity-75 hover:underline'>{field.link}</a>
+              </Link>
+            </div>
+          )}
           label='Reference'
           name='reference'
         />
