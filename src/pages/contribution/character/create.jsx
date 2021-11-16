@@ -44,6 +44,7 @@ export default function Create() {
         <meta content='Create Character Information' name='description' />
       </Head>
       <main className={clsx(
+        'bg-paper-general sm:p-3 mb-10',
         baseData
           ? 'px-2 text-general'
           : 'flex items-center justify-center min-h-[50vh]',
@@ -62,7 +63,6 @@ export default function Create() {
               <div className='flex items-center gap-2 mb-5'>
                 <img
                   alt={baseData.name}
-                  className={clsx(baseData.bgColor, 'p-1')}
                   height={60}
                   src={baseData.img}
                   width={60}

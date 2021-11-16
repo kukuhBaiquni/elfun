@@ -59,7 +59,7 @@ export default function LeftNavigation() {
 
   return (
     <nav className='font-titillium mr-0 sm:mr-3 hidden lg:block'>
-      <ul className='py-2 px-2 bg-paper-general min-h-[750px] max-h-full w-52 transition-general'>
+      <ul className='py-2 px-2 bg-paper-general w-52 transition-general'>
         <div className='relative z-20'>
           {navigation.map((item) => (
             item.childData ? (
