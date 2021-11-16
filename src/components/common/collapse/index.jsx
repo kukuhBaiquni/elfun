@@ -6,9 +6,10 @@ import { ChevronUpIcon } from '@heroicons/react/solid'
 import clsx from 'clsx'
 import { Fragment } from 'react'
 
-export default function ChangeJobQuest(props) {
+export default function Collapse(props) {
   const {
     children, title, additionalToolbar, preIcon,
+    color,
   } = props
   return (
     <div className='w-full mt-3'>
@@ -16,8 +17,9 @@ export default function ChangeJobQuest(props) {
         {({ open }) => (
           <Fragment>
             <Disclosure.Button className={clsx(
+              color ?? 'dark:bg-warmGray-600 bg-sky-500',
               'w-full p-2 font-medium text-left hover:bg-opacity-80 text-white',
-              'rounded-t dark:bg-warmGray-600 bg-sky-500 border-white focus-visible:border',
+              'rounded-t border-white focus-visible:border',
             )}
             >
               <div className='flex justify-between'>

@@ -59,30 +59,39 @@ export default function Create() {
             <p className='my-2'>
               Fill all the required input fields:
             </p>
-            <div className='flex justify-between items-center'>
-              <div className='flex items-center gap-2 mb-5'>
-                <img
-                  alt={baseData.name}
-                  height={60}
-                  src={baseData.img}
-                  width={60}
-                />
-                <div>
-                  <p className={clsx(baseData.textColor, 'font-bold font-titillium text-lg')}>{baseData.name}</p>
-                  <p className='leading-5 text-sm'>({classType[baseData.classId]})</p>
-                </div>
-              </div>
-              <Button
-                label='Save'
-                leftIcon={<CheckCircleIcon className='w-5 h-5 mr-2' />}
-                variant='submit-solid'
-                onClick={form.handleSubmit(onSubmit)}
+            <div className='flex items-center gap-2 mb-5'>
+              <img
+                alt={baseData.name}
+                height={60}
+                src={baseData.img}
+                width={60}
               />
+              <div>
+                <p className={clsx(baseData.textColor, 'font-bold font-titillium text-lg')}>{baseData.name}</p>
+                <p className='leading-5 text-sm'>({classType[baseData.classId]})</p>
+              </div>
             </div>
             <ContributionCharacterForm
               baseData={baseData}
               form={form}
             />
+            <div className='mt-3 sm:flex justify-end hidden'>
+              <Button
+                label='Save Information'
+                leftIcon={<CheckCircleIcon className='w-5 h-5 mr-2' />}
+                variant='submit-solid'
+                onClick={form.handleSubmit(onSubmit)}
+              />
+            </div>
+            <div className='mt-2 sm:hidden py-2'>
+              <Button
+                fluid
+                label='Save Information'
+                leftIcon={<CheckCircleIcon className='w-5 h-5 mr-2' />}
+                variant='submit-solid'
+                onClick={form.handleSubmit(onSubmit)}
+              />
+            </div>
             <Modal
               isVisible={isVisible}
               render={<Warning />}
