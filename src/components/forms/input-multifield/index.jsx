@@ -55,29 +55,29 @@ export default function InputMultifield(props) {
             {fields.map((field, index) => (
               <div
                 className={clsx(
-                  'p-2 dark:bg-gray-700 bg-warmGray-300 rounded flex justify-between mb-2 border-input',
+                  'p-2 dark:bg-gray-700 bg-warmGray-300 rounded border-input mb-2',
                   !disableSwitch && 'cursor-grab handle',
                 )}
                 key={field.$id}
               >
-                <div>
+                <div className='flex justify-between mb-2'>
                   {!disableSwitch && <SwitchVerticalIcon className='w-5 h-5' />}
-                  {itemRender(field)}
+                  <div className='flex items-start ml-auto'>
+                    <PencilIcon
+                      className='w-5 h-5 text-sky-500 action-icon'
+                      onClick={() => {
+                        setFocusedData(field)
+                        setFocusedIndex(index)
+                        setIsVisible(true)
+                      }}
+                    />
+                    <TrashIcon
+                      className='w-5 h-5 text-red-500 action-icon'
+                      onClick={() => remove(index)}
+                    />
+                  </div>
                 </div>
-                <div className='flex items-start'>
-                  <PencilIcon
-                    className='w-5 h-5 text-sky-500 action-icon'
-                    onClick={() => {
-                      setFocusedData(field)
-                      setFocusedIndex(index)
-                      setIsVisible(true)
-                    }}
-                  />
-                  <TrashIcon
-                    className='w-5 h-5 text-red-500 action-icon'
-                    onClick={() => remove(index)}
-                  />
-                </div>
+                {itemRender(field)}
               </div>
             ))}
           </ReactSortable>
