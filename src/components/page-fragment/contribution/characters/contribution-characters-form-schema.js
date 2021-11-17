@@ -47,16 +47,8 @@ const schema = yup.object().shape({
   ),
   advancement: yup.array().of(
     yup.object({
-      prerequisites: yup.array().of(
-        yup.object({
-          description: yup.string(),
-        }),
-      ),
-      objectives: yup.array().of(
-        yup.object({
-          description: yup.string(),
-        }),
-      ),
+      prerequisites: yup.string(),
+      objectives: yup.string(),
       description: yup.string(),
     }),
   ),
