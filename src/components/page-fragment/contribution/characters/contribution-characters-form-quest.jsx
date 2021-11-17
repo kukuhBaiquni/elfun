@@ -2,13 +2,13 @@ import { ClipboardListIcon, TrashIcon } from '@heroicons/react/solid'
 import clsx from 'clsx'
 import Button from 'components/common/button'
 import Collapse from 'components/common/collapse'
-import InputText from 'components/forms/input-text/input-text'
 import PropTypes from 'prop-types'
 import { useFieldArray } from 'react-hook-form'
+import ContributionCharacterFormRequirements from './contribution-characters-form-requirements'
 
 export default function ContributionCharacterFormQuest(props) {
   const { form, baseData } = props
-  const { formState: { errors }, control, register } = form
+  const { control } = form
   const { fields, append, remove } = useFieldArray({
     name: 'advancement',
     control,
@@ -39,28 +39,12 @@ export default function ContributionCharacterFormQuest(props) {
             />
           )}
           key={field.$id}
-          title={baseData.name}
+          title={`${baseData.name} ${index + 1}/${fields.length}`}
         >
-          <div className='grid sm:grid-cols-2 grid-cols-1 gap-x-10 p-2'>
-            <section>
-              <InputText
-                errors={errors}
-                label='Quest Acceptance Prerequisites'
-                name='prerequisites'
-                placeholder='Weapon e.g: Sword, Bow, Kick'
-                register={register}
-              />
-            </section>
-            <section>
-              <InputText
-                errors={errors}
-                label='Quest Acceptance Prerequisites'
-                name='prerequisites'
-                placeholder='Weapon e.g: Sword, Bow, Kick'
-                register={register}
-              />
-            </section>
-          </div>
+          <ContributionCharacterFormRequirements
+            form={form}
+            name='advancement'
+          />
         </Collapse>
       ))}
       <div className='mt-2'>
