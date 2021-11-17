@@ -4,6 +4,7 @@ import Button from 'components/common/button'
 import Collapse from 'components/common/collapse'
 import PropTypes from 'prop-types'
 import { useFieldArray } from 'react-hook-form'
+import CLASS_TYPE from 'constant/class-type'
 import ContributionCharacterFormRequirements from './contribution-characters-form-requirements'
 
 export default function ContributionCharacterFormQuest(props) {
@@ -25,7 +26,7 @@ export default function ContributionCharacterFormQuest(props) {
 
   return (
     <div className='mt-10 border-input p-3 rounded dark:bg-gray-900 bg-gray-300'>
-      <h4 className={clsx(baseData.textColor, 'text-lg font-bold font-titillium mb-1')}>Class Advancement ({baseData.name})</h4>
+      <h4 className={clsx(baseData.textColor, 'text-lg font-bold font-titillium mb-1')}>{CLASS_TYPE[baseData.classId]} Advancement ({baseData.name})</h4>
       <div className='dark:text-gray-500 text-gray-500 text-sm'>
         <p> Upon reaching level 35, the player will receive second class advancement quest.  </p>
         <p> Please add quest requirements to help player change their class to the next level </p>
