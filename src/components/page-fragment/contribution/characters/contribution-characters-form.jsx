@@ -18,10 +18,12 @@ export default function ContributionCharacterForm(props) {
           form={form}
         />
       </div>
-      <ContributionCharacterFormQuest
-        baseData={baseData}
-        form={form}
-      />
+      {baseData.classId !== 0 && (
+        <ContributionCharacterFormQuest
+          baseData={baseData}
+          form={form}
+        />
+      )}
     </Fragment>
   )
 }

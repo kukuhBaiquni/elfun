@@ -37,6 +37,7 @@ export default function Create() {
   const { isLoading, isError } = queryCharacterUtility
 
   const onSubmit = (data) => {
+    // eslint-disable-next-line no-console
     console.log('DATA__', data)
   }
 
