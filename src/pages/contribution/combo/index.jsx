@@ -7,7 +7,7 @@ import ClassTree from 'components/page-fragment/contribution/class-tree'
 import clsx from 'clsx'
 import baseClass from 'constant/characters/base-class'
 
-export default function Skill() {
+export default function Combo() {
   const [isVisible, setIsVisible] = useState(false)
   const [data, setData] = useState(null)
   const [selectedCharacter, setSelectedCharacter] = useState(null)
@@ -29,9 +29,11 @@ export default function Skill() {
         <meta content='Elfun Contribution Guide, Contribution Elfun, Elfun' name='keywords' />
       </Head>
       <main className='text-general px-2 bg-paper-general sm:p-3 sm:mb-10 mb-2 pt-3'>
-        <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>Create Character Skill Information</h2>
+        <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>
+          Create Character Combos
+        </h2>
         <p className='my-2'>
-          Choose which character you want to add skills information:
+          Choose which character you want to add combo information:
         </p>
         <div className='grid grid-cols-3 sm:grid-cols-5 gap-2 max-w-screen-sm'>
           {baseClass.map((item) => (
@@ -45,7 +47,13 @@ export default function Skill() {
               onClick={() => showModalAndSetData(item)}
             >
               <img alt={item.name} height={20} src={item.img} width={20} />
-              <span className={clsx(item.hoverTextColor ? 'text-gray-600' : 'text-white', 'ml-2 font-titillium')}>{item.name}</span>
+              <span className={clsx(
+                item.hoverTextColor ? 'text-gray-600' : 'text-white',
+                'ml-2 font-titillium',
+              )}
+              >
+                {item.name}
+              </span>
             </button>
           ))}
         </div>
@@ -66,7 +74,7 @@ export default function Skill() {
   )
 }
 
-Skill.getLayout = (page) => (
+Combo.getLayout = (page) => (
   <ContributionLayout>
     {page}
   </ContributionLayout>

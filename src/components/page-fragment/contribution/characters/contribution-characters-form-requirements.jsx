@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 export default function ContributionCharacterFormRequirements(props) {
   const {
-    form, defaultValues = {}, name, baseData = {},
+    form, name, baseData = {},
   } = props
   const { formState: { errors }, register, control } = form
 
@@ -17,7 +17,7 @@ export default function ContributionCharacterFormRequirements(props) {
           errors={errors}
           label='Quest Acceptance Prerequisites'
           name={`${name}.prerequisites`}
-          placeholder='Achieve Level 15'
+          placeholder='e.g: Achieve Level 15'
           register={register}
           rows={3}
         />
@@ -25,7 +25,7 @@ export default function ContributionCharacterFormRequirements(props) {
           errors={errors}
           label='Objectives'
           name={`${name}.objectives`}
-          placeholder='Clear a dungeon 0/1'
+          placeholder='e.g: Clear a dungeon 0/1'
           register={register}
           rows={4}
         />
@@ -33,7 +33,7 @@ export default function ContributionCharacterFormRequirements(props) {
           errors={errors}
           label='Description'
           name={`${name}.description`}
-          placeholder='Elesis felt that she was slowly losing control over the power of fire within her..'
+          placeholder='e.g: Elesis felt that she was slowly losing control over the power of fire within her..'
           register={register}
         />
       </section>
@@ -43,25 +43,25 @@ export default function ContributionCharacterFormRequirements(props) {
           errors={errors}
           label='Experience'
           name={`${name}.rewards.exp`}
-          placeholder='Exp. Rewards'
+          placeholder='e.g: 1000'
         />
         <InputNumber
           control={control}
           errors={errors}
           label='ED'
           name={`${name}.rewards.ed`}
-          placeholder='ED Rewards'
+          placeholder='e.g: 80000'
         />
         <InputNumber
           control={control}
           errors={errors}
           label='AP'
           name={`${name}.rewards.ap`}
-          placeholder='AP Rewards'
+          placeholder='e.g: 400'
         />
         <h6 className='font-titillium font-bold'>Common Rewards</h6>
         {REWARDS[baseData.classId].map((reward) => (
-          <div className='flex items-center gap-x-1 p-1 my-2 border-input rounded bg-opacity-70 dark:bg-gray-800 bg-gray-300' key={reward.name}>
+          <div className='flex items-center gap-x-1 p-1 my-2 border-input rounded bg-opacity-70 dark:bg-gray-800 bg-gray-200' key={reward.name}>
             <Image
               alt={reward.name}
               height={40}
@@ -70,7 +70,7 @@ export default function ContributionCharacterFormRequirements(props) {
             />
             <div className='flex flex-col gap-y-0'>
               <p className='font-titillium text-xs sm:text-base'>{reward.name}</p>
-              <span className='text-xs font-bold hover:underline cursor-pointer'>[Show Content]</span>
+              <span className='text-xs text-sky-500 font-bold hover:underline cursor-pointer'>[Show Content]</span>
             </div>
           </div>
         ))}
@@ -81,7 +81,6 @@ export default function ContributionCharacterFormRequirements(props) {
 
 ContributionCharacterFormRequirements.propTypes = {
   form: PropTypes.object,
-  defaultValues: PropTypes.object,
   name: PropTypes.string,
   baseData: PropTypes.object,
 }

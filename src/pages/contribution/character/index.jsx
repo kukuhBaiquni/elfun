@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Fragment, useState, useEffect } from 'react'
 import Head from 'next/head'
-import Layout from 'layouts'
+import ContributionLayout from 'layouts/contribution-layout'
 import Modal from 'components/common/modal'
 import ClassTree from 'components/page-fragment/contribution/class-tree'
 import clsx from 'clsx'
@@ -28,7 +28,7 @@ export default function Character() {
         <meta content='Contribution guide for filling submission article form' name='description' />
         <meta content='Elfun Contribution Guide, Contribution Elfun, Elfun' name='keywords' />
       </Head>
-      <main className='text-general px-2'>
+      <main className='text-general px-2 bg-paper-general sm:p-3 sm:mb-10 mb-2 pt-3'>
         <h2 className='text-3xl font-semibold dark:text-sky-400 text-sky-600 font-titillium'>
           Create Character Information
         </h2>
@@ -75,7 +75,7 @@ export default function Character() {
 }
 
 Character.getLayout = (page) => (
-  <Layout>
+  <ContributionLayout>
     {page}
-  </Layout>
+  </ContributionLayout>
 )
