@@ -15,11 +15,14 @@ import InvalidAccess from 'components/page-fragment/contribution/invalid-access'
 import { useQuery } from 'react-query'
 import Button from 'components/common/button'
 import { CheckCircleIcon } from '@heroicons/react/solid'
+import FormSchema from 'components/page-fragment/contribution/characters/contribution-characters-form-schema'
 
 export default function Create() {
   const [isVisible, setIsVisible] = useState(false)
   const { query } = useRouter()
-  const form = useForm()
+  const form = useForm({
+    resolver: FormSchema,
+  })
 
   const queryCharacterUtility = useQuery([
     'CHARACTER-UTILITY',

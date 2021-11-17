@@ -47,9 +47,9 @@ const schema = yup.object().shape({
   ),
   advancement: yup.array().of(
     yup.object({
-      prerequisites: yup.string(),
-      objectives: yup.string(),
-      description: yup.string(),
+      prerequisites: yup.string().required('Quest Acceptance Prerequisites is Required!'),
+      objectives: yup.string().required('Objectives is Required!'),
+      description: yup.string().required('Description is Required!'),
     }),
   ),
 })
