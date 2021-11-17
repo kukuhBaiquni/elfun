@@ -17,8 +17,8 @@ export default function ContributionCharacterFormQuest(props) {
 
   const addQuest = () => {
     append({
-      prerequisites: [],
-      objectives: [],
+      prerequisites: '',
+      objectives: '',
       description: '',
     })
   }

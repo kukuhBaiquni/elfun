@@ -56,6 +56,7 @@ export default function ContributionCharacterFormLeft(props) {
         register={register}
       />
       <Textarea
+        errors={errors}
         label='Background'
         name='background'
         placeholder='Background e.g: Background story of this character'

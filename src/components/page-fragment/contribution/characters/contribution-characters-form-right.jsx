@@ -15,6 +15,7 @@ export default function ContributionCharacterFormRight(props) {
     <section>
       <InputNumber
         control={control}
+        errors={errors}
         label='Age'
         name='age'
         placeholder='Age e.g: 20 or 0 for "Unknown"'
