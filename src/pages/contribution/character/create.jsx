@@ -7,7 +7,7 @@ import Modal from 'components/common/modal'
 import Warning from 'components/common/modal/feedback/warning'
 import clsx from 'clsx'
 import { useForm } from 'react-hook-form'
-import classType from 'constant/class-type'
+import CLASS_TYPE from 'constant/class-type'
 import ContributionCharacterForm from 'components/page-fragment/contribution/characters/contribution-characters-form'
 import FormLoader from 'components/page-fragment/contribution/form-loader'
 import { getCharacterUtility } from 'api/character-utility'
@@ -37,6 +37,7 @@ export default function Create() {
   const { isLoading, isError } = queryCharacterUtility
 
   const onSubmit = (data) => {
+    // eslint-disable-next-line no-console
     console.log('DATA__', data)
   }
 
@@ -71,7 +72,7 @@ export default function Create() {
               />
               <div>
                 <p className={clsx(baseData.textColor, 'font-bold font-titillium text-lg')}>{baseData.name}</p>
-                <p className='leading-5 text-sm'>({classType[baseData.classId]})</p>
+                <p className='leading-5 text-sm'>({CLASS_TYPE[baseData.classId]})</p>
               </div>
             </div>
             <ContributionCharacterForm

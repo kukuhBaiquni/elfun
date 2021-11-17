@@ -1,4 +1,4 @@
-const classType = {
+const CLASS_TYPE = {
   0: 'Base Class',
   1: 'First Class',
   2: 'Second Class',
@@ -6,4 +6,4 @@ const classType = {
   4: 'Third Class',
 }
 
-export default classType
+export default CLASS_TYPE

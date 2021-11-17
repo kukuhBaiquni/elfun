@@ -8,7 +8,7 @@ import FormSchema from 'components/page-fragment/contribution/skills/contributio
 import ContributionSkillsForm from 'components/page-fragment/contribution/skills/contribution-skills-form'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
-import classType from 'constant/class-type'
+import CLASS_TYPE from 'constant/class-type'
 import FormLoader from 'components/page-fragment/contribution/form-loader'
 import { getCharacterUtility } from 'api/character-utility'
 import InvalidAccess from 'components/page-fragment/contribution/invalid-access'
@@ -66,7 +66,7 @@ export default function Skills() {
               />
               <div>
                 <p className={clsx(baseData.textColor, 'font-bold font-titillium')}>{baseData.name}</p>
-                <p className='leading-5 text-sm'>({classType[baseData.classId]})</p>
+                <p className='leading-5 text-sm'>({CLASS_TYPE[baseData.classId]})</p>
               </div>
             </div>
             <ContributionSkillsForm
