@@ -44,7 +44,7 @@ export default function Skills() {
         <meta content='Elfun Contribution Guide, Contribution Elfun, Elfun' name='keywords' />
       </Head>
       <main className={clsx(
-        'bg-paper-general sm:p-3 sm:mb-10 mb-2',
+        'bg-paper-general sm:p-3 sm:mb-10 mb-2 pt-3',
         baseData
           ? 'px-2 text-general'
           : 'flex items-center justify-center min-h-[50vh]',

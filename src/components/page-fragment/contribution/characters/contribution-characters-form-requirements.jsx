@@ -61,7 +61,7 @@ export default function ContributionCharacterFormRequirements(props) {
         />
         <h6 className='font-titillium font-bold'>Common Rewards</h6>
         {REWARDS[baseData.classId].map((reward) => (
-          <div className='flex items-center gap-x-1 p-1 my-2 border-input rounded bg-opacity-70 dark:bg-gray-800 bg-gray-300' key={reward.name}>
+          <div className='flex items-center gap-x-1 p-1 my-2 border-input rounded bg-opacity-70 dark:bg-gray-800 bg-gray-200' key={reward.name}>
             <Image
               alt={reward.name}
               height={40}
@@ -70,7 +70,7 @@ export default function ContributionCharacterFormRequirements(props) {
             />
             <div className='flex flex-col gap-y-0'>
               <p className='font-titillium text-xs sm:text-base'>{reward.name}</p>
-              <span className='text-xs font-bold hover:underline cursor-pointer'>[Show Content]</span>
+              <span className='text-xs text-sky-500 font-bold hover:underline cursor-pointer'>[Show Content]</span>
             </div>
           </div>
         ))}

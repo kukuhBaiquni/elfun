@@ -25,7 +25,7 @@ export default function ContributionCharacterFormQuest(props) {
   }
 
   return (
-    <div className='mt-10 border-input p-3 rounded dark:bg-gray-900 bg-gray-200'>
+    <div className='mt-10 border-input p-3 rounded dark:bg-gray-900 bg-gray-300'>
       <h4 className={clsx(baseData.textColor, 'text-lg font-bold font-titillium mb-1')}>{CLASS_TYPE[baseData.classId]} Advancement ({baseData.name})</h4>
       <div className='dark:text-gray-500 text-gray-500 text-sm'>
         <p> Upon reaching level 35, the player will receive second class advancement quest.  </p>
