@@ -43,7 +43,7 @@ export default function ContributionCharacterFormQuest(props) {
         >
           <ContributionCharacterFormRequirements
             form={form}
-            name='advancement'
+            name={`advancement.${index}`}
           />
         </Collapse>
       ))}
