@@ -1,9 +1,13 @@
 import PropTypes from 'prop-types'
 import Textarea from 'components/forms/input-text/textarea'
 import InputNumber from 'components/forms/input-text/input-number'
+import REWARDS from 'constant/rewards'
+import Image from 'next/image'
 
 export default function ContributionCharacterFormRequirements(props) {
-  const { form, defaultValues = {}, name } = props
+  const {
+    form, defaultValues = {}, name, baseData = {},
+  } = props
   const { formState: { errors }, register, control } = form
 
   return (
@@ -38,7 +42,7 @@ export default function ContributionCharacterFormRequirements(props) {
           control={control}
           errors={errors}
           label='Experience'
-          name={`${name}.rewards.experience`}
+          name={`${name}.rewards.exp`}
           placeholder='Exp. Rewards'
         />
         <InputNumber
@@ -55,6 +59,21 @@ export default function ContributionCharacterFormRequirements(props) {
           name={`${name}.rewards.ap`}
           placeholder='AP Rewards'
         />
+        <h6 className='font-titillium font-bold'>Common Rewards</h6>
+        {REWARDS[baseData.classId].map((reward) => (
+          <div className='flex items-center gap-x-1 p-1 my-2 border-input rounded bg-opacity-70 dark:bg-gray-800 bg-gray-300' key={reward.name}>
+            <Image
+              alt={reward.name}
+              height={40}
+              src={reward.img}
+              width={40}
+            />
+            <div className='flex flex-col gap-y-0'>
+              <p className='font-titillium text-xs sm:text-base'>{reward.name}</p>
+              <span className='text-xs font-bold hover:underline cursor-pointer'>[Show Content]</span>
+            </div>
+          </div>
+        ))}
       </section>
     </div>
   )
@@ -64,4 +83,5 @@ ContributionCharacterFormRequirements.propTypes = {
   form: PropTypes.object,
   defaultValues: PropTypes.object,
   name: PropTypes.string,
+  baseData: PropTypes.object,
 }

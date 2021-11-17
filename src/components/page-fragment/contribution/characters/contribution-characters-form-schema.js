@@ -50,6 +50,11 @@ const schema = yup.object().shape({
       prerequisites: yup.string().required('Quest Acceptance Prerequisites is Required!'),
       objectives: yup.string().required('Objectives is Required!'),
       description: yup.string().required('Description is Required!'),
+      rewards: yup.object({
+        exp: yup.string(),
+        ed: yup.string(),
+        ap: yup.string(),
+      }),
     }),
   ),
 })
