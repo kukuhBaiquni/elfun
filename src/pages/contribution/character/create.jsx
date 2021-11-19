@@ -41,9 +41,13 @@ export default function Create() {
   const { isLoading, isError } = queryCharacterUtility
 
   const mutationCharacterInformation = useMutation(addCharacterInformation)
-
   const onSubmit = (data) => {
-    mutationCharacterInformation.mutate(data, {
+    mutationCharacterInformation.mutate({
+      ...data,
+      characterUtility: {
+        ...baseData,
+      },
+    }, {
       onSettled: (response) => {
         console.log('DATA___', response)
       },
