@@ -13,7 +13,7 @@ export default function ContributionCharacterFormLeft(props) {
         disabled
         errors={errors}
         label='Name'
-        name='characterName'
+        name='name'
         placeholder='Character Name..'
         register={register}
       />
@@ -22,7 +22,7 @@ export default function ContributionCharacterFormLeft(props) {
         disabled
         errors={errors}
         label='Class'
-        name='className'
+        name='class'
         placeholder='Class..'
         register={register}
       />

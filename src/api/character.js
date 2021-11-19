@@ -3,8 +3,11 @@ import API from 'utils/api'
 
 const basePath = (extra = '') => `/character${extra}`
 
-export const addCharacterInformation = ({ data }) => API({
-  method: 'POST',
-  path: basePath(),
-  data,
-})
+export const addCharacterInformation = (data) => {
+  console.log('SENDING DATA', data)
+  API({
+    method: 'POST',
+    path: basePath(),
+    data,
+  })
+}
