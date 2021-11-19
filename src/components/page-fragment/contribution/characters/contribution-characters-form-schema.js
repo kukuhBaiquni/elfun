@@ -8,7 +8,7 @@ const schema = yup.object().shape({
   innate: yup.string().required('Innate is Required!'),
   specialAbility: yup.string(),
   weapon: yup.string().required('Weapon is Required!'),
-  background: yup.string().required('background is Required!'),
+  background: yup.string().required('Background is Required!'),
   age: yup.string().required('Age is Required!'),
   race: yup.string().required('Race is Required!'),
   statistic: yup.object({
