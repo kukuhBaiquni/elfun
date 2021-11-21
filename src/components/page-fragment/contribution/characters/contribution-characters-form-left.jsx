@@ -40,6 +40,14 @@ export default function ContributionCharacterFormLeft(props) {
         placeholder='Innate e.g: Specialized in close combat'
         register={register}
       />
+      <Textarea
+        errors={errors}
+        label='Description'
+        name='description'
+        placeholder='Description e.g: innate description'
+        register={register}
+        rows={2}
+      />
       {baseData?.classId === 0 && (
         <Textarea
           label='Special Ability'

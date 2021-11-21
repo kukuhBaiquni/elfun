@@ -6,6 +6,7 @@ const schema = yup.object().shape({
   class: yup.string().required('Class is Required!'),
   quote: yup.string().required('Quote is Required!'),
   innate: yup.string().required('Innate is Required!'),
+  description: yup.string().required('Innate is Required!'),
   specialAbility: yup.string(),
   weapon: yup.string().required('Weapon is Required!'),
   background: yup.string().required('Background is Required!'),
