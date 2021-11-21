@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import LeftNavigation from 'components/left-navigation'
 import RightNavigation from 'components/right-navigation/contributions'
 import dynamic from 'next/dynamic'
+import ErrorBoundary from './error-boundary'
 
 const Header = dynamic(
   () => import('../components/header'),
@@ -17,7 +18,9 @@ function ContributionLayout({ children }) {
           <div className='flex px-1.5'>
             <LeftNavigation />
             <div className='w-full transition-general'>
-              {children}
+              <ErrorBoundary>
+                {children}
+              </ErrorBoundary>
             </div>
             <RightNavigation />
           </div>
