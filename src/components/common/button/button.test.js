@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable no-undef */
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import Button from '.'
