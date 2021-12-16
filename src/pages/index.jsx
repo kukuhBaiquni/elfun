@@ -4,13 +4,18 @@ import Layout from 'layouts'
 import Head from 'next/head'
 import Alert from 'components/common/alerts'
 import {
-  Welcome, Contribution, RelatedArticles, NewsAndUpdate,
+  Welcome,
+  Contribution,
+  RelatedArticles,
+  NewsAndUpdate,
 } from 'components/page-fragment/home'
 
 function Home() {
   const alertContent = (
     <p className='ml-3'>
-      This website was created for the purpose of being a <strong>PORTFOLIO</strong> and for <strong>PERSONAL</strong> use only. Everything in this website just a <strong>DEMO</strong>
+      This website was created for the purpose of being a{' '}
+      <strong>PORTFOLIO</strong> and for <strong>PERSONAL</strong> use only.
+      Everything in this website just a <strong>DEMO</strong>
     </p>
   )
 
@@ -25,19 +30,15 @@ function Home() {
         <Alert text={alertContent} variant='info' />
         <section className='px-2 mb-10'>
           <Welcome />
-          <Contribution />
-          <NewsAndUpdate />
           <RelatedArticles />
+          <NewsAndUpdate />
+          <Contribution />
         </section>
       </main>
     </Fragment>
   )
 }
 
-Home.getLayout = (page) => (
-  <Layout>
-    {page}
-  </Layout>
-)
+Home.getLayout = (page) => <Layout>{page}</Layout>
 
 export default Home
