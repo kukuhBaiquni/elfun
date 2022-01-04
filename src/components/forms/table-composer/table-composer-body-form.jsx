@@ -41,12 +41,12 @@ export default function TableComposerBody(props) {
 
   return (
     <Fragment>
-      <div className='bg-sky-500 dark:bg-gray-700 text-white py-2 px-3 text-lg flex justify-between items-center'>
+      <div className='bg-sky-500 dark:bg-gray-700 text-white h-12 px-3 text-lg flex justify-between items-center'>
         <h5>Create Table</h5>
         <XIcon className='w-6 h-6 cursor-pointer' onClick={closeModal} />
       </div>
-      <div className='py-2 pl-3 pr-2 mt-3'>
-        <div className='max-h-[700px] min-h-[300px] overflow-y-auto custom-scroll pr-2'>
+      <div className='pl-3 pr-2 mt-3'>
+        <div className='max-h-[calc(100vh-72px)] min-h-[300px] overflow-y-auto custom-scroll pr-2'>
           <InputText
             defaultValue={defaultValues?.tableName}
             errors={errors}
@@ -80,17 +80,17 @@ export default function TableComposerBody(props) {
               }}
             />
           </FormFieldWrapper>
-        </div>
-        <div className='flex justify-end mt-2 mb-1 gap-2'>
-          <Button
-            label='Cancel'
-            variant='danger-solid'
-            onClick={closeModal}
-          />
-          <Button
-            label='Done'
-            onClick={formSubmit}
-          />
+          <div className='flex justify-end mt-2 mb-1 gap-2'>
+            <Button
+              label='Cancel'
+              variant='danger-solid'
+              onClick={closeModal}
+            />
+            <Button
+              label='Done'
+              onClick={formSubmit}
+            />
+          </div>
         </div>
       </div>
     </Fragment>

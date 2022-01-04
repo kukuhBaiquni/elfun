@@ -73,6 +73,7 @@ export default function TableComposer(props) {
         }}
       />
       <Modal
+        fullHeight
         isVisible={isVisible}
         render={(
           <TableComposerBodyForm
@@ -81,7 +82,7 @@ export default function TableComposer(props) {
             onSubmit={onSubmit}
           />
         )}
-        size='max-w-xl'
+        size='max-w-screen'
       />
     </FormFieldWrapper>
   )
