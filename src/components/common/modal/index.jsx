@@ -6,7 +6,7 @@ import clsx from 'clsx'
 export default function Modal(props) {
   const cancelButtonRef = useRef(null)
   const {
-    isVisible, closeModal, render, persist, size,
+    isVisible, closeModal = () => {}, render, persist, size = 'max-w-lg', fullHeight = false,
   } = props
 
   return (
@@ -42,7 +42,7 @@ export default function Modal(props) {
             leaveTo='opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'
           >
             <div className={clsx(
-              size,
+              size, fullHeight && 'h-screen',
               'inline-block w-full bg-general whitespace-nowrap overflow-hidden shadow-xl',
               'sm:text-left text-general transform transition-all',
             )}
@@ -63,9 +63,5 @@ Modal.propTypes = {
   render: PropTypes.node,
   persist: PropTypes.bool,
   size: PropTypes.string,
-}
-
-Modal.defaultProps = {
-  size: 'max-w-lg',
-  closeModal: () => {},
+  fullHeight: PropTypes.bool,
 }
